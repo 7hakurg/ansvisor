@@ -18,6 +18,21 @@ function isAuthRoute(pathname: string): boolean {
   return authPathnames.some((p) => pathname === p || pathname.startsWith(`${p}/`));
 }
 
+/** The request header next-intl sets on the locale rewrite it makes. */
+const INTL_LOCALE_HEADER = 'x-next-intl-locale';
+
+/**
+ * Whether this is the proxy pass for next-intl's own rewrite: a locale-prefixed
+ * path carrying the header next-intl adds when it rewrites. A visitor typing
+ * /en/... has no header and still goes through next-intl's canonical redirect.
+ */
+function isIntlRewritePass(request: NextRequest): boolean {
+  const locale = request.headers.get(INTL_LOCALE_HEADER);
+  if (!locale || !(routing.locales as readonly string[]).includes(locale)) return false;
+  const { pathname } = request.nextUrl;
+  return pathname === `/${locale}` || pathname.startsWith(`/${locale}/`);
+}
+
 export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
@@ -115,6 +130,19 @@ export async function proxy(request: NextRequest) {
         response.cookies.set(cookie.name, cookie.value, cookie);
       });
     }
+    return response;
+  }
+
+  // Next.js 16.4 runs the proxy again for the target of next-intl's own locale
+  // rewrite (/sign-up → /en/sign-up). Handing that pass back to next-intl makes
+  // it redirect /en/sign-up to /sign-up (localePrefix 'as-needed'), which
+  // rewrites again: an endless 307 loop on every page. That pass is already
+  // routed, so let it through. The auth checks above have run on it as usual.
+  if (isIntlRewritePass(request)) {
+    const response = NextResponse.next();
+    supabaseResponse?.cookies.getAll().forEach((cookie) => {
+      response.cookies.set(cookie.name, cookie.value, cookie);
+    });
     return response;
   }
 

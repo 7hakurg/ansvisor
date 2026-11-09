@@ -1,4 +1,4 @@
-import { afterEach, describe, expect, it, vi } from 'vitest';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { NextRequest, NextResponse } from 'next/server';
 
 /**
@@ -8,7 +8,13 @@ import { NextRequest, NextResponse } from 'next/server';
  */
 
 // The locale routing isn't what's tested here (and its ESM build doesn't load in Vitest).
-vi.mock('next-intl/middleware', () => ({ default: () => () => NextResponse.next() }));
+const intl = vi.hoisted(() => ({ calls: [] as string[] }));
+vi.mock('next-intl/middleware', () => ({
+  default: () => (request: NextRequest) => {
+    intl.calls.push(request.nextUrl.pathname);
+    return NextResponse.next();
+  },
+}));
 const session = vi.hoisted(() => ({
   user: null as { id: string } | null,
   organizationId: 'org-1' as string | null,
@@ -92,6 +98,54 @@ describe('proxy: the old Agent addresses', () => {
   it('sends a signed-out visitor to sign-in first', async () => {
     vi.stubEnv('CHAT_AGENTIC', 'true');
     const res = await proxy(new NextRequest('https://app.example.com/dashboard/agent'));
+    expect(res.status).toBe(307);
+    expect(new URL(res.headers.get('location')!).pathname).toBe('/sign-in');
+  });
+});
+
+/**
+ * Next.js 16.4 runs the proxy again for the target of next-intl's own locale
+ * rewrite (/sign-up → /en/sign-up, marked with next-intl's locale header).
+ * Handing that pass back to next-intl made it redirect /en/sign-up to
+ * /sign-up ('as-needed' prefix), which rewrote again: a 307 loop on every page.
+ */
+describe('proxy: the pass for next-intl’s own rewrite', () => {
+  beforeEach(() => {
+    intl.calls.length = 0;
+    session.user = null;
+  });
+
+  it('lets the rewritten page through instead of routing it again', async () => {
+    const res = await proxy(
+      new NextRequest('https://app.example.com/en/sign-up', {
+        headers: { 'x-next-intl-locale': 'en' },
+      }),
+    );
+    expect(res.headers.get('location')).toBeNull();
+    expect(res.headers.get('x-middleware-next')).toBe('1');
+    expect(intl.calls).toEqual([]);
+  });
+
+  it('still routes a visitor’s own /en address through next-intl', async () => {
+    await proxy(new NextRequest('https://app.example.com/en/sign-up'));
+    expect(intl.calls).toEqual(['/en/sign-up']);
+  });
+
+  it('still routes an unprefixed address through next-intl, even with the header', async () => {
+    await proxy(
+      new NextRequest('https://app.example.com/sign-up', {
+        headers: { 'x-next-intl-locale': 'en' },
+      }),
+    );
+    expect(intl.calls).toEqual(['/sign-up']);
+  });
+
+  it('keeps the auth checks on the rewritten pass', async () => {
+    const res = await proxy(
+      new NextRequest('https://app.example.com/en/dashboard', {
+        headers: { 'x-next-intl-locale': 'en' },
+      }),
+    );
     expect(res.status).toBe(307);
     expect(new URL(res.headers.get('location')!).pathname).toBe('/sign-in');
   });
