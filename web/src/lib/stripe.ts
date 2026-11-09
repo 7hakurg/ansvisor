@@ -1,6 +1,34 @@
 import Stripe from 'stripe';
 
-export const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
+let client: Stripe | undefined;
+
+function getClient(): Stripe {
+  if (client) return client;
+  const key = process.env.STRIPE_SECRET_KEY;
+  if (!key) {
+    throw new Error(
+      'STRIPE_SECRET_KEY is not set: Stripe billing is only available when it is configured (cloud mode).',
+    );
+  }
+  client = new Stripe(key);
+  return client;
+}
+
+/**
+ * The Stripe client, created on first use rather than at import.
+ *
+ * Self-hosted installs run without Stripe, and `next build` evaluates every
+ * route module while collecting page data — an eager `new Stripe(undefined)`
+ * would fail the build and any route that merely imports this file. Using the
+ * client without a key throws a clear error instead.
+ */
+export const stripe: Stripe = new Proxy({} as Stripe, {
+  get(_target, prop) {
+    const real = getClient();
+    const value = Reflect.get(real, prop, real);
+    return typeof value === 'function' ? value.bind(real) : value;
+  },
+});
 
 export const PRICE_IDS = {
   starter: {
