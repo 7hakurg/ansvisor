@@ -120,9 +120,13 @@ export async function proxy(request: NextRequest) {
   const isRscOrAction = request.headers.has('rsc') || request.headers.has('next-action');
   if (isRscOrAction) {
     const needsLocalePrefix = !(pathname === '/en' || pathname.startsWith('/en/'));
+    // Mark the rewrite the way next-intl marks its own, so the proxy's second
+    // pass on it (Next.js 16.4) is let through rather than redirected back.
+    const rewriteHeaders = new Headers(request.headers);
+    rewriteHeaders.set(INTL_LOCALE_HEADER, routing.defaultLocale);
     const response = needsLocalePrefix
       ? NextResponse.rewrite(new URL(`/en${pathname}${request.nextUrl.search}`, request.url), {
-          request,
+          request: { headers: rewriteHeaders },
         })
       : NextResponse.next({ request });
     if (supabaseResponse) {

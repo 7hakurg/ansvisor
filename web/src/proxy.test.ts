@@ -150,3 +150,35 @@ describe('proxy: the pass for next-intl’s own rewrite', () => {
     expect(new URL(res.headers.get('location')!).pathname).toBe('/sign-in');
   });
 });
+
+/**
+ * RSC navigations and server actions skip next-intl and are rewritten to /en by
+ * hand. That rewrite must carry next-intl's locale header too, or the proxy's
+ * second pass on Next.js 16.4 hands /en/... to next-intl, which redirects it
+ * back: ERR_TOO_MANY_REDIRECTS on every client-side navigation.
+ */
+describe('proxy: RSC and server-action requests', () => {
+  beforeEach(() => {
+    intl.calls.length = 0;
+    session.user = null;
+  });
+
+  it('marks the /en rewrite as already routed', async () => {
+    const res = await proxy(
+      new NextRequest('https://app.example.com/sign-in?verified=1', { headers: { rsc: '1' } }),
+    );
+    expect(res.headers.get('location')).toBeNull();
+    expect(new URL(res.headers.get('x-middleware-rewrite')!).pathname).toBe('/en/sign-in');
+    expect(res.headers.get('x-middleware-request-x-next-intl-locale')).toBe('en');
+  });
+
+  it('lets that marked pass through without next-intl', async () => {
+    const res = await proxy(
+      new NextRequest('https://app.example.com/en/sign-in?verified=1', {
+        headers: { 'x-next-intl-locale': 'en' },
+      }),
+    );
+    expect(res.headers.get('location')).toBeNull();
+    expect(intl.calls).toEqual([]);
+  });
+});
