@@ -98,7 +98,19 @@ if (process.env.OPENROUTER_API_KEY) {
 }
 
 /**
- * Resolve a "provider/model" string into a Vercel AI SDK model instance
+ * First-party namespaces that OpenRouter serves under the same names
+ * ("google/gemini-3-flash-preview" is one model id on both). The defaults and
+ * fallbacks across the server are written this way, so a deployment with only
+ * an OpenRouter key can still run every one of them.
+ */
+const OPENROUTER_MIRRORED = new Set(['openai', 'anthropic', 'google']);
+
+/**
+ * Resolve a "provider/model" string into a Vercel AI SDK model instance.
+ *
+ * A provider's own key wins. Without one, a first-party model goes through
+ * OpenRouter when that is configured, whole string as the model id.
+ *
  * @param {string} modelString - e.g. "openai/gpt-4o-mini", "anthropic/claude-sonnet-4-20250514", "google/gemini-pro"
  * @returns AI SDK model instance
  */
@@ -108,6 +120,10 @@ export function resolveModel(modelString, options) {
 
   const [providerName, ...modelParts] = target.split('/');
   const modelId = modelParts.join('/');
+
+  if (!providers[providerName] && providers.openrouter && OPENROUTER_MIRRORED.has(providerName)) {
+    return providers.openrouter(target, options);
+  }
 
   const provider = providers[providerName];
   if (!provider) {

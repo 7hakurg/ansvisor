@@ -67,6 +67,47 @@ describe('ai-provider registry', () => {
     expect(resolveModel('anthropic/claude-haiku-4-5').provider).toBe('anthropic.messages');
   });
 
+  it('sends a first-party model through openrouter when only openrouter has a key', async () => {
+    // The default and fallback models are written "google/…", OpenRouter's own
+    // names for them, so an OpenRouter-only deployment can run every one.
+    const { resolveModel } = await loadWith({ OPENROUTER_API_KEY: 'sk-or-test' });
+
+    for (const id of [
+      'google/gemini-3-flash-preview',
+      'openai/gpt-5-mini',
+      'anthropic/claude-haiku-4.5',
+    ]) {
+      const model = resolveModel(id);
+      expect(model.provider).toBe('openai.chat');
+      expect(model.modelId).toBe(id);
+    }
+  });
+
+  it('falls back to openrouter for the default model too', async () => {
+    const { resolveModel } = await loadWith({
+      OPENROUTER_API_KEY: 'sk-or-test',
+      DEFAULT_SUGGESTION_MODEL: 'google/gemini-3-flash-preview',
+    });
+
+    expect(resolveModel().modelId).toBe('google/gemini-3-flash-preview');
+  });
+
+  it("prefers a provider's own key over openrouter", async () => {
+    const { resolveModel } = await loadWith({
+      OPENROUTER_API_KEY: 'sk-or-test',
+      ANTHROPIC_API_KEY: 'sk-ant-test',
+    });
+
+    expect(resolveModel('anthropic/claude-haiku-4-5').provider).toBe('anthropic.messages');
+    expect(resolveModel('google/gemini-3-flash-preview').provider).toBe('openai.chat');
+  });
+
+  it('still fails for a first-party model when no provider can serve it', async () => {
+    const { resolveModel } = await loadWith({});
+
+    expect(() => resolveModel('google/gemini-3-flash-preview')).toThrow(/not configured/);
+  });
+
   it('names the configured providers when an unknown one is requested', async () => {
     const { resolveModel } = await loadWith({ OPENROUTER_API_KEY: 'sk-or-test' });
 
