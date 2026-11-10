@@ -3,7 +3,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 /**
  * The staff Debug endpoint (CHAT-03 items 25–26; W1-15): not there while the
- * new Chat is off; 401 without a session; 403 for anyone who isn't Ansvisor
+ * new Chat is off; 401 without a session; 403 for anyone who isn't Oppla
  * staff, a customer's Admin too; for staff, the answer's debug record, and
  * a step's whole output as a download, in their own workspace only. Each
  * staff view is logged, with the workspace.

@@ -12,7 +12,7 @@ import { loadSupportedCountries, supportsCountry } from '../cloro-countries.js';
 
 /**
  * The engines a card asks, in the order it lists them (web
- * lib/report-card/payload.ts; owner decision 2026-11-04): Ansvisor
+ * lib/report-card/payload.ts; owner decision 2026-11-04): Oppla
  * Starter's engines, ChatGPT and Gemini, are the card's main result; the
  * Google engines only Growth tracks are shown apart. Cards made before
  * Copilot was dropped asked it as a main engine.

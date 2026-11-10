@@ -54,7 +54,7 @@ export const COMPETITOR_TOOLS = [
     class: 'write',
     area: 'competitors',
     description:
-      "Remove one of the brand's competitors (its id from list_competitors): Ansvisor stops comparing the brand with it. Only when the person asked for it to go.",
+      "Remove one of the brand's competitors (its id from list_competitors): Oppla stops comparing the brand with it. Only when the person asked for it to go.",
     // A card in every mode (§9 row 32: "Ask (always_card)").
     defaultPolicy: 'ask',
     maxPolicy: 'ask',

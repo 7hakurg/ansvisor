@@ -68,7 +68,7 @@ describe('buildAgentModel', () => {
     const { url, headers } = await firstRequest(model);
     expect(url).toBe('https://openrouter.ai/api/v1/chat/completions');
     expect(headers.get('authorization')).toBe(`Bearer ${KEY}`);
-    expect(headers.get('x-title')).toBe('Ansvisor');
+    expect(headers.get('x-title')).toBe('Oppla');
   });
 
   it('asks OpenRouter for providers that keep no data (W4-34)', async () => {

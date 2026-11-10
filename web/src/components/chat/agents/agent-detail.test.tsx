@@ -321,7 +321,7 @@ describe('AgentDetail', () => {
             {
               ok: true,
               runs: [
-                { brand: 'Ansvisor', status: 'queued', repeated: false, coalesced: false },
+                { brand: 'Oppla', status: 'queued', repeated: false, coalesced: false },
                 { brand: 'Brand B', status: 'queued', repeated: false, coalesced: false },
               ],
             },
@@ -424,7 +424,7 @@ describe('AgentDetail', () => {
     );
     expect(rows[0].querySelector('[data-slot="run-ai-use"]')?.textContent).toBe('3.2% of 10%');
     expect(rows[0].textContent).toContain('Schedule');
-    expect(rows[0].textContent).toContain('Ansvisor');
+    expect(rows[0].textContent).toContain('Oppla');
     expect(rows[0].textContent).toContain('Done');
     expect(rows[0].querySelector('[data-slot="run-outcome"]')?.textContent).toBe('Improved');
     expect(rows[1].querySelector('a')).toBeNull();
@@ -458,7 +458,7 @@ describe('AgentDetail', () => {
         return Response.json(
           {
             ok: true,
-            runs: [{ brand: 'Ansvisor', status: 'queued', repeated: false, coalesced: false }],
+            runs: [{ brand: 'Oppla', status: 'queued', repeated: false, coalesced: false }],
           },
           { status: 202 },
         );
@@ -561,7 +561,7 @@ describe('AgentDetail', () => {
     const row = (name: string) => one(`[data-row="${name}"]`)?.textContent;
     expect(row('owner')).toBe('You');
     expect(row('visibility')).toBe('Workspace');
-    expect(row('brands')).toBe('Ansvisor');
+    expect(row('brands')).toBe('Oppla');
     expect(row('engines')).toBe('Perplexity');
     expect(row('perRun')).toBe('15%');
     expect(row('monthCap')).toBe('None');

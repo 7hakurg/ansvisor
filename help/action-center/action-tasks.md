@@ -29,7 +29,7 @@ Click **Edit** to change any of them.
 
 **How we check** says how a task is confirmed:
 
-- **Automatic**: Ansvisor fetches the page again.
+- **Automatic**: Oppla fetches the page again.
 - **Re-run**: the prompts run again.
 - **Manual**: you confirm it.
 
@@ -49,7 +49,7 @@ A task you reopen after it passed stays open: the call is yours.
 
 ## Task status
 
-A task's status is **To Do**, **In Progress**, **Completed**, **Skipped** (with a reason), **Waiting Approval**, or **Failed** when Ansvisor couldn't carry it out itself and it needs doing by hand. Skipped tasks leave the count, so they don't hold an action short of done. Use **Add task** for work of your own, and delete tasks you don't need.
+A task's status is **To Do**, **In Progress**, **Completed**, **Skipped** (with a reason), **Waiting Approval**, or **Failed** when Oppla couldn't carry it out itself and it needs doing by hand. Skipped tasks leave the count, so they don't hold an action short of done. Use **Add task** for work of your own, and delete tasks you don't need.
 
 ## Hand a task on
 
@@ -57,7 +57,7 @@ From a task you can:
 
 - **Create content** or **Optimize page**: open a draft in the Content Editor for this task. **Open draft** returns to it, and marking the draft ready completes the task.
 - **Send to Content**: send a content task to Content as an opportunity, where a brief can be written for it.
-- **Send to webhook**: post the task to the brand's webhook, for a workflow outside Ansvisor. Set it up under **Content › Webhook Settings** with the **Action Center task sent** event selected. It's for admins and managers.
+- **Send to webhook**: post the task to the brand's webhook, for a workflow outside Oppla. Set it up under **Content › Webhook Settings** with the **Action Center task sent** event selected. It's for admins and managers.
 
 ## Files attached from Chat
 
@@ -71,9 +71,9 @@ Where AI task writing is on for your workspace, **Regenerate tasks** writes the 
 
 The AI also reads this brand's last three closed rounds of the same action. It builds on what improved results here, and doesn't hand out again a task that was done without effect. A task it writes without its URL, Change, Done when or How we check waits on **Needs review**.
 
-## Tasks Ansvisor does itself
+## Tasks Oppla does itself
 
-Some tasks that only read data, such as checking a page's traffic in your connected Analytics, can be carried out by Ansvisor overnight. The action's History says so. Nothing that would change something outside Ansvisor runs without your approval: such a task waits as **Waiting Approval**.
+Some tasks that only read data, such as checking a page's traffic in your connected Analytics, can be carried out by Oppla overnight. The action's History says so. Nothing that would change something outside Oppla runs without your approval: such a task waits as **Waiting Approval**.
 
 ## Comparing pages overnight
 
@@ -82,4 +82,4 @@ Two tasks compare pages for you overnight:
 - **Compare competitor content and coverage** reads up to three pages AI answers cited for the action's prompts, your competitors' first, and your own cited page. It says which checks at least half of their pages pass that yours doesn't.
 - **Find what sets your winning pages apart** compares up to three of your winning pages with your other pages that Site Audit checked. It lists what most winning pages have and the others lack, and the pages missing the most of it.
 
-When there is nothing to compare, the task stays open with the reason, and Ansvisor tries again a week later.
+When there is nothing to compare, the task stays open with the reason, and Oppla tries again a week later.

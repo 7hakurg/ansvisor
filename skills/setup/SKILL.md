@@ -13,7 +13,7 @@ The Onboarding & Help agent's skill: where the brand stands in Getting started, 
 
 ## When to use
 
-- "Help me set up", "What should I do next in Ansvisor?", "Which agents should I use?"
+- "Help me set up", "What should I do next in Oppla?", "Which agents should I use?"
 - On a new brand, or for a new member, on day one.
 - For one step the person names ("Connect Search Console"), do only that step, then the agents.
 
@@ -45,7 +45,7 @@ Text: the one-line status, the open steps as a numbered list, then "Agents for y
 
 ## Next moves
 
-The next open step, such as "Add 3 competitors", and a how-to question about Ansvisor, such as "How do I connect Google Search Console?": Chat answers those from Help.
+The next open step, such as "Add 3 competitors", and a how-to question about Oppla, such as "How do I connect Google Search Console?": Chat answers those from Help.
 
 ## Don't
 

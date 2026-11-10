@@ -57,7 +57,7 @@ describe('ExploreDemoCard', () => {
       'Not ready to add a card? Explore a demo brand',
     );
     expect(container.textContent).toContain(
-      'See Ansvisor with sample data: prompts, AI answers, content and reports. No card needed. Acme stays saved, and tracking starts when you pick a plan.',
+      'See Oppla with sample data: prompts, AI answers, content and reports. No card needed. Acme stays saved, and tracking starts when you pick a plan.',
     );
     expect(button().textContent).toBe('Explore the demo');
     await act(async () => button().click());

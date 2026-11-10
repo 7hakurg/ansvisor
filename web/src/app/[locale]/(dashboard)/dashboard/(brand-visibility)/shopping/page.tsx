@@ -136,7 +136,7 @@ const NO_SUMMARIES: CompetitorShoppingSummary[] = [];
  * Visibility page, which kept its address): which of the brand's products
  * AI shopping answers show, why, and what they sell. Its views (Shelf,
  * Categories, Products, Readiness, Competitors) are a second row, as the
- * Mentions tab's; "Why Ansvisor Product Visibility?" sits in the shared
+ * Mentions tab's; "Why Oppla Product Visibility?" sits in the shared
  * header, beside Reports.
  *
  * Each view reads only what it shows, when it is opened, every read at once
@@ -411,7 +411,7 @@ export default function ShoppingPage() {
 
   return (
     <div className="space-y-6">
-      {/* "Why Ansvisor Product Visibility?" (ECOM-010), beside Reports in the shared header. */}
+      {/* "Why Oppla Product Visibility?" (ECOM-010), beside Reports in the shared header. */}
       <TabHeaderActions>
         <Button variant="outline" className="gap-2" onClick={() => setWhyOpen(true)}>
           <HelpCircle className="h-4 w-4" aria-hidden />

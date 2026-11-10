@@ -108,7 +108,7 @@ describe('rankSummary', () => {
 
   it('gives the gap to the brand directly ahead', () => {
     expect(
-      rankSummary([brand('Semrush', 36.3), brand('Peec AI', 18.3), brand('Ansvisor', 17.4, true)]),
+      rankSummary([brand('Semrush', 36.3), brand('Peec AI', 18.3), brand('Oppla', 17.4, true)]),
     ).toEqual({
       rank: 3,
       count: 3,
@@ -117,7 +117,7 @@ describe('rankSummary', () => {
   });
 
   it('gives the lead over the runner-up when first', () => {
-    expect(rankSummary([brand('Ansvisor', 78.8, true), brand('Demo Coffee Co', 61.9)])).toEqual({
+    expect(rankSummary([brand('Oppla', 78.8, true), brand('Demo Coffee Co', 61.9)])).toEqual({
       rank: 1,
       count: 2,
       neighbour: { name: 'Demo Coffee Co', gap: 16.9, side: 'ahead' },
@@ -125,7 +125,7 @@ describe('rankSummary', () => {
   });
 
   it('has no rank alone on the leaderboard', () => {
-    expect(rankSummary([brand('Ansvisor', 78.8, true)])).toBeNull();
+    expect(rankSummary([brand('Oppla', 78.8, true)])).toBeNull();
   });
 });
 
@@ -312,13 +312,13 @@ describe('leaderboardCallout', () => {
   const board = [
     brand('Semrush', 36.3),
     brand('Peec AI', 18.3),
-    brand('Ansvisor', 17.4, true),
+    brand('Oppla', 17.4, true),
     brand('Otterly', 16.8),
   ];
   const rows = [
-    { provider: 'ChatGPT', 'Peec AI': 60, Ansvisor: 30 },
-    { provider: 'Gemini', 'Peec AI': 50, Ansvisor: 45 },
-    { provider: 'Grok', 'Peec AI': 90, Ansvisor: 0 },
+    { provider: 'ChatGPT', 'Peec AI': 60, Oppla: 30 },
+    { provider: 'Gemini', 'Peec AI': 50, Oppla: 45 },
+    { provider: 'Grok', 'Peec AI': 90, Oppla: 0 },
   ];
 
   it('gives the gap to the brand ahead and where it leads most', () => {
@@ -334,7 +334,7 @@ describe('leaderboardCallout', () => {
   });
 
   it('reads a tie with the brand ahead as a gap of 0', () => {
-    const level = [brand('Peec AI', 18.3), brand('Ansvisor', 18.3, true)];
+    const level = [brand('Peec AI', 18.3), brand('Oppla', 18.3, true)];
     expect(leaderboardCallout(level, rows, (p) => p !== 'Grok')).toEqual({
       rank: 1,
       gap: 0,
@@ -350,7 +350,7 @@ describe('leaderboardCallout', () => {
 
   it('has no callout in first place, even when level with second', () => {
     expect(
-      leaderboardCallout([brand('Ansvisor', 20, true), brand('Peec AI', 20)], rows, () => true),
+      leaderboardCallout([brand('Oppla', 20, true), brand('Peec AI', 20)], rows, () => true),
     ).toBeNull();
   });
 });

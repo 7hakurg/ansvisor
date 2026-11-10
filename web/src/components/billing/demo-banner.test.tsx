@@ -147,7 +147,7 @@ describe('DemoBanner', () => {
       bandButton()!.click();
     });
     expect(document.querySelector('[role="dialog"]')?.textContent).toContain(
-      'Use Ansvisor for Acme Coffee',
+      'Use Oppla for Acme Coffee',
     );
   });
 
@@ -160,7 +160,7 @@ describe('DemoBanner', () => {
       bandButton()!.click();
     });
     expect(document.querySelector('[role="dialog"]')?.textContent).toContain(
-      'Use Ansvisor for your own brand',
+      'Use Oppla for your own brand',
     );
   });
 

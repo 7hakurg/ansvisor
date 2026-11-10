@@ -447,7 +447,7 @@ const ANSWERS = {
       ],
       page: {
         intro: [
-          `${d.brand.name} was named in ${d.ansvisor.mentioned} of ${d.ansvisor.answers} AI answers to this question (Ansvisor data, October 2026).`,
+          `${d.brand.name} was named in ${d.ansvisor.mentioned} of ${d.ansvisor.answers} AI answers to this question (Oppla data, October 2026).`,
           `${d.author.name}, ${d.author.title}, explains each step. “${d.quote.text}” says ${d.quote.name}.`,
         ],
       },
@@ -552,7 +552,7 @@ const ANSWERS = {
       ],
       page: {
         intro: [
-          `${d.brand.name}, son 30 günde bu soruya verilen ${d.ansvisor.answers} yapay zekâ yanıtının ${d.ansvisor.mentioned} tanesinde anıldı (%${commaShare(d)}; Ansvisor verisi, Ekim 2026).`,
+          `${d.brand.name}, son 30 günde bu soruya verilen ${d.ansvisor.answers} yapay zekâ yanıtının ${d.ansvisor.mentioned} tanesinde anıldı (%${commaShare(d)}; Oppla verisi, Ekim 2026).`,
           `${d.author.title} ${d.author.name} her adımı anlatıyor. “${d.quote.text}” diyor ${d.quote.name}.`,
         ],
       },
@@ -676,7 +676,7 @@ const ANSWERS = {
       ],
       page: {
         intro: [
-          `${d.brand.name} wurde in ${d.ansvisor.mentioned} von ${d.ansvisor.answers} KI-Antworten auf diese Frage genannt (${commaShare(d)} %; Ansvisor-Daten, Oktober 2026).`,
+          `${d.brand.name} wurde in ${d.ansvisor.mentioned} von ${d.ansvisor.answers} KI-Antworten auf diese Frage genannt (${commaShare(d)} %; Oppla-Daten, Oktober 2026).`,
           `${d.author.name}, ${d.author.title}, erklärt jeden Schritt. „${d.quote.text}“ sagt ${d.quote.name}.`,
         ],
       },
@@ -750,7 +750,7 @@ function insert(passage, after, sources = []) {
   };
 }
 
-/** Ansvisor data's share as Turkish and German write it: "3,4" for the source's "3.4%". */
+/** Oppla data's share as Turkish and German write it: "3,4" for the source's "3.4%". */
 function commaShare(d) {
   return String(Math.round((d.ansvisor.mentioned / d.ansvisor.answers) * 1000) / 10).replace(
     '.',

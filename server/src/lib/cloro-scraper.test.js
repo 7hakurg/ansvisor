@@ -242,16 +242,16 @@ describe('cloro-scraper – parseScraperResponse', () => {
 
   describe('ChatGPT entity markup', () => {
     const markdown =
-      'Top tools: **<Entity category="software" value="Tesseract" disambig="Adlift AI search optimization platform"/>** and <Entity category="software" value="Ansvisor" />.';
+      'Top tools: **<Entity category="software" value="Tesseract" disambig="Adlift AI search optimization platform"/>** and <Entity category="software" value="Oppla" />.';
 
     it('stores the names instead of the entity tags', () => {
       const parsed = parseScraperResponse({ markdown, sources: [] }, 'chatgpt-web');
-      expect(parsed.text).toBe('Top tools: **Tesseract** and Ansvisor.');
+      expect(parsed.text).toBe('Top tools: **Tesseract** and Oppla.');
     });
 
     it('cleans the shopping answer too', () => {
       const parsed = parseScraperResponse({ markdown, sources: [] }, 'chatgpt-shopping');
-      expect(parsed.text).toBe('Top tools: **Tesseract** and Ansvisor.');
+      expect(parsed.text).toBe('Top tools: **Tesseract** and Oppla.');
     });
   });
 

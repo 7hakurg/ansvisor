@@ -3,7 +3,7 @@ import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 /**
  * Whose key images run on and what each image model costs as a share
- * (W4-08, W4-09): the workspace's own OpenRouter key or Ansvisor's, and
+ * (W4-08, W4-09): the workspace's own OpenRouter key or Oppla's, and
  * the image models with their multipliers and shares, the cheapest first.
  */
 
@@ -78,16 +78,16 @@ beforeEach(() => {
 });
 
 describe('the key images run on', () => {
-  it('is Ansvisor’s OpenRouter key, unless Chat runs on the workspace’s own OpenRouter key', async () => {
+  it('is Oppla’s OpenRouter key, unless Chat runs on the workspace’s own OpenRouter key', async () => {
     expect(await access.imageKey('org-1')).toEqual({ key: 'or-ansvisor', source: 'ansvisor' });
     fakes.chatKey = { source: 'own', config: { provider: 'openrouter', apiKey: 'or-own' } };
     expect(await access.imageKey('org-1')).toEqual({ key: 'or-own', source: 'own' });
-    // An own key of a provider that can't make these images: Ansvisor's, on the AI limit.
+    // An own key of a provider that can't make these images: Oppla's, on the AI limit.
     fakes.chatKey = { source: 'own', config: { provider: 'anthropic', apiKey: 'sk-own' } };
     expect(await access.imageKey('org-1')).toEqual({ key: 'or-ansvisor', source: 'ansvisor' });
   });
 
-  it('is none with Chat off or no key set, and never Ansvisor’s for an own key it can’t read', async () => {
+  it('is none with Chat off or no key set, and never Oppla’s for an own key it can’t read', async () => {
     fakes.agentic = false;
     expect(await access.imageKey('org-1')).toBeNull();
     fakes.agentic = true;

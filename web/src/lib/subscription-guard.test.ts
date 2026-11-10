@@ -2,7 +2,7 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 /**
- * The web app's own writes on a read-only workspace (Ansvisor Cloud, plan not
+ * The web app's own writes on a read-only workspace (Oppla Cloud, plan not
  * active): assertWritable reads the signed-in person's organization, with
  * their profile in one query, and refuses unless its plan is active; setup's
  * writes stay open to an organization that never subscribed; a plan it can't

@@ -86,7 +86,7 @@ beforeEach(() => {
         full_name: 'Sam Lee',
       },
     ],
-    brands: [{ id: BRAND, organization_id: ORG, name: 'Ansvisor' }],
+    brands: [{ id: BRAND, organization_id: ORG, name: 'Oppla' }],
     chat_conversations: [],
     chat_runs: [],
     chat_run_steps: [],
@@ -121,7 +121,7 @@ describe('listChats', () => {
     expect(list.chats.map((c) => c.id)).toEqual([CHAT(2), CHAT(1)]);
     expect(list.total).toBe(2);
     expect(list.archived).toBe(1);
-    expect(list.chats[1]).toMatchObject({ brand: 'Ansvisor', mine: true, ownerInitials: null });
+    expect(list.chats[1]).toMatchObject({ brand: 'Oppla', mine: true, ownerInitials: null });
     expect(list.chats[0]).toMatchObject({ mine: false, shared: true, ownerInitials: 'SL' });
   });
 
@@ -274,7 +274,7 @@ describe('createChat', () => {
         originPage: '/dashboard/visibility',
       }),
     );
-    expect(made).toMatchObject({ title: null, brand: 'Ansvisor', mine: true, state: 'idle' });
+    expect(made).toMatchObject({ title: null, brand: 'Oppla', mine: true, state: 'idle' });
     expect(db.tables.chat_conversations[0]).toMatchObject({
       user_id: ME.userId,
       organization_id: ORG,

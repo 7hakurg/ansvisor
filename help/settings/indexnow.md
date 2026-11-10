@@ -17,9 +17,9 @@ sources: [docs/guides/send-to-cms.mdx]
 
 In **Settings › Integrations**, find **IndexNow** under the CMS cards, for the brand open now, and click **Set up IndexNow**. Admins and managers can do this.
 
-1. Ansvisor makes a key. Make a text file named after it, ending in .txt, that holds only the key. **Copy key** puts it on your clipboard.
+1. Oppla makes a key. Make a text file named after it, ending in .txt, that holds only the key. **Copy key** puts it on your clipboard.
 2. Put the file at your site's root, on the domain the card shows, so it opens at the address under the key.
-3. Click **Check**. When Ansvisor finds the file, the card says **On**.
+3. Click **Check**. When Oppla finds the file, the card says **On**.
 
 ## What happens next
 

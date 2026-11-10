@@ -107,7 +107,7 @@ describe('notifyOwnKeyFailure', () => {
     expect(deliverEmail).toHaveBeenCalledTimes(1);
     expect(deliverEmail.mock.calls[0][0]).toMatchObject({
       to: ['admin-1@acme.test'],
-      subject: "Your AI key for Ansvisor isn't working",
+      subject: "Your AI key for Oppla isn't working",
     });
     expect(db.tables.organization_ai_keys[0].notified_at).toBe(at(60_000).toISOString());
 
@@ -131,7 +131,7 @@ describe('notifyOwnKeyFailure', () => {
     expect(await tell({ reminder: true }, at(3 * DAY + 1000))).toEqual({ notices: 2, emails: 1 });
     expect(db.tables.chat_notices.at(-1).dedupe_key).toBe(`own_key:openai:${SINCE}:reminder`);
     expect(deliverEmail.mock.calls.at(-1)[0].subject).toBe(
-      "Reminder: your AI key for Ansvisor still isn't working",
+      "Reminder: your AI key for Oppla still isn't working",
     );
     // Then none.
     expect(await tell({ reminder: true }, at(4 * DAY))).toEqual({ notices: 0, emails: 0 });

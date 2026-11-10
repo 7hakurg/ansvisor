@@ -32,7 +32,7 @@ import {
  * runs through the real engine, its data reads answering with the test's
  * own numbers, every change's server action a stand-in, and the model either
  * scripted (always: the harness and its checks work) or the model itself
- * (only with CHAT_MODEL_EVAL, on Ansvisor's keys: real calls, real cost).
+ * (only with CHAT_MODEL_EVAL, on Oppla's keys: real calls, real cost).
  *
  *   cd web && CHAT_MODEL_EVAL=untested yarn vitest run src/lib/chat/model-eval.test.ts
  *

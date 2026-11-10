@@ -93,7 +93,7 @@ interface LibraryRead {
 
 /**
  * The Content Library (Content Editor, CE-002): everything a person or the
- * Content Agent wrote or changed in Ansvisor, by status, and what was
+ * Content Agent wrote or changed in Oppla, by status, and what was
  * archived (00233). A row's menu sets its status; admins and managers also
  * send it to the CMS (#1331), archive, restore and delete. The tab lives in
  * the URL (?tab=in_review), so a link can open "Library › In review";
@@ -135,7 +135,7 @@ export default function ContentLibraryPage() {
   const [sending, setSending] = useState<{ brandId: string; source: CmsSource } | null>(null);
   // Mark published open, on a draft (CE-013).
   const [publishing, setPublishing] = useState<string | null>(null);
-  // Take down open, on a page published through Ansvisor (AUTONOMOUS-GO-LIVE PR 10).
+  // Take down open, on a page published through Oppla (AUTONOMOUS-GO-LIVE PR 10).
   const [takingDown, setTakingDown] = useState<TakeDownPage | null>(null);
   // Each draft's last send, beside its status; read with the list.
   const [cms, setCms] = useState<ReadonlyMap<string, CmsStatus>>(new Map());

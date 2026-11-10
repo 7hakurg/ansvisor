@@ -105,7 +105,7 @@ describe('runTask', () => {
    * third-party system ships yet, so this stands one in — the gate has to be
    * provable before there is something for it to hold back, not afterwards.
    */
-  describe('changing something outside Ansvisor', () => {
+  describe('changing something outside Oppla', () => {
     const outreach = { id: 'outreach', version: 1, writesExternally: true, source: 'tracking' };
     const primitive = { mode: 'agent', tool: 'outreach' };
 

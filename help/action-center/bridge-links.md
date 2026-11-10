@@ -15,7 +15,7 @@ AI sends readers to some of your pages, often guides and blog posts, that rarely
 
 ## Which pages are paired
 
-Ansvisor looks at the last 28 days of AI visits, citations and Google Analytics conversions. It needs AI traffic and a Google Analytics connection.
+Oppla looks at the last 28 days of AI visits, citations and Google Analytics conversions. It needs AI traffic and a Google Analytics connection.
 
 - **From:** a page with at least 10 AI visits or 10 citations, no sales, and key events per session under half your site's.
 - **To:** a page that sells, converts well above your site, is a pricing, demo, product, category or feature page, or is new on your sitemap with no AI visits yet.
@@ -30,6 +30,6 @@ Each pair shows the page's AI visits and citations, the page it should link to a
 
 1. **Review the links to add**: change a pair or its link text, then mark it done.
 2. **Optimize content**: **Start now** opens each page in the Content Editor. Its links are under **Brief › Your input**.
-3. **Add internal links**: checked automatically. Ansvisor reads each page and finds its link. It completes once every page has one.
+3. **Add internal links**: checked automatically. Oppla reads each page and finds its link. It completes once every page has one.
 
 Nothing is changed on your site for you.

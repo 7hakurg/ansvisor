@@ -49,7 +49,7 @@ describe('kitInUse', () => {
     expect(kitInUse({ companyName: null, logoPath: `${ORG}/kit/${ID}.png` }, true)).toBe(true);
   });
 
-  it('keeps Ansvisor’s look without a kit, with only a color or a footer, or once the plan drops', () => {
+  it('keeps Oppla’s look without a kit, with only a color or a footer, or once the plan drops', () => {
     expect(kitInUse(null, true)).toBe(false);
     expect(kitInUse({ companyName: null, logoPath: null }, true)).toBe(false);
     expect(kitInUse({ companyName: 'Acme Agency', logoPath: null }, false)).toBe(false);
@@ -163,12 +163,12 @@ describe('reportLook', () => {
     clientLogo: null,
   };
 
-  it('is Ansvisor’s own without a kit, as before', () => {
+  it('is Oppla’s own without a kit, as before', () => {
     expect(reportLook(null)).toEqual({
       branded: false,
       accent: REPORT_ACCENT,
       textAccent: REPORT_ACCENT,
-      author: 'Ansvisor',
+      author: 'Oppla',
       footer: ANSVISOR_REPORT_FOOTER,
     });
   });
@@ -196,8 +196,8 @@ describe('reportLook', () => {
 });
 
 describe('file names', () => {
-  it('start with Ansvisor’s word without a kit, the company’s with one, and none with only a logo', () => {
-    expect(fileWord(null)).toBe('ansvisor');
+  it('start with Oppla’s word without a kit, the company’s with one, and none with only a logo', () => {
+    expect(fileWord(null)).toBe('oppla');
     expect(fileWord({ companyName: 'Acme Ajans Şirketi' })).toBe('acme-ajans-sirketi');
     expect(fileWord({ companyName: null })).toBeNull();
     expect(fileWord({ companyName: '***' })).toBeNull();
@@ -209,7 +209,7 @@ describe('file names', () => {
 
   it('name a report’s PDF as before without a kit, and after the agency with one', () => {
     expect(reportFileName(null, 'Northwind Coffee', '2026-10-31T00:00:00Z')).toBe(
-      'ansvisor_northwind-coffee_report_2026-10-31.pdf',
+      'oppla_northwind-coffee_report_2026-10-31.pdf',
     );
     expect(reportFileName({ companyName: 'Acme Agency' }, 'Northwind', '2026-10-31')).toBe(
       'acme-agency_northwind_report_2026-10-31.pdf',

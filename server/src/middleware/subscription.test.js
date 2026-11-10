@@ -108,7 +108,7 @@ describe('requireActiveSubscription', () => {
       success: false,
       error: 'plan_limit',
       code: 'subscription_inactive',
-      message: 'Your plan has ended. Choose a plan to use Ansvisor again.',
+      message: 'Your plan has ended. Choose a plan to use Oppla again.',
     });
   });
 

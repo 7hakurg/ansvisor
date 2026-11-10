@@ -1255,7 +1255,7 @@ describe("save_skill's draft card (W3-08)", () => {
     });
     expect(apply({ name: 'winback' })).toEqual({
       ok: false,
-      error: '/winback is an Ansvisor skill or shortcut. Pick another name.',
+      error: '/winback is an Oppla skill or shortcut. Pick another name.',
     });
   });
 

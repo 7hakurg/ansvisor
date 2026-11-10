@@ -21,13 +21,13 @@ Under **Skills** in the chat menu, the **Connections** row has **Manage** and an
 
 The tabs **All**, **Connected** and **Not connected** show how many tools each has. Search by name, or pick a group: **Search & analytics**, **CMS**, **E-commerce**, **CRM & revenue** or **Team & data**.
 
-Each card shows the tool, its group and its status. A connected card shows the account, who connected it and when, and what Ansvisor may do with it, such as **read-only** or **read + write drafts**. **Used by** lists the skills and agents that use it. A card not connected says what it would unlock instead. Up to two cards carry a **Suggested** tag.
+Each card shows the tool, its group and its status. A connected card shows the account, who connected it and when, and what Oppla may do with it, such as **read-only** or **read + write drafts**. **Used by** lists the skills and agents that use it. A card not connected says what it would unlock instead. Up to two cards carry a **Suggested** tag.
 
 ## Connect, reconnect and disconnect
 
 Only Admins connect tools. **Connect** opens the tool's card in Settings, Integrations, where you sign in. **Sign-in failed** means the tool refused the saved sign-in: click **Reconnect**.
 
-**Disconnect** asks first and lists the agents that need the tool and would pause. For a CMS, pages stop going to that site for this brand. For Search Console or Analytics, Ansvisor stops reading it for this brand; other brands keep theirs. Catalog sources and workflow webhooks are managed in **Settings**.
+**Disconnect** asks first and lists the agents that need the tool and would pause. For a CMS, pages stop going to that site for this brand. For Search Console or Analytics, Oppla stops reading it for this brand; other brands keep theirs. Catalog sources and workflow webhooks are managed in **Settings**.
 
 If you're not an Admin, click **Ask your Admin to connect** to send them a request.
 

@@ -301,7 +301,7 @@ describe('WebflowCard', () => {
     const steps = container.querySelector('ol[aria-label="How to get a site token"]')!;
     expect([...steps.querySelectorAll('li')].map((li) => li.textContent)).toEqual([
       'In Webflow, go to Site settings › Apps & Integrations › API access and click Generate API token.',
-      'Enter a token name (4–80 characters), e.g. “Ansvisor connector”.',
+      'Enter a token name (4–80 characters), e.g. “Oppla connector”.',
       'Under Permissions, set CMS to Read and write and Sites to Read-only. Leave everything else on No access.',
       'Click Generate token, copy the token and paste it into the field below.',
     ]);

@@ -6,6 +6,7 @@ import { withFileWord } from '@/lib/white-label/kit';
 import { ELEMENT_NODE, TEXT_NODE, parseHtml } from './dom';
 import { safeLinkHref } from './editor';
 import { pageFields, withoutLeadingH1 } from './ready-to-publish';
+import { siteConfig } from '@/config/site';
 
 /**
  * Export in the Content Editor: the page as Word, Excel, CSV, HTML or
@@ -499,7 +500,7 @@ export async function draftExportBlob(
 export function draftExportFileName(
   title: string,
   format: DraftExportFormat,
-  word: string | null = 'ansvisor',
+  word: string | null = siteConfig.fileWord,
 ): string {
   const slug = slugify(title).slice(0, 60).replace(/-+$/, '') || 'page';
   return withFileWord(word, `content_${slug}.${format}`);
@@ -678,7 +679,7 @@ export function libraryExportFileName(
   tab: string,
   format: LibraryExportFormat,
   now: Date,
-  word: string | null = 'ansvisor',
+  word: string | null = siteConfig.fileWord,
 ): string {
   return withFileWord(
     word,

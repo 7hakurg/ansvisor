@@ -4,7 +4,7 @@ import { KeyFailureError, ProviderDownError, stepFailure } from './engine-key';
 
 /**
  * AGENT-OWN-KEY §5.2: a failed call on the workspace's own key stops the run
- * with the key's class; a provider that didn't answer says so; Ansvisor's
+ * with the key's class; a provider that didn't answer says so; Oppla's
  * own key failing isn't the workspace's to fix.
  */
 
@@ -51,7 +51,7 @@ describe('stepFailure', () => {
     expect((openrouter as KeyFailureError).failure.model).toBe('openai/gpt-5.5');
   });
 
-  it('leaves Ansvisor’s own key failing to the run’s usual failure', () => {
+  it('leaves Oppla’s own key failing to the run’s usual failure', () => {
     expect(stepFailure(ANSVISOR, 'anthropic/claude-sonnet-5.5', answer(401, {}))).toBeNull();
   });
 

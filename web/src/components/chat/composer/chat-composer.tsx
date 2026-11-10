@@ -66,7 +66,7 @@ const INTEGRATIONS_HREF = '/dashboard/settings/integrations';
 
 /**
  * A context chip (CHAT-02 items 5–7): what Chat looks at, as the page names
- * it ("Ansvisor", "Last 30 days"). `key` is the page's own handle for it,
+ * it ("Oppla", "Last 30 days"). `key` is the page's own handle for it,
  * never shown; the label is a name, never an ID.
  */
 export interface ComposerChip {

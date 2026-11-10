@@ -87,7 +87,7 @@ const KIND_NAMES = {
 };
 
 /** What the agent does with Brief › Your input, when the list has any (CE-048). */
-export const INPUT_RULE = `- Your input is the person's own: write their experience as first-hand ("we tested…") and add nothing to it; quote an expert word for word, with their name and title; cite Ansvisor data as its line says. Never invent people, quotes, customer stories, test results or numbers beyond what you were given: where one of the brand's own is missing, write {{ask: …}}.`;
+export const INPUT_RULE = `- Your input is the person's own: write their experience as first-hand ("we tested…") and add nothing to it; quote an expert word for word, with their name and title; cite Oppla data as its line says. Never invent people, quotes, customer stories, test results or numbers beyond what you were given: where one of the brand's own is missing, write {{ask: …}}.`;
 
 /** The numbered list as the model reads it, or '' with none. */
 export function sourcesPrompt(numbered) {
@@ -222,7 +222,7 @@ export function todayText(now = new Date()) {
 /**
  * A source's words its numbers are read from: a cited page's address is
  * none ("/2024/03/15/post-1234"), nor what only places a source, its note
- * (a quote's address, the days Ansvisor data covers: content-inputs.js).
+ * (a quote's address, the days Oppla data covers: content-inputs.js).
  */
 export function sourceWords(source) {
   return source.kind === 'cited_page' ? '' : `${source.label} ${source.detail ?? ''}`;

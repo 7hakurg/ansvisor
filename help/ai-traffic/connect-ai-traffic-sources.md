@@ -28,7 +28,7 @@ Add it to the head of every page you want to track, your 404 page included, so *
 
 ## Check that the snippet works
 
-After you publish it, click **Check again**: Ansvisor reads your home page once and looks for the snippet. Your home page is also checked when the brand is set up, or once when you open this page if it never was and no AI visit has arrived: the card reads **Checking your home page…** meanwhile. The snippet itself adds no request for your other visitors.
+After you publish it, click **Check again**: Oppla reads your home page once and looks for the snippet. Your home page is also checked when the brand is set up, or once when you open this page if it never was and no AI visit has arrived: the card reads **Checking your home page…** meanwhile. The snippet itself adds no request for your other visitors.
 
 The **Tracking snippet** card then reads:
 
@@ -40,7 +40,7 @@ Added the snippet with a tag manager? The check can't see it in the page, so the
 
 ## What the snippet collects
 
-The snippet sends nothing for a visitor who didn't come from an AI assistant. For an AI-referred visit it sends the page address, the referrer, the AI source, the browser, its language and screen size, and the page's status as the browser saw it. Ansvisor adds the country.
+The snippet sends nothing for a visitor who didn't come from an AI assistant. For an AI-referred visit it sends the page address, the referrer, the AI source, the browser, its language and screen size, and the page's status as the browser saw it. Oppla adds the country.
 
 The snippet sets no cookies, and without conversions it stores nothing in the visitor's browser. The visitor's IP address is never stored.
 

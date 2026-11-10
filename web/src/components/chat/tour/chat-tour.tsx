@@ -35,10 +35,10 @@ import { TOUR_CHIP, TOUR_CHIP_PRIMARY } from './tour-chip';
  * Chat's product tour (owner decision 2026-11-06; mockups
  * chat-tour/2-visibility-with-panel and 3-prompts-with-panel): a topic opens
  * its page with Chat's side panel beside it, and the panel shows the tour's
- * chat ("Ansvisor tour", in the person's Chats) with the topic's scripted
+ * chat ("Oppla tour", in the person's Chats) with the topic's scripted
  * turn. Under it: Next: {topic} →, the topic's own step in Chat (Prompts:
  * Suggest prompts for me, a normal run), Another topic and End the tour;
- * over it, "Ansvisor tour · n of 5". A question typed meanwhile goes to Chat
+ * over it, "Oppla tour · n of 5". A question typed meanwhile goes to Chat
  * in the same chat. The tour runs where the panel does: with Ask Chat on
  * pages off for the person, it isn't offered.
  *
@@ -210,7 +210,7 @@ export function ChatTourProvider({
   return <ChatTourContext.Provider value={value}>{children}</ChatTourContext.Provider>;
 }
 
-/** "Ansvisor tour · 2 of 5" over the tour's chat in the panel, kept in view as it scrolls. */
+/** "Oppla tour · 2 of 5" over the tour's chat in the panel, kept in view as it scrolls. */
 export function TourLabel({ topic }: { topic: TourTopic }) {
   const t = useTranslations('chatTour');
   return (

@@ -136,7 +136,7 @@ export function ChatRowMenu({ chat }: { chat: ChatListItem }) {
 /**
  * The open chat's ⋯ in the header (CHAT-23 `header.more`, G10): Chat
  * settings (Chat's Settings page, CHAT-01 owner update), Open in new window; for the author Pin, Rename (in the title),
- * Share with team; Export chat; Activity log; for Ansvisor staff only, the
+ * Share with team; Export chat; Activity log; for Oppla staff only, the
  * Debug switch (CHAT-03 item 25, W1-15); Archive and Delete. Split view,
  * Schedule this and Save as agent come later.
  */
@@ -214,7 +214,7 @@ export function ChatHeaderMenu({ chat }: { chat: ChatListItem }) {
 }
 
 /**
- * Debug (CHAT-03 item 25): Ansvisor staff only, never rendered for anyone
+ * Debug (CHAT-03 item 25): Oppla staff only, never rendered for anyone
  * else. On, each answer shows its steps' tools, inputs, outputs and cost.
  */
 function DebugItem() {

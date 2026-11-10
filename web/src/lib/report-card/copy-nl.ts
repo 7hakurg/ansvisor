@@ -1,11 +1,12 @@
 import type { CardCopy, TargetKind } from './copy';
 import { countryIn, languageIn, percentIn } from './copy-names';
+import { siteConfig } from '@/config/site';
 
 /**
  * The report card in Dutch, when the form chooses it (owner decision
  * 2026-11-09), with "je". A country never follows a preposition whose
  * article must agree with it ("in de Verenigde Staten", "op de
- * Filipijnen"): it stands after "land:". Ansvisor's product, feature and
+ * Filipijnen"): it stands after "land:". Oppla's product, feature and
  * button names stay in English, as the app shows them (owner decision
  * 2026-11-08).
  */
@@ -42,7 +43,7 @@ export const nl: CardCopy = {
   language: (english) => languageIn('nl', english),
   document: (company) => `AI-zichtbaarheidsrapport: ${company}`,
   footer: (page, pages) => `${page} / ${pages}`,
-  brand: 'Gemaakt met Ansvisor · www.ansvisor.com',
+  brand: `Gemaakt met ${siteConfig.name} · ${siteConfig.host}`,
   engines: {
     count: (n) => plural(n, 'AI-engine', 'AI-engines'),
     the: (n) => `de ${{ 2: 'twee', 3: 'drie', 4: 'vier', 5: 'vijf' }[n] ?? n} engines`,
@@ -56,7 +57,7 @@ export const nl: CardCopy = {
     subtitle: (domain, country, language, date) =>
       `${domain} · ${country}, in het ${language} · ${date}`,
     oneTime: (date) =>
-      `Een momentopname: we stelden elke vraag één keer, op ${date}. AI-antwoorden veranderen van dag tot dag; in Ansvisor worden de vragen elke dag gesteld.`,
+      `Een momentopname: we stelden elke vraag één keer, op ${date}. AI-antwoorden veranderen van dag tot dag; in Oppla worden de vragen elke dag gesteld.`,
     understood: (domain, readers) =>
       readers
         ? `Zo begrepen we ${domain}: een publicatie over`
@@ -88,7 +89,7 @@ export const nl: CardCopy = {
     byEngine: 'Zichtbaarheid per engine',
     engineValue: (named, answers, pct) => `${named} van ${answers} · ${pc(pct)}`,
     growthBand: (starter) =>
-      `In Ansvisor Growth: de AI-engines van Google, ook gemeten. Starter volgt ${starter}; Growth voegt deze toe.`,
+      `In Oppla Growth: de AI-engines van Google, ook gemeten. Starter volgt ${starter}; Growth voegt deze toe.`,
     whoNamed: 'Wie AI noemt',
     noCompetitor: 'Er werd geen concurrent genoemd.',
     you: (name) => `${name} (jij)`,
@@ -237,10 +238,10 @@ export const nl: CardCopy = {
     eyebrow: 'Je plan',
     title: 'Drie bevindingen en wat je in week 1 zou doen',
     subtitle: (company) =>
-      `Met vaste regels gekozen uit de resultaten van ${company}: wat het rapport vond, de eerste stap en waar Ansvisor helpt.`,
+      `Met vaste regels gekozen uit de resultaten van ${company}: wat het rapport vond, de eerste stap en waar Oppla helpt.`,
     finding: 'Bevinding',
     weekOne: 'Week 1',
-    inAnsvisor: 'In Ansvisor',
+    inAnsvisor: 'In Oppla',
     feature: {
       contentEditor: 'Content Editor',
       citations: 'Citations',
@@ -268,7 +269,7 @@ export const nl: CardCopy = {
     autoTitle: 'Of laat agents zelf publiceren',
     autoBody:
       'In Full auto, met twee schakelaars die een Admin aanzet, sturen of publiceren gekozen agents pagina’s naar je CMS zonder klik, 1 tot 20 per dag. Een pagina die niet door Quality of je merkfeiten komt, wacht nog steeds op jou. In Growth.',
-    examplePrompt: 'Een prompt die Ansvisor elke dag voor je zou volgen:',
+    examplePrompt: 'Een prompt die Oppla elke dag voor je zou volgen:',
   },
 
   // ─── Pagina 4 ──────────────────────────────────────────────────────────────
@@ -276,7 +277,7 @@ export const nl: CardCopy = {
     eyebrow: 'Wat het waard is',
     title: 'Wat AI-bezoeken waard zijn, en de plannen voor dit rapport',
     subtitle:
-      'AI-bezoeken tegen de prijs van dezelfde klikken in Google Ads, de twee plannen naast elkaar, en hoe Ansvisor helpt.',
+      'AI-bezoeken tegen de prijs van dezelfde klikken in Google Ads, de twee plannen naast elkaar, en hoe Oppla helpt.',
     demand: (searches, country, keywords) =>
       `De zoekwoorden van je vragen: zo’n ${searches} Google-zoekopdrachten per maand (${country}; ${keywords} met volume).`,
     cpcLine: (cpc, keywords, total) =>
@@ -291,7 +292,7 @@ export const nl: CardCopy = {
       `${visits} bezoeken per maand kosten in Google Ads zo’n ${ads}, elke maand: ${year} per jaar.`,
     earning: 'Verdienen',
     earningBody: (plan, price) =>
-      `Ansvisor ${plan} kost ${price} per maand. Een pagina die AI citeert, stuurt bezoeken zolang ze geciteerd blijft.`,
+      `Oppla ${plan} kost ${price} per maand. Een pagina die AI citeert, stuurt bezoeken zolang ze geciteerd blijft.`,
     cheap: (ads, plan, price) =>
       `Klikken zijn goedkoop in je markt: deze bezoeken zouden in Ads zo’n ${ads} per maand kosten, minder dan ${plan} voor ${price}. Wat advertenties niet kunnen kopen: het merk zijn dat AI aanraadt als je klanten het vragen.`,
     slow: 'AI-bezoeken groeien over maanden: de eerste maand is inrichten en de eerste pagina’s, nog geen bezoeken.',
@@ -306,9 +307,9 @@ export const nl: CardCopy = {
       `Je gemiddelde ${kind === 'order' ? 'orderwaarde' : 'dealwaarde'}: ${value}. Aanname: ${low} tot ${high} van de AI-bezoeken ${kind === 'order' ? 'bestelt' : 'wordt een deal'}, niet beter dan andere bezoeken.`,
     revenueRow: (visits, low, high) => `${visits} AI-bezoeken per maand: ${low}–${high} per maand`,
     scenarios:
-      'Scenario’s, geen voorspelling of garantie. AI Traffic in Ansvisor meet je echte AI-bezoeken zodra het is ingericht.',
+      'Scenario’s, geen voorspelling of garantie. AI Traffic in Oppla meet je echte AI-bezoeken zodra het is ingericht.',
     planTitle: 'De plannen voor dit rapport',
-    planName: (plan) => `Ansvisor ${plan}`,
+    planName: (plan) => `Oppla ${plan}`,
     starterTag: 'Past bij dit rapport',
     growthTag: 'Met de engines van Google',
     perMonth: (price) => `${price}/maand`,
@@ -330,13 +331,13 @@ export const nl: CardCopy = {
     siteAudits: (pages) => `Site Audit: ${pages} pagina’s per maand.`,
     starterAgents: 'Chat, en Agent Center met agents die vóór elke wijziging vragen.',
     growthAgents: 'Full auto: de agents die je kiest publiceren zelf.',
-    mcpRead: 'MCP: lees je Ansvisor-data vanuit AI-tools.',
-    mcpReadWrite: 'MCP: lees en schrijf je Ansvisor-data vanuit AI-tools.',
-    workTitle: 'Ansvisor doet het werk met je',
+    mcpRead: 'MCP: lees je Oppla-data vanuit AI-tools.',
+    mcpReadWrite: 'MCP: lees en schrijf je Oppla-data vanuit AI-tools.',
+    workTitle: 'Oppla doet het werk met je',
     work: [
       {
         title: 'Chat',
-        body: 'Antwoordt vanuit je eigen Ansvisor-data, bereidt het werk van week 1 uit dit rapport voor en leest de bestanden die je toevoegt.',
+        body: 'Antwoordt vanuit je eigen Oppla-data, bereidt het werk van week 1 uit dit rapport voor en leest de bestanden die je toevoegt.',
       },
       {
         title: 'Agent Center',
@@ -344,7 +345,7 @@ export const nl: CardCopy = {
       },
       {
         title: 'MCP',
-        body: 'Gebruik je Ansvisor-data vanuit Claude, ChatGPT, Cursor en andere AI-tools.',
+        body: 'Gebruik je Oppla-data vanuit Claude, ChatGPT, Cursor en andere AI-tools.',
       },
     ],
     ctaTitle: 'Meet je eigen vragen',

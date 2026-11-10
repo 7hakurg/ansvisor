@@ -57,8 +57,8 @@ Click a prompt to see each platform, with its model and region, and how many run
 
 Below the comparison, a card shows why the competitor may be rising. Its chart shows the answers that mentioned the competitor, and your brand, each week for the last twelve weeks. A marker sits on each week something happened to its pages; the events are listed newest first:
 
-- **First cited in your tracked answers**: the first day an AI answer to one of your prompts cited one of its pages. When a competitor is added, Ansvisor reads back 90 days of your answers once, so the first date is the first within that window.
-- **Changed**: once a week, Ansvisor reads again the 10 competitor pages your answers cited most over the last two weeks. When a page's words changed by more than a date or a price moving, it says so, with the Site Audit checks it gained or lost, such as an FAQ or a table.
+- **First cited in your tracked answers**: the first day an AI answer to one of your prompts cited one of its pages. When a competitor is added, Oppla reads back 90 days of your answers once, so the first date is the first within that window.
+- **Changed**: once a week, Oppla reads again the 10 competitor pages your answers cited most over the last two weeks. When a page's words changed by more than a date or a price moving, it says so, with the Site Audit checks it gained or lost, such as an FAQ or a table.
 
 ## How the pages are read
 

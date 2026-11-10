@@ -59,7 +59,7 @@ const OPEN_ACTIONS: Record<string, string> = {
   'content-images.ts:prepareImageUpload':
     'checks the plan itself (isSubscriptionActive), to answer "plan" instead of throwing',
   'brand.ts:deleteBrand':
-    'deleting a brand only removes what the person gave us (Ansvisor, 2026-10-27)',
+    'deleting a brand only removes what the person gave us (Oppla, 2026-10-27)',
   'prompt-table-views.ts:savePromptTableView':
     'a column layout: costs nothing, and read-only shows the data the same way',
   'prompt-table-views.ts:removePromptTableView':
@@ -176,7 +176,7 @@ const OPEN_ROUTES: Record<string, string> = {
   // Skipped, and runs nothing (fireDueJobs).
   'internal/chat/schedules/tick:POST':
     "the server's cron; it runs no scheduled job in a read-only workspace",
-  // The API server's report card queue (CRON_SECRET): Ansvisor's own free report card, no workspace.
+  // The API server's report card queue (CRON_SECRET): Oppla's own free report card, no workspace.
   'internal/report-card/pdf:POST':
     "draws a free report card's PDF for the API server; no workspace, nothing written",
 };

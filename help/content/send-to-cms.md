@@ -27,7 +27,7 @@ A CMS that is connected but not ready shows what to fix and can't be picked, for
 
 ## What holds a send
 
-The page goes as Export makes it, without its H1: your CMS's title field carries the title. Ansvisor holds the send while:
+The page goes as Export makes it, without its H1: your CMS's title field carries the title. Oppla holds the send while:
 
 - a placeholder in square brackets is still open. **Fill now** selects the first one;
 - the page has no title, or nothing under its title;
@@ -45,11 +45,11 @@ The **Last send** filter beside **Created** lists the pages that were **Never se
 
 ## When a page becomes Published
 
-Once you publish the item in Webflow or Framer, or the post in WordPress or Wix, the page becomes **Published** and its address shows in the Library. Ansvisor checks when you open the Library and once a day, for sends from the last 60 days. A page sent to your workflow becomes Published when the workflow reports where it went live. A page whose item or post you deleted reads as removed: send it again to make a new one.
+Once you publish the item in Webflow or Framer, or the post in WordPress or Wix, the page becomes **Published** and its address shows in the Library. Oppla checks when you open the Library and once a day, for sends from the last 60 days. A page sent to your workflow becomes Published when the workflow reports where it went live. A page whose item or post you deleted reads as removed: send it again to make a new one.
 
 ## Take a published page down
 
-A page published through Ansvisor in Webflow, WordPress or Wix can be taken down: pick **Take down** in its row's **…** menu. It leaves your site at once and goes back to a draft in your CMS, and the Library shows **Taken down** beside its status. Links to it, and AI answers that cited it, may still point to it for a while.
+A page published through Oppla in Webflow, WordPress or Wix can be taken down: pick **Take down** in its row's **…** menu. It leaves your site at once and goes back to a draft in your CMS, and the Library shows **Taken down** beside its status. Links to it, and AI answers that cited it, may still point to it for a while.
 
 Admins and managers can take a page down, even when publishing is off for managers. A page someone took down never goes live on its own again: an agent's next publish of it waits for a click. Framer publishes the whole site, and a send to your workflow is your workflow's: take those down there.
 
@@ -68,4 +68,4 @@ Add images in your CMS. The slug may change slightly there: lowercase, without a
 
 ## The Article schema
 
-An article goes with the Article schema Ansvisor adds, its author included, unless you left it out in **Before you publish**. WordPress doesn't take it: add it with your SEO plugin.
+An article goes with the Article schema Oppla adds, its author included, unless you left it out in **Before you publish**. WordPress doesn't take it: add it with your SEO plugin.

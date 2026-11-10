@@ -178,14 +178,14 @@ describe('extractPageContent', () => {
               <p>Many teams check ChatGPT one day, Google the next and Gemini when someone asks.</p>
               <figure><img src="/prompts.png" alt="The prompt list"></figure>
               <p>Record mentions, cited addresses and competitors, the same way every week.</p>
-              <div class="ai-monitor-cta"><h2>How Ansvisor helps</h2><p>Our platform runs one prompt set across every engine and keeps every answer.</p></div>
+              <div class="ai-monitor-cta"><h2>How Oppla helps</h2><p>Our platform runs one prompt set across every engine and keeps every answer.</p></div>
               <div class="qoute-box"><img class="qoute-icon" src="/quote.svg" alt=""><p>Monitoring should explain why visibility changes, not only that it did.</p></div>
             </div>
           </div>
-          <div class="author-box"><img src="/cihan-small.jpg" alt="Cihan"><h3>Cihan Geyik</h3><p>Cihan is the co-founder of Ansvisor, an open-source platform.</p></div>
+          <div class="author-box"><img src="/cihan-small.jpg" alt="Cihan"><h3>Cihan Geyik</h3><p>Cihan is the co-founder of Oppla, an open-source platform.</p></div>
           <div><a href="/blog">← Explore all</a><h3>Related Blog Posts</h3><a href="/blog/crawlers">How to check AI crawler access</a><a href="/blog/refresh">How to refresh content for AI search</a></div>
         </div></section>
-        <section class="preferred-source"><p>Get more Ansvisor insights in Google, add us as a preferred source.</p><a href="https://google.com/preferences">Add Ansvisor</a></section>
+        <section class="preferred-source"><p>Get more Oppla insights in Google, add us as a preferred source.</p><a href="https://google.com/preferences">Add Oppla</a></section>
         <div class="cta-footer"><p>Make your brand visible in AI answers, start a trial today.</p></div>
         </div>
       </body>`,
@@ -197,7 +197,7 @@ describe('extractPageContent', () => {
       'Many teams check ChatGPT',
       'src="https://www.ansvisor.com/prompts.png"',
       // The article's own call to action is its text.
-      'How Ansvisor helps',
+      'How Oppla helps',
       'Monitoring should explain why',
     ]) {
       expect(html).toContain(kept);

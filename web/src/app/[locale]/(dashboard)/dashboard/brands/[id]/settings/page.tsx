@@ -1118,7 +1118,7 @@ function DangerTab({
   const [confirmValue, setConfirmValue] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
   // Delete stays open on a read-only workspace (plan not active): it only
-  // removes what the person gave us (Ansvisor, 2026-10-27). The demo brand
+  // removes what the person gave us (Oppla, 2026-10-27). The demo brand
   // is never deleted, only hidden from the brand menu.
   const demo = brand.isDemo === true;
 

@@ -63,13 +63,13 @@ function draw(card: ReportCardPayload, language: ReportLanguage | null = null) {
 }
 
 describe('ReportCardPdfDocument', () => {
-  it('has four pages, as Ansvisor', () => {
+  it('has four pages, as Oppla', () => {
     const pages = draw(SAMPLE_REPORT_CARD);
     expect(pages).toHaveLength(4);
     const doc = container.firstElementChild as HTMLElement;
-    expect(doc.dataset.author).toBe('Ansvisor');
+    expect(doc.dataset.author).toBe('Oppla');
     expect(doc.dataset.title).toBe('AI visibility report card: Brewline Coffee');
-    for (const page of pages) expect(page).toContain('Generated with Ansvisor · www.ansvisor.com');
+    for (const page of pages) expect(page).toContain('Generated with Oppla · oppla.ai');
   });
 
   it('page 1: a small trial button, a one-time snapshot, the products, Starter’s engines first and the questions missed', () => {
@@ -87,7 +87,7 @@ describe('ReportCardPdfDocument', () => {
     expect(status).toContain('named in 21 of the same 50 answers');
     expect(status).toContain('of the same 50 answers cite a page of yours');
     expect(status).toContain('competitors and sites are counted over the same answers');
-    expect(status).toContain('In Ansvisor Growth: Google’s AI engines, measured too.');
+    expect(status).toContain('In Oppla Growth: Google’s AI engines, measured too.');
     expect(status).toContain('6 of 25 · 24%');
     expect(status).toContain('Brewline Coffee (you)');
     expect(status).toContain('ridgelineroasters.example (competitor)');
@@ -183,7 +183,7 @@ describe('ReportCardPdfDocument', () => {
     const [, , plan] = draw(SAMPLE_REPORT_CARD);
     expect(plan).toContain('Three findings, and what you’d do in week one');
     expect(plan.match(/Week one/g)).toHaveLength(3);
-    expect(plan).toContain('In Ansvisor · Content Editor');
+    expect(plan).toContain('In Oppla · Content Editor');
     expect(plan).toContain('Guides and comparisons');
     expect(plan).toContain('coffeereview.example');
     expect(plan).toContain('Left out: ridgelineroasters.example and beanmarket.example.');
@@ -201,15 +201,15 @@ describe('ReportCardPdfDocument', () => {
     expect(value).toContain('$1.85 (19 of 25 keywords had one)');
     expect(value).toContain('5% of those searches');
     expect(value).toContain('$1,719');
-    expect(value).toContain('Ansvisor Starter is $49 a month.');
+    expect(value).toContain('Oppla Starter is $49 a month.');
     expect(value).toContain('A revenue scenario');
     // Two plan cards drawn alike: Starter, then Growth.
     expect(value).toContain('The plans for this card');
     expect(value).toContain(
-      'Ansvisor StarterMatches this card$49/monthor $470 a year, paid yearly: 20% off',
+      'Oppla StarterMatches this card$49/monthor $470 a year, paid yearly: 20% off',
     );
     expect(value).toContain(
-      'Ansvisor GrowthAdds Google’s engines$249/monthor $2,390 a year, paid yearly: 20% off',
+      'Oppla GrowthAdds Google’s engines$249/monthor $2,390 a year, paid yearly: 20% off',
     );
     expect(value).toContain(
       'Tracks ChatGPT and Google Gemini every day: the engines this card’s visibility counts.',
@@ -218,7 +218,7 @@ describe('ReportCardPdfDocument', () => {
     expect(value).toContain('AI usage included.');
     expect(value).toContain('Site Audit: 100 pages a month.');
     expect(value).toContain('Chat, and Agent Center with agents that ask before every change.');
-    expect(value).toContain('MCP: read your Ansvisor data from AI tools.');
+    expect(value).toContain('MCP: read your Oppla data from AI tools.');
     expect(value).toContain(
       'Adds Google AI Overviews and Google AI Mode every day: the Growth band on page 1.',
     );
@@ -226,14 +226,14 @@ describe('ReportCardPdfDocument', () => {
     expect(value).toContain('5× the AI usage: more content opportunities and drafts');
     expect(value).toContain('Site Audit: 500 pages a month.');
     expect(value).toContain('Full auto: the agents you choose publish on their own.');
-    expect(value).toContain('MCP: read and write your Ansvisor data from AI tools.');
+    expect(value).toContain('MCP: read and write your Oppla data from AI tools.');
     // AI usage is never in dollars or tokens; no Growth footnote left.
     expect(value).not.toMatch(/\$(5|25) |tokens|Growth, \$249/);
     // Chat, Agent Center and MCP, with no plan's figures repeated.
-    expect(value).toContain('Ansvisor does the work with you');
-    expect(value).toContain('ChatAnswers from your own Ansvisor data');
+    expect(value).toContain('Oppla does the work with you');
+    expect(value).toContain('ChatAnswers from your own Oppla data');
     expect(value).toContain('Agent CenterReady-to-use agents and more than 700 skills');
-    expect(value).toContain('MCPUse your Ansvisor data from Claude, ChatGPT, Cursor');
+    expect(value).toContain('MCPUse your Oppla data from Claude, ChatGPT, Cursor');
     expect(value).toContain('Measure your own questions');
     expect(value).toContain('Starter tracks 50 prompts every day');
     expect(value).toContain('Start your free trial');
@@ -247,11 +247,11 @@ describe('ReportCardPdfDocument', () => {
     expect(links).toEqual([
       [
         'Start free trial',
-        'https://app.ansvisor.com/en/sign-up?utm_source=report-card&utm_medium=pdf&utm_content=page1',
+        'https://aeo.oppla.ai/en/sign-up?utm_source=report-card&utm_medium=pdf&utm_content=page1',
       ],
       [
         'Start your free trial',
-        'https://app.ansvisor.com/en/sign-up?utm_source=report-card&utm_medium=pdf&utm_content=page4',
+        'https://aeo.oppla.ai/en/sign-up?utm_source=report-card&utm_medium=pdf&utm_content=page4',
       ],
     ]);
   });
@@ -318,7 +318,7 @@ describe('ReportCardPdfDocument', () => {
     });
     expect(pages[0]).toContain('Brewline Coffee, yapay zekâ yanıtlarında ne kadar görünür?');
     expect(pages[0]).toContain('Tek seferlik bir ölçüm');
-    expect(pages[0]).toContain('Ansvisor ile hazırlandı · www.ansvisor.com');
+    expect(pages[0]).toContain('Oppla ile hazırlandı · oppla.ai');
     // One base for the headline, the competitor and the citations.
     expect(pages[0]).toContain('50 yanıtın 8 tanesinde adınız geçiyor: 25 soru × 2 motor');
     expect(pages[0]).toContain('aynı 50 yanıtın 21 tanesinde geçiyor');
@@ -332,22 +332,22 @@ describe('ReportCardPdfDocument', () => {
     expect(pages[3]).toContain('Starter ayda $49.');
     expect(pages[3]).not.toMatch(/₺|USD =/);
     expect(pages[3]).toContain('ayda yaklaşık 19.000 kez Google’da aranıyor');
-    expect(pages[3]).toContain('Ansvisor StarterBu karneye uyanaylık $49');
-    expect(pages[3]).toContain('Ansvisor GrowthGoogle motorlarını ekleraylık $249');
+    expect(pages[3]).toContain('Oppla StarterBu karneye uyanaylık $49');
+    expect(pages[3]).toContain('Oppla GrowthGoogle motorlarını ekleraylık $249');
     expect(pages[3]).toContain('Yapay zekâ kullanımı dahil.');
     expect(pages[3]).toContain('5 kat yapay zekâ kullanımı');
-    expect(pages[3]).toContain('Ansvisor işi sizinle birlikte yapar');
-    // Ansvisor's feature names stay in English, as the app shows them.
-    expect(pages[2]).toContain('Ansvisor’da · Content Editor');
+    expect(pages[3]).toContain('Oppla işi sizinle birlikte yapar');
+    // Oppla's feature names stay in English, as the app shows them.
+    expect(pages[2]).toContain('Oppla’da · Content Editor');
     expect(pages[2]).toContain('her değişiklik Activity log’da');
     expect(pages[2]).toContain('Full auto modunda');
     expect(pages[3]).toContain('Chat ve her değişiklikten önce soran ajanlarıyla Agent Center.');
     expect(pages[3]).toContain('Site Audit: ayda 100 sayfa.');
     expect(pages[3]).toContain('Full auto: seçtiğiniz ajanlar kendi başına yayınlar.');
-    expect(pages[3]).toContain('ChatKendi Ansvisor verilerinizden');
+    expect(pages[3]).toContain('ChatKendi Oppla verilerinizden');
     expect(pages[3]).toContain('Agent CenterKullanıma hazır ajanlar ve 700’den fazla skill');
     expect(pages[3]).toContain('Action Center’ı açın');
-    expect(pages[3]).toContain('Ansvisor’daki AI Traffic');
+    expect(pages[3]).toContain('Oppla’daki AI Traffic');
     expect(pages.join(' ')).not.toMatch(
       /Sohbet|Ajan Merkezi|Aksiyon Merkezi|Site Denetimi|Tam otomatik|Yapay Zekâ Trafiği|İçerik Editörü|beceri/,
     );
@@ -364,7 +364,7 @@ describe('ReportCardPdfDocument', () => {
     expect(fr[0]).toContain('brewlinecoffee.example · États-Unis, en anglais · 4 nov. 2026');
     expect(fr[0]).toContain('16\u00a0%');
     expect(fr[1]).toContain('posées en anglais (pays\u00a0: États-Unis)');
-    expect(fr[2]).toContain('Dans Ansvisor · Content Editor');
+    expect(fr[2]).toContain('Dans Oppla · Content Editor');
     expect(fr[3]).toContain('Commencer votre essai gratuit');
     expect(fr.join(' ')).not.toMatch(/How visible|Week one|Start your free trial/);
     // A Turkish card in German, and an American card in Turkish: the language wins.

@@ -97,7 +97,7 @@ const beforeMigration = (error: { code?: string } | null) =>
 
 /**
  * Whether an agent's go-live permission still fits its skills (§8): it keeps
- * the checksums of the agent's Library skills when it was given. Ansvisor's
+ * the checksums of the agent's Library skills when it was given. Oppla's
  * own skills carry none, and workspace copies of Library skills aren't built
  * yet (CHAT-17), so today it fits only when it was given with none.
  */

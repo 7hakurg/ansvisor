@@ -1,7 +1,7 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 /**
- * A download's name and Word author (00429): Ansvisor's without a kit, the
+ * A download's name and Word author (00429): Oppla's without a kit, the
  * agency's with one, none for a kit with only a logo, and neither when the
  * kit can't be read. The kit is read once, until it changes.
  */
@@ -17,12 +17,12 @@ beforeEach(() => {
 });
 
 describe('exportFileName', () => {
-  it('keeps Ansvisor’s word without a kit in use', async () => {
+  it('keeps Oppla’s word without a kit in use', async () => {
     getExportBranding.mockResolvedValue({ ok: true, branding: null });
     expect(await names.exportFileName('acme_prompts_2026-10-31.csv')).toBe(
-      'ansvisor_acme_prompts_2026-10-31.csv',
+      'oppla_acme_prompts_2026-10-31.csv',
     );
-    expect(await names.exportFileName('ai-traffic.zip', '-')).toBe('ansvisor-ai-traffic.zip');
+    expect(await names.exportFileName('ai-traffic.zip', '-')).toBe('oppla-ai-traffic.zip');
     expect(await names.exportAuthor()).toBeUndefined();
   });
 
@@ -47,12 +47,12 @@ describe('exportFileName', () => {
     expect(getExportBranding).toHaveBeenCalledTimes(2);
   });
 
-  it('names neither the agency nor Ansvisor when the kit can’t be read, and asks again next time', async () => {
+  it('names neither the agency nor Oppla when the kit can’t be read, and asks again next time', async () => {
     getExportBranding.mockResolvedValueOnce({ ok: false, failure: 'failed' });
     expect(await names.exportFileName('acme_prompts.csv')).toBe('acme_prompts.csv');
     getExportBranding.mockRejectedValueOnce(new Error('offline'));
     expect(await names.exportFileName('acme_prompts.csv')).toBe('acme_prompts.csv');
     getExportBranding.mockResolvedValueOnce({ ok: true, branding: null });
-    expect(await names.exportFileName('acme_prompts.csv')).toBe('ansvisor_acme_prompts.csv');
+    expect(await names.exportFileName('acme_prompts.csv')).toBe('oppla_acme_prompts.csv');
   });
 });

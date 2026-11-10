@@ -112,7 +112,7 @@ describe('useFailureToast (BUG-001)', () => {
       upgrade = null;
       const [message, options] = show('subscription');
       expect(message).toBe(
-        "Your workspace's plan isn't active, so changes are paused. Choose a plan to use Ansvisor again.",
+        "Your workspace's plan isn't active, so changes are paused. Choose a plan to use Oppla again.",
       );
       expect(options.action?.label).toBe('Choose a plan');
       options.action?.onClick();

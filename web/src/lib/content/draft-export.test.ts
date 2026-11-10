@@ -228,9 +228,9 @@ describe('draftExportBlob and draftExportFileName', () => {
     expect(strFromU8(await read(md))).toBe('# T\n');
     expect((await draftExportBlob('html', 'T', '<h1>T</h1>')).type).toBe('text/html;charset=utf-8');
     expect(draftExportFileName('Pipeline forecasting: a guide', 'docx')).toBe(
-      'ansvisor_content_pipeline-forecasting-a-guide.docx',
+      'oppla_content_pipeline-forecasting-a-guide.docx',
     );
-    expect(draftExportFileName('—', 'md')).toBe('ansvisor_content_page.md');
+    expect(draftExportFileName('—', 'md')).toBe('oppla_content_page.md');
   });
 
   it('gives CSV marked as UTF-8 for Excel, and Excel as a workbook', async () => {
@@ -242,7 +242,7 @@ describe('draftExportBlob and draftExportFileName', () => {
     const xlsx = await draftExportBlob('xlsx', 'T', '<h1>T</h1><p>Done.</p>');
     const files = unzipSync(await read(xlsx));
     expect(Object.keys(files)).toContain('xl/workbook.xml');
-    expect(draftExportFileName('T', 'xlsx')).toBe('ansvisor_content_t.xlsx');
+    expect(draftExportFileName('T', 'xlsx')).toBe('oppla_content_t.xlsx');
   });
 
   it('starts the name with a white label kit’s word instead, or none', () => {
@@ -261,7 +261,7 @@ describe('draftExportBlob and draftExportFileName', () => {
     expect(branded).toContain('<dc:creator>Acme Agency</dc:creator>');
     expect(branded).toContain('<cp:lastModifiedBy>Acme Agency</cp:lastModifiedBy>');
     expect(await core()).not.toContain('Acme Agency');
-    expect(await core()).not.toMatch(/ansvisor/i);
+    expect(await core()).not.toMatch(/oppla/i);
   });
 });
 
@@ -416,7 +416,7 @@ describe('the Library’s Export', () => {
 
   it('names the file by tab and day', () => {
     expect(libraryExportFileName('in_review', 'xlsx', new Date('2026-10-22T10:00:00Z'))).toBe(
-      'ansvisor_content_library_in-review_2026-10-22.xlsx',
+      'oppla_content_library_in-review_2026-10-22.xlsx',
     );
     expect(
       libraryExportFileName('in_review', 'docx', new Date('2026-10-22T10:00:00Z'), 'acme-agency'),

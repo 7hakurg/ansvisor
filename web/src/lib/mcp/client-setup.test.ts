@@ -22,13 +22,13 @@ describe('mcpClientSnippet', () => {
     const parse = (client: (typeof MCP_CLIENTS)[number]) =>
       JSON.parse(mcpClientSnippet(client, URL_, TOKEN));
 
-    expect(parse('cursor').mcpServers.ansvisor.url).toBe(URL_);
-    expect(parse('vscode').servers.ansvisor).toMatchObject({ type: 'http', url: URL_ });
-    expect(parse('windsurf').mcpServers.ansvisor.serverUrl).toBe(URL_);
-    expect(parse('openclaw').mcp.servers.ansvisor).toMatchObject({
+    expect(parse('cursor').mcpServers.oppla.url).toBe(URL_);
+    expect(parse('vscode').servers.oppla).toMatchObject({ type: 'http', url: URL_ });
+    expect(parse('windsurf').mcpServers.oppla.serverUrl).toBe(URL_);
+    expect(parse('openclaw').mcp.servers.oppla).toMatchObject({
       url: URL_,
       transport: 'streamable-http',
     });
-    expect(parse('zed').context_servers.ansvisor.url).toBe(URL_);
+    expect(parse('zed').context_servers.oppla.url).toBe(URL_);
   });
 });

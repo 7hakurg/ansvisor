@@ -121,10 +121,10 @@ afterEach(() => {
 });
 
 describe('Your input', () => {
-  it("offers Ansvisor data from the draft's prompts, cited as of this month", async () => {
+  it("offers Oppla data from the draft's prompts, cited as of this month", async () => {
     await render();
     expect(container.textContent).toContain(
-      'From your Ansvisor data: in 825 answers to “best pour-over grinder” over the last 30 days, you were named 28 times.',
+      'From your Oppla data: in 825 answers to “best pour-over grinder” over the last 30 days, you were named 28 times.',
     );
     expect(container.textContent).toContain("over the last 30 days, you weren't named.");
 
@@ -140,8 +140,8 @@ describe('Your input', () => {
       },
     ]);
     // Used: no longer offered, shown with how it is cited.
-    expect(container.textContent).toContain('Cited as “Ansvisor data, October 2026”.');
-    expect(container.textContent).not.toContain('From your Ansvisor data: in 825');
+    expect(container.textContent).toContain('Cited as “Oppla data, October 2026”.');
+    expect(container.textContent).not.toContain('From your Oppla data: in 825');
 
     await act(async () => field<HTMLButtonElement>('Remove best pour-over grinder').click());
     expect(last().ansvisorData).toEqual([]);

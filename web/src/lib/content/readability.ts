@@ -6,7 +6,7 @@ import { parseHtml } from './dom';
  * CE-036): seven checks read from the draft as written, in the browser, with
  * no AI cost. Each gives points up to its weight; a check the draft's
  * language can't be read for is left out and the score rescaled to 100, so
- * no points are made up. An Ansvisor estimate, not a Google score.
+ * no points are made up. An Oppla estimate, not a Google score.
  */
 
 export const READABILITY_CHECKS = [

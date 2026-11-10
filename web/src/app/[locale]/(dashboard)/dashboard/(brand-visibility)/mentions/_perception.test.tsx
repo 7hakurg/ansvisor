@@ -42,11 +42,11 @@ const values = (brand: number, profound: number, peec: number, otterly: number) 
   { entity: 'o', answers: otterly },
 ];
 
-// Profound owns "enterprise", which AI uses for Ansvisor in 10% of its mentions.
+// Profound owns "enterprise", which AI uses for Oppla in 10% of its mentions.
 const perception: MentionsPerception = {
   window: { from: '2026-09-17T09:00:00Z', to: '2026-10-17T09:00:00Z', days: 30 },
   entities: [
-    entity('brand', 'Ansvisor', 50),
+    entity('brand', 'Oppla', 50),
     entity('p', 'Profound', 80),
     entity('e', 'Peec AI', 40),
     entity('o', 'Otterly AI', 20),
@@ -99,8 +99,8 @@ afterEach(() => {
 
 describe('TermsCard', () => {
   it("lists the brand's terms with their responses, share and change", () => {
-    render(<TermsCard perception={perception} brand="Ansvisor" />);
-    expect(container.textContent).toContain('What AI associates with Ansvisor');
+    render(<TermsCard perception={perception} brand="Oppla" />);
+    expect(container.textContent).toContain('What AI associates with Oppla');
     const rows = [...container.querySelectorAll('tbody tr')];
     expect(rows.map(cells)).toEqual([
       ['visibility tracking', '', '20 responses', '+100%'],
@@ -109,12 +109,12 @@ describe('TermsCard', () => {
       ['pricing', '', '5 responses', '—'],
     ]);
     expect(rows[0].querySelectorAll('td')[2].getAttribute('title')).toBe(
-      '40% of responses naming Ansvisor',
+      '40% of responses naming Oppla',
     );
   });
 
   it('says when there are no terms yet', () => {
-    render(<TermsCard perception={{ ...perception, brandTerms: [] }} brand="Ansvisor" />);
+    render(<TermsCard perception={{ ...perception, brandTerms: [] }} brand="Oppla" />);
     expect(container.textContent).toContain('No terms yet.');
   });
 });
@@ -159,30 +159,30 @@ describe('GapNote', () => {
       brandShare: 10,
       brandRank: 2,
     };
-    render(<GapNote gap={gap} brand="Ansvisor" />);
+    render(<GapNote gap={gap} brand="Oppla" />);
     expect(container.textContent).toBe(
-      'Biggest gap: “enterprise”: Profound in 60% of the responses naming it; Ansvisor in 10% (#2).',
+      'Biggest gap: “enterprise”: Profound in 60% of the responses naming it; Oppla in 10% (#2).',
     );
 
-    render(<GapNote gap={{ ...gap, brandShare: 0, brandRank: null }} brand="Ansvisor" />);
+    render(<GapNote gap={{ ...gap, brandShare: 0, brandRank: null }} brand="Oppla" />);
     expect(container.textContent).toBe(
-      "Biggest gap: “enterprise”: Profound in 60% of the responses naming it; AI doesn't use it for Ansvisor.",
+      "Biggest gap: “enterprise”: Profound in 60% of the responses naming it; AI doesn't use it for Oppla.",
     );
   });
 });
 
 describe('BrandShapeCard', () => {
   it('draws the brand and its top three competitors, with the biggest gap beneath', () => {
-    render(<BrandShapeCard perception={perception} brand="Ansvisor" />);
+    render(<BrandShapeCard perception={perception} brand="Oppla" />);
     expect(container.querySelector('[data-testid="radar"]')?.textContent).toBe(
       // Your brand in ink, as the rest of the page; no violet.
-      'Ansvisor var(--primary), Profound #f97316, Peec AI #0d9488, Otterly AI #ef4444',
+      'Oppla var(--primary), Profound #f97316, Peec AI #0d9488, Otterly AI #ef4444',
     );
     expect(container.querySelector('figcaption')?.textContent).toBe(
-      'AnsvisorProfoundPeec AIOtterly AI',
+      'OpplaProfoundPeec AIOtterly AI',
     );
     expect(container.textContent).toContain(
-      'Biggest gap: “enterprise”: Profound in 60% of the responses naming it; Ansvisor in 10% (#2).',
+      'Biggest gap: “enterprise”: Profound in 60% of the responses naming it; Oppla in 10% (#2).',
     );
   });
 
@@ -197,7 +197,7 @@ describe('BrandShapeCard', () => {
             { term: 'agencies', values: [{ entity: 's', answers: 36 }] },
           ],
         }}
-        brand="Ansvisor"
+        brand="Oppla"
       />,
     );
     expect(container.textContent).toContain('Biggest gap: “enterprise”: Profound');
@@ -207,7 +207,7 @@ describe('BrandShapeCard', () => {
     render(
       <BrandShapeCard
         perception={{ ...perception, attributes: perception.attributes.slice(0, 2) }}
-        brand="Ansvisor"
+        brand="Oppla"
       />,
     );
     expect(container.querySelector('[data-testid="radar"]')).toBeNull();
@@ -220,7 +220,7 @@ describe('MentionsPerceptionTab', () => {
     vi.useFakeTimers();
     getMentionsPerception.mockResolvedValue(perception);
     render(
-      <MentionsPerceptionTab brandId="b1" brand="Ansvisor" filters={DEFAULT_MENTIONS_FILTERS} />,
+      <MentionsPerceptionTab brandId="b1" brand="Oppla" filters={DEFAULT_MENTIONS_FILTERS} />,
     );
     // The tab's first read goes at once; later filter changes wait for typing to pause.
     expect(getMentionsPerception).toHaveBeenCalledTimes(1);
@@ -229,7 +229,7 @@ describe('MentionsPerceptionTab', () => {
     });
     expect(getMentionsPerception).toHaveBeenCalledTimes(1);
     expect(getMentionsPerception.mock.calls[0][0]).toBe('b1');
-    expect(container.textContent).toContain('What AI associates with Ansvisor');
+    expect(container.textContent).toContain('What AI associates with Oppla');
     expect(container.textContent).toContain('Frequently mentioned with');
     expect(container.textContent).toContain('by rule (no LLM)');
   });
@@ -241,7 +241,7 @@ describe('MentionsPerceptionTab', () => {
       .mockRejectedValueOnce(new Error('offline'))
       .mockRejectedValueOnce(new Error('offline'));
     render(
-      <MentionsPerceptionTab brandId="b1" brand="Ansvisor" filters={DEFAULT_MENTIONS_FILTERS} />,
+      <MentionsPerceptionTab brandId="b1" brand="Oppla" filters={DEFAULT_MENTIONS_FILTERS} />,
     );
     await act(async () => {
       await vi.advanceTimersByTimeAsync(250);
@@ -253,7 +253,7 @@ describe('MentionsPerceptionTab', () => {
     render(
       <MentionsPerceptionTab
         brandId="b1"
-        brand="Ansvisor"
+        brand="Oppla"
         filters={{ ...DEFAULT_MENTIONS_FILTERS, range: '7d' }}
       />,
     );
@@ -267,14 +267,14 @@ describe('MentionsPerceptionTab', () => {
       .mockRejectedValueOnce(new Error('timeout'))
       .mockResolvedValueOnce(perception);
     render(
-      <MentionsPerceptionTab brandId="b1" brand="Ansvisor" filters={DEFAULT_MENTIONS_FILTERS} />,
+      <MentionsPerceptionTab brandId="b1" brand="Oppla" filters={DEFAULT_MENTIONS_FILTERS} />,
     );
     await act(async () => {
       await vi.advanceTimersByTimeAsync(250);
     });
     expect(getMentionsPerception).toHaveBeenCalledTimes(2);
     expect(getMentionsPerception.mock.calls[1]).toEqual(getMentionsPerception.mock.calls[0]);
-    expect(container.textContent).toContain('What AI associates with Ansvisor');
+    expect(container.textContent).toContain('What AI associates with Oppla');
     expect(container.textContent).not.toContain("Couldn't load");
   });
 
@@ -283,7 +283,7 @@ describe('MentionsPerceptionTab', () => {
     let answer: (value: typeof perception) => void = () => {};
     getMentionsPerception.mockReturnValueOnce(new Promise((resolve) => (answer = resolve)));
     render(
-      <MentionsPerceptionTab brandId="b1" brand="Ansvisor" filters={DEFAULT_MENTIONS_FILTERS} />,
+      <MentionsPerceptionTab brandId="b1" brand="Oppla" filters={DEFAULT_MENTIONS_FILTERS} />,
     );
     await act(async () => {
       await vi.advanceTimersByTimeAsync(3_000);
@@ -298,14 +298,14 @@ describe('MentionsPerceptionTab', () => {
     );
     await act(async () => answer(perception));
     expect(container.querySelector('[role="status"]')!.textContent).toBe('');
-    expect(container.textContent).toContain('What AI associates with Ansvisor');
+    expect(container.textContent).toContain('What AI associates with Oppla');
 
     // New filters: the last figures stay, dimmed, and a slow read says so.
     getMentionsPerception.mockReturnValueOnce(new Promise(() => {}));
     render(
       <MentionsPerceptionTab
         brandId="b1"
-        brand="Ansvisor"
+        brand="Oppla"
         filters={{ ...DEFAULT_MENTIONS_FILTERS, range: '90d' }}
       />,
     );
@@ -331,7 +331,7 @@ describe('MentionsPerceptionTab', () => {
       to: '2026-06-30',
     };
     const tab = (filters: typeof DEFAULT_MENTIONS_FILTERS) =>
-      render(<MentionsPerceptionTab brandId="b1" brand="Ansvisor" filters={filters} />);
+      render(<MentionsPerceptionTab brandId="b1" brand="Oppla" filters={filters} />);
     const status = () => container.querySelector('[role="status"]')!.textContent;
 
     tab(june);
@@ -366,7 +366,7 @@ describe('MentionsPerceptionTab', () => {
       .mockRejectedValueOnce(new Error('timeout'))
       .mockResolvedValueOnce(perception);
     render(
-      <MentionsPerceptionTab brandId="b1" brand="Ansvisor" filters={DEFAULT_MENTIONS_FILTERS} />,
+      <MentionsPerceptionTab brandId="b1" brand="Oppla" filters={DEFAULT_MENTIONS_FILTERS} />,
     );
     await act(async () => {
       await vi.advanceTimersByTimeAsync(250);
@@ -379,14 +379,14 @@ describe('MentionsPerceptionTab', () => {
     });
     expect(getMentionsPerception).toHaveBeenCalledTimes(3);
     expect(getMentionsPerception.mock.calls[2]).toEqual(getMentionsPerception.mock.calls[0]);
-    expect(container.textContent).toContain('What AI associates with Ansvisor');
+    expect(container.textContent).toContain('What AI associates with Oppla');
   });
 
   it('asks for dates on a custom range without any', () => {
     render(
       <MentionsPerceptionTab
         brandId="b1"
-        brand="Ansvisor"
+        brand="Oppla"
         filters={{ ...DEFAULT_MENTIONS_FILTERS, range: 'custom' }}
       />,
     );
@@ -398,16 +398,16 @@ describe('MentionsPerceptionTab', () => {
     vi.useFakeTimers();
     getMentionsPerception.mockResolvedValueOnce({
       ...perception,
-      entities: [entity('brand', 'Ansvisor', 0), ...perception.entities.slice(1)],
+      entities: [entity('brand', 'Oppla', 0), ...perception.entities.slice(1)],
     });
     render(
-      <MentionsPerceptionTab brandId="b1" brand="Ansvisor" filters={DEFAULT_MENTIONS_FILTERS} />,
+      <MentionsPerceptionTab brandId="b1" brand="Oppla" filters={DEFAULT_MENTIONS_FILTERS} />,
     );
     await act(async () => {
       await vi.advanceTimersByTimeAsync(250);
     });
     expect(container.textContent).toBe(
-      "AI didn't name Ansvisor in the tracked responses of this period.",
+      "AI didn't name Oppla in the tracked responses of this period.",
     );
 
     getMentionsPerception.mockResolvedValueOnce(null);

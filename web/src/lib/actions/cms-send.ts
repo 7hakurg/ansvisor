@@ -177,7 +177,7 @@ export async function publishDraftToCms(
  * happens next. An EXECUTE in the publishing group, checked as Send to CMS
  * is (Admins and Managers, not Managers while publishing is off for them,
  * not a page live already). No address comes with it: the API sends to the
- * brand's own webhook, and Ansvisor can't take it back. Errors come back
+ * brand's own webhook, and Oppla can't take it back. Errors come back
  * as values.
  */
 export async function sendDraftToWebhook(

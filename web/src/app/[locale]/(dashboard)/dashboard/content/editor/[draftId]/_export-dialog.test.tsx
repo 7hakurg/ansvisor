@@ -7,7 +7,7 @@ import type { ContentAuthor } from '@/lib/content/authors';
 import type { PasteChecks } from '@/lib/content/ready-to-publish';
 
 const toast = vi.hoisted(() => Object.assign(vi.fn(), { success: vi.fn(), error: vi.fn() }));
-// No white label kit: downloads keep Ansvisor's names (export-name.test.ts has a kit's).
+// No white label kit: downloads keep Oppla's names (export-name.test.ts has a kit's).
 vi.mock('@/lib/actions/white-label', () => ({
   getExportBranding: async () => ({ ok: true, branding: null }),
 }));
@@ -407,7 +407,7 @@ describe('ExportDialog', () => {
       null,
       undefined,
     );
-    expect(saveBlob).toHaveBeenCalledWith(expect.any(Blob), 'ansvisor_content_pour-over.docx');
+    expect(saveBlob).toHaveBeenCalledWith(expect.any(Blob), 'oppla_content_pour-over.docx');
     expect(localStorage.getItem('aeo:content-export-destination')).toBe('docx');
     // A new page's front matter dates it today.
     await act(async () => destination('Markdown').click());
@@ -497,7 +497,7 @@ describe('ExportDialog', () => {
       null,
       undefined,
     );
-    expect(saveBlob).toHaveBeenLastCalledWith(expect.any(Blob), 'ansvisor_content_pour-over.xlsx');
+    expect(saveBlob).toHaveBeenLastCalledWith(expect.any(Blob), 'oppla_content_pour-over.xlsx');
     await act(async () => destination('CSV').click());
     await act(async () => button('Download CSV')!.click());
     expect(draftExportBlob).toHaveBeenLastCalledWith(
@@ -508,7 +508,7 @@ describe('ExportDialog', () => {
       null,
       undefined,
     );
-    expect(saveBlob).toHaveBeenLastCalledWith(expect.any(Blob), 'ansvisor_content_pour-over.csv');
+    expect(saveBlob).toHaveBeenLastCalledWith(expect.any(Blob), 'oppla_content_pour-over.csv');
   });
 
   it("dates a live page's Markdown as updated today, keeping its published date", async () => {

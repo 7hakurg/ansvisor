@@ -259,7 +259,7 @@ describe('no number without a source', () => {
   });
 
   it('reads a decimal comma as a point, once thousands separators are gone', () => {
-    // Ansvisor data's share is written "3.4%"; a Turkish or a German page writes it with a comma.
+    // Oppla data's share is written "3.4%"; a Turkish or a German page writes it with a comma.
     const share = knownNumbers('named in 28 of 825 AI answers over the last 30 days (3.4%)');
     expect(addedNumbers('825 yanıtın 28 tanesinde anıldı (%3,4).', share)).toEqual([]);
     expect(addedNumbers('in 28 von 825 Antworten genannt (3,4 %).', share)).toEqual([]);

@@ -106,7 +106,7 @@ describe('the run models', () => {
     });
     expect(await resolveChatModels('org')).toMatchObject({ provider: 'openai', keyFailing: true });
 
-    // A health read that fails reads as working; Ansvisor's key is never read for it.
+    // A health read that fails reads as working; Oppla's key is never read for it.
     key.failure.mockRejectedValueOnce(new Error('down'));
     key.resolve.mockResolvedValueOnce({
       source: 'own',
@@ -220,7 +220,7 @@ describe('the run models', () => {
     expect(models!.pick('write').budgetModel).toBe('anthropic/claude-sonnet-5.5');
   });
 
-  it('pass "Use Ansvisor’s limit" on to the key, for Auto too (W4-06)', async () => {
+  it('pass "Use Oppla’s limit" on to the key, for Auto too (W4-06)', async () => {
     key.resolve.mockResolvedValueOnce({
       source: 'ansvisor',
       config: { provider: 'anthropic', apiKey: 'k', settings: {} },

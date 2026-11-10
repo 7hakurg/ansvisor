@@ -11,13 +11,13 @@ app_version: 0.3.0
 approved: true
 sources: [docs/guides/prompts.mdx]
 ---
-AI assistants don't publish how often people ask them something, so every AI search volume in Ansvisor is an estimate. It is shown as a range, such as 540–2k, never as a single number. Totals, averages, a prompt's own page, a content opportunity, the **Prompt Volumes** chart and the Action Center's volumes add a dashed **Estimate** badge; in other tables the range alone marks an estimate.
+AI assistants don't publish how often people ask them something, so every AI search volume in Oppla is an estimate. It is shown as a range, such as 540–2k, never as a single number. Totals, averages, a prompt's own page, a content opportunity, the **Prompt Volumes** chart and the Action Center's volumes add a dashed **Estimate** badge; in other tables the range alone marks an estimate.
 
 ## How it's estimated
 
 The estimate is the median monthly Google searches for the prompt's related keywords, times the share of Google searches that now get an AI answer (45% by default; a self-hosted server can change it).
 
-When a prompt's volume is analyzed, Ansvisor picks five short Google keywords for its category and reads their monthly Google searches. Keywords Google has no data for are left out, and the median of the rest is the prompt's **Google Vol. (head terms)**. The Insights tab shows the AI share as **AI Adoption Rate**.
+When a prompt's volume is analyzed, Oppla picks five short Google keywords for its category and reads their monthly Google searches. Keywords Google has no data for are left out, and the median of the rest is the prompt's **Google Vol. (head terms)**. The Insights tab shows the AI share as **AI Adoption Rate**.
 
 ## How the range is set
 
@@ -47,7 +47,7 @@ Some estimates are built differently, and their note says so:
 
 - **Totals and averages** (**Total Est. AI Volume**, **Avg. AI Volume**, and Similar Topics' **Est. AI Volume**): the sum of the lows to the sum of the highs; an average divides both by the prompt count. A total is high-confidence when at least 80% of its volume is, low when more than half is low-confidence, and medium otherwise. The note gives the mix.
 - **One keyword** (each row of Similar Topics): only the AI share is assumed, so it is Medium with a ±25% range, or Low when it has no volume or is over six months old.
-- **An AI's guess** (suggestions from Ansvisor Agents, Opportunities on Visibility's Overview, and the Action Center's topic opportunities): always Low, from half to twice the guess. Track the prompt to get an estimate from its keywords' Google searches.
+- **An AI's guess** (suggestions from Oppla Agents, Opportunities on Visibility's Overview, and the Action Center's topic opportunities): always Low, from half to twice the guess. Track the prompt to get an estimate from its keywords' Google searches.
 
 ## A content opportunity's volume
 

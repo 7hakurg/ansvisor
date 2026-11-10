@@ -192,7 +192,7 @@ export async function GET(req: Request) {
       unread,
     };
 
-    // A white label kit's word in Ansvisor's place (00429); none when it can't be read.
+    // A white label kit's word in Oppla's place (00429); none when it can't be read.
     const branding = await getExportBranding();
     const fileName = trafficExportFileName({
       brand: (brand.slug as string | null) || (brand.name as string),

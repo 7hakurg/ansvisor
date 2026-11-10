@@ -93,7 +93,7 @@ export function shopifyPixelCode(
   trackingCode: string | null | undefined,
 ): string | null {
   if (!apiUrl || !trackingCode) return null;
-  return `// Ansvisor: orders from AI visits
+  return `// Oppla: orders from AI visits
 const ANSVISOR_TRACK = ${JSON.stringify(`${apiUrl}/track/${trackingCode}`)};
 analytics.subscribe("checkout_completed", async (event) => {
   let visitor = null;

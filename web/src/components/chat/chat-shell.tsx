@@ -176,7 +176,7 @@ export function ChatShell({
 }: {
   menuOpen: boolean;
   railOpen?: boolean;
-  /** Ansvisor staff (STAFF_EMAILS): the open chat's ⋯ menu offers Debug (W1-15). */
+  /** Oppla staff (STAFF_EMAILS): the open chat's ⋯ menu offers Debug (W1-15). */
   staff?: boolean;
   children: ReactNode;
 }) {

@@ -4,7 +4,7 @@ import { createContext, useContext, useMemo, useState, type ReactNode } from 're
 
 /**
  * Chat's staff Debug switch (CHAT-03 item 25; W1-15): whether the person is
- * Ansvisor staff, as the server read it (STAFF_EMAILS), and whether they
+ * Oppla staff, as the server read it (STAFF_EMAILS), and whether they
  * switched Debug on in the open chat's ⋯ menu. Kept for the visit, across
  * the chats opened in Chat's shell. Only the switch lives here: the debug
  * record itself comes from the staff-only endpoint, which checks the person

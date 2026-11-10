@@ -310,7 +310,7 @@ describe('MerchantCenterAccounts', () => {
     listSignInAccounts.mockResolvedValue({ ok: false, code: 'not_configured' });
     await render();
     expect(container.textContent).toContain(
-      "Merchant Center isn't set up correctly on this server, or this Google account can't open Merchant Center. Ask whoever runs your Ansvisor server, or check the account's users in Merchant Center.",
+      "Merchant Center isn't set up correctly on this server, or this Google account can't open Merchant Center. Ask whoever runs your Oppla server, or check the account's users in Merchant Center.",
     );
     listSignInAccounts.mockResolvedValue({ ok: true, accounts: [{ id: '123', name: 'Acme' }] });
     await act(async () => button('Try again')!.click());

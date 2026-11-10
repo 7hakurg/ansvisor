@@ -2,7 +2,7 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 /**
- * Server actions on a read-only workspace (Ansvisor Cloud, plan not active):
+ * Server actions on a read-only workspace (Oppla Cloud, plan not active):
  * one that writes refuses before it writes anything, and writes once the
  * plan is active; setup's writes stay open to an organization that never
  * subscribed; the person's own profile (their work areas too) and a

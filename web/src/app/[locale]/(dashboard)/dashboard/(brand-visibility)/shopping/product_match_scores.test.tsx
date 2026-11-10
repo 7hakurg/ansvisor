@@ -96,7 +96,7 @@ describe('ProductMatchScores', () => {
       ['p1', 'p2'],
       { datePreset: '30d' },
     );
-    expect(text).toContain('Ansvisor estimate');
+    expect(text).toContain('Oppla estimate');
     expect(text).toContain('This product 62');
     expect(text).toContain('Shown first 88');
     expect(text).toContain('Missing:wetrock');

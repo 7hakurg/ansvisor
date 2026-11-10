@@ -421,7 +421,7 @@ describe('the panel’s chat', () => {
     expect(shown()).toBe(true);
     expect(calls).toEqual([`/api/chat/conversations/${CHAT}`]);
     expect(panel()!.querySelector('[data-slot="tour-label"]')?.textContent).toBe(
-      'Ansvisor tour · 1 of 5',
+      'Oppla tour · 1 of 5',
     );
     // Visibility's answer, not the newer Prompts turn: the chips go under it.
     const thread = container.querySelector('[data-testid="thread"]')!;
@@ -449,7 +449,7 @@ describe('the panel’s chat', () => {
     route.pathname = '/dashboard/audit';
     await render({}, { chatId: CHAT, topic: 'prompts', finished: false });
     expect(panel()!.querySelector('[data-slot="tour-label"]')?.textContent).toBe(
-      'Ansvisor tour · 2 of 5',
+      'Oppla tour · 2 of 5',
     );
     expect(panel()!.querySelector('[data-action="tour.next"]')?.textContent).toBe(
       'Next: Positions and locations',

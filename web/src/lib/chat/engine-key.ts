@@ -49,7 +49,7 @@ const modelName = (budgetModel: string) => budgetModel.split('/').slice(1).join(
 
 /**
  * What a failed model call means for the run: a key class on the workspace's
- * own key (Ansvisor's key failing is ours, not the workspace's to fix), a
+ * own key (Oppla's key failing is ours, not the workspace's to fix), a
  * provider that didn't answer, or null for anything else (the run fails as
  * before).
  */

@@ -42,7 +42,7 @@ const BRAND_2 = 'bbbbbbbb-0000-4000-8000-000000000002';
 const SETUP: AgentFormSetup = {
   role: 'manager',
   brands: [
-    { id: BRAND, name: 'Ansvisor' },
+    { id: BRAND, name: 'Oppla' },
     { id: BRAND_2, name: 'Brand B' },
   ],
   topics: [],
@@ -106,16 +106,16 @@ describe('a new agent', () => {
   });
 
   it('is named after its skill, then with its brand, then numbered (§O)', () => {
-    expect(defaultAgentName('Win back lost citations', 'Ansvisor', [])).toBe(
+    expect(defaultAgentName('Win back lost citations', 'Oppla', [])).toBe(
       'Win back lost citations',
     );
     expect(
-      defaultAgentName('Win back lost citations', 'Ansvisor', ['win back LOST citations']),
-    ).toBe('Win back lost citations · Ansvisor');
+      defaultAgentName('Win back lost citations', 'Oppla', ['win back LOST citations']),
+    ).toBe('Win back lost citations · Oppla');
     expect(
-      defaultAgentName('Win back lost citations', 'Ansvisor', [
+      defaultAgentName('Win back lost citations', 'Oppla', [
         'Win back lost citations',
-        'Win back lost citations · Ansvisor',
+        'Win back lost citations · Oppla',
       ]),
     ).toBe('Win back lost citations 2');
     expect(defaultAgentName('x'.repeat(70), null, [])).toHaveLength(60);

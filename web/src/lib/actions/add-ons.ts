@@ -338,7 +338,7 @@ function rows<T>({ data, error }: { data: unknown; error: { message: string } | 
 
 /**
  * The plan's own monthly AI limit, what an AI pack is measured against: the
- * plan's, not the trial's smaller one; Enterprise's own when Ansvisor set one
+ * plan's, not the trial's smaller one; Enterprise's own when Oppla set one
  * at least the plan's. Null when unlimited.
  */
 function monthlyLimitUsd(org: { plan?: unknown; plan_overrides?: unknown } | null): number | null {

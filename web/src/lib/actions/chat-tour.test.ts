@@ -4,7 +4,7 @@ import type { FakeSupabase } from '@/lib/chat/testing/fake-supabase';
 
 /**
  * The product tour's turns (owner decision 2026-11-06; 00486): kept as the
- * person's own "Ansvisor tour" chat, each topic adding the line they
+ * person's own "Oppla tour" chat, each topic adding the line they
  * clicked and the page's scripted explanation with no run, in their answer
  * language; End the tour adds the last line and keeps the tour ended.
  */
@@ -77,7 +77,7 @@ describe('showTourTopic', () => {
         organization_id: 'org-1',
         user_id: 'user-1',
         brand_id: 'brand-1',
-        title: 'Ansvisor tour',
+        title: 'Oppla tour',
         origin: 'panel',
         origin_page: '/dashboard/insights',
       }),

@@ -35,7 +35,7 @@ Where your workspace has Chat, a pill next to the title says where the page stan
 
 The page starts with its H1, which is also its title. A page has one H1: the toolbar won't add a second one. A paste keeps headings, lists, links and tables, and drops fonts, colors and styles. Press Command or Ctrl + Shift + V to paste plain text.
 
-**Attach a file** inserts Excel, CSV, Word, Markdown, HTML or text, up to 10 MB each; a sheet comes in as a table. **Add HTML** adds an embed, a widget or a form, kept exactly as written; Ansvisor never runs it. **Edit as HTML** shows the page's source; scripts, iframes and inline styles are removed when you switch back.
+**Attach a file** inserts Excel, CSV, Word, Markdown, HTML or text, up to 10 MB each; a sheet comes in as a table. **Add HTML** adds an embed, a widget or a form, kept exactly as written; Oppla never runs it. **Edit as HTML** shows the page's source; scripts, iframes and inline styles are removed when you switch back.
 
 In a narrow editor, such as beside the side panel on a small screen, the numbered list, quote, table, **Add HTML**, **Products**, **Attach a file** and **Edit as HTML** move under **More** in the toolbar.
 
@@ -107,7 +107,7 @@ When a draft optimizes a live page brought in by its URL, the passages AI answer
 ## History, Copy HTML and Export
 
 - **History** keeps earlier versions for 90 days: the live page as imported, the page before agent changes, each Mark ready and publish, each Hand off, and the page before a restore. **Restore** makes a new version, so nothing is lost.
-- **Copy HTML** copies the whole page as HTML, HTML blocks and schema included, to paste into your CMS. An article also gets the Article schema Ansvisor adds, with its author.
+- **Copy HTML** copies the whole page as HTML, HTML blocks and schema included, to paste into your CMS. An article also gets the Article schema Oppla adds, with its author.
 - **Export** downloads the page as **Word**, **Excel**, **CSV**, **HTML** or **Markdown**. Excel and CSV hold the page as one row, for a CMS's import. Only the HTML file carries the schema.
 
 With Quality on, **Export** opens a dialog instead: the same files, and under **Platforms** a copy of the page to paste into Webflow, WordPress, Shopify or Google Docs.
@@ -120,12 +120,12 @@ On an online shop's draft, **Products** in the toolbar adds products from your c
 
 **Mark ready** saves the page, sets it to **Ready** and keeps a version in History. If the draft was sent to the Action Center, it also completes its task there. With Quality on, **Mark ready** opens **Before you publish** first.
 
-Ansvisor doesn't publish the page: copy or export it to your site, or send it to your CMS.
+Oppla doesn't publish the page: copy or export it to your site, or send it to your CMS.
 
 Click **Ready** in the header to move the page back to **In review**. A task that Mark ready completed is open again, unless someone changed it in the Action Center since or the action is closed.
 
 ## Mark published
 
-Once the page is live, tell Ansvisor where with **Mark published**, in the Library's **Status** menu or, with Quality on, under the header's **Next step** once the page is ready. It asks for the live address, starting from the page it optimizes or your site with the page's slug, and **Live page** measures that address from then. If the draft came from the Action Center, its Publish task is completed once all the action's work is live.
+Once the page is live, tell Oppla where with **Mark published**, in the Library's **Status** menu or, with Quality on, under the header's **Next step** once the page is ready. It asks for the live address, starting from the page it optimizes or your site with the page's slug, and **Live page** measures that address from then. If the draft came from the Action Center, its Publish task is completed once all the action's work is live.
 
 On a published page, the header's **Published** button changes the address. A page your CMS reports live, or one published in Webflow, WordPress, Framer or Wix, gets its address on its own. Restore an archived page in the Library first.

@@ -1,7 +1,7 @@
 ---
 title: Pick the model and effort Chat uses
 route: /dashboard/chat
-keywords: [model, choose model, pick model, model menu, auto, haiku, sonnet, gpt, openai, gemini, google, effort, normal effort, high effort, max effort, multiplier, 2.3x, uses your limit faster, own api key, your key, your api keys, add api key, use for, images key, use ansvisor's limit]
+keywords: [model, choose model, pick model, model menu, auto, haiku, sonnet, gpt, openai, gemini, google, effort, normal effort, high effort, max effort, multiplier, 2.3x, uses your limit faster, own api key, your key, your api keys, add api key, use for, images key, use oppla's limit]
 synonyms: [ai model, llm, which model, switch model, thinking effort]
 plan: starter
 updated: 2026-11-03
@@ -45,7 +45,7 @@ A model you pick runs on its provider's key first, then on your OpenRouter key, 
 
 ## When your key stops working
 
-If a key stops working during an answer, Chat stops and says why. Admins can open **AI Providers** to update the key, or click **Use Ansvisor's limit** to ask again on your plan's AI limit. Chat never switches to the limit by itself.
+If a key stops working during an answer, Chat stops and says why. Admins can open **AI Providers** to update the key, or click **Use Oppla's limit** to ask again on your plan's AI limit. Chat never switches to the limit by itself.
 
 ## Your own API key, usage and plan
 

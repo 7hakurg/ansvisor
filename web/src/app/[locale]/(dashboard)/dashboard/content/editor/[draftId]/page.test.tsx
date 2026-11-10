@@ -39,7 +39,7 @@ const confirmOwnImage = vi.fn();
 const getBrandFacts = vi.fn();
 const checkDraftLinks = vi.fn();
 const getSiteTrust = vi.fn();
-// No white label kit: downloads keep Ansvisor's names (export-name.test.ts has a kit's).
+// No white label kit: downloads keep Oppla's names (export-name.test.ts has a kit's).
 // Chat beside the page (W4-16): the panel's setup when a test gives one, and the tab as a stub.
 const chatPanel = vi.hoisted(() => ({ value: null as unknown }));
 vi.mock('@/components/chat/panel/chat-panel-context', () => ({
@@ -2907,7 +2907,7 @@ describe('the content editor', () => {
 
     expect(saveBlob).toHaveBeenCalledTimes(1);
     const [blob, name] = saveBlob.mock.calls[0] as [Blob, string];
-    expect(name).toBe('ansvisor_content_pipeline-forecasting.md');
+    expect(name).toBe('oppla_content_pipeline-forecasting.md');
     const text = await new Promise<string>((resolve) => {
       const reader = new FileReader();
       reader.onload = () => resolve(reader.result as string);
@@ -6287,7 +6287,7 @@ describe('the side panel', () => {
         [expect.objectContaining({ draftId: 'd1', author: null })],
         'webhook',
       );
-      // The page goes with the Article schema Ansvisor adds, naming no author (00448).
+      // The page goes with the Article schema Oppla adds, naming no author (00448).
       const [, [sent]] = sendPagesToCms.mock.calls.at(-1)!;
       const [body, script] = sent.html.split('\n<script type="application/ld+json">');
       expect(body).toBe('<p>Teams trust it.</p>');

@@ -1,7 +1,7 @@
 /**
  * The workspace the agents' and skills' test set runs in (agent-eval.ts):
  * Brewline Coffee, the demo brand's world (server/src/lib/demo/brewline.js),
- * with a week of numbers as Ansvisor's reads answer them. Every read of a
+ * with a week of numbers as Oppla's reads answer them. Every read of a
  * run answers from here, by its tool's name; the numbers a run may state are
  * the ones its reads returned. Made up, on `.example` domains that can
  * never belong to anyone. Tests only.

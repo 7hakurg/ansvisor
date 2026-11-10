@@ -195,7 +195,7 @@ function questionOf(turns: Turn[], index: number): Turn | null {
  * kept steps shown until they come; a dropped or broken stream says
  * "Reconnecting…" and resumes after its last event (W1-15). An answer that
  * ended in error says why, after a reload too, and Retry sends its question
- * again; Ansvisor staff can switch on the Debug view. Steering stops the run,
+ * again; Oppla staff can switch on the Debug view. Steering stops the run,
  * its done steps kept, and sends the text as the next message (decided
  * 2026-10-30). A teammate's shared chat is read only. In the side panel
  * (`variant="panel"`, CHAT-01 items 15–24) the page's address stays: the
@@ -566,7 +566,7 @@ export function ChatThreadView({
     route = pageRoute,
     /** The run whose answer it acts on (Send to Action Center): the server reads its taint. */
     fromRunId?: string,
-    /** "Use Ansvisor's limit" after the own key failed (W4-06): an Admin's click. */
+    /** "Use Oppla's limit" after the own key failed (W4-06): an Admin's click. */
     keySource?: 'ansvisor',
   ): Promise<boolean> {
     if (isLocked) {
@@ -766,9 +766,9 @@ export function ChatThreadView({
   }
 
   /**
-   * "Use Ansvisor's limit" on the latest answer that stopped because the
+   * "Use Oppla's limit" on the latest answer that stopped because the
    * workspace's own key failed (W4-06): its question goes again on
-   * Ansvisor's key and the AI limit. An Admin's click only, never by itself,
+   * Oppla's key and the AI limit. An Admin's click only, never by itself,
    * and not once the limit is used up.
    */
   function ansvisorRetryOf(index: number): (() => void) | undefined {
@@ -1045,7 +1045,7 @@ function Answer({
   onTasks: (strip: ChatTaskStrip) => void;
   /** Sends its question again; none while another run works, or on a teammate's chat. */
   onRetry?: () => void;
-  /** Sends it again on Ansvisor's key after the own key failed (W4-06): Admins. */
+  /** Sends it again on Oppla's key after the own key failed (W4-06): Admins. */
   onUseAnsvisorLimit?: () => void;
   /** Send to Action Center (CHAT-09 item 18): the latest answer, for Admins and Managers. */
   onSendToActionCenter?: () => void;

@@ -39,12 +39,12 @@ describe('reading the site', () => {
   it('lists the token’s sites, however Composio wraps them', async () => {
     executeWebflowTool.mockResolvedValueOnce({
       sites: [
-        { id: 's1', displayName: 'Ansvisor', shortName: 'ansvisor' },
+        { id: 's1', displayName: 'Oppla', shortName: 'ansvisor' },
         { displayName: 'no id' },
       ],
     });
     expect(await listSites(account)).toEqual([
-      { id: 's1', name: 'Ansvisor', host: 'ansvisor.webflow.io' },
+      { id: 's1', name: 'Oppla', host: 'ansvisor.webflow.io' },
     ]);
     expect(executeWebflowTool).toHaveBeenCalledWith('WEBFLOW_LIST_WEBFLOW_SITES', account, {});
 

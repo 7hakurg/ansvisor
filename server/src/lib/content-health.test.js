@@ -226,7 +226,7 @@ describe('addedHealthClaims', () => {
     expect(addedHealthClaims('Take 4 capsules daily.', own)).toEqual(['Take 4 capsules']);
   });
 
-  it('reads Your input as the brand’s, never Ansvisor data’s prompt', () => {
+  it('reads Your input as the brand’s, never Oppla data’s prompt', () => {
     const own = healthGuard(VITAROOT, {
       numbered: [
         {
@@ -241,7 +241,7 @@ describe('addedHealthClaims', () => {
           kind: 'input',
           ref: 'ansvisor:p1',
           label: 'magnesium that supports deep sleep',
-          detail: 'Ansvisor data: …',
+          detail: 'Oppla data: …',
         },
       ],
     });

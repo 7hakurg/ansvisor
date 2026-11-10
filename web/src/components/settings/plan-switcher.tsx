@@ -489,15 +489,17 @@ export function PlanSwitcher({
       {/* The cards list the highlights; the pricing page has every feature */}
       <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
         {ended && <PlanDetailsToggle open={details} onToggle={() => setDetails((open) => !open)} />}
-        <a
-          href={PRICING_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 text-sm text-muted-foreground underline-offset-4 transition-colors hover:text-foreground hover:underline"
-        >
-          {t('seeAllPlanFeatures')}
-          <ExternalLink className="h-3.5 w-3.5" />
-        </a>
+        {PRICING_URL && (
+          <a
+            href={PRICING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 text-sm text-muted-foreground underline-offset-4 transition-colors hover:text-foreground hover:underline"
+          >
+            {t('seeAllPlanFeatures')}
+            <ExternalLink className="h-3.5 w-3.5" />
+          </a>
+        )}
       </div>
 
       {/* Buy now / change confirmation */}

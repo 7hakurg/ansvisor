@@ -18,7 +18,7 @@ import { TOUR_TOPICS, type TourTopic, type TourVia } from './tour';
  * The tour follows the person's answer language (Settings › Chat ›
  * General, chat_user_prefs.answer_language): English as written; another
  * language is translated once, by the small model Chat reads with (Claude
- * Haiku 5.5, on Ansvisor's key), and kept for everyone in
+ * Haiku 5.5, on Oppla's key), and kept for everyone in
  * chat_tour_translations (00486) by the language and the English texts'
  * hash. The texts name no workspace, so one translation serves all. Any
  * failure, or no key, answers English. Server only.
@@ -110,7 +110,7 @@ function instructions(language: AnswerLanguage): string {
 /** The translations under way, by language and script hash: one at a time, on this server. */
 const inFlight = new Map<string, Promise<TourTexts | null>>();
 
-/** The script translated by the small model; null without Ansvisor's key or on any failure. */
+/** The script translated by the small model; null without Oppla's key or on any failure. */
 async function translate(language: AnswerLanguage, english: TourTexts): Promise<TourTexts | null> {
   const apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey) return null;

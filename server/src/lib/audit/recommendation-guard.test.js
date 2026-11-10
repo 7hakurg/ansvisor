@@ -14,14 +14,14 @@ import {
 
 // The pricing page from the spec's bug report, cut down.
 const PRICING_PAGE =
-  'Ansvisor pricing. Starter $49 per month: 100 site audits, 50 prompts. ' +
+  'Oppla pricing. Starter $49 per month: 100 site audits, 50 prompts. ' +
   'Growth $249 per month: 500 site audits. Track ChatGPT, Perplexity and Google AI Overviews. ' +
   'Last updated October 2026.';
 
 const known = buildKnownFacts({
   pageText: PRICING_PAGE,
-  extras: ['Ansvisor pricing: plans for every team'],
-  brand: { name: 'Ansvisor', description: 'AI visibility platform', domains: ['ansvisor.com'] },
+  extras: ['Oppla pricing: plans for every team'],
+  brand: { name: 'Oppla', description: 'AI visibility platform', domains: ['ansvisor.com'] },
 });
 
 const rec = (over = {}) => ({
@@ -148,12 +148,12 @@ describe('guardFacts', () => {
   it('keeps the brand, the AI platforms and known names, and replaces an unknown CamelCase name', () => {
     const { rec: out } = guardFacts(
       rec({
-        recommendation: 'Say Ansvisor tracks ChatGPT and Perplexity answers, as HubSpot does.',
+        recommendation: 'Say Oppla tracks ChatGPT and Perplexity answers, as HubSpot does.',
       }),
       known,
     );
     expect(out.recommendation).toBe(
-      'Say Ansvisor tracks ChatGPT and Perplexity answers, as [customer name] does.',
+      'Say Oppla tracks ChatGPT and Perplexity answers, as [customer name] does.',
     );
   });
 
@@ -229,7 +229,7 @@ describe('guardFacts', () => {
       {
         '@context': 'https://schema.org',
         '@type': 'Product',
-        name: 'Ansvisor Growth',
+        name: 'Oppla Growth',
         offers: { '@type': 'Offer', price: 799, priceCurrency: 'USD' },
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.8', reviewCount: 312 },
         datePublished: '2024-01-15',
@@ -259,7 +259,7 @@ describe('guardFacts', () => {
 
   it('checks nothing from the brand data when none was given', () => {
     const pageOnly = buildKnownFacts({ pageText: 'A coffee roaster in Leeds.' });
-    expect(replaceUnknownNames('Teams at Ansvisor, like ExampleCo.', pageOnly).text).toBe(
+    expect(replaceUnknownNames('Teams at Oppla, like ExampleCo.', pageOnly).text).toBe(
       'Teams at [customer name], like [customer name].',
     );
   });

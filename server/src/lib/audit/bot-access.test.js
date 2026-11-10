@@ -10,9 +10,9 @@ import {
 import { fetchPage, publicOnlyLookup, USER_AGENT } from '../safe-fetch.js';
 
 /**
- * The live AI-bot access test (SA-008): the page asked for as AnsvisorBot,
+ * The live AI-bot access test (SA-008): the page asked for as OpplaBot,
  * then once as each AI bot, one after another, within a time budget. A 4xx to
- * a bot while AnsvisorBot was let in is a CDN or firewall block.
+ * a bot while OpplaBot was let in is a CDN or firewall block.
  */
 
 describe('liveResult', () => {
@@ -32,7 +32,7 @@ describe('probeBotAccess', () => {
   let server;
   let port;
   let requests;
-  /** The status the site answers each user agent with; AnsvisorBot's under 'control'. */
+  /** The status the site answers each user agent with; OpplaBot's under 'control'. */
   let answers;
 
   beforeAll(async () => {
@@ -65,7 +65,7 @@ describe('probeBotAccess', () => {
   const probe = (deps = {}) =>
     probeBotAccess(`http://site.test:${port}/pricing`, { fetchImpl, ...deps });
 
-  it('asks as AnsvisorBot, then once as each bot in the spec’s order, one at a time', async () => {
+  it('asks as OpplaBot, then once as each bot in the spec’s order, one at a time', async () => {
     const result = await probe();
     expect(requests.map((r) => r.path)).toEqual(Array(6).fill('/pricing'));
     expect(requests[0].ua).toBe(USER_AGENT);
@@ -87,7 +87,7 @@ describe('probeBotAccess', () => {
     });
   });
 
-  it('names a bot the site refuses while it lets AnsvisorBot in', async () => {
+  it('names a bot the site refuses while it lets OpplaBot in', async () => {
     answers = { perplexitybot: 403, gptbot: 429 };
     const { bots } = await probe();
     expect(bots.find((b) => b.key === 'perplexitybot')).toMatchObject({
@@ -126,7 +126,7 @@ describe('probeBotAccess', () => {
     expect((await probe()).page).toBeNull();
   });
 
-  it('asks no bot when AnsvisorBot itself is refused, and concludes nothing', async () => {
+  it('asks no bot when OpplaBot itself is refused, and concludes nothing', async () => {
     answers = { control: 403 };
     const result = await probe();
     expect(requests).toHaveLength(1);

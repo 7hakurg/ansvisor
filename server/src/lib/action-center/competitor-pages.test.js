@@ -139,9 +139,9 @@ describe('citedPages', () => {
 describe('robotsDisallow', () => {
   it('keeps out of a site whose robots.txt shuts out this reader or every crawler', () => {
     expect(robotsDisallow('User-agent: *\nDisallow: /')).toBe(true);
-    expect(robotsDisallow('User-agent: AnsvisorBot\nDisallow: /')).toBe(true);
+    expect(robotsDisallow('User-agent: OpplaBot\nDisallow: /')).toBe(true);
     // Its own group wins over everyone's.
-    expect(robotsDisallow('User-agent: *\nDisallow: /\n\nUser-agent: AnsvisorBot\nAllow: /')).toBe(
+    expect(robotsDisallow('User-agent: *\nDisallow: /\n\nUser-agent: OpplaBot\nAllow: /')).toBe(
       false,
     );
     expect(robotsDisallow('User-agent: *\nDisallow: /\nAllow: /')).toBe(false);

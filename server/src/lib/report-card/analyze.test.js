@@ -361,7 +361,7 @@ describe('competitorsIn', () => {
     }));
     const { byAnswer } = await competitorsIn(
       [{ index: 0, question: 'q', text: 't' }],
-      { companyName: 'Ansvisor', site: 'ansvisor.com', about: null },
+      { companyName: 'Oppla', site: 'ansvisor.com', about: null },
       { generate, env: {} },
     );
     expect(byAnswer.get(0)).toEqual(['Semrush']);

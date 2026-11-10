@@ -1,6 +1,6 @@
 # What's new
 
-Short notes on what Ansvisor added, for the people who use it (CHAT-11). Chat shows them on Chat Home ("New" line), in the What's new answer and, when someone asks for it, in a monthly summary. The team writes them; Cihan approves them in the pull request. Chat never writes or changes one: it picks, orders and, for someone writing in another language, translates them.
+Short notes on what Oppla added, for the people who use it (CHAT-11). Chat shows them on Chat Home ("New" line), in the What's new answer and, when someone asks for it, in a monthly summary. The team writes them; Cihan approves them in the pull request. Chat never writes or changes one: it picks, orders and, for someone writing in another language, translates them.
 
 ## Where
 

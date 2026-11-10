@@ -76,7 +76,7 @@ export function menuSectionsFor(chatAgentic: boolean): string[] {
 
 /**
  * What a person works on or leads, with the sections that work needs. They
- * follow the audiences on ansvisor.com › Solutions. Agent Center is in every
+ * follow the audiences on oppla.ai › Solutions. Agent Center is in every
  * area Chat is in, right after it; AEO/GEO & Audit, Developers and Analytics
  * have it without Chat, right after Action Center.
  */

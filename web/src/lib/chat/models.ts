@@ -16,8 +16,8 @@
 export const AUTO_MODEL = 'auto';
 
 /**
- * How an offered model is called: Anthropic's own API (on Ansvisor's key or
- * the workspace's own Anthropic key), or OpenRouter (Ansvisor's
+ * How an offered model is called: Anthropic's own API (on Oppla's key or
+ * the workspace's own Anthropic key), or OpenRouter (Oppla's
  * OPENROUTER_API_KEY; offered only where it is set). None of OpenRouter's is
  * offered yet.
  */
@@ -26,7 +26,7 @@ export type OfferedModelProvider = 'anthropic' | 'openrouter';
 /**
  * The workspace's own keys a picked model's steps try, in order (W4-06,
  * CHAT-16 item 23): the key for the model's provider, then its OpenRouter
- * key, which runs any model by its catalog id. With neither, Ansvisor's key
+ * key, which runs any model by its catalog id. With neither, Oppla's key
  * runs it, on the monthly AI limit (key.ts resolvePickedModelKey).
  */
 export function pickedModelKeyOrder(provider: OfferedModelProvider): OfferedModelProvider[] {
@@ -37,7 +37,7 @@ export function pickedModelKeyOrder(provider: OfferedModelProvider): OfferedMode
  * The provider of the own key a picked model runs on, in
  * pickedModelKeyOrder's order, from the providers of the workspace's own
  * keys for Chat (key.ts ownChatKeyProviders); null when none runs it:
- * Ansvisor's key, on the monthly AI limit. Reads no key.
+ * Oppla's key, on the monthly AI limit. Reads no key.
  */
 export function pickedModelOwnKey(
   provider: OfferedModelProvider,

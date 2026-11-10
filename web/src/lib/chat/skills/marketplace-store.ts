@@ -38,7 +38,7 @@ import {
  *     then cleaned and scanned as an import is, by the Library's rules (its
  *     front matter read as a safe YAML subset; a price, an email address or
  *     a tracking URL worth a look, not a block: owner, 2026-11-05). What the
- *     card shows in place of the directory's score is Ansvisor's own scan
+ *     card shows in place of the directory's score is Oppla's own scan
  *     (decision 10).
  *     A read is kept in memory by its pinned commit, which never changes.
  *   - Add (items 11–13): the import path of 00458 with the catalog row it
@@ -172,7 +172,7 @@ export async function listMarketplace(
 
 // ─── Reading a skill at its pinned commit ───────────────────────────────────
 
-/** What a read found: the skill as an import keeps it, and what Ansvisor's cleanup took out. */
+/** What a read found: the skill as an import keeps it, and what Oppla's cleanup took out. */
 export interface MarketplaceRead {
   parsed: ParsedImport;
   /** The skill's folder at the pinned commit (kept as source_url). */
@@ -219,7 +219,7 @@ export async function readMarketplaceSkill(
   const value: MarketplaceRead = {
     parsed: {
       ...parsed.value,
-      // Ansvisor's own edits first, in the removed list a review shows.
+      // Oppla's own edits first, in the removed list a review shows.
       removed: [...cleaned.edits.map(editWords), ...parsed.value.removed],
     },
     sourceUrl: read.value.sourceUrl,
@@ -231,7 +231,7 @@ export async function readMarketplaceSkill(
   return { ok: true, value };
 }
 
-/** A skill's detail (item 9): its card, its source at the pinned commit, and what Ansvisor read. */
+/** A skill's detail (item 9): its card, its source at the pinned commit, and what Oppla read. */
 export interface MarketplaceDetail {
   skill: MarketplaceCard;
   /** The SKILL.md on GitHub at the pinned commit (…/blob/<commit>/<path>). */
@@ -246,11 +246,11 @@ export interface MarketplaceDetail {
         compatibility: string | null;
         license: 'MIT';
         licenseText: string | null;
-        /** Ansvisor's own scan (decision 10). */
+        /** Oppla's own scan (decision 10). */
         scan: { blocks: string[]; warns: string[] };
         /** What adding it leaves out (scripts, other files, fields, comments). */
         removed: string[];
-        /** "Edited by Ansvisor" (item 15): the row's cleanups that took something out. */
+        /** "Edited by Oppla" (item 15): the row's cleanups that took something out. */
         edits: MarketplaceEdit[];
       }
     | { ok: false; code: SkillRefusalCode; error: string };

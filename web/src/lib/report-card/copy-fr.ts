@@ -1,10 +1,11 @@
 import type { CardCopy, TargetKind } from './copy';
 import { countryIn, languageIn, percentIn } from './copy-names';
+import { siteConfig } from '@/config/site';
 
 /**
  * The report card in French, when the form chooses it (owner decision
  * 2026-11-09). A country never follows a preposition that must agree with
- * it ("aux États-Unis", "en France"): it stands after "pays :". Ansvisor's
+ * it ("aux États-Unis", "en France"): it stands after "pays :". Oppla's
  * product, feature and button names stay in English, as the app shows them
  * (owner decision 2026-11-08). A no-break space comes before a colon, and
  * a narrow one before ; and ?, as French sets them.
@@ -46,7 +47,7 @@ export const fr: CardCopy = {
   language: (english) => languageIn('fr', english),
   document: (company) => `Rapport de visibilité IA\u00a0: ${company}`,
   footer: (page, pages) => `${page} / ${pages}`,
-  brand: 'Généré avec Ansvisor · www.ansvisor.com',
+  brand: `Généré avec ${siteConfig.name} · ${siteConfig.host}`,
   engines: {
     count: (n) => plural(n, 'moteur IA', 'moteurs IA'),
     the: (n) => `les ${{ 2: 'deux', 3: 'trois', 4: 'quatre', 5: 'cinq' }[n] ?? n} moteurs`,
@@ -60,7 +61,7 @@ export const fr: CardCopy = {
     subtitle: (domain, country, language, date) =>
       `${domain} · ${country}, en ${language} · ${date}`,
     oneTime: (date) =>
-      `Un instantané\u00a0: chaque question a été posée une fois, le ${date}. Les réponses de l’IA changent d’un jour à l’autre\u202f; dans Ansvisor, les questions sont posées chaque jour.`,
+      `Un instantané\u00a0: chaque question a été posée une fois, le ${date}. Les réponses de l’IA changent d’un jour à l’autre\u202f; dans Oppla, les questions sont posées chaque jour.`,
     understood: (domain, readers) =>
       readers
         ? `Notre lecture de ${domain}\u00a0: une publication sur`
@@ -92,7 +93,7 @@ export const fr: CardCopy = {
     byEngine: 'Visibilité par moteur',
     engineValue: (named, answers, pct) => `${named} sur ${answers} · ${pc(pct)}`,
     growthBand: (starter) =>
-      `Dans Ansvisor Growth\u00a0: les moteurs IA de Google, mesurés aussi. Starter suit ${starter}\u202f; Growth ajoute ceux-ci.`,
+      `Dans Oppla Growth\u00a0: les moteurs IA de Google, mesurés aussi. Starter suit ${starter}\u202f; Growth ajoute ceux-ci.`,
     whoNamed: 'Qui l’IA mentionne',
     noCompetitor: 'Aucun concurrent mentionné.',
     you: (name) => `${name} (vous)`,
@@ -240,10 +241,10 @@ export const fr: CardCopy = {
     eyebrow: 'Votre plan',
     title: 'Trois constats, et ce que vous feriez la première semaine',
     subtitle: (company) =>
-      `Choisis dans les résultats de ${company} selon des règles fixes\u00a0: ce que le rapport a trouvé, la première chose à faire et où Ansvisor vous aide.`,
+      `Choisis dans les résultats de ${company} selon des règles fixes\u00a0: ce que le rapport a trouvé, la première chose à faire et où Oppla vous aide.`,
     finding: 'Constat',
     weekOne: 'Semaine 1',
-    inAnsvisor: 'Dans Ansvisor',
+    inAnsvisor: 'Dans Oppla',
     feature: {
       contentEditor: 'Content Editor',
       citations: 'Citations',
@@ -272,7 +273,7 @@ export const fr: CardCopy = {
     autoTitle: 'Ou laissez les agents publier seuls',
     autoBody:
       'En Full auto, avec deux réglages qu’un Admin active, les agents choisis envoient ou publient des pages dans votre CMS sans clic, de 1 à 20 par jour. Une page qui échoue au contrôle Quality ou à vos informations de marque vous attend toujours. Dans Growth.',
-    examplePrompt: 'Un prompt qu’Ansvisor suivrait pour vous, chaque jour\u00a0:',
+    examplePrompt: 'Un prompt qu’Oppla suivrait pour vous, chaque jour\u00a0:',
   },
 
   // ─── Page 4 ────────────────────────────────────────────────────────────────
@@ -280,7 +281,7 @@ export const fr: CardCopy = {
     eyebrow: 'Ce que ça vaut',
     title: 'Ce que valent les visites de l’IA, et les plans pour ce rapport',
     subtitle:
-      'Les visites de l’IA au prix des mêmes clics dans Google Ads, les deux plans côte à côte, et comment Ansvisor vous aide.',
+      'Les visites de l’IA au prix des mêmes clics dans Google Ads, les deux plans côte à côte, et comment Oppla vous aide.',
     demand: (searches, country, keywords) =>
       `Les mots-clés de vos questions\u00a0: environ ${searches} recherches Google par mois (${country}\u202f; ${plural(keywords, 'mot-clé', 'mots-clés')} avec volume).`,
     cpcLine: (cpc, keywords, total) =>
@@ -295,7 +296,7 @@ export const fr: CardCopy = {
       `${visits} visites par mois coûtent environ ${ads} dans Google Ads, chaque mois\u00a0: ${year} par an.`,
     earning: 'Les gagner',
     earningBody: (plan, price) =>
-      `Ansvisor ${plan}\u00a0: ${price} par mois. Une page citée par l’IA envoie des visites tant qu’elle reste citée.`,
+      `Oppla ${plan}\u00a0: ${price} par mois. Une page citée par l’IA envoie des visites tant qu’elle reste citée.`,
     cheap: (ads, plan, price) =>
       `Les clics sont bon marché sur votre marché\u00a0: ces visites coûteraient environ ${ads} par mois dans Ads, moins que ${plan} à ${price}. Ce que la publicité ne peut pas acheter, c’est d’être la marque que l’IA recommande quand vos clients posent la question.`,
     slow: 'Les visites de l’IA se construisent sur plusieurs mois\u00a0: le premier mois, c’est la mise en place et les premières pages, pas encore des visites.',
@@ -311,9 +312,9 @@ export const fr: CardCopy = {
     revenueRow: (visits, low, high) =>
       `${visits} visites IA par mois\u00a0: ${low}–${high} par mois`,
     scenarios:
-      'Des scénarios, pas une prévision ni une garantie. AI Traffic, dans Ansvisor, mesure vos vraies visites de l’IA une fois configuré.',
+      'Des scénarios, pas une prévision ni une garantie. AI Traffic, dans Oppla, mesure vos vraies visites de l’IA une fois configuré.',
     planTitle: 'Les plans pour ce rapport',
-    planName: (plan) => `Ansvisor ${plan}`,
+    planName: (plan) => `Oppla ${plan}`,
     starterTag: 'Correspond à ce rapport',
     growthTag: 'Ajoute les moteurs Google',
     perMonth: (price) => `${price}/mois`,
@@ -337,11 +338,11 @@ export const fr: CardCopy = {
     growthAgents: 'Full auto\u00a0: les agents que vous choisissez publient seuls.',
     mcpRead: 'MCP\u00a0: lisez vos données depuis vos outils d’IA.',
     mcpReadWrite: 'MCP\u00a0: lisez et écrivez vos données depuis vos outils d’IA.',
-    workTitle: 'Ansvisor fait le travail avec vous',
+    workTitle: 'Oppla fait le travail avec vous',
     work: [
       {
         title: 'Chat',
-        body: 'Répond à partir de vos données Ansvisor, prépare le travail de la première semaine de ce rapport et lit les fichiers que vous ajoutez.',
+        body: 'Répond à partir de vos données Oppla, prépare le travail de la première semaine de ce rapport et lit les fichiers que vous ajoutez.',
       },
       {
         title: 'Agent Center',
@@ -349,7 +350,7 @@ export const fr: CardCopy = {
       },
       {
         title: 'MCP',
-        body: 'Utilisez vos données Ansvisor depuis Claude, ChatGPT, Cursor et d’autres outils d’IA.',
+        body: 'Utilisez vos données Oppla depuis Claude, ChatGPT, Cursor et d’autres outils d’IA.',
       },
     ],
     ctaTitle: 'Mesurez vos propres questions',

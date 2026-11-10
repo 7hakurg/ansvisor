@@ -40,7 +40,7 @@ describe('ANSVISOR_SKILLS', () => {
     expect(Object.keys(titles).sort()).toEqual(ANSVISOR_SKILLS.map((skill) => skill.id).sort());
   });
 
-  it('gives /setup no connection: it says how to connect one, and reads Ansvisor’s own data', () => {
+  it('gives /setup no connection: it says how to connect one, and reads Oppla’s own data', () => {
     expect(skillOf('setup')?.uses).toEqual([]);
   });
 
@@ -55,7 +55,7 @@ describe('ANSVISOR_SKILLS', () => {
     expect(requiredBy(['prompts'], 'google_search_console')).toBeNull();
   });
 
-  it("gives the focus areas' seven no connection: they read Ansvisor's own data", () => {
+  it("gives the focus areas' seven no connection: they read Oppla's own data", () => {
     for (const id of FOCUS_SKILLS) expect(skillOf(id)?.uses, id).toEqual([]);
     expect(skillConnections(FOCUS_SKILLS)).toEqual([]);
     expect(requiredBy(FOCUS_SKILLS, 'catalog')).toBeNull();

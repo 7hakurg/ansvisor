@@ -171,7 +171,7 @@ function ChatPiecesPreview() {
 
 /**
  * Chat's shared agent pieces and run cards for design sign-off (Chat P0, D1
- * and D2). Only for Ansvisor staff (STAFF_EMAILS, lib/chat/staff.ts, as
+ * and D2). Only for Oppla staff (STAFF_EMAILS, lib/chat/staff.ts, as
  * Chat's Debug view), with the new Chat on for their workspace
  * (CHAT_AGENTIC); for anyone else, a customer's Admin too, the page isn't
  * there. Not linked from the menu.

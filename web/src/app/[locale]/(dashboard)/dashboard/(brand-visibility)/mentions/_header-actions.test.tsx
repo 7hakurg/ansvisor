@@ -16,7 +16,7 @@ import { useMentionsExport } from './_use-mentions-export';
 
 const getMentionsOverview = vi.fn();
 const exportMentions = vi.fn();
-// No white label kit: downloads keep Ansvisor's names (export-name.test.ts has a kit's).
+// No white label kit: downloads keep Oppla's names (export-name.test.ts has a kit's).
 vi.mock('@/lib/actions/white-label', () => ({
   getExportBranding: async () => ({ ok: true, branding: null }),
 }));
@@ -298,7 +298,7 @@ describe('MentionsHeaderActions', () => {
       expect.objectContaining({}),
       DEFAULT_MENTIONS_TABLE,
     );
-    expect(saved[0].name).toMatch(/^ansvisor_acme-coffee_mentions_\d{4}-\d{2}-\d{2}\.csv$/);
+    expect(saved[0].name).toMatch(/^oppla_acme-coffee_mentions_\d{4}-\d{2}-\d{2}\.csv$/);
     const lines = (await savedText()).split('\n');
     expect(lines.slice(0, 11)).toEqual([
       'Visibility · Mentions,Acme Coffee',

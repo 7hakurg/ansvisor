@@ -2,7 +2,7 @@ import type { SupabaseClient } from '@supabase/supabase-js';
 import { readAllRpcRows } from '@/lib/supabase/rpc-pages';
 
 /**
- * The free report card's admin view (REPORT-CARD §7): for Ansvisor staff,
+ * The free report card's admin view (REPORT-CARD §7): for Oppla staff,
  * how many requests came, how many cards were made, what they cost against
  * the month's budget and how many failed. Counts and sites only: no
  * person's name or e-mail is shown. Read with the service role (00472's

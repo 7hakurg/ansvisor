@@ -217,7 +217,7 @@ describe('the plan cards', () => {
     aiUsage.usage = { chatMetered: true };
     await render('growth');
     expect(hint('5x AI usage')).toBe(
-      "A monthly allowance for Ansvisor's AI features: Chat and agents, Improve suggestions, the Content Editor's AI and the Action Center's task writing. Your own AI key comes with Enterprise only. The free trial comes with a smaller allowance.",
+      "A monthly allowance for Oppla's AI features: Chat and agents, Improve suggestions, the Content Editor's AI and the Action Center's task writing. Your own AI key comes with Enterprise only. The free trial comes with a smaller allowance.",
     );
     expect(hint('Custom AI usage, from 10x')).toContain(
       'On Enterprise, Chat can also run on your own AI key.',
@@ -248,10 +248,10 @@ describe('the plan cards', () => {
     const ai = [...container.querySelectorAll('li span')].find(
       (el) => el.textContent === 'Custom AI usage, from 10x',
     );
-    expect(ai?.getAttribute('title')).toContain('A monthly allowance for Ansvisor');
+    expect(ai?.getAttribute('title')).toContain('A monthly allowance for Oppla');
     // The trial's smaller allowance isn't Enterprise's.
     expect(ai?.getAttribute('title')).not.toContain('free trial');
-    expect(ai?.getAttribute('title')).toContain('Ansvisor sets the amount with you.');
+    expect(ai?.getAttribute('title')).toContain('Oppla sets the amount with you.');
     expect(container.textContent).not.toContain('10x AI usage');
     for (const point of [
       'Unlimited brands in a custom workspace',
@@ -261,16 +261,13 @@ describe('the plan cards', () => {
       expect(container.textContent).toContain(point);
     }
     expect(
-      container.querySelector('a[href="https://www.ansvisor.com/contact-us"]')?.textContent,
+      container.querySelector('a[href="mailto:support@oppla.ai"]')?.textContent,
     ).toBe('Contact Us');
   });
 
-  it('links to every feature on the pricing page, in a new tab, for any role', async () => {
+  it('links no pricing page while the deployment has none', async () => {
     await render('starter', { role: 'manager' });
-    const link = container.querySelector('a[href="https://www.ansvisor.com/pricing"]');
-    expect(link?.textContent).toBe('See everything each plan includes');
-    expect(link?.getAttribute('target')).toBe('_blank');
-    expect(link?.getAttribute('rel')).toBe('noopener noreferrer');
+    expect(container.textContent).not.toContain('See everything each plan includes');
   });
 });
 

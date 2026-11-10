@@ -85,7 +85,7 @@ const {
   firstRun: { run: null as FirstRun | null, finished: new Set<(brandId: string) => void>() },
 }));
 
-// No white label kit: downloads keep Ansvisor's names (export-name.test.ts has a kit's).
+// No white label kit: downloads keep Oppla's names (export-name.test.ts has a kit's).
 vi.mock('@/lib/actions/white-label', () => ({
   getExportBranding: async () => ({ ok: true, branding: null }),
 }));
@@ -385,7 +385,7 @@ describe('the actions list Export CSV', () => {
 
     expect(getActionsAffected).toHaveBeenCalledWith('brand-id', ['a1']);
     const [blob, fileName] = saveBlob.mock.calls[0] as [Blob, string];
-    expect(fileName).toMatch(/^ansvisor_acme_actions_\d{4}-\d{2}-\d{2}\.csv$/);
+    expect(fileName).toMatch(/^oppla_acme_actions_\d{4}-\d{2}-\d{2}\.csv$/);
     const bytes = await new Promise<Uint8Array>((resolve) => {
       const reader = new FileReader();
       reader.onload = () => resolve(new Uint8Array(reader.result as ArrayBuffer));

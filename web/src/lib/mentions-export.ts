@@ -2,6 +2,7 @@ import { csvLine, toCsv } from '@/lib/csv';
 import { mentionPlatformLabel } from '@/lib/mentions-headline';
 import type { MentionRow } from '@/lib/mentions-list';
 import { withFileWord } from '@/lib/white-label/kit';
+import { siteConfig } from '@/config/site';
 
 /**
  * Export CSV on the Mentions & Sentiment page (MS-13): the mentions under the
@@ -59,12 +60,12 @@ export function mentionsCsv(facts: ExportFact[], rows: MentionRow[]): string {
 
 /**
  * "ansvisor_acme-coffee_mentions_2026-10-17.csv", as the other pages name
- * theirs; `word` is a white label kit's in Ansvisor's place, or none.
+ * theirs; `word` is a white label kit's in Oppla's place, or none.
  */
 export function mentionsExportFileName(
   slug: string,
   now = new Date(),
-  word: string | null = 'ansvisor',
+  word: string | null = siteConfig.fileWord,
 ): string {
   return withFileWord(word, `${slug || 'brand'}_mentions_${now.toISOString().slice(0, 10)}.csv`);
 }

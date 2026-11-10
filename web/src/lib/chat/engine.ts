@@ -572,8 +572,8 @@ const startRunFields = z.object({
     .optional(),
   effort: z.enum(CHAT_EFFORTS).optional(),
   /**
-   * "Use Ansvisor's limit" after the workspace's own key failed (W4-06): the
-   * run takes Ansvisor's key and the AI limit. An Admin's click only.
+   * "Use Oppla's limit" after the workspace's own key failed (W4-06): the
+   * run takes Oppla's key and the AI limit. An Admin's click only.
    */
   keySource: z.literal('ansvisor').optional(),
   /**
@@ -928,7 +928,7 @@ export async function startChatRun(
       : {}),
     ...(earlier.fromTaintedMove ? { fromTaintedMove: true } : {}),
     ...(scope && options.scopeUntrusted ? { scopeUntrusted: true } : {}),
-    // Ansvisor's key on an Admin's click only: the AI limit is the workspace's.
+    // Oppla's key on an Admin's click only: the AI limit is the workspace's.
     ...(input.keySource === 'ansvisor' && ctx.role === 'admin' ? { ansvisorKey: true } : {}),
     ...(saveSteps ? { saveSteps } : {}),
   };
@@ -982,7 +982,7 @@ type Progress = RunProgress & {
    */
   modelDropped?: boolean | 'catalog' | 'provider';
   modelNoted?: boolean;
-  /** An Admin chose "Use Ansvisor's limit" after the own key failed (W4-06). */
+  /** An Admin chose "Use Oppla's limit" after the own key failed (W4-06). */
   ansvisorKey?: boolean;
   /**
    * The run's one recovery from a reply with no answer, by its cause: 'retry' ran a step the
@@ -1294,7 +1294,7 @@ async function openContext(
       return null;
     }
     if (!(err instanceof OwnKeyUnreadableError)) throw err;
-    // Marked failing where it was found (key.ts); the run stops on it, never on Ansvisor's key.
+    // Marked failing where it was found (key.ts); the run stops on it, never on Oppla's key.
     const failure = {
       class: 'unreadable' as const,
       provider: err.provider,
@@ -1719,7 +1719,7 @@ async function helpTurn(rc: RunContext): Promise<'none' | 'ended'> {
       });
       return 'none';
     }
-    // Kept for every workspace only when Ansvisor's model wrote it: a
+    // Kept for every workspace only when Oppla's model wrote it: a
     // workspace's own key may run another model, and its words stay its own.
     if (key && rc.models.source === 'ansvisor') {
       await saveHelpAnswer(
@@ -1964,7 +1964,7 @@ async function loadSkill(
 async function loadShortcut(rc: RunContext): Promise<number> {
   const playbook = rc.skills.playbook;
   if (!playbook) return 0;
-  // Ansvisor's own, its body always there: loaded as a library skill is.
+  // Oppla's own, its body always there: loaded as a library skill is.
   const skill: EnabledSkill = {
     ...playbook,
     source: 'library',
@@ -2496,7 +2496,7 @@ function toolSchemas(rc: RunContext, phase: ChatPhase): unknown[] {
  */
 function coreRules(rc: Pick<RunContext, 'budget'>, phase: ChatPhase): string {
   const lines = [
-    'You are Chat in Ansvisor, an app that tracks how AI answer engines (ChatGPT, Perplexity, Gemini, Google AI Overviews and others) mention and cite a brand, and helps improve that (AEO/GEO).',
+    'You are Chat in Oppla, an app that tracks how AI answer engines (ChatGPT, Perplexity, Gemini, Google AI Overviews and others) mention and cite a brand, and helps improve that (AEO/GEO).',
     UNTRUSTED_RULES,
   ];
   if (phase === 'read') {
@@ -2513,7 +2513,7 @@ function coreRules(rc: Pick<RunContext, 'budget'>, phase: ChatPhase): string {
         'A result with code "skipped": the person said no, so don\'t make that change. Codes forbidden_role, plan_locked, policy_never, subscription_inactive, demo_brand, brand_scope, execute_off, no_access: the person already sees a card saying why; say it in one short sentence and don\'t try again.',
         'A message that starts "Earlier in this chat, in short" sums up older turns: use it for context; its numbers may be out of date, so read again before quoting one.',
         "Never show ids, tool names, JSON or code to the person. Answer in the person's language, in short Markdown.",
-        `When your answer is complete, call ${NEXT_MOVES_TOOL} once in that same reply, after the text: 2–3 next moves, best first, at most one per kind (continue, deepen, act, repeat, reuse). The label names the real page, task or prompt; the prompt is what the person would type, under 80 characters. Mark continues_this_run when the move continues an object of this answer. Only moves Ansvisor can do on this plan; never an outside tool. Not while a question or a change waits on the person.`,
+        `When your answer is complete, call ${NEXT_MOVES_TOOL} once in that same reply, after the text: 2–3 next moves, best first, at most one per kind (continue, deepen, act, repeat, reuse). The label names the real page, task or prompt; the prompt is what the person would type, under 80 characters. Mark continues_this_run when the move continues an object of this answer. Only moves Oppla can do on this plan; never an outside tool. Not while a question or a change waits on the person.`,
         // "Remember this?" (W4-33): flagged with the next moves, no other call.
         REMEMBER_RULE,
         PARTS_RULE,
@@ -4371,7 +4371,7 @@ const SAID_FAILURES: Record<string, string> = {
   execute_off: 'execute_off',
   // The CMS didn't put the page live: it stays a draft there, with the CMS's words (publish_cms).
   publish_refused: 'failed',
-  // A page taken down (unpublish_cms): not live through Ansvisor, Framer's or a webhook's, or
+  // A page taken down (unpublish_cms): not live through Oppla, Framer's or a webhook's, or
   // the CMS said no, with its words.
   not_live: 'not_found',
   unavailable: 'failed',

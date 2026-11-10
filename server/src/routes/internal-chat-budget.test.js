@@ -133,7 +133,7 @@ describe('POST /api/internal/chat/budget/*', () => {
     spy.mockRestore();
   });
 
-  it('holds a step and answers its row, a Chat step on Ansvisor’s key unless it says otherwise', async () => {
+  it('holds a step and answers its row, a Chat step on Oppla’s key unless it says otherwise', async () => {
     const res = await post('reserve', reserveBody());
     expect(res.status).toBe(201);
     expect(await res.json()).toEqual({ success: true, usageId: USAGE });

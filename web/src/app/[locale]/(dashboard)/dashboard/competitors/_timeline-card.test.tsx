@@ -82,7 +82,7 @@ describe('CompetitorTimelineCard', () => {
     const rows = [...container.querySelectorAll('li')].map((li) => li.textContent);
     expect(rows).toEqual([
       'Oct 28, 2026Changed rival.com/kettlesnow has FAQ schema, Tables · no longer has Author byline',
-      'Oct 20, 2026First cited in your tracked answers rival.com/guide3 answers had cited it when Ansvisor found it',
+      'Oct 20, 2026First cited in your tracked answers rival.com/guide3 answers had cited it when Oppla found it',
     ]);
     expect(container.querySelector('a[href="https://www.rival.com/kettles/"]')).not.toBeNull();
   });
@@ -108,7 +108,7 @@ describe('CompetitorTimelineCard', () => {
 
   it('says what it reads before anything happened, and when it could not be read', () => {
     expect(render({ weeks, events: [] })).toContain(
-      "Nothing yet: Ansvisor reads Rival's pages cited in your answers each night",
+      "Nothing yet: Oppla reads Rival's pages cited in your answers each night",
     );
     expect(render('failed')).toContain("Couldn't load the timeline.");
     render(null);

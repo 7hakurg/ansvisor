@@ -109,7 +109,7 @@ export async function readModelMenu({
   const byId = new Map((server?.models ?? []).map((model) => [model.id, model]));
   const models: ChatMenuModel[] = [];
   for (const offered of OFFERED_MODELS) {
-    // A model through OpenRouter needs Ansvisor's OpenRouter key (W4-03).
+    // A model through OpenRouter needs Oppla's OpenRouter key (W4-03).
     if (offered.provider === 'openrouter' && !process.env.OPENROUTER_API_KEY) continue;
     if (!modelProviderOn(providers, offered.id)) continue;
     const listed = byId.get(offered.id);

@@ -208,11 +208,11 @@ describe('Send', () => {
       to: ['jane@client.com'],
       subject: 'Weekly report',
       replyTo: 'creator@acme.test',
-      fromName: 'Ansvisor',
+      fromName: 'Oppla',
       attachments: [{ filename: 'weekly-report-2026-11-03.pdf', content: PDF.toString('base64') }],
     });
     expect(message.html).toContain('Citations rose 12%');
-    expect(message.html).toContain('Sent by Ayşe Demir from Acme Agency via Ansvisor');
+    expect(message.html).toContain('Sent by Ayşe Demir from Acme Agency via Oppla');
     expect(message.html).toContain('attached as a PDF');
     expect(jane()).toMatchObject({
       status: 'sent',

@@ -2,13 +2,13 @@
  * Carrying out a task automatically (#818, phase 7).
  *
  * Phase 5 marked every task with who could carry it out and whether carrying
- * it out reaches outside Ansvisor; nothing acted on either. This does, under
+ * it out reaches outside Oppla; nothing acted on either. This does, under
  * four rules that are the whole point of the layer:
  *
  *  1. **Nothing reaches outside except through a tool.** The tool registry is
  *     the enumerable surface; a task without a tool is not runnable, and says
  *     so rather than improvising.
- *  2. **Nothing changes outside Ansvisor without approval.** A tool that
+ *  2. **Nothing changes outside Oppla without approval.** A tool that
  *     writes to a third-party system is blocked until a person has
  *     authorised that task, and the authorisation is recorded on the task
  *     rather than inferred from whoever happened to trigger the run. Reading
@@ -95,11 +95,11 @@ export function blockedReason({ task, primitive, tool, sources, siblings }) {
   if (!sources.has(tool.source)) return `brand has no ${tool.source} source`;
 
   // WRITE and EXECUTE need a person's approval, and so does any tool that
-  // changes something outside Ansvisor, whatever the task says (spec §5).
+  // changes something outside Oppla, whatever the task says (spec §5).
   const permission = task.permission ?? primitive.permission;
   const needsApproval = tool.writesExternally || APPROVAL_PERMISSIONS.includes(permission);
   if (needsApproval && !task.approved_by) {
-    return 'changes something outside Ansvisor and has not been approved';
+    return 'changes something outside Oppla and has not been approved';
   }
 
   const unfinished = (task.depends_on ?? []).filter((key) => {

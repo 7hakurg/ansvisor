@@ -72,7 +72,7 @@ const publishedLately = (row: Awaited<ReturnType<typeof readRows>>[number], now:
   now - Date.parse(row.created_at) < TAKE_DOWN_MS;
 
 /**
- * The pages the page's publish rows put live, still live through Ansvisor,
+ * The pages the page's publish rows put live, still live through Oppla,
  * by draft: what Take down needs (PR 10). Only for an Admin or a Manager,
  * and only rows of the last 30 days; a read that fails offers none.
  */

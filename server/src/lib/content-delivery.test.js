@@ -259,7 +259,7 @@ describe('sendContentPages', () => {
     const [address, body, { headers }] = postJson.mock.calls[0];
     expect(address).toBe('https://hooks.acme.example/cms');
     expect(headers['X-Webhook-Secret']).toBe('s3cret');
-    expect(headers['X-Ansvisor-Signature']).toBe(signBody('s3cret', body));
+    expect(headers['X-Oppla-Signature']).toBe(signBody('s3cret', body));
     expect(JSON.parse(body)).toMatchObject({
       event: 'content_draft.sent',
       schemaVersion: 1,

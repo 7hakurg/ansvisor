@@ -2,9 +2,9 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 /**
  * Which key a picked model's step runs on (W4-06, CHAT-16 item 23): the
- * own key for its provider, then the own OpenRouter key, then Ansvisor's;
+ * own key for its provider, then the own OpenRouter key, then Oppla's;
  * a key saved for images only isn't Chat's; a key that can't be read stops
- * it; "Use Ansvisor's limit" skips the own keys.
+ * it; "Use Oppla's limit" skips the own keys.
  */
 
 const ORG = '22222222-2222-4222-8222-222222222222';
@@ -76,7 +76,7 @@ describe('resolvePickedModelKey', () => {
     });
   });
 
-  it('goes on to the own OpenRouter key, then Ansvisor’s, past a key for images only', async () => {
+  it('goes on to the own OpenRouter key, then Oppla’s, past a key for images only', async () => {
     keys = {
       anthropic: { key_encrypted: 'ant', settings: { useFor: ['images'] } },
       openrouter: { key_encrypted: 'or', settings: { model: 'anthropic/claude-sonnet-5.5' } },
@@ -92,7 +92,7 @@ describe('resolvePickedModelKey', () => {
     });
   });
 
-  it('stops on an own key it can’t read, marked failing, never Ansvisor’s in its place', async () => {
+  it('stops on an own key it can’t read, marked failing, never Oppla’s in its place', async () => {
     keys = { anthropic: { key_encrypted: 'bad', settings: {} } };
     await expect(resolvePickedModelKey(ORG, 'anthropic')).rejects.toBeInstanceOf(
       OwnKeyUnreadableError,
@@ -103,7 +103,7 @@ describe('resolvePickedModelKey', () => {
     });
   });
 
-  it('uses Ansvisor’s key below Enterprise, or on "Use Ansvisor’s limit"', async () => {
+  it('uses Oppla’s key below Enterprise, or on "Use Oppla’s limit"', async () => {
     keys = { anthropic: { key_encrypted: 'ant', settings: {} } };
     plan = 'growth';
     expect((await resolvePickedModelKey(ORG, 'anthropic'))?.source).toBe('ansvisor');
@@ -113,7 +113,7 @@ describe('resolvePickedModelKey', () => {
     );
   });
 
-  it('runs an OpenRouter model on Ansvisor’s OpenRouter key only where it is set', async () => {
+  it('runs an OpenRouter model on Oppla’s OpenRouter key only where it is set', async () => {
     expect(await resolvePickedModelKey(ORG, 'openrouter')).toBeNull();
     vi.stubEnv('OPENROUTER_API_KEY', 'ansvisor-or');
     expect(await resolvePickedModelKey(ORG, 'openrouter')).toEqual({

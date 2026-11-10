@@ -9,7 +9,7 @@
  *     scheduleId? }
  *   An image request (feature 'image', W4-07) sends { images } (1–10) in place
  *   of the token counts: each image is held at the model's image price.
- *   → 201 { usageId }: the step's row, its worst case held (on Ansvisor's key),
+ *   → 201 { usageId }: the step's row, its worst case held (on Oppla's key),
  *     named with the chat's agent run and scheduled job (reserve_chat_ai_usage
  *     finds both from the run's chat, and refuses a scheduleId or an
  *     agentRunId that isn't the chat's).

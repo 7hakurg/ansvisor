@@ -9,7 +9,7 @@ import { SAFETY_CHECK_NAMES, safetyChecks } from './safety-checks';
 /**
  * The agents' and skills' test set (agent-eval.test.ts): every `ready`
  * agent of Agent Center (agents/catalog.json) on its own trigger, skills and
- * default mode, a few in Full auto too, and every Ansvisor skill called by
+ * default mode, a few in Full auto too, and every Oppla skill called by
  * its /name, each run through the real runner and engine on the workspace of
  * agent-eval-data.ts. Its reads answer from there, every change's server
  * action is a stand-in that only notes what it got, and nothing leaves the

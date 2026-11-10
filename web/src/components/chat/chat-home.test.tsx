@@ -100,7 +100,7 @@ const { ChatInboxView } = await import('./chat-inbox');
 const chat = (id: string, row: Partial<ChatListItem> = {}): ChatListItem => ({
   id,
   title: `Chat ${id}`,
-  brand: 'Ansvisor',
+  brand: 'Oppla',
   pinned: false,
   archived: false,
   shared: false,
@@ -817,7 +817,7 @@ describe('What’s new on Home (CHAT-11 §B, item 19)', () => {
     // Right after Ask anything (CHAT-08 v2).
     expect(chip.previousElementSibling?.getAttribute('data-action')).toBe('home.askAnything');
     await act(async () => chip.click());
-    expect(onAsk).toHaveBeenCalledWith('What’s new in Ansvisor and how can it help me?');
+    expect(onAsk).toHaveBeenCalledWith('What’s new in Oppla and how can it help me?');
   });
 
   it('shows the chip without a dot and no line once all is read, and neither before it is read', async () => {

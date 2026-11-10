@@ -448,7 +448,7 @@ describe('BeforePublish', () => {
     expect(rows()).toEqual([
       'Visible published and updated dates · check itMost CMSs (WordPress, Webflow, Shopify) add these for you. Check your page.',
       "Author: Ada Lovelace · doneAda Lovelace is named in the page's Article schema. Set them as the author in your CMS too, so its template shows the byline.",
-      "Search engine details (Article schema), with the authorAdded · doneAnsvisor adds it to the page it sends to your CMS and to exports, with Ada Lovelace as the author. The page's text doesn't change. WordPress leaves it out: add it with your SEO plugin.",
+      "Search engine details (Article schema), with the authorAdded · doneOppla adds it to the page it sends to your CMS and to exports, with Ada Lovelace as the author. The page's text doesn't change. WordPress leaves it out: add it with your SEO plugin.",
       'Ready for your CMS · doneNo placeholders, all images have alt text, all links work.',
     ]);
     const groups = [...dialog().querySelectorAll('section h3')].map((h) => h.textContent);
@@ -533,9 +533,9 @@ describe('BeforePublish', () => {
     expect(toast.success).toHaveBeenCalledWith('JSON-LD copied');
   });
 
-  it('says the code is the one Ansvisor adds, and leaves it out on Leave it out (00448)', async () => {
+  it('says the code is the one Oppla adds, and leaves it out on Leave it out (00448)', async () => {
     await render(quality());
-    expect(dialog().textContent).toContain('The code Ansvisor adds to the page');
+    expect(dialog().textContent).toContain('The code Oppla adds to the page');
     await act(async () => button('Leave it out')!.click());
     expect(onSchemaLeftOut).toHaveBeenCalledWith(true);
   });
@@ -543,20 +543,20 @@ describe('BeforePublish', () => {
   it('says a left-out schema is left out, with the code to paste and Add it back', async () => {
     await render(quality(), { schemaLeftOut: true });
     expect(rows()[2]).toBe(
-      "Search engine details left out · check itYou left Ansvisor's search engine details (Article schema) out of this page, for a CMS that adds its own. If yours doesn't, paste the code below into the page.",
+      "Search engine details left out · check itYou left Oppla's search engine details (Article schema) out of this page, for a CMS that adds its own. If yours doesn't, paste the code below into the page.",
     );
     // The author row no longer says the schema names them.
     expect(rows()[0]).toContain('Author for your CMS');
-    expect(dialog().textContent).not.toContain('The code Ansvisor adds');
+    expect(dialog().textContent).not.toContain('The code Oppla adds');
     expect(jsonLd()['@type']).toBe('Article');
     await act(async () => button('Add it back')!.click());
     expect(onSchemaLeftOut).toHaveBeenCalledWith(false);
   });
 
-  it('says why Ansvisor adds none to a page with an Article schema of its own', async () => {
+  it('says why Oppla adds none to a page with an Article schema of its own', async () => {
     await render(quality(), { ownArticleSchema: true });
     expect(rows()[2]).toBe(
-      'Search engine details on the page · doneYour page already has its search engine details (Article schema), so Ansvisor leaves its own out.',
+      'Search engine details on the page · doneYour page already has its search engine details (Article schema), so Oppla leaves its own out.',
     );
     expect(button('Leave it out')).toBeUndefined();
     expect(dialog().querySelector('pre')).toBeNull();
@@ -636,7 +636,7 @@ describe('BeforePublish', () => {
     });
     expect(
       rows().find((row) => row.startsWith('ItemList schema needs links to your products')),
-    ).toContain('Ansvisor finds one link to your product pages here');
+    ).toContain('Oppla finds one link to your product pages here');
     expect(dialog().querySelector('pre')).toBeNull();
     // The brand's domains not read yet, or not read at all: no "none" said.
     await render(quality(), {
@@ -823,7 +823,7 @@ describe('BeforePublish', () => {
     expect(dialog().querySelector('pre')).toBeNull();
     // Copy JSON-LD is still there, for a CMS that doesn't add it.
     expect(button('Copy JSON-LD')).toBeDefined();
-    await act(async () => button('Show the code Ansvisor adds')!.click());
+    await act(async () => button('Show the code Oppla adds')!.click());
     expect(jsonLd()['@type']).toBe('Article');
     // Left out: the code to paste, for a CMS that doesn't add it.
     await render(quality(), { mode: 'send', schemaLeftOut: true });
@@ -840,7 +840,7 @@ describe('BeforePublish', () => {
     // The dialog moves focus in a frame after it opens: clicked before that, on a
     // slow run, it takes the focus back from the code.
     await vi.waitFor(() => expect(document.activeElement).toBe(button('Continue to send')));
-    const show = button('Show the code Ansvisor adds')!;
+    const show = button('Show the code Oppla adds')!;
     expect(show.getAttribute('aria-expanded')).toBe('false');
     await act(async () => show.click());
     expect(show.getAttribute('aria-expanded')).toBe('true');
@@ -948,7 +948,7 @@ describe('BeforePublish', () => {
     await render(quality(), { pageType: 'product_page' });
     expect(rows()).toEqual([
       expect.stringContaining('Author for your CMS'),
-      'Schema for this page type · check itCheck what your CMS adds for it (Product, ItemList…). The code Ansvisor gives here is for articles.',
+      'Schema for this page type · check itCheck what your CMS adds for it (Product, ItemList…). The code Oppla gives here is for articles.',
       expect.stringContaining('Ready for your CMS'),
     ]);
     expect(dialog().querySelector('pre')).toBeNull();

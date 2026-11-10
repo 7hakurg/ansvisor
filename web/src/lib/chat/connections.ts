@@ -38,7 +38,7 @@ import { NO_CONNECTION_ROWS, readConnectionRows, type ConnectionRows } from './c
 export const CONNECTION_CATEGORIES = ['search', 'cms', 'ecommerce', 'crm', 'team'] as const;
 export type ConnectionCategory = (typeof CONNECTION_CATEGORIES)[number];
 
-/** What a connected tool lets Ansvisor do: read only, write drafts, or send pages out. */
+/** What a connected tool lets Oppla do: read only, write drafts, or send pages out. */
 export const CONNECTION_ACCESS = ['read_only', 'read_write_drafts', 'sends_pages'] as const;
 export type ConnectionAccess = (typeof CONNECTION_ACCESS)[number];
 
@@ -324,7 +324,7 @@ export function connectionRecords(input: RecordInput): ConnectionRecord[] {
     const only = toolsOfKind(kind);
     if (only.length === 1) suggested.add(only[0].key);
   }
-  // Then Search Console, then Analytics: the data most of Ansvisor reads.
+  // Then Search Console, then Analytics: the data most of Oppla reads.
   for (const key of ['google_search_console', 'google_analytics']) {
     if (states.get(key)?.status === 'not_connected') suggested.add(key);
   }

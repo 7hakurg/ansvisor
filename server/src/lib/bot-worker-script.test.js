@@ -7,7 +7,7 @@ const { Request, Response } = globalThis;
 
 /**
  * The Cloudflare Worker (AT-010, spec §6.1 option A): passes every request
- * through and sends only AI-bot requests, in batches, to Ansvisor.
+ * through and sends only AI-bot requests, in batches, to Oppla.
  */
 
 async function loadWorker() {

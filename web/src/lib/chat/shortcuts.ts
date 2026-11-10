@@ -1,7 +1,7 @@
 /**
  * Chat's shortcuts (CHAT-08; Chat Wave 2 W2-09): a known job with a fixed
  * data plan, picked from the composer's / menu (or a Home chip) and sent
- * with the message as its `shortcutId`. Each is a hidden Ansvisor skill, a
+ * with the message as its `shortcutId`. Each is a hidden Oppla skill, a
  * playbook in the repo's /skills folder under the same name (`/analyze` is
  * skills/analyze/SKILL.md), that the engine loads for the run. "Complete
  * tasks" is the /tasks skill itself, and "Create a report on" is

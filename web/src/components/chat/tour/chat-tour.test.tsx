@@ -14,7 +14,7 @@ import type { TourTopic } from '@/lib/chat/tour';
  * The product tour (owner decision 2026-11-06; mockups chat-tour/2 and 3):
  * a topic opens its page with the side panel on the tour's chat; Next, the
  * topic's own step in Chat, Another topic and End the tour under its turn;
- * "Ansvisor tour · n of 5" over it.
+ * "Oppla tour · n of 5" over it.
  */
 
 const nav = vi.hoisted(() => ({ push: vi.fn(), pathname: '/dashboard/insights' }));
@@ -202,7 +202,7 @@ describe('ChatTourProvider', () => {
 describe('TourLabel and TourControls', () => {
   it('counts the topic in the tour', async () => {
     await render(<TourLabel topic="prompts" />);
-    expect(q('[data-slot="tour-label"]')?.textContent).toBe('Ansvisor tour · 2 of 5');
+    expect(q('[data-slot="tour-label"]')?.textContent).toBe('Oppla tour · 2 of 5');
   });
 
   it('offers Next, Another topic and End the tour under a topic', async () => {

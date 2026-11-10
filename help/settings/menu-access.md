@@ -11,7 +11,7 @@ app_version: 0.3.0
 approved: true
 sources: [docs/guides/menu-access.mdx]
 ---
-**Menu access** in Settings decides which sections are on each person's left menu, so everyone sees the part of Ansvisor they use. It only hides: a section off someone's menu still opens from a link, and what their role can do there doesn't change. To change what someone can do, change their role in **Settings › Team**.
+**Menu access** in Settings decides which sections are on each person's left menu, so everyone sees the part of Oppla they use. It only hides: a section off someone's menu still opens from a link, and what their role can do there doesn't change. To change what someone can do, change their role in **Settings › Team**.
 
 ## Fold a group on your menu
 
@@ -43,4 +43,4 @@ Click **Customize** to tick or untick a section for that person alone, even one 
 
 A person's menu is their role's sections, changed by their own exceptions from **People**, then narrowed to the sections of their work areas, when they picked any.
 
-**Action Center** always stays, and nobody takes a section off an admin's menu; only an admin's own work areas narrow it. A section added to Ansvisor later is on everyone's menu until someone hides it.
+**Action Center** always stays, and nobody takes a section off an admin's menu; only an admin's own work areas narrow it. A section added to Oppla later is on everyone's menu until someone hides it.

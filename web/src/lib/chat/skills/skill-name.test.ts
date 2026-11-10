@@ -12,7 +12,7 @@ describe('readSkillName', () => {
     for (const bad of ['pricing faq', 'pricing--faq', '-pricing', 'faq_page', 'x'.repeat(65)]) {
       expect(readSkillName(bad).problem).toBe('nameFormat');
     }
-    // An Ansvisor skill's name, and a shortcut's (W2-09).
+    // An Oppla skill's name, and a shortcut's (W2-09).
     expect(readSkillName('winback')).toEqual({ name: 'winback', problem: 'nameReserved' });
     expect(readSkillName('/start').problem).toBe('nameReserved');
   });

@@ -17,7 +17,7 @@ import { useIntegrationConnect } from '@/hooks/use-integration-connect';
 const STEPS = ['shelf', 'why', 'fix', 'sell'] as const;
 
 /**
- * "Why Ansvisor Product Visibility?" (ECOM-010): what the page does for a
+ * "Why Oppla Product Visibility?" (ECOM-010): what the page does for a
  * shop, from the AI shelf to the sale, in four steps. Its Connect Google
  * Analytics is there while GA isn't connected and the member may connect
  * it: GA joins an AI visit to its order.

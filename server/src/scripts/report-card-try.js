@@ -5,8 +5,8 @@
  * on the engines, the model and the keyword call, so it prints the estimate
  * first and runs only with --spend.
  *
- *   node src/scripts/report-card-try.js --company Ansvisor --site ansvisor.com \
- *     --country US [--domain ansvisor.com] [--deal 99:USD] [--industry software] \
+ *   node src/scripts/report-card-try.js --company Oppla --site oppla.ai \
+ *     --country US [--domain oppla.ai] [--deal 99:USD] [--industry software] \
  *     --out /path/card.json [--spend]
  *
  * Needs CLORO_API_KEY, DataForSEO's login and the model's key in .env.

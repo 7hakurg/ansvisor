@@ -498,8 +498,8 @@ async function logoDataUrl(path: string | null): Promise<string | null> {
 /**
  * The kit a brand's report is shown and downloaded with: the workspace's,
  * with the brand's client logo, when it is in use (kitInUse); null keeps
- * Ansvisor's look. The logos come as the images themselves, for the PDF the
- * browser draws. A failed read is a failure, not null: a PDF in Ansvisor's
+ * Oppla's look. The logos come as the images themselves, for the PDF the
+ * browser draws. A failed read is a failure, not null: a PDF in Oppla's
  * look must not go to an agency's client by mistake.
  */
 export async function getReportBranding(

@@ -13,7 +13,7 @@ import { draftLanguage } from '@/lib/content/rules';
  * A draft as a page ready for a CMS, for the MCP tool
  * get_content_draft_package (MCP plan B5): what the Content Library's Send to
  * CMS sends (bulkCmsItems), so the user's own AI tool can put it on their CMS
- * with its own connector. Ansvisor's MCP never sends it.
+ * with its own connector. Oppla's MCP never sends it.
  *
  * The editor's helpers read HTML with a DOM, which the server has none of:
  * jsdom's window is given to them (withContentDom, made on the first call

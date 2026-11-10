@@ -1,5 +1,5 @@
 /**
- * The Action Center's tabs, in order: Actions first (New Ansvisor, AC-ALT2 §3:
+ * The Action Center's tabs, in order: Actions first (New Oppla, AC-ALT2 §3:
  * everything starts at Actions), then Signals, KPIs and History.
  */
 export const ACTION_CENTER_TABS = [

@@ -239,7 +239,7 @@ describe('Sidebar', () => {
     await render(true);
     const logo = container.querySelector<HTMLButtonElement>('[data-action="rail.toggle"]')!;
     expect(logo.getAttribute('aria-expanded')).toBe('false');
-    expect(logo.getAttribute('aria-label')).toBe('Expand the Ansvisor menu');
+    expect(logo.getAttribute('aria-label')).toBe('Expand the Oppla menu');
     expect(container.querySelector('aside')?.className).toContain('w-16');
 
     await act(async () => logo.click());

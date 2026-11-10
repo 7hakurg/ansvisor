@@ -3,7 +3,7 @@ import type { ImpactOutcome, ImpactRow } from '@/lib/impact/report';
 
 /**
  * How a shipped change's outcome reads wherever the impact ledger shows it:
- * Reports › "What Ansvisor did for you" and an agent's "What this agent
+ * Reports › "What Oppla did for you" and an agent's "What this agent
  * did". One set of pills, words and numbers for both.
  */
 

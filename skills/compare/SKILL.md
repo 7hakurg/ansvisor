@@ -13,7 +13,7 @@ A balanced comparison page that answers "X or Y?" the way AI engines like to quo
 
 ## When to use
 
-- "Write an Ansvisor vs Northwind page", "We lose the 'best alternative to X' prompt: draft a page", "Make an alternatives page."
+- "Write an Oppla vs Northwind page", "We lose the 'best alternative to X' prompt: draft a page", "Make an alternatives page."
 - To change the brand's existing pages against one competitor instead, the Beat a competitor skill fits better.
 
 ## What to read

@@ -3,6 +3,7 @@ import { toCsv } from '@/lib/csv';
 import { slugify } from '@/lib/slug';
 import { withFileWord } from '@/lib/white-label/kit';
 import type { OpportunityDocument, OpportunityLine } from './opportunity-markdown';
+import { siteConfig } from '@/config/site';
 
 /**
  * An opportunity's Export (the user's spec): the write-up Copy All Data
@@ -142,7 +143,7 @@ export async function opportunityDocx(doc: OpportunityDocument, author?: string)
 export function opportunityExportFileName(
   doc: OpportunityDocument,
   extension: OpportunityExportFormat,
-  word: string | null = 'ansvisor',
+  word: string | null = siteConfig.fileWord,
 ): string {
   const slug = slugify(doc.title).slice(0, 60).replace(/-+$/, '') || 'export';
   return withFileWord(word, `opportunity_${slug}.${extension}`);

@@ -164,7 +164,7 @@ describe('GET /api/traffic/export', () => {
       'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
     );
     expect(res.headers.get('Content-Disposition')).toMatch(
-      /^attachment; filename="ansvisor-ai-traffic-acme-coffee-2026-10-11_\d{4}-\d{2}-\d{2}\.xlsx"$/,
+      /^attachment; filename="oppla-ai-traffic-acme-coffee-2026-10-11_\d{4}-\d{2}-\d{2}\.xlsx"$/,
     );
     const workbook = strFromU8(
       unzipSync(new Uint8Array(await res.arrayBuffer()))['xl/workbook.xml'],

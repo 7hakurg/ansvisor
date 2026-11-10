@@ -1,3 +1,4 @@
+import { BRAND_NAME } from '@/config/site';
 /**
  * Copy-paste setup for the MCP clients people actually use, filled in with
  * the endpoint and a freshly created key.
@@ -39,45 +40,48 @@ export const MCP_CLIENT_LABELS: Record<McpClient, string> = {
 
 /** The snippet for one client. Where it goes (a terminal, a file, a settings
  *  screen) is UI copy and lives in messages under `apiKeysConnectWhere`. */
+/** The name the MCP server is added under in each client's settings. */
+export const MCP_SERVER_NAME = BRAND_NAME.toLowerCase();
+
 export function mcpClientSnippet(client: McpClient, url: string, token: string): string {
   const bearer = `Bearer ${token}`;
   const json = (value: unknown) => JSON.stringify(value, null, 2);
 
   switch (client) {
     case 'claude-code':
-      return `claude mcp add --transport http ansvisor ${url} \\\n  --header "Authorization: ${bearer}"`;
+      return `claude mcp add --transport http ${MCP_SERVER_NAME} ${url} \\\n  --header "Authorization: ${bearer}"`;
     case 'claude-desktop':
       return [
-        'Name: Ansvisor',
+        `Name: ${BRAND_NAME}`,
         `URL: ${url}`,
         'Authentication: No sign in',
         `Request header: Authorization = ${bearer}`,
       ].join('\n');
     case 'codex':
-      return `[mcp_servers.ansvisor]\nurl = "${url}"\nhttp_headers = { "Authorization" = "${bearer}" }`;
+      return `[mcp_servers.${MCP_SERVER_NAME}]\nurl = "${url}"\nhttp_headers = { "Authorization" = "${bearer}" }`;
     case 'cursor':
-      return json({ mcpServers: { ansvisor: { url, headers: { Authorization: bearer } } } });
+      return json({ mcpServers: { [MCP_SERVER_NAME]: { url, headers: { Authorization: bearer } } } });
     case 'vscode':
       return json({
-        servers: { ansvisor: { type: 'http', url, headers: { Authorization: bearer } } },
+        servers: { [MCP_SERVER_NAME]: { type: 'http', url, headers: { Authorization: bearer } } },
       });
     case 'windsurf':
       return json({
-        mcpServers: { ansvisor: { serverUrl: url, headers: { Authorization: bearer } } },
+        mcpServers: { [MCP_SERVER_NAME]: { serverUrl: url, headers: { Authorization: bearer } } },
       });
     case 'gemini-cli':
-      return `gemini mcp add --transport http \\\n  --header "Authorization: ${bearer}" \\\n  ansvisor ${url}`;
+      return `gemini mcp add --transport http \\\n  --header "Authorization: ${bearer}" \\\n  ${MCP_SERVER_NAME} ${url}`;
     case 'hermes':
-      return `mcp_servers:\n  ansvisor:\n    url: "${url}"\n    headers:\n      Authorization: "${bearer}"`;
+      return `mcp_servers:\n  ${MCP_SERVER_NAME}:\n    url: "${url}"\n    headers:\n      Authorization: "${bearer}"`;
     case 'openclaw':
       return json({
         mcp: {
           servers: {
-            ansvisor: { url, transport: 'streamable-http', headers: { Authorization: bearer } },
+            [MCP_SERVER_NAME]: { url, transport: 'streamable-http', headers: { Authorization: bearer } },
           },
         },
       });
     case 'zed':
-      return json({ context_servers: { ansvisor: { url, headers: { Authorization: bearer } } } });
+      return json({ context_servers: { [MCP_SERVER_NAME]: { url, headers: { Authorization: bearer } } } });
   }
 }

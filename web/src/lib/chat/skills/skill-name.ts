@@ -7,7 +7,7 @@ export type SkillNameProblem = 'nameRequired' | 'nameFormat' | 'nameReserved';
 /**
  * A /name as a skill's draft card keeps it (W3-08): without its slash,
  * trimmed, lowercase, and why it can't be kept: the format (format.ts
- * SKILL_NAME), and never an Ansvisor skill's nor a shortcut's name
+ * SKILL_NAME), and never an Oppla skill's nor a shortcut's name
  * (reserved-names.ts). The card says it as the person types; save_skill's
  * apply says it again on Save, and the store checks it once more. Pure.
  */

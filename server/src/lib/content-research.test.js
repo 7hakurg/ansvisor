@@ -117,7 +117,7 @@ async function research(texts = PAGE, known = knownNumbers('2026'), options = {}
     draftId: 'd1',
     modelId: HAIKU,
     run: run(),
-    context: { brand: 'Ansvisor', title: 'Social media tools', language: 'English' },
+    context: { brand: 'Oppla', title: 'Social media tools', language: 'English' },
     ...options,
   });
   const settled = mapTexts(mapTexts(looked.page)(settler(looked.own, looked.stats)))(

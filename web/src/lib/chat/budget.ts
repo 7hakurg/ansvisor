@@ -18,7 +18,7 @@ import type { ChatKeySource } from './key';
  * through here, and none goes to a browser.
  *
  * Every step writes one usage row, on either key (lib/chat/key.ts): on
- * Ansvisor's it counts toward the budget, on the workspace's own it is
+ * Oppla's it counts toward the budget, on the workspace's own it is
  * marked and never counts. With CHAT_AGENTIC off for the workspace nothing is
  * held or written: today's Agent Chat runs on the workspace's own key only.
  *
@@ -402,7 +402,7 @@ const UNMETERED_IMAGES: ChatImageBudget = {
 
 /**
  * Holds an image request on the AI budget before any image is made: each
- * image at the model's image price (the server's catalog), on Ansvisor's key
+ * image at the model's image price (the server's catalog), on Oppla's key
  * against the limit, on the workspace's own key never counted. Its charge
  * takes the provider's own reported cost as it is (owner decision
  * 2026-11-02: no markup), so the limit drops by exactly what OpenRouter

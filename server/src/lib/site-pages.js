@@ -22,6 +22,7 @@ import supabaseAdmin from '../config/supabase.js';
 import { fetchViaScrapeDo } from './audit/fetcher.js';
 import { isExcludedPath } from './page-paths.js';
 import { logger } from './logger.js';
+import { BOT_USER_AGENT } from './brand.js';
 
 export const MAX_PAGES = 500;
 const REFRESH_DAYS = 30;
@@ -31,7 +32,7 @@ const MAX_CHILD_SITEMAPS = 20;
 const FETCH_TIMEOUT_MS = 10_000;
 const CONCURRENCY = 5;
 const FIELD_MAX = 300;
-const USER_AGENT = 'Mozilla/5.0 (compatible; AnsvisorBot/1.0; +https://ansvisor.com)';
+const USER_AGENT = BOT_USER_AGENT;
 
 const NON_HTML =
   /\.(pdf|jpe?g|png|gif|webp|svg|ico|mp4|mp3|zip|gz|xml|txt|json|css|js|docx?|xlsx?|pptx?)$/i;

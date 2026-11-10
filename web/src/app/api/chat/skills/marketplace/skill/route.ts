@@ -19,7 +19,7 @@ import { chatActor, runFailure } from '@/lib/chat/run-api';
  * A Library skill, by its catalog id (`owner/repo/folder`; CHAT-17).
  *
  * GET ?id=: its detail (item 9, W4-18): its card, its SKILL.md and license
- * read at the commit the catalog pins, cleaned, and Ansvisor's own scan.
+ * read at the commit the catalog pins, cleaned, and Oppla's own scan.
  * Every role reads. A skill GitHub can't give now answers 200 with
  * `read: { ok: false, code, error }`.
  *

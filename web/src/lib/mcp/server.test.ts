@@ -59,7 +59,7 @@ describe('the MCP server', () => {
     }
   });
 
-  it('marks what reaches outside Ansvisor, and what overwrites', async () => {
+  it('marks what reaches outside Oppla, and what overwrites', async () => {
     const client = await connect();
     const { tools } = await client.listTools();
     const hints = (name: string) => tools.find((tool) => tool.name === name)?.annotations;

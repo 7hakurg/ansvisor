@@ -98,7 +98,7 @@
     {
       "slug": "chat",
       "feature": "Chat",
-      "homeLine": "Chat answers questions from your Ansvisor data and does the work with you.",
+      "homeLine": "Chat answers questions from your Oppla data and does the work with you.",
       "route": "/dashboard/chat",
       "plans": [
         "starter",
@@ -166,7 +166,7 @@
       "published": "2026-11-03",
       "lines": [
         "A good way of doing a task was hard to repeat the same way every time.",
-        "The Skills page lists Ansvisor's skills and your own, each with the connections it uses.",
+        "The Skills page lists Oppla's skills and your own, each with the connections it uses.",
         "Admins and Managers can save steps as a skill in Chat, or import one from a file or GitHub for review.",
         "Open Skills in the Chat menu, or type / in Chat to use a skill."
       ]
@@ -174,7 +174,7 @@
     {
       "slug": "take-down",
       "feature": "Take down",
-      "homeLine": "A page published through Ansvisor can be taken down from the Library in one click.",
+      "homeLine": "A page published through Oppla can be taken down from the Library in one click.",
       "route": "/dashboard/content/library",
       "plans": [
         "starter",

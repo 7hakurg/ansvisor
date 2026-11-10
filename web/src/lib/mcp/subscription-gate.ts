@@ -13,7 +13,7 @@ import {
 import { callOnDemoBrand, demoBrandToolResult } from './demo-gate';
 
 /**
- * Ansvisor Cloud's read-only mode on the API key surface (MCP tools, the
+ * Oppla Cloud's read-only mode on the API key surface (MCP tools, the
  * /api/mcp REST routes): while a workspace's plan isn't active — its trial
  * ended, or it was canceled — reading stays open and anything that writes,
  * runs or spends answers with the server's 402 body, as the dashboard's
@@ -50,7 +50,7 @@ export const PLAN_REQUIRED = {
   code: 'plan_required',
   required_plan: MCP_WRITE_PLAN,
   message:
-    "On Starter and in the free trial, Ansvisor's MCP tools and API can read. Changes, runs " +
+    "On Starter and in the free trial, Oppla's MCP tools and API can read. Changes, runs " +
     'and anything that uses credits need the Growth plan or above: an admin can upgrade in ' +
     'Settings › Billing.',
 } as const;

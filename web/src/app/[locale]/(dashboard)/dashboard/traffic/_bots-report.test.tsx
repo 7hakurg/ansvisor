@@ -114,7 +114,7 @@ async function render(canConnect = true, revision = 0, onChanged?: () => void) {
   });
 }
 
-/** On Ansvisor Cloud, on `planId`, whose subscription has ended. */
+/** On Oppla Cloud, on `planId`, whose subscription has ended. */
 async function renderOnEndedPlan(planId: PlanId) {
   vi.stubEnv('NEXT_PUBLIC_IS_CLOUD', 'true');
   await act(async () => {

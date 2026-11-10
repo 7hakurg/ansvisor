@@ -3,6 +3,7 @@ import https from 'node:https';
 import { pipeline } from 'node:stream';
 import zlib from 'node:zlib';
 import { PageFetchError, checkPageUrl, publicOnlyLookup } from '../lib/safe-fetch.js';
+import { productAgent } from '../lib/brand.js';
 
 /**
  * The HTTP client a store connector calls its platform's API with (#1263).
@@ -29,7 +30,7 @@ export const MAX_BODY_BYTES = 20 * 1024 * 1024;
 export const RETRIES = 3;
 export const MAX_WAIT_MS = 60_000;
 
-const USER_AGENT = 'AnsvisorCatalog/1.0 (+https://ansvisor.com)';
+const USER_AGENT = productAgent('Catalog');
 const RETRY_STATUSES = new Set([429, 502, 503, 504]);
 const RETRY_ERRNOS = new Set(['ECONNRESET', 'ECONNREFUSED', 'EPIPE', 'ETIMEDOUT', 'EAI_AGAIN']);
 

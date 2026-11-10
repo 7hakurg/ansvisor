@@ -1,5 +1,5 @@
 /**
- * Getting started (New Ansvisor, AC-ALT2 §4): the fixed steps a brand walks
+ * Getting started (New Oppla, AC-ALT2 §4): the fixed steps a brand walks
  * through in the Actions page, and how each step's state follows from the
  * brand's data (getting_started_facts, 00196). They sit beside the generated
  * actions and never go through the signal engine or get a Priority Score.

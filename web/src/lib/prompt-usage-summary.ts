@@ -35,7 +35,7 @@ const PLAN_CTA: Record<PlanId, PromptUsageCta | null> = {
   self_hosted: null,
   starter: 'upgrade_growth',
   growth: 'upgrade',
-  // Ansvisor sets each Enterprise customer's limit (plan_overrides).
+  // Oppla sets each Enterprise customer's limit (plan_overrides).
   enterprise: 'contact',
 };
 

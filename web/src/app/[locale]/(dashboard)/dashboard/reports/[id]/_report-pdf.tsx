@@ -12,7 +12,7 @@
  *
  * With a white label kit in use (00429) it is the agency's: its logo and
  * "Prepared for" the brand with the client's logo on top, its color, its
- * footer line and its name as the author. Without one, Ansvisor's as before.
+ * footer line and its name as the author. Without one, Oppla's as before.
  */
 
 import {
@@ -280,7 +280,7 @@ export function ReportPdfDocument({
   fontFamily,
 }: {
   report: Report;
-  /** The kit in use, its logos as PNG or JPEG; null for Ansvisor's look. */
+  /** The kit in use, its logos as PNG or JPEG; null for Oppla's look. */
   branding?: ReportBranding | null;
   /** The Inter registered for this PDF (withInter). */
   fontFamily: string;
@@ -782,7 +782,7 @@ export function ReportPdfDocument({
 
         {/* Footer */}
         <View style={styles.footer} fixed>
-          {/* Ansvisor's line, the kit's own, or none. */}
+          {/* Oppla's line, the kit's own, or none. */}
           <Text style={styles.footerText}>{look.footer ?? ''}</Text>
           <Text
             style={styles.footerText}

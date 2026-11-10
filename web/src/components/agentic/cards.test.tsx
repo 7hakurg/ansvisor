@@ -549,7 +549,7 @@ describe('ResultCard', () => {
 describe('DenialCard', () => {
   const role = {
     title: 'I can’t add these prompts for you',
-    asked: 'Add 5 prompts to Tracked Prompts for Ansvisor.',
+    asked: 'Add 5 prompts to Tracked Prompts for Oppla.',
     askedItems: ['best aeo tools', 'aeo vs seo'],
     why: 'Your role is Analyst. Adding prompts needs Manager or Admin.',
     whySource: 'Role rule · Settings › Team › Roles & access',
@@ -568,7 +568,7 @@ describe('DenialCard', () => {
       'Next',
     ]);
     expect($('[data-part="asked"]')!.textContent).toBe(
-      'Add 5 prompts to Tracked Prompts for Ansvisor.best aeo toolsaeo vs seo',
+      'Add 5 prompts to Tracked Prompts for Oppla.best aeo toolsaeo vs seo',
     );
     expect($('[data-part="why"]')!.textContent).toBe(
       'Your role is Analyst. Adding prompts needs Manager or Admin.Role rule · Settings › Team › Roles & access',

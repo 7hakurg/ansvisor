@@ -35,7 +35,7 @@ import {
 import { uploadLogo, type LogoUploadError } from '@/lib/white-label/logo-upload';
 import { forgetExportBranding } from '@/lib/white-label/export-name';
 
-/** The reports' own accent while a kit has no color: Ansvisor's indigo. */
+/** The reports' own accent while a kit has no color: Oppla's indigo. */
 const DEFAULT_ACCENT = '#6366f1';
 
 const FAILED = { ok: false, failure: 'failed' } as const;

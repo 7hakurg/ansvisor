@@ -252,7 +252,7 @@ describe('the Competitors item', () => {
   });
 });
 
-// New Ansvisor: Chat and Agent Center on their own above the groups, then
+// New Oppla: Chat and Agent Center on their own above the groups, then
 // Execution (do the work) above Analytics (measure it); the Optimization
 // group is gone, its items moved under Execution.
 describe('the sidebar groups', () => {

@@ -414,7 +414,7 @@ describe('getReportBranding', () => {
     });
   });
 
-  it('fails, rather than giving Ansvisor’s look, when a logo can’t be read', async () => {
+  it('fails, rather than giving Oppla’s look, when a logo can’t be read', async () => {
     vi.spyOn(console, 'error').mockImplementation(() => {});
     kit = { company_name: 'Acme Agency', logo_path: `${ORG}/kit/${OTHER_ORG}.png` };
     expect(await actions.getReportBranding(BRAND)).toEqual({ ok: false, failure: 'failed' });

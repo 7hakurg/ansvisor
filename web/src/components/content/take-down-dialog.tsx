@@ -27,7 +27,7 @@ export interface TakeDownPage {
 
 /**
  * Take down (AUTONOMOUS-GO-LIVE §6.4, PR 10): a person's click that takes a
- * page published through Ansvisor back down to a draft in its CMS, from the
+ * page published through Oppla back down to a draft in its CMS, from the
  * Inbox notice, Chat's Activity and the Content Library. It says first what
  * happens, Keep it live focused; a refusal stays in the dialog, in the
  * CMS's words. Rendered only while open.

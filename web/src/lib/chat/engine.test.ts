@@ -82,7 +82,7 @@ vi.mock('@/lib/help/search', async (importOriginal) => {
         approved: true,
       },
       sections: [
-        { heading: null, text: 'A prompt is a question Ansvisor asks the AI engines every day.' },
+        { heading: null, text: 'A prompt is a question Oppla asks the AI engines every day.' },
         { heading: 'Add one prompt', text: 'On Tracked Prompts, click Add prompt and save.' },
         { heading: 'Add many at once', text: 'Open the Bulk import tab and upload a file.' },
       ],
@@ -472,7 +472,7 @@ function scripted(modelId: string, script: Step[]) {
   return { model, seen, script };
 }
 
-/** Auto: the read script for Haiku, the write script for Sonnet; on Ansvisor's key unless `key` says. */
+/** Auto: the read script for Haiku, the write script for Sonnet; on Oppla's key unless `key` says. */
 function useModels(
   read: Step[],
   write: Step[],
@@ -1078,7 +1078,7 @@ describe('answers from Help (W1-30)', () => {
     expect(ofType(events, 'step.finished')[0].data.step).toMatchObject({
       kind: 'read',
       status: 'done',
-      label: 'Read Ansvisor Help',
+      label: 'Read Oppla Help',
       detail: 'Add prompts to track',
     });
     expect(ofType(events, 'run.finished')[0].data).toMatchObject({ dataAsOf: null, sources: [] });
@@ -1107,7 +1107,7 @@ describe('answers from Help (W1-30)', () => {
     expect(haiku.seen).toHaveLength(0);
     expect(fakes.reserve).toHaveBeenCalledTimes(1);
     expect(answerOf(runId)).toBe(`${ANSWER}\n\n${SOURCE}`);
-    expect(stepsOf(runId)[0]).toMatchObject({ label: 'Read Ansvisor Help', cache_hit: true });
+    expect(stepsOf(runId)[0]).toMatchObject({ label: 'Read Oppla Help', cache_hit: true });
     expect(db.tables.help_answer_cache[0].hits).toBe(1);
   });
 
@@ -1164,7 +1164,7 @@ describe('answers from Help (W1-30)', () => {
     const runId = await turn(ADMIN, 'How do I add a prompt?');
     expect(haiku.seen).toHaveLength(0);
     expect(runRow(runId).status).toBe('paused_cap');
-    expect(stepsOf(runId)[0]).toMatchObject({ label: 'Read Ansvisor Help', status: 'skipped' });
+    expect(stepsOf(runId)[0]).toMatchObject({ label: 'Read Oppla Help', status: 'skipped' });
   });
 
   it('answers as usual when the small model fails before it wrote a word', async () => {
@@ -1179,7 +1179,7 @@ describe('answers from Help (W1-30)', () => {
     );
     vi.spyOn(console, 'error').mockImplementation(() => {});
     const runId = await turn(ADMIN, 'How do I add a prompt?');
-    expect(stepsOf(runId)[0]).toMatchObject({ label: 'Read Ansvisor Help', status: 'error' });
+    expect(stepsOf(runId)[0]).toMatchObject({ label: 'Read Oppla Help', status: 'error' });
     expect(holds[0].release).toHaveBeenCalled();
     expect(holds[0].charge).not.toHaveBeenCalled();
     expect(sonnet.seen).toHaveLength(1);
@@ -4075,7 +4075,7 @@ describe('the own AI key (AGENT-OWN-KEY §5.2)', () => {
     });
   });
 
-  it('leaves Ansvisor’s own key failing to the old path: the writing model reads, nothing marked', async () => {
+  it('leaves Oppla’s own key failing to the old path: the writing model reads, nothing marked', async () => {
     const { sonnet } = useModels([refused], [text('Hi.')]);
     const runId = await turn(ADMIN, 'Hello');
     expect(sonnet.seen).toHaveLength(1);
@@ -6496,12 +6496,12 @@ describe('skills (W2-04, CHAT-13 items 3–6)', () => {
       kind: 'skill',
       status: 'done',
       label: 'Used skill: FAQ from fan-outs',
-      detail: 'Ansvisor library',
+      detail: 'Oppla library',
       tool: USE_SKILL_TOOL,
       debug_json: { skill: 'faq', via: 'typed' },
     });
     // A task, not a how-to question: Help didn't answer it, the models did.
-    expect(stepsOf(runId).some((s) => s.label === 'Read Ansvisor Help')).toBe(false);
+    expect(stepsOf(runId).some((s) => s.label === 'Read Oppla Help')).toBe(false);
     for (const options of [haiku.seen[0], sonnet.seen[0]]) {
       const systems = systemsOf(options);
       expect(systems).toHaveLength(3);
@@ -6517,7 +6517,7 @@ describe('skills (W2-04, CHAT-13 items 3–6)', () => {
       kind: 'skill',
       status: 'done',
       label: 'Used skill: FAQ from fan-outs',
-      detail: 'Ansvisor library',
+      detail: 'Oppla library',
     });
     expectClean(events);
   });
@@ -6789,7 +6789,7 @@ describe('skills (W2-04, CHAT-13 items 3–6)', () => {
       warn.mockRestore();
     });
 
-    it('leaves out an Ansvisor skill the workspace turned off', async () => {
+    it('leaves out an Oppla skill the workspace turned off', async () => {
       db.tables.chat_settings = [
         {
           organization_id: ORG,
@@ -6868,7 +6868,7 @@ describe('shortcuts (W2-09, CHAT-08 items 4, 7, 8)', () => {
       position: 1,
       kind: 'skill',
       label: 'Used shortcut: Analyze',
-      detail: 'Ansvisor library',
+      detail: 'Oppla library',
       debug_json: { skill: 'analyze', via: 'shortcut' },
     });
     // Its body below the rules, for both models; never listed as a skill to pick.
@@ -6946,7 +6946,7 @@ describe('shortcuts (W2-09, CHAT-08 items 4, 7, 8)', () => {
       'refresh',
     ]);
     expect(JSON.stringify(haiku.seen[1].prompt)).toContain('limit_reached');
-    expect(stepsOf(runId).some((s) => s.label === 'Read Ansvisor Help')).toBe(false);
+    expect(stepsOf(runId).some((s) => s.label === 'Read Oppla Help')).toBe(false);
   });
 
   it('keeps nothing of it while the new Chat is off', async () => {
@@ -7740,7 +7740,7 @@ describe('the skill draft card (W3-08, CHAT-13 item 12)', () => {
       ok: false,
       status: 400,
       code: 'invalid',
-      message: '/winback is an Ansvisor skill or shortcut. Pick another name.',
+      message: '/winback is an Oppla skill or shortcut. Pick another name.',
     });
     expect(runRow(runId).status).toBe('waiting');
     expect(db.tables.chat_skills).toEqual([]);
@@ -9142,8 +9142,8 @@ describe('the run’s model (W4-03)', () => {
   });
 });
 
-describe('"Use Ansvisor’s limit" (W4-06)', () => {
-  it('runs on Ansvisor’s key when an Admin asks, and never for anyone else', async () => {
+describe('"Use Oppla’s limit" (W4-06)', () => {
+  it('runs on Oppla’s key when an Admin asks, and never for anyone else', async () => {
     useModels([READY], [text('Done.')]);
     const started = await engine.startChatRun(ADMIN, {
       message: 'Which pages does Perplexity cite?',

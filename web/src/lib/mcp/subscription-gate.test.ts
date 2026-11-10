@@ -4,7 +4,7 @@ import { InMemoryTransport } from '@modelcontextprotocol/sdk/inMemory.js';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 /**
- * The MCP server on a read-only workspace (Ansvisor Cloud, plan not active):
+ * The MCP server on a read-only workspace (Oppla Cloud, plan not active):
  * list_/get_ tools answer, every other tool answers subscription_inactive.
  */
 

@@ -426,10 +426,10 @@ describe('response-parser', () => {
   describe('ChatGPT entity markup', () => {
     const text = [
       '1. <Entity category="software" value="Tesseract" disambig="Adlift AI search optimization platform"/> — tracks answers.',
-      '2. <Entity category="software" value="Ansvisor" /> — open source.',
+      '2. <Entity category="software" value="Oppla" /> — open source.',
       '3. Adlift — agency platform.',
     ].join('\n');
-    const brand = { brandName: 'Ansvisor', domains: ['ansvisor.com'] };
+    const brand = { brandName: 'Oppla', domains: ['ansvisor.com'] };
     const competitors = [
       { id: 'tesseract', name: 'Tesseract', domain: null },
       { id: 'adlift', name: 'Adlift', domain: null },
@@ -457,7 +457,7 @@ describe('response-parser', () => {
     });
 
     it('counts a brand named only inside a tag', () => {
-      expect(countBrandMentions('Try <Entity category="software" value="Ansvisor"/>.', brand)).toBe(
+      expect(countBrandMentions('Try <Entity category="software" value="Oppla"/>.', brand)).toBe(
         1,
       );
     });

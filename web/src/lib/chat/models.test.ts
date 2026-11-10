@@ -29,7 +29,7 @@ describe('CHAT_MODELS', () => {
     expect(serverHosts('openai')).toBeNull();
   });
 
-  it('tests a model whose hosts Ansvisor limits only once the AI budget prices it at theirs (W4-36)', () => {
+  it('tests a model whose hosts Oppla limits only once the AI budget prices it at theirs (W4-36)', () => {
     // DeepSeek runs only on US and EU hosts (W4-34), dearer than the catalog's price, which is
     // its cheapest provider's: on that price the budget would count less than it costs.
     const limited = CHAT_MODELS.filter((model) => openRouterRouting(model.id).only);

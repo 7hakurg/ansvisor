@@ -401,7 +401,7 @@ describe('ChatComposer: a pasted API key (W4-05)', () => {
 
 describe('ChatComposer: context chips and the ghost suggestion (W1-11)', () => {
   const chips = [
-    { key: 'brand', label: 'Ansvisor' },
+    { key: 'brand', label: 'Oppla' },
     { key: 'range', label: 'Last 30 days' },
     { key: 'prompt', label: 'Best AI search visibility tools for small agencies' },
   ];
@@ -414,7 +414,7 @@ describe('ChatComposer: context chips and the ghost suggestion (W1-11)', () => {
   it('shows the chips by name, cuts a long one with the whole name in its tooltip, and sends them', async () => {
     const onRemoveChip = vi.fn();
     await render({ chips, onRemoveChip });
-    expect(chipTexts()).toEqual(['Ansvisor×', 'Last 30 days×', 'Best AI search visibility t…×']);
+    expect(chipTexts()).toEqual(['Oppla×', 'Last 30 days×', 'Best AI search visibility t…×']);
     const long = container.querySelectorAll('[data-action="composer.removeChip"]')[2];
     expect(long.parentElement!.getAttribute('title')).toBe(chips[2].label);
     expect(long.getAttribute('aria-label')).toBe(`Remove ${chips[2].label}`);

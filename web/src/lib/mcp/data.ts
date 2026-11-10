@@ -678,7 +678,7 @@ export type AcceptPromptSuggestionResult =
  * it: topic suggestions are the topics it can add itself.
  */
 export const MCP_NO_TOPICS_MESSAGE =
-  'This brand has no topics yet. Prompts are grouped under topics, so add a topic first: accept one from list_topic_suggestions with accept_topic_suggestion, or add one in Ansvisor under Prompts › Topics. Then accept the prompt suggestion again.';
+  'This brand has no topics yet. Prompts are grouped under topics, so add a topic first: accept one from list_topic_suggestions with accept_topic_suggestion, or add one in Oppla under Prompts › Topics. Then accept the prompt suggestion again.';
 
 /**
  * Accept one pending prompt suggestion by creating a tracked prompt, then
@@ -1095,7 +1095,7 @@ export async function generateBriefFor(
     .maybeSingle();
   if (!ownership || !(await mayUseBrand(auth, ownership.brand_id))) return null;
   // No brief (an LLM call) on the demo brand, nor for a read-only workspace, whoever asks.
-  // Only Ansvisor Cloud has demo brands: self-hosted reads nothing for it.
+  // Only Oppla Cloud has demo brands: self-hosted reads nothing for it.
   if (
     await callOnDemoBrand('generate_content_brief', auth.organizationId, {
       opportunity_id: opportunityId,
@@ -3830,7 +3830,7 @@ export async function createImproveActionFor(
     : ownership.prompt_sets;
   if (!(await mayUseBrand(auth, promptSet?.brand_id))) return null;
   // No Improve action (an LLM call) on the demo brand, nor for a read-only workspace, whoever asks.
-  // Only Ansvisor Cloud has demo brands: self-hosted reads nothing for it.
+  // Only Oppla Cloud has demo brands: self-hosted reads nothing for it.
   if (
     await callOnDemoBrand('create_improve_action', auth.organizationId, {
       prompt_id: input.promptId,

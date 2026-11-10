@@ -80,7 +80,7 @@ describe('ownKeyCapReached', () => {
       renewsAt: '2026-11-20T09:00:00.000Z',
     });
 
-    // Chat on Ansvisor's key: the guard isn't read at all.
+    // Chat on Oppla's key: the guard isn't read at all.
     fetchMock.mockClear();
     onOwnKey.value = false;
     expect(await ownKeyCapReached(ORG, { fresh: true })).toBeNull();

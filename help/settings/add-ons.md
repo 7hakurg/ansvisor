@@ -49,4 +49,4 @@ Only admins buy packs. Everyone else sees the packs and **Ask your Admin**, whic
 
 ## Purchases and invoices
 
-Admins see **Purchases**: the date, the pack, the price, its status (**Processing**, **Active**, **Used up**, **Expired**, **Ended** or **Refunded**), what is left, and a download for its invoice. Refunds are made by the Ansvisor team; a refund takes back what the pack hasn't used yet.
+Admins see **Purchases**: the date, the pack, the price, its status (**Processing**, **Active**, **Used up**, **Expired**, **Ended** or **Refunded**), what is left, and a download for its invoice. Refunds are made by the Oppla team; a refund takes back what the pack hasn't used yet.

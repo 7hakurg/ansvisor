@@ -52,7 +52,7 @@ const GROUPS: RowState[] = ['missing', 'check', 'ok'];
 type Row = {
   state: RowState;
   title: string;
-  /** A word beside the title: the schema Ansvisor adds is "Added". */
+  /** A word beside the title: the schema Oppla adds is "Added". */
   pill?: string;
   detail: string;
   /** The Article schema's Leave it out, or Add it back once left out (00448). */
@@ -78,7 +78,7 @@ export interface ReadyToPaste {
  * (nothing else blocks), what the CMS does for the page (its author, dates
  * and schema), Ready to paste (no placeholders, images with alt text, links
  * that work), and for an article the Article JSON-LD with its author that
- * Ansvisor adds to the page it sends and exports (customer priorities item
+ * Oppla adds to the page it sends and exports (customer priorities item
  * 7, 00448), from the page's facts only: the person can leave it out for a
  * CMS that writes its own, and a page with an Article schema of its own
  * gets none. Mark ready anyway is logged with
@@ -174,9 +174,9 @@ export function BeforePublish({
   pageType: string | null;
   /** The page's own image (firstImage). */
   image: string | null;
-  /** The Article schema Ansvisor adds to an article page as it goes out (00448). */
+  /** The Article schema Oppla adds to an article page as it goes out (00448). */
   articleSchema: AddedArticleSchema;
-  /** The page has an Article schema of its own: Ansvisor adds none. */
+  /** The page has an Article schema of its own: Oppla adds none. */
   ownArticleSchema?: boolean;
   /** Leave it out (true) or Add it back (false), kept on the draft. */
   onSchemaLeftOut?: (leftOut: boolean) => void;
@@ -218,7 +218,7 @@ export function BeforePublish({
         .sort((a, b) => b.gain - a.gain)
     : [];
   const article = !product && !category && isArticlePage(pageType);
-  // What Ansvisor does with the page's Article schema (articleSchemaPlan's, from the dialog's facts).
+  // What Oppla does with the page's Article schema (articleSchemaPlan's, from the dialog's facts).
   const schemaPlan: ArticleSchemaPlan = !article
     ? 'none'
     : ownArticleSchema
@@ -257,7 +257,7 @@ export function BeforePublish({
     : itemListLd
       ? itemListLd
       : article && schemaPlan !== 'own'
-        ? // The code Ansvisor adds, or, left out, the code to paste.
+        ? // The code Oppla adds, or, left out, the code to paste.
           jsonLdScript(
             articleJsonLd({ ...articleSchema.input, image, today: localDate(new Date()) }),
           )
@@ -312,7 +312,7 @@ export function BeforePublish({
               detail: t('author.inContent', { line: contentByline }),
             }
           : schemaPlan === 'added'
-            ? // Named in the Article schema Ansvisor adds (00448).
+            ? // Named in the Article schema Oppla adds (00448).
               {
                 state: 'ok',
                 title: t('author.inSchema', { name: author.name }),

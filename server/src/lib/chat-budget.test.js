@@ -407,7 +407,7 @@ describe('a Chat step on the AI budget', () => {
     );
   });
 
-  it('shows Ansvisor-key steps in their own Chat row, and says Chat is metered', async () => {
+  it('shows Oppla-key steps in their own Chat row, and says Chat is metered', async () => {
     spent(1);
     const id = await budget.reserveChatStep('o1', step());
     await budget.chargeChatStep('o1', id, {
@@ -1412,7 +1412,7 @@ describe('about how much of the limit a Chat run uses (CHAT-12 item 7)', () => {
 });
 
 describe('a scheduled run’s use (CHAT-12 item 24)', () => {
-  it('keeps its Chat run’s spend on Ansvisor’s key as a share of the included budget, as steps settle', async () => {
+  it('keeps its Chat run’s spend on Oppla’s key as a share of the included budget, as steps settle', async () => {
     const JOB = '0b6c2f2e-6a43-4c55-9f0e-3f4f1d2a7c0b';
     scheduleRuns.push({ id: 'sr1', run_id: RUN, usage_share: 0 });
     // Starter's included budget is $5: an earlier step of $0.10 and an own-key one that doesn't count.

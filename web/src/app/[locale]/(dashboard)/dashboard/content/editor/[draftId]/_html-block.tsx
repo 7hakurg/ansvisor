@@ -23,7 +23,7 @@ import { HtmlBlockNode } from '@/lib/content/html-block-node';
 /**
  * HTML blocks (the user's request beside CE-020, as Webflow's custom code in
  * rich text): code the page carries as written, a widget, an embed, a form,
- * as many as the page needs. Ansvisor never runs it: the editor shows it as
+ * as many as the page needs. Oppla never runs it: the editor shows it as
  * text, the draft stores it encoded (html-allowlist.ts), and Copy HTML gives
  * it back unchanged.
  */

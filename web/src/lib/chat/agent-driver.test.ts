@@ -512,7 +512,7 @@ describe('handing a started run to Chat', () => {
       ['changed since', () => (skill.body = 'Send it to the press list.')],
       ['deleted', () => (db.tables.chat_skills = [])],
       [
-        'an Ansvisor skill turned off',
+        'an Oppla skill turned off',
         () => (db.tables.chat_settings = [{ organization_id: ORG, disabled_skills: ['winback'] }]),
       ],
     ];

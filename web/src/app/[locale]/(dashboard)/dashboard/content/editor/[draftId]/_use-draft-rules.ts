@@ -39,7 +39,7 @@ import type { DraftReads } from './_use-draft-reads';
 export interface DraftRulesState {
   /** The page type whose set applies. */
   setType: PageType | null;
-  /** The set the draft's rules come from: Ansvisor's default or the workspace's My rules. */
+  /** The set the draft's rules come from: Oppla's default or the workspace's My rules. */
   source: 'default' | 'mine';
   rules: { rule: ActiveRule; status: RuleStatus }[];
   /** The person's own rules, each checked as a number or by AI (not counted). */
@@ -73,7 +73,7 @@ export interface DraftRulesState {
   checkHtml: (html: string, characters: number) => { rule: ActiveRule; status: RuleStatus }[];
   /** Turns a rule on or off, or gives it a value, for this draft. */
   change: (key: string, change: { on?: boolean; value?: string }) => void;
-  /** Loads a set into the draft: a type's Ansvisor default, or the workspace's My rules for it. */
+  /** Loads a set into the draft: a type's Oppla default, or the workspace's My rules for it. */
   pickSet: (type: PageType, source: 'default' | 'mine') => void;
   /** Adds rules in the person's own words, one per line. */
   addTextRules: (lines: string[]) => void;
@@ -81,7 +81,7 @@ export interface DraftRulesState {
   changeTextRule: (id: string, change: { text?: string; on?: boolean }) => void;
   /** Save as my rules: the draft's choices become the workspace's set for the type. */
   saveAsMine: () => void;
-  /** Back to Ansvisor's default set for the type. */
+  /** Back to Oppla's default set for the type. */
   reset: () => void;
 }
 
@@ -269,7 +269,7 @@ export function useDraftRules({
   };
   const save = (next: DraftRules, message: string) => {
     if (locked()) return;
-    // Before My rules are read, the draft would save Ansvisor's set over the workspace's.
+    // Before My rules are read, the draft would save Oppla's set over the workspace's.
     if (!mineRead) return;
     // Past the database's size check the save would fail: the change stays out.
     if (!draftRulesFit(next)) {

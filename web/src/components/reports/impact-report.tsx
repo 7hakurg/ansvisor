@@ -30,6 +30,7 @@ import {
 import { cn } from '@/lib/utils';
 import { useBrandStore } from '@/stores/use-brand-store';
 import { OUTCOME_PILL, PILL, outcomeLabel, signed, type ImpactWords } from './impact-parts';
+import { siteConfig } from '@/config/site';
 
 const CHIP = 'inline-flex items-center rounded-full border bg-muted/40 px-2 py-0.5 text-xs';
 
@@ -66,7 +67,7 @@ const timeOf = (iso: string) =>
   new Date(iso).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false });
 
 /**
- * Reports › "What Ansvisor did for you" (CHAT-22 feature 2 item 5, mockup
+ * Reports › "What Oppla did for you" (CHAT-22 feature 2 item 5, mockup
  * signature #f-impact): the month's shipped changes on the brand on screen,
  * each against untouched similar prompts. The headline counts only Medium
  * and High confidence verdicts; the table lists every change, with its
@@ -146,7 +147,7 @@ export function ImpactReportView() {
       confidence: (confidence) => t(`confidence.${confidence}`),
       source: (source) => t(`source.${source}`),
     });
-    const name = `ansvisor-impact-${month.year}-${String(month.month + 1).padStart(2, '0')}.csv`;
+    const name = `${siteConfig.fileWord}-impact-${month.year}-${String(month.month + 1).padStart(2, '0')}.csv`;
     saveBlob(new Blob([csv], { type: 'text/csv;charset=utf-8' }), name);
     toast(t('exported', { name }));
   }, [report, month, t]);

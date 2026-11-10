@@ -621,7 +621,7 @@ describe('SuggestionsCard — shopping questions from the catalog (ECOM-003)', (
     const [plain, shopping] = [...rows()];
     expect(plain.textContent).not.toContain('Your catalog');
     expect(shopping.textContent).toContain('Your catalog');
-    expect(shopping.textContent).toContain('Ansvisor Agents');
+    expect(shopping.textContent).toContain('Oppla Agents');
   });
 
   it('lists only the shopping questions on ?source=shopping', async () => {
@@ -675,7 +675,7 @@ describe('SuggestionsCard — a failed read', () => {
     });
     expect(actions.getPromptSuggestions).toHaveBeenCalledTimes(2);
     expect(container.textContent).toContain("Couldn't load suggestions");
-    expect(container.textContent).toContain("Ansvisor isn't answering right now.");
+    expect(container.textContent).toContain("Oppla isn't answering right now.");
     expect(container.textContent).not.toContain('Minified React error');
 
     actions.getPromptSuggestions.mockResolvedValue({
@@ -708,7 +708,7 @@ describe('SuggestionsCard — a failed read', () => {
     await act(async () => {
       await vi.advanceTimersByTimeAsync(1500);
     });
-    expect(container.textContent).toContain("Ansvisor isn't answering right now.");
+    expect(container.textContent).toContain("Oppla isn't answering right now.");
     expect(container.textContent).not.toContain('Minified React error');
   });
 });

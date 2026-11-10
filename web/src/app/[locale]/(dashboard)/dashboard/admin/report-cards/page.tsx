@@ -9,7 +9,7 @@ export const dynamic = 'force-dynamic';
 
 /**
  * The free report card's admin view (REPORT-CARD §7): requests, cards,
- * cost against the month's budget and failures. Only for Ansvisor staff
+ * cost against the month's budget and failures. Only for Oppla staff
  * (STAFF_EMAILS, lib/chat/staff.ts, as Chat's Debug view); for anyone
  * else, a customer's Admin too, the page isn't there. Not linked from the
  * menu.

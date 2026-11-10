@@ -2,7 +2,7 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 /**
- * POST /api/agent/chat on a read-only workspace (Ansvisor Cloud, plan not
+ * POST /api/agent/chat on a read-only workspace (Oppla Cloud, plan not
  * active): a chat turn is an action, so it answers 402 subscription_inactive
  * before anything else; an active plan, or self-hosted, goes on to the
  * conversation check.

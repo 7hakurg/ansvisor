@@ -12,7 +12,7 @@ import { fileStamp } from '../stamp';
  * server (POST /api/internal/chat/schedules/email, CRON_SECRET), which
  * checks the recipients as it sends — the creator and the workspace's
  * people the job names, still members, still reaching its brand — and
- * sends through Resend, from "Ansvisor" or the white label kit's company:
+ * sends through Resend, from "Oppla" or the white label kit's company:
  *
  *   - a run that is done (not "No change"), for a job that delivers by
  *     e-mail: its answer as a PDF, the one the answer's own Download › PDF

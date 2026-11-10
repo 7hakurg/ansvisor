@@ -35,7 +35,7 @@ const CMS_NAMES = { webflow: 'Webflow', wix: 'Wix' } as const;
 /**
  * IndexNow (#2142, part B; 00491) for the active brand: pages that go live
  * through Send to CMS are announced once to Bing, Yandex and the others.
- * Admins and managers set it up: Ansvisor makes a key, the person puts its
+ * Admins and managers set it up: Oppla makes a key, the person puts its
  * file at the site's root, and Check reads it back; then they can turn it
  * off. Members see whether it is on. A brand on Webflow or Wix, which can't
  * put a file at the site's root, keeps it off with a note.

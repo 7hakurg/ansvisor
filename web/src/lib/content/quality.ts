@@ -1,7 +1,7 @@
 /**
  * The Content Editor's Quality scores (Quality spec §2): E-E-A-T, Trust and
  * Readability, 0–100 each, shown in Instructions › Quality and as one
- * "Quality {avg}" chip in the header. Ansvisor estimates, not Google scores.
+ * "Quality {avg}" chip in the header. Oppla estimates, not Google scores.
  */
 
 /** Which of the spec's three phases are live (NEXT_PUBLIC_CONTENT_QUALITY_PHASE): 0 is none. */

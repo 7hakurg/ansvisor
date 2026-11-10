@@ -4,7 +4,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import messages from '../../../../../../../messages/en.json';
 
-/** "Why Ansvisor Product Visibility?" (ECOM-010). */
+/** "Why Oppla Product Visibility?" (ECOM-010). */
 
 const connect = vi.hoisted(() => vi.fn());
 vi.mock('@/hooks/use-integration-connect', () => ({
@@ -60,7 +60,7 @@ describe('WhyDialog', () => {
     ]);
     expect(document.body.textContent).toContain('From AI shelf to cart');
     expect(document.body.textContent).toContain(
-      "Most tools tell you if you're visible. Ansvisor shows why, fixes it and shows the sales.",
+      "Most tools tell you if you're visible. Oppla shows why, fixes it and shows the sales.",
     );
   });
 

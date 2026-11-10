@@ -1,11 +1,12 @@
 import type { CardCopy, TargetKind } from './copy';
 import { countryIn, languageIn } from './copy-names';
+import { siteConfig } from '@/config/site';
 
 /**
  * The report card in Turkish, for Türkiye (owner decision 2026-11-04: the
  * whole card in the target language). Sentences never put a Turkish case
  * ending on a brand, a site or a question, which would need vowel harmony
- * for each name: "{marka} markası", "{site} sitesinde". Ansvisor's own
+ * for each name: "{marka} markası", "{site} sitesinde". Oppla's own
  * product, feature and button names stay in English, as the app shows them
  * (owner decision 2026-11-08), a suffix after an apostrophe as the English
  * is said: "Action Center’ı", "Agent Center’da". The country and the
@@ -40,7 +41,7 @@ export const tr: CardCopy = {
   language: (english) => languageIn('tr', english),
   document: (company) => `Yapay zekâ görünürlük karnesi: ${company}`,
   footer: (page, pages) => `${page} / ${pages}`,
-  brand: 'Ansvisor ile hazırlandı · www.ansvisor.com',
+  brand: `${siteConfig.name} ile hazırlandı · ${siteConfig.host}`,
   engines: {
     count: (n) => `${n} yapay zekâ motoru`,
     the: (n) => `${n} motor`,
@@ -53,7 +54,7 @@ export const tr: CardCopy = {
     title: (company) => `${company}, yapay zekâ yanıtlarında ne kadar görünür?`,
     subtitle: (domain, country, language, date) => `${domain} · ${country}, ${language} · ${date}`,
     oneTime: (date) =>
-      `Tek seferlik bir ölçüm: her soruyu ${date} tarihinde bir kez sorduk. Yapay zekâ yanıtları her gün değişir; Ansvisor bu soruları her gün sorar.`,
+      `Tek seferlik bir ölçüm: her soruyu ${date} tarihinde bir kez sorduk. Yapay zekâ yanıtları her gün değişir; Oppla bu soruları her gün sorar.`,
     understood: (domain, readers) =>
       readers
         ? `${domain} sitesini şöyle anladık: yayın konuları`
@@ -85,7 +86,7 @@ export const tr: CardCopy = {
     byEngine: 'Motorlara göre görünürlük',
     engineValue: (named, answers, pct) => `${answers} yanıtta ${named} · %${pct}`,
     growthBand: (starter) =>
-      `Ansvisor Growth’ta: Google’ın yapay zekâ motorları, bunları da ölçtük. Starter ${starter} motorlarını izler; Growth bunları ekler.`,
+      `Oppla Growth’ta: Google’ın yapay zekâ motorları, bunları da ölçtük. Starter ${starter} motorlarını izler; Growth bunları ekler.`,
     whoNamed: 'Yapay zekâ kimi öneriyor',
     noCompetitor: 'Hiçbir rakip anılmadı.',
     you: (name) => `${name} (siz)`,
@@ -236,10 +237,10 @@ export const tr: CardCopy = {
     eyebrow: 'Planınız',
     title: 'Üç bulgu ve ilk haftada yapacaklarınız',
     subtitle: (company) =>
-      `${company} sonuçlarından sabit kurallarla seçildi: karnenin bulduğu, ilk yapılacak iş ve Ansvisor’ın yardım ettiği yer.`,
+      `${company} sonuçlarından sabit kurallarla seçildi: karnenin bulduğu, ilk yapılacak iş ve Oppla’ın yardım ettiği yer.`,
     finding: 'Bulgu',
     weekOne: 'İlk hafta',
-    inAnsvisor: 'Ansvisor’da',
+    inAnsvisor: 'Oppla’da',
     feature: {
       contentEditor: 'Content Editor',
       citations: 'Citations',
@@ -267,7 +268,7 @@ export const tr: CardCopy = {
     autoTitle: 'Ya da ajanlar kendi başına yayınlasın',
     autoBody:
       'Full auto modunda, bir Admin’in açtığı iki ayarla, seçtiğiniz ajanlar sayfaları tıklamanız olmadan CMS’inize gönderir ya da yayınlar: günde 1 ile 20 arası. Quality ya da marka bilgileri kontrolünden geçmeyen sayfa sizi bekler. Growth’ta.',
-    examplePrompt: 'Ansvisor’ın sizin için her gün izleyeceği bir soru:',
+    examplePrompt: 'Oppla’ın sizin için her gün izleyeceği bir soru:',
   },
 
   // ─── Sayfa 4 ───────────────────────────────────────────────────────────────
@@ -275,7 +276,7 @@ export const tr: CardCopy = {
     eyebrow: 'Değeri',
     title: 'Yapay zekâ ziyaretlerinin değeri ve bu karne için planlar',
     subtitle:
-      'Yapay zekâ ziyaretleri, aynı tıklamaların Google Ads’teki fiyatıyla; iki plan yan yana; ve Ansvisor’ın nasıl yardım ettiği.',
+      'Yapay zekâ ziyaretleri, aynı tıklamaların Google Ads’teki fiyatıyla; iki plan yan yana; ve Oppla’ın nasıl yardım ettiği.',
     demand: (searches, country, keywords) =>
       `Sorularınızın anahtar kelimeleri ${country} içinde ayda yaklaşık ${searches} kez Google’da aranıyor (hacmi olan ${keywords} kelime).`,
     cpcLine: (cpc, keywords, total) =>
@@ -290,7 +291,7 @@ export const tr: CardCopy = {
       `Ayda ${visits} ziyaret, Google Ads’te her ay yaklaşık ${ads}: yılda ${year}, her ay yeniden satın alınır.`,
     earning: 'Kazanmak',
     earningBody: (plan, price) =>
-      `Ansvisor ${plan} ayda ${price}. Yapay zekânın kaynak gösterdiği sayfalar, kaynak gösterildikleri sürece ziyaret getirmeye devam eder.`,
+      `Oppla ${plan} ayda ${price}. Yapay zekânın kaynak gösterdiği sayfalar, kaynak gösterildikleri sürece ziyaret getirmeye devam eder.`,
     cheap: (ads, plan, price) =>
       `Pazarınızda tıklamalar ucuz: bu ziyaretler Ads’te ayda yaklaşık ${ads} tutar, ${price} olan ${plan} planından az. Reklamın satın alamadığı şey, alıcılarınız sorduğunda yapay zekânın önerdiği marka olmaktır.`,
     slow: 'Yapay zekâ ziyaretleri aylar içinde birikir: ilk ay kurulum ve ilk sayfalarla geçer, henüz ziyaret değil.',
@@ -305,9 +306,9 @@ export const tr: CardCopy = {
       `Ortalama ${kind === 'order' ? 'sipariş' : 'anlaşma'} değeriniz: ${value}. Varsayım: yapay zekâ ziyaretlerinin ${low} ile ${high} arası ${kind === 'order' ? 'siparişe' : 'anlaşmaya'} dönüşür, diğer ziyaretlerden daha iyi değil.`,
     revenueRow: (visits, low, high) => `Ayda ${visits} yapay zekâ ziyareti: ayda ${low}–${high}`,
     scenarios:
-      'Senaryodur; tahmin ya da garanti değildir. Ansvisor’daki AI Traffic, kurulduktan sonra gerçek yapay zekâ ziyaretlerinizi ölçer.',
+      'Senaryodur; tahmin ya da garanti değildir. Oppla’daki AI Traffic, kurulduktan sonra gerçek yapay zekâ ziyaretlerinizi ölçer.',
     planTitle: 'Bu karne için planlar',
-    planName: (plan) => `Ansvisor ${plan}`,
+    planName: (plan) => `Oppla ${plan}`,
     starterTag: 'Bu karneye uyan',
     growthTag: 'Google motorlarını ekler',
     perMonth: (price) => `aylık ${price}`,
@@ -328,13 +329,13 @@ export const tr: CardCopy = {
     siteAudits: (pages) => `Site Audit: ayda ${pages} sayfa.`,
     starterAgents: 'Chat ve her değişiklikten önce soran ajanlarıyla Agent Center.',
     growthAgents: 'Full auto: seçtiğiniz ajanlar kendi başına yayınlar.',
-    mcpRead: 'MCP: Ansvisor verilerinizi yapay zekâ araçlarından okuyun.',
-    mcpReadWrite: 'MCP: Ansvisor verilerinizi yapay zekâ araçlarından okuyun ve yazın.',
-    workTitle: 'Ansvisor işi sizinle birlikte yapar',
+    mcpRead: 'MCP: Oppla verilerinizi yapay zekâ araçlarından okuyun.',
+    mcpReadWrite: 'MCP: Oppla verilerinizi yapay zekâ araçlarından okuyun ve yazın.',
+    workTitle: 'Oppla işi sizinle birlikte yapar',
     work: [
       {
         title: 'Chat',
-        body: 'Kendi Ansvisor verilerinizden yanıt verir, bu karnenin ilk hafta işlerini hazırlar ve eklediğiniz dosyaları okur.',
+        body: 'Kendi Oppla verilerinizden yanıt verir, bu karnenin ilk hafta işlerini hazırlar ve eklediğiniz dosyaları okur.',
       },
       {
         title: 'Agent Center',
@@ -342,7 +343,7 @@ export const tr: CardCopy = {
       },
       {
         title: 'MCP',
-        body: 'Ansvisor verilerinizi Claude, ChatGPT, Cursor ve diğer yapay zekâ araçlarından kullanın.',
+        body: 'Oppla verilerinizi Claude, ChatGPT, Cursor ve diğer yapay zekâ araçlarından kullanın.',
       },
     ],
     ctaTitle: 'Kendi sorularınızı ölçün',

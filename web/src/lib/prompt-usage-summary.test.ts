@@ -23,7 +23,7 @@ describe('usagePlan', () => {
     });
   });
 
-  it('shows the limit Ansvisor set for an Enterprise customer, and asks them to contact us', () => {
+  it('shows the limit Oppla set for an Enterprise customer, and asks them to contact us', () => {
     expect(usagePlan(withLimit(PLANS.enterprise, 1000))).toEqual({
       key: 'enterprise',
       name: 'Enterprise plan',

@@ -257,7 +257,7 @@ describe('page 3', () => {
     expect(leftOut).toEqual(['jollytur.com']);
   });
 
-  it('shows the question competitors win as a prompt Ansvisor would track', () => {
+  it('shows the question competitors win as a prompt Oppla would track', () => {
     expect(examplePrompt(SAMPLE_REPORT_CARD)).toBe(
       'where to buy fresh roasted coffee beans online',
     );
@@ -667,7 +667,7 @@ describe('page 4: plans and links', () => {
 
   it('marks each trial button with its page', () => {
     expect(signUpUrlFor(1)).toBe(
-      'https://app.ansvisor.com/en/sign-up?utm_source=report-card&utm_medium=pdf&utm_content=page1',
+      'https://aeo.oppla.ai/en/sign-up?utm_source=report-card&utm_medium=pdf&utm_content=page1',
     );
     expect(signUpUrlFor(4)).toMatch(/&utm_content=page4$/);
   });

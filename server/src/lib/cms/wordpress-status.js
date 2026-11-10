@@ -8,7 +8,7 @@ import { WordPressError, answersAsWordPress, readPostState } from './wordpress.j
 
 /**
  * Pages sent to WordPress, published there since (Send to CMS #1331, phase
- * 2; 00294): nothing calls back when a post goes live, so Ansvisor reads the
+ * 2; 00294): nothing calls back when a post goes live, so Oppla reads the
  * posts its sends made. A send writes only to a draft (a live post gets a
  * new draft, cms/wordpress-delivery.js), so a post published now was put
  * live after the send: it is marked published at the post's own link (read

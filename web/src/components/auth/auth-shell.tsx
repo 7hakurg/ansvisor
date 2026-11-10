@@ -4,6 +4,7 @@ import { BarChart3, Compass, Zap } from 'lucide-react';
 import { Link } from '@/i18n/navigation';
 import { buttonVariants } from '@/components/ui/button-variants';
 import { siteConfig } from '@/config/site';
+import { LegalLinks } from './legal-links';
 import { cn } from '@/lib/utils';
 
 /**
@@ -65,35 +66,14 @@ export function AuthShell({
 
       <footer className="relative z-10 mx-auto flex w-full max-w-7xl flex-col items-center justify-between gap-3 px-4 py-6 text-sm text-muted-foreground sm:flex-row sm:px-8">
         <p>
-          &copy; {new Date().getFullYear()} {siteConfig.name}. {t('footer.openSource')}{' '}
-          <a
-            href="https://github.com/ansvisor/ansvisor/blob/main/LICENSE"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="transition-colors hover:text-foreground"
-          >
-            {t('footer.mitLicense')}
-          </a>
-          .
+          &copy; {new Date().getFullYear()} {siteConfig.name}
         </p>
-        <div className="flex items-center gap-8">
-          <a
-            href={siteConfig.legal.terms}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="transition-colors hover:text-foreground"
-          >
-            {t('footer.terms')}
-          </a>
-          <a
-            href={siteConfig.legal.privacy}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="transition-colors hover:text-foreground"
-          >
-            {t('footer.privacy')}
-          </a>
-        </div>
+        <LegalLinks
+          className="flex items-center gap-8"
+          linkClassName="transition-colors hover:text-foreground"
+          terms={t('footer.terms')}
+          privacy={t('footer.privacy')}
+        />
       </footer>
     </div>
   );

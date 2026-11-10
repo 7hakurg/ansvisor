@@ -249,7 +249,7 @@ export default function ReportDetailPage() {
   const handleDownloadPdf = async () => {
     setDownloading(true);
     try {
-      // A kit that couldn't be read is read again: a PDF in Ansvisor's look
+      // A kit that couldn't be read is read again: a PDF in Oppla's look
       // must not go to an agency's client by mistake.
       let kit = branding;
       if (kit === undefined) {

@@ -295,7 +295,7 @@ describe('ChatThreadView', () => {
     window.history.replaceState(null, '', '/dashboard/prompts');
     const tourThread: ChatThread = {
       conversationId: CHAT,
-      title: 'Ansvisor tour',
+      title: 'Oppla tour',
       brandId: null,
       mine: true,
       messages: [
@@ -360,7 +360,7 @@ describe('ChatThreadView', () => {
     await render({
       thread: {
         conversationId: CHAT,
-        title: 'Ansvisor tour',
+        title: 'Oppla tour',
         brandId: null,
         mine: true,
         messages: [

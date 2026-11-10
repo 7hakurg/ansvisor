@@ -37,7 +37,7 @@ const leaderboard = (...brands: [string, number, boolean?][]) =>
 
 const input = (over: Partial<SummaryInput> = {}): SummaryInput => ({
   trend: trend(17.4, 1.5),
-  competitors: leaderboard(['Semrush', 36.3], ['Peec AI', 18.3], ['Ansvisor', 17.4, true]),
+  competitors: leaderboard(['Semrush', 36.3], ['Peec AI', 18.3], ['Oppla', 17.4, true]),
   comparison: { basis: 'same', samePrompts: 200, newPrompts: 509, droppedPrompts: 0 },
   platformChanges: [
     { name: 'Google AI Mode', cur: 21, prev: 4.9, change: 16.1 },
@@ -63,11 +63,11 @@ describe('summary line', () => {
 
   it('says ahead when first and tied when level', () => {
     const first = summaryFacts(
-      input({ competitors: leaderboard(['Ansvisor', 20, true], ['B', 18.5]) }),
+      input({ competitors: leaderboard(['Oppla', 20, true], ['B', 18.5]) }),
       t,
     );
     const tied = summaryFacts(
-      input({ competitors: leaderboard(['Ansvisor', 20, true], ['B', 20]) }),
+      input({ competitors: leaderboard(['Oppla', 20, true], ['B', 20]) }),
       t,
     );
 

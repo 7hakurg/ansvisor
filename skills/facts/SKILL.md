@@ -17,7 +17,7 @@ Check the brand's drafts against its approved brand facts (its plans, trial, fou
 
 ## Where the facts come from
 
-Ansvisor reads the brand facts from the brand's own pricing, About and product pages, and a person approves each one in the brand's settings, on the **Brand facts** tab. Only approved facts count. Read them with `get_brand_facts`: the approved facts still on the brand's site, each in its page's own words, with when it was approved and the page it came from. Facts waiting for approval, rejected ones and ones gone from the site aren't in it.
+Oppla reads the brand facts from the brand's own pricing, About and product pages, and a person approves each one in the brand's settings, on the **Brand facts** tab. Only approved facts count. Read them with `get_brand_facts`: the approved facts still on the brand's site, each in its page's own words, with when it was approved and the page it came from. Facts waiting for approval, rejected ones and ones gone from the site aren't in it.
 
 When it returns none, say so, and ask the person to open **Brand facts** and approve the ones waiting, or to paste the facts they confirm. Never approve a fact yourself, and never use a fact that isn't approved or that the person didn't confirm.
 

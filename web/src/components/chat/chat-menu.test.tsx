@@ -71,7 +71,7 @@ const NOW = new Date('2026-10-30T12:00:00');
 const chat = (id: string, row: Partial<ChatListItem> = {}): ChatListItem => ({
   id,
   title: `Chat ${id}`,
-  brand: 'Ansvisor',
+  brand: 'Oppla',
   pinned: false,
   archived: false,
   shared: false,

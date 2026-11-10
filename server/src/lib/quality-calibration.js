@@ -4,7 +4,7 @@ import { z } from 'zod';
  * Quality's weights against AI citations (Content Editor Quality spec §11,
  * Phase 3, CE-055): "check whether pages with higher scores get more AI
  * citations … Adjust the weights from the result. Until then, the
- * 'Ansvisor estimate' label stays."
+ * 'Oppla estimate' label stays."
  *
  * It reads rows a maintainer exports, one page each: its type's profile,
  * each check's share of its points (0–1) by score, the AI citations the

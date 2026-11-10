@@ -11,7 +11,7 @@ app_version: 0.3.0
 approved: true
 sources: [docs/guides/content-optimization.mdx, docs/guides/content-editor.mdx]
 ---
-A content brief tells a writer what to write to close an opportunity's gap: the title, the type of content, the outline and the keywords. Ansvisor writes it with AI from the opportunity's data, in your brand's language. You can then write the page in the Content Editor, or hand the work on to the Action Center or your workflow tool.
+A content brief tells a writer what to write to close an opportunity's gap: the title, the type of content, the outline and the keywords. Oppla writes it with AI from the opportunity's data, in your brand's language. You can then write the page in the Content Editor, or hand the work on to the Action Center or your workflow tool.
 
 ## Generate a brief
 
@@ -43,7 +43,7 @@ An opportunity's brief is written once and stays as it is. Once the page is in t
 
 ## Send it to your workflow
 
-In the opportunity's **…** menu, click **Send to Workflow**. Ansvisor sends the opportunity, the data behind it and its brief, if it has one, and its status becomes **Sent to Workflow**. The button then reads **Send Again**. To send several at once, tick them on the list and click **Send All**.
+In the opportunity's **…** menu, click **Send to Workflow**. Oppla sends the opportunity, the data behind it and its brief, if it has one, and its status becomes **Sent to Workflow**. The button then reads **Send Again**. To send several at once, tick them on the list and click **Send All**.
 
 The webhook needs **Opportunity sent** ticked. An address that redirects isn't followed, so nothing is sent: use the address it redirects to.
 
@@ -52,7 +52,7 @@ The webhook needs **Opportunity sent** ticked. An address that redirects isn't f
 Click **Webhook Settings** at the top of the Opportunities page:
 
 - **Webhook URL**: your workflow tool's address, such as an n8n, Make or Zapier flow, or your own endpoint.
-- **Secret Key (optional)**: lets your endpoint tell that a call came from Ansvisor.
+- **Secret Key (optional)**: lets your endpoint tell that a call came from Oppla.
 - **Events to send**: **Opportunity sent**, **Daily Pulse created**, **Action Center task sent** and **Content page sent**. A new webhook has the first three ticked; **Content page sent** stays off until you tick it.
 - **Active**: turn it off to pause sending without deleting the webhook.
 

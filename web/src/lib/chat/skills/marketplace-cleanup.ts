@@ -7,7 +7,7 @@ import type { MarketplaceCleanup } from './marketplace';
  * before it is shown or added, so Chat never cites a competitor or a
  * paid-pack promo in customer content. Only the body is cleaned; the front
  * matter stays as it is. The original stays at its pinned commit on
- * GitHub, and what went is counted for "Edited by Ansvisor". The removed
+ * GitHub, and what went is counted for "Edited by Oppla". The removed
  * text itself is never shown: it names the competitor, and the product
  * never does.
  *

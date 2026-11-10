@@ -23,7 +23,7 @@ import { applyPlanOverrides } from './plan-guard.js';
  *   - The report as a PDF, attached up to 5 MB (the web renders it, as the
  *     answer's own PDF download): a bigger one, or none, is the Open in
  *     Chat link only.
- *   - From "Ansvisor", or the white label kit's company when the plan has
+ *   - From "Oppla", or the white label kit's company when the plan has
  *     white label and the kit names one, on RESEND_FROM_EMAIL's address.
  *   - A run's result goes once (chat_schedule_runs.email_status); its
  *     outcome and Resend's id are kept on the run.
@@ -96,8 +96,8 @@ export function summaryLines(markdown, max = SUMMARY_LINES) {
 
 /**
  * The name the e-mail comes from: the white label kit's company when the
- * workspace's plan has white label and the kit names one; else "Ansvisor".
- * A kit that can't be read is Ansvisor's, as the address is.
+ * workspace's plan has white label and the kit names one; else "Oppla".
+ * A kit that can't be read is Oppla's, as the address is.
  * @param {string} orgId
  */
 export async function senderNameOf(orgId) {
@@ -109,7 +109,7 @@ export async function senderNameOf(orgId) {
       .maybeSingle();
     if (error) throw new Error(error.message);
     if (!org || !hasFeature(applyPlanOverrides(getPlan(org.plan), org), 'white_label')) {
-      return 'Ansvisor';
+      return 'Oppla';
     }
     const { data: kit, error: kitError } = await supabaseAdmin
       .from('white_label_kits')
@@ -118,10 +118,10 @@ export async function senderNameOf(orgId) {
       .maybeSingle();
     if (kitError) throw new Error(kitError.message);
     const company = typeof kit?.company_name === 'string' ? kit.company_name.trim() : '';
-    return company || 'Ansvisor';
+    return company || 'Oppla';
   } catch (err) {
     logger.warn({ err, orgId }, '[chat-schedule-email] could not read the white label kit');
-    return 'Ansvisor';
+    return 'Oppla';
   }
 }
 

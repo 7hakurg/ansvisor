@@ -21,11 +21,11 @@ import { MAX_TITLE, skillChecksum, skillFileText, type SkillParts } from './skil
 
 /**
  * A workspace's own skills (CHAT-13 items 10, 12, 18–19; Chat Wave 3
- * W3-06), in chat_skills (00458), beside Ansvisor's library (library.ts):
+ * W3-06), in chat_skills (00458), beside Oppla's library (library.ts):
  *
  *   - Saving: Admins and Managers (CHAT-20 §4) save a skill made in Chat
  *     (`user`). It is checked as a SKILL.md (format.ts: the format and the
- *     scan), may not take an Ansvisor skill's name, and counts against the
+ *     scan), may not take an Oppla skill's name, and counts against the
  *     plan's My skills limit. It is approved at once, on, and private to
  *     its creator until it is shared. An import (`import`, W3-09) waits on
  *     an Admin's review; a blocked one can't be approved.
@@ -51,7 +51,7 @@ export type SkillStatus = (typeof SKILL_STATUSES)[number];
 export const SKILL_VISIBILITIES = ['private', 'workspace'] as const;
 export type SkillVisibility = (typeof SKILL_VISIBILITIES)[number];
 
-/** Where a skill comes from: Ansvisor's library, made in the workspace, or imported. */
+/** Where a skill comes from: Oppla's library, made in the workspace, or imported. */
 export type SkillSource = 'library' | 'user' | 'import';
 
 /** A skill the person may use now, as a run and the / menu see it. */
@@ -477,7 +477,7 @@ function repoOwner(url: string | null): string | null {
 
 /**
  * Where a skill comes from, under its "Used skill" step (item 4):
- * "Ansvisor library", "You", "Your workspace", or an import's repo owner.
+ * "Oppla library", "You", "Your workspace", or an import's repo owner.
  */
 export function skillSourceWords(
   skill: Pick<EnabledSkill, 'source' | 'createdBy' | 'sourceUrl'>,
@@ -689,7 +689,7 @@ export interface SavedSkill {
 /**
  * Saves a skill made in Chat (item 12): an Admin's or a Manager's, while
  * the workspace isn't read-only, checked as its SKILL.md, under the plan's
- * limit, never with an Ansvisor skill's name. Approved and on at once,
+ * limit, never with an Oppla skill's name. Approved and on at once,
  * private to its creator.
  */
 export async function saveSkill(
@@ -810,7 +810,7 @@ export async function deleteSkill(
   return { ok: true, value: { id: found.row.id } };
 }
 
-/** Turns an Ansvisor library skill on or off for the workspace: an Admin's (00458). */
+/** Turns an Oppla library skill on or off for the workspace: an Admin's (00458). */
 export async function setLibrarySkillEnabled(
   viewer: SkillViewer,
   name: string,
@@ -938,7 +938,7 @@ export async function hasLibrarySkill(
  * Keeps an imported skill for review (CHAT-13 items 13–18): an Admin's or
  * a Manager's, while the workspace isn't read-only, on a paid plan or
  * self-hosted (not in the trial, Wave 3 decision 9), under the plan's
- * limit, never with an Ansvisor skill's name. It waits off and private,
+ * limit, never with an Oppla skill's name. It waits off and private,
  * `pending_review` (or `blocked`); a Manager's asks the Admins to review it
  * (chat_access_requests, through their own session). A skill added from
  * the Library (W4-19) is kept the same way, as `library` with the catalog

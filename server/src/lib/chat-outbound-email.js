@@ -25,7 +25,7 @@ import { logger } from './logger.js';
  *     never pass the limit.
  *   - What goes: the job's title, the answer's first lines and the
  *     report's PDF; no link into the app, nothing that asks to sign in, and
- *     the footer "Sent by {person} from {workspace} via Ansvisor".
+ *     the footer "Sent by {person} from {workspace} via Oppla".
  *     Reply-To is the person who clicked Send. Through email.js (Resend).
  *   - Kept: sent (when, who, Resend's id), or pending again with why when
  *     Resend didn't take it; Cancel makes it cancelled. Each Send and
@@ -86,7 +86,7 @@ export function renderOutsideEmail({ title, summary, person, workspace, attached
   <h1 style="font-size:18px;color:#111827;margin:0 0 16px 0;">${escapeHtml(title)}</h1>
   ${lines}
   ${file}
-  <p style="font-size:12px;color:#9ca3af;border-top:1px solid #e5e7eb;padding-top:16px;">Sent by ${escapeHtml(person)} from ${escapeHtml(workspace)} via Ansvisor</p>
+  <p style="font-size:12px;color:#9ca3af;border-top:1px solid #e5e7eb;padding-top:16px;">Sent by ${escapeHtml(person)} from ${escapeHtml(workspace)} via Oppla</p>
 </div>`;
   return { subject: title, html };
 }

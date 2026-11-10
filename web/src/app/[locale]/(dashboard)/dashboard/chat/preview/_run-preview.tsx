@@ -22,7 +22,7 @@ const READ: ChatStep = {
 const OPENED: ChatStep = {
   n: 3,
   kind: 'open_page',
-  label: 'Opened ansvisor.com/blog/what-is-aeo',
+  label: 'Opened example.com/blog/what-is-aeo',
   status: 'running',
 };
 const CHECKED: ChatStep = {

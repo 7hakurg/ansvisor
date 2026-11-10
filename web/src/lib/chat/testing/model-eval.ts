@@ -171,7 +171,7 @@ const TURKISH_LETTERS = /[çğışöüÇĞİŞÖÜ]/g;
 const TURKISH_WORDS = /\b(ve|bir|bu|için|son|gün|hafta|düş\w*|neden|göre)\b/gi;
 
 /**
- * SEO and site-audit vendors Chat must not send the person to: Ansvisor's
+ * SEO and site-audit vendors Chat must not send the person to: Oppla's
  * Site Audit does the work (CHAT-05 item 9).
  */
 export const AUDIT_VENDORS = [

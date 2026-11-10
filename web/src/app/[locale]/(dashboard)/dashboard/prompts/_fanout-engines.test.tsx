@@ -7,7 +7,7 @@ import type { FanoutEngineCoverage } from '@/lib/actions/fanout';
 import { FanoutEngineNotices, FanoutEngineStrip, isSilentEngine } from './_fanout-engines';
 
 // No engine tracked today always shares its searches: Copilot and Perplexity
-// did until Ansvisor stopped tracking them on 2026-11-06
+// did until Oppla stopped tracking them on 2026-11-06
 // (config/fanout-platforms.ts). The silent-engine view stays for the next
 // one, so the two stand in for it here.
 vi.mock('@/config/fanout-platforms', async (importOriginal) => {

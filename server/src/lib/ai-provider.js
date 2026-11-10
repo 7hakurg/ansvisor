@@ -6,6 +6,7 @@
 import { createOpenAI } from '@ai-sdk/openai';
 import { createAnthropic } from '@ai-sdk/anthropic';
 import { createGoogleGenerativeAI } from '@ai-sdk/google';
+import { BRAND_NAME, BRAND_URL } from './brand.js';
 
 const providers = {};
 
@@ -84,8 +85,8 @@ if (process.env.OPENROUTER_API_KEY) {
     apiKey: process.env.OPENROUTER_API_KEY,
     baseURL: process.env.OPENROUTER_BASE_URL || 'https://openrouter.ai/api/v1',
     headers: {
-      'HTTP-Referer': process.env.OPENROUTER_SITE_URL || 'https://ansvisor.com',
-      'X-Title': process.env.OPENROUTER_SITE_NAME || 'Ansvisor',
+      'HTTP-Referer': process.env.OPENROUTER_SITE_URL || BRAND_URL,
+      'X-Title': process.env.OPENROUTER_SITE_NAME || BRAND_NAME,
     },
     fetch: openRouterFetch(OPENROUTER_ROUTING),
   });

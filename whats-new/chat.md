@@ -1,6 +1,6 @@
 ---
 feature: Chat
-home_line: Chat answers questions from your Ansvisor data and does the work with you.
+home_line: Chat answers questions from your Oppla data and does the work with you.
 route: /dashboard/chat
 plans: [starter, growth, enterprise]
 plan_mode: show_upgrade

@@ -1,7 +1,7 @@
 'use server';
 
 /**
- * Getting started (New Ansvisor, AC-ALT2 §4): the 17 setup steps in the
+ * Getting started (New Oppla, AC-ALT2 §4): the 17 setup steps in the
  * Actions page. Reads the brand's facts in one call (getting_started_facts,
  * 00196) and turns them into steps in lib/getting-started/steps.ts; stores
  * only what the data can't show — a page opened, an optional step skipped.

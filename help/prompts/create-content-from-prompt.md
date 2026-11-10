@@ -16,7 +16,7 @@ For admins and managers, each row in **Tracked Prompts** has a **…** menu with
 ## Start a page with Create content
 
 1. Click **Create content**. It opens **New content** at its Start step, titled with the prompt.
-2. Pick a page type. Ansvisor picks one from the title; change it if it's wrong, now or later in the editor.
+2. Pick a page type. Oppla picks one from the title; change it if it's wrong, now or later in the editor.
 3. Choose **Who does it**: **Me** opens the Content Editor, **Agent** writes a draft for you to review, and **Team** sends it to the Action Center.
 4. Check the overlap. Start reads your pages AI already cites for the prompt. If one already answers it, you can optimize that page instead of choosing **Create a new page**.
 

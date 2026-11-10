@@ -3,7 +3,7 @@ import { CHAT_HOME, DASHBOARD_HOME, isDashboardHomeItem, landingPageFor } from '
 import { ACTION_CENTER_TABS } from '@/lib/action-center/tabs';
 
 /**
- * New Ansvisor (AC-ALT2 §3): everything starts at the Action Center's
+ * New Oppla (AC-ALT2 §3): everything starts at the Action Center's
  * Actions, and its tabs read Actions · Signals · KPIs · History.
  */
 describe('the dashboard home', () => {

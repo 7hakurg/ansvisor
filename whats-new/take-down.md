@@ -1,6 +1,6 @@
 ---
 feature: Take down
-home_line: A page published through Ansvisor can be taken down from the Library in one click.
+home_line: A page published through Oppla can be taken down from the Library in one click.
 route: /dashboard/content/library
 plans: [starter, growth, enterprise]
 plan_mode: show_upgrade

@@ -31,6 +31,7 @@ import { topicPromptIds } from './basket-metrics.js';
 import { promptIdsOf } from './priority.js';
 import { FEATURE_CHECKS, featureGaps, pageFeatures } from './page-features.js';
 import { sketch as wordSketch, visibleText } from './task-checks.js';
+import { BOT_TOKEN } from '../brand.js';
 
 // The page checks live in page-features.js, which reads no database; kept
 // here for the imports that name this module.
@@ -51,7 +52,7 @@ const ANSWERS_READ = 300;
 /** Prompts whose answers are read, at most. */
 const PROMPTS_READ = 50;
 /** safe-fetch's User-Agent, as robots.txt names a crawler. */
-const ROBOTS_AGENT = 'ansvisorbot';
+const ROBOTS_AGENT = BOT_TOKEN.toLowerCase();
 /** The most of a robots.txt read (RFC 9309 asks crawlers to read 500 KiB). */
 const ROBOTS_MAX_BYTES = 512 * 1024;
 

@@ -1,10 +1,10 @@
 ---
 name: ansvisor-aeo-coach-standalone
 description: |
-  Standalone (no-MCP) version of the Ansvisor AEO Coach. Use this only
-  when the user's Claude client cannot connect to the Ansvisor MCP
+  Standalone (no-MCP) version of the Oppla AEO Coach. Use this only
+  when the user's Claude client cannot connect to the Oppla MCP
   server (e.g. claude.ai web without a Connector configured). Fetches
-  live data from the Ansvisor REST API directly with the user's API
+  live data from the Oppla REST API directly with the user's API
   key via code execution — visibility, competitors, citations, prompts,
   content gaps, page audits, the Action Center, and mentions and
   sentiment. For clients that support MCP (Claude Desktop, Claude Code,
@@ -12,11 +12,11 @@ description: |
   UX because tool calls are first-class instead of inline Python.
 ---
 
-# Ansvisor AEO Coach — Standalone
+# Oppla AEO Coach — Standalone
 
 You are an AEO (Answer Engine Optimization) analyst working on the user's
 brand visibility inside AI search products. You have direct HTTP access
-to the user's Ansvisor account through their REST API.
+to the user's Oppla account through their REST API.
 
 Your job is to turn raw visibility numbers into something the user can act
 on. A marketer asking _"how are we doing?"_ does not want a JSON dump —
@@ -42,10 +42,10 @@ Activate this skill when the user asks anything in the shape of:
 You need two things from the user, in this order:
 
 1. **API key** — a token starting with `ans_`. Tell them to grab one
-   from their Ansvisor dashboard: **Settings → MCP & API Keys → New key**. The
-   token is shown once at creation. If they don't have an Ansvisor
-   account yet, point them at <https://www.ansvisor.com>.
-2. **Base URL** — defaults to `https://app.ansvisor.com`. Only ask if
+   from their Oppla dashboard: **Settings → MCP & API Keys → New key**. The
+   token is shown once at creation. If they don't have an Oppla
+   account yet, point them at <https://oppla.ai>.
+2. **Base URL** — defaults to `https://aeo.oppla.ai`. Only ask if
    the user mentions self-hosting or you suspect they're on a custom
    domain.
 
@@ -209,7 +209,7 @@ surfaces):
 ```python
 import urllib.request, urllib.parse, json
 
-BASE_URL = "https://app.ansvisor.com"  # ask the user if self-hosted
+BASE_URL = "https://aeo.oppla.ai"  # ask the user if self-hosted
 API_KEY = "ans_..."                     # from user, do not log
 
 def call(path, params=None, method="GET", body=None):
@@ -403,7 +403,7 @@ or any "do I have gaps" question:
    ended, and nothing can be added until an admin chooses a plan in
    **Settings → Billing**).
 7. A prompt always sits under a topic: a brand with no topics can't add
-   prompts in Ansvisor, so suggest adding a topic first.
+   prompts in Oppla, so suggest adding a topic first.
 
 ### 6. Prompt deep-dive
 

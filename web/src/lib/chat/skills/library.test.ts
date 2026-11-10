@@ -30,7 +30,7 @@ vi.mock('@/lib/actions/content-drafts', () => ({ createContentDraft: vi.fn() }))
 vi.mock('@/lib/actions/prompt-suggestions', () => ({ dismissSuggestion: vi.fn() }));
 
 /**
- * Ansvisor's skills library (CHAT-13 items 3–5, 11, 20; W2-04): every skill
+ * Oppla's skills library (CHAT-13 items 3–5, 11, 20; W2-04): every skill
  * in the repo's /skills folder keeps the SKILL.md format, passes the scan
  * and holds nothing a public repo mustn't, names only tools Chat has, and is
  * in library.json, which Chat reads (refresh: `yarn test -u
@@ -42,7 +42,7 @@ const REPO = path.resolve(__dirname, '../../../../..');
 const SKILLS = path.join(REPO, 'skills');
 
 /**
- * The AEO coach skills for Claude clients on the Ansvisor MCP server (see
+ * The AEO coach skills for Claude clients on the Oppla MCP server (see
  * skills/README.md): not Chat's library, they keep references/ files and a
  * multi-line description. This test leaves them out; every other folder in
  * /skills is a library skill and is checked.
@@ -50,7 +50,7 @@ const SKILLS = path.join(REPO, 'skills');
 const MCP_COACH_SKILLS = ['ansvisor-aeo-coach', 'ansvisor-aeo-coach-standalone'];
 
 /**
- * Ansvisor's skills (CHAT-13 v2, "Ansvisor skills (14)"): the v2 mockup's
+ * Oppla's skills (CHAT-13 v2, "Oppla skills (14)"): the v2 mockup's
  * fourteen, by the ids CHAT-21's agents use (agent-skills.ts on W2-15).
  * Each title and description is the mockup's (`SK`: its card and its line),
  * and the mockup's words are final, except where they promise what Chat
@@ -200,7 +200,7 @@ function unknownTools(text: string, known: ReadonlySet<string>): string[] {
   return [...new Set(names)].filter((name) => !known.has(name));
 }
 
-/** Ansvisor's competitors: a published skill names none of them (item 20). */
+/** Oppla's competitors: a published skill names none of them (item 20). */
 const COMPETITORS = /\b(profound|peec|otterly|athena ?hq|scrunch)\b/i;
 
 const allFolders = readdirSync(SKILLS).filter(
@@ -218,7 +218,7 @@ const folders = files.map((file) => file.folder);
 const playbookFiles = allFiles.filter(isHidden);
 
 describe('the skills in /skills', () => {
-  it("are Ansvisor's twenty-four, with the mockup's titles and descriptions", () => {
+  it("are Oppla's twenty-four, with the mockup's titles and descriptions", () => {
     expect([...folders].sort()).toEqual([...LIBRARY_NAMES].sort());
     const shown = Object.fromEntries(
       files.map(({ folder, text }) => {

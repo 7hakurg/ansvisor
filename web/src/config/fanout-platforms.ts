@@ -10,7 +10,7 @@
 
 /**
  * Platforms whose answers come with the searches the engine ran. None today:
- * Copilot and Perplexity did, but Ansvisor stopped tracking them on
+ * Copilot and Perplexity did, but Oppla stopped tracking them on
  * 2026-11-06 (Cloro no longer serves them). Their past answers still show
  * their searches, as an ordinary engine's; a window without any is no news.
  */

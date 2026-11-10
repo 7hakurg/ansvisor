@@ -1,5 +1,6 @@
 import { PLATFORM_LABELS } from '@/config/platform-labels';
 import { PLANS } from '@/config/plans';
+import { siteConfig } from '@/config/site';
 import { cardCopy, type CardCopy, type FeatureTag, type TargetKind } from './copy';
 import type { CitedSiteKind, ReportCardEngine, ReportCardPayload } from './payload';
 
@@ -13,9 +14,8 @@ import type { CitedSiteKind, ReportCardEngine, ReportCardPayload } from './paylo
  * language, from ./copy.ts.
  */
 
-/** Where the card's trial links go. */
-export const REPORT_CARD_SIGN_UP_URL =
-  'https://app.ansvisor.com/en/sign-up?utm_source=report-card&utm_medium=pdf';
+/** Where the card's trial links go: this app's own sign-up. */
+export const REPORT_CARD_SIGN_UP_URL = `${siteConfig.appUrl}/en/sign-up?utm_source=report-card&utm_medium=pdf`;
 
 /** A trial button's link, marked with the page it is on: page 1's small one, page 4's. */
 export const signUpUrlFor = (page: 1 | 4): string =>
@@ -190,7 +190,7 @@ const QUESTION_MAX = 110;
 export const percent = (part: number, whole: number): number =>
   whole > 0 ? Math.round((part / whole) * 100) : 0;
 
-/** Ansvisor Starter's engines: a card's main result (owner decision 2026-11-04). */
+/** Oppla Starter's engines: a card's main result (owner decision 2026-11-04). */
 export const STARTER_ENGINES: readonly ReportCardEngine[] = ['chatgpt-web', 'gemini-web'];
 
 type EngineRow = ReportCardPayload['engines'][number];
@@ -273,7 +273,7 @@ export interface QuickWin {
   detail: string;
   /** What you'd do about it in your first week. */
   week: string;
-  /** Where Ansvisor helps with it. */
+  /** Where Oppla helps with it. */
   feature: FeatureTag;
 }
 
@@ -319,7 +319,7 @@ function targetWin(site: CitedSite, card: ReportCardPayload, t: CardCopy): Quick
  * put the brand's name where AI already cites its pages without naming it,
  * or make its pages easy to cite; close the gap on the leading competitor;
  * work on the Starter engine that names it least. Each with what to do in
- * week one and where Ansvisor helps.
+ * week one and where Oppla helps.
  */
 export function quickWins(card: ReportCardPayload, t: CardCopy = cardCopy(card)): QuickWin[] {
   const headline = mainTotals(card);
@@ -632,7 +632,7 @@ export function targetGroups(card: ReportCardPayload): {
   return { groups, leftOut };
 }
 
-/** A prompt the card's buyers ask, to show what Ansvisor tracks: the question competitors win. */
+/** A prompt the card's buyers ask, to show what Oppla tracks: the question competitors win. */
 export function examplePrompt(card: ReportCardPayload): string | null {
   const missed = leadQuestion(card);
   const quoted = missed ? quotedQuestion(missed) : null;

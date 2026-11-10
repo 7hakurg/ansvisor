@@ -44,7 +44,7 @@ const WRITE_METHODS = new Set(['POST', 'PUT', 'PATCH', 'DELETE']);
 /**
  * Resolve the bearer token on a request into a user/org context.
  *
- * Accepts only Ansvisor API keys (prefix `ans_`) — not Supabase session JWTs.
+ * Accepts only Oppla API keys (prefix `ans_`) — not Supabase session JWTs.
  * MCP endpoints are intended to be hit by long-lived external clients, so we
  * intentionally don't fall back to the dashboard's session cookie.
  *
@@ -53,7 +53,7 @@ const WRITE_METHODS = new Set(['POST', 'PUT', 'PATCH', 'DELETE']);
  * for the tools to check. A read that fails answers 503: no tool runs on
  * access it couldn't read.
  *
- * On Ansvisor Cloud, a write (POST, PUT, PATCH, DELETE) for an organization
+ * On Oppla Cloud, a write (POST, PUT, PATCH, DELETE) for an organization
  * whose plan isn't active answers 402 subscription_inactive, and on a plan
  * without MCP writes (Starter, a free trial) 402 plan_required, so a new
  * write route is gated without asking. The MCP endpoint, where every call is a

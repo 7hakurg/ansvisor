@@ -46,7 +46,7 @@ const DENIED = new Set(['not-allowed', 'service-not-allowed']);
  * browser's own speech recognition turns what is said into text, in the
  * browser's language. While it listens, "Listening…" and a red dot show; a
  * second click, or a pause, stops it. The words go into the box and are
- * never sent by themselves. Ansvisor keeps no audio, and nothing is drawn
+ * never sent by themselves. Oppla keeps no audio, and nothing is drawn
  * from the AI limit; the browser's own service hears it (Chrome's and
  * Edge's send the audio to Google or Microsoft). Hidden where the browser
  * has no speech recognition.

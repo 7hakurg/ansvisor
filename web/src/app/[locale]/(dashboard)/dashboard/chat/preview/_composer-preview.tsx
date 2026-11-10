@@ -13,12 +13,12 @@ const RUN_MS = 6000;
 
 /** The mockup's chips and starters (CHAT-02 variants table). */
 const HOME_CHIPS = [
-  { key: 'brand', label: 'Ansvisor' },
+  { key: 'brand', label: 'Oppla' },
   { key: 'range', label: 'Last 30 days' },
 ];
 const PANEL_CHIPS = [
   { key: 'page', label: 'Visibility' },
-  { key: 'brand', label: 'Ansvisor' },
+  { key: 'brand', label: 'Oppla' },
   { key: 'range', label: 'Last 30 days' },
   { key: 'platform', label: 'All platforms' },
 ];
@@ -29,7 +29,7 @@ const PAGE_REFERENCES: ChatReference[] = [
 ];
 const BRAND_REFERENCES: ChatReference[] = [
   { type: 'table', id: 'citations-aio', label: 'Citations · Google AI Overviews' },
-  { type: 'page', id: 'https://ansvisor.com/pricing', label: 'ansvisor.com/pricing' },
+  { type: 'page', id: 'https://example.com/pricing', label: 'example.com/pricing' },
   { type: 'task', id: 'faq-pricing', label: 'Add FAQ block to /pricing' },
 ];
 /** The preview's search: the mockup's rows that match, after a moment. */
@@ -54,7 +54,7 @@ const previewUploader = {
 };
 
 const DOCK_CHIPS = [
-  { key: 'brand', label: 'Ansvisor' },
+  { key: 'brand', label: 'Oppla' },
   { key: 'area', label: 'Action Center' },
 ];
 

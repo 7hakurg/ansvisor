@@ -1303,7 +1303,7 @@ function openRouterAuto(apiKey: string): ChatModels {
   const anthropic = createAnthropic({
     apiKey,
     baseURL: 'https://openrouter.ai/api/v1',
-    headers: { 'HTTP-Referer': 'https://ansvisor.com', 'X-Title': 'Ansvisor quality tests' },
+    headers: { 'HTTP-Referer': 'https://ansvisor.com', 'X-Title': 'Oppla quality tests' },
     fetch: routed,
   });
   const step = (catalog: string, maxOutputTokens: number) => ({
@@ -1355,7 +1355,7 @@ const GROUPS: {
     maxUsd: Number(process.env.SKILL_EVAL_MAX_USD) || null,
     scenarios: SKILL_SCENARIOS,
     file: 'skill-eval',
-    title: 'Ansvisor becerileri: kalite testi',
+    title: 'Oppla becerileri: kalite testi',
   },
 ];
 

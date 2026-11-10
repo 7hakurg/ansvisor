@@ -11,7 +11,7 @@ app_version: 0.3.0
 approved: true
 sources: [docs/guides/answer-engine-insights.mdx, docs/concepts/visibility-scoring.mdx, docs/guides/prompts.mdx, docs/guides/add-your-first-brand.mdx]
 ---
-Ansvisor describes how AI answers treat your brand with a few metrics: visibility, mentions, citations, position and the rates built on them. They are counted from real AI answers, not estimated, so they never carry an **Estimate** badge.
+Oppla describes how AI answers treat your brand with a few metrics: visibility, mentions, citations, position and the rates built on them. They are counted from real AI answers, not estimated, so they never carry an **Estimate** badge.
 
 ## Read your visibility score
 

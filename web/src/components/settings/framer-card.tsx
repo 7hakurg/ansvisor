@@ -354,7 +354,7 @@ function KeyForm({
           aria-describedby={short ? `${id('hint')} ${id('short')}` : id('hint')}
           aria-invalid={short || undefined}
           type="password"
-          // Not a sign-in to Ansvisor: no saved password is offered here.
+          // Not a sign-in to Oppla: no saved password is offered here.
           autoComplete="new-password"
           spellCheck={false}
           value={apiKey}

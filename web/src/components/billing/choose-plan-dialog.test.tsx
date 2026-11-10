@@ -232,14 +232,15 @@ describe('ChoosePlanDialog', () => {
     expect(custom).toContain('Custom AI usage, from 10x');
     expect(custom).toContain('SSO / SAML and custom feature requests');
     expect(card('custom').querySelector('a')?.getAttribute('href')).toBe(
-      'https://www.ansvisor.com/contact-us',
+      'mailto:support@oppla.ai',
     );
 
     expect(dialog().textContent).toContain('Prices in USD.');
     const pricing = [...dialog().querySelectorAll('a')].find((a) =>
       a.textContent?.includes('See everything each plan includes'),
     );
-    expect(pricing?.getAttribute('href')).toBe('https://www.ansvisor.com/pricing');
+    // No pricing page is set for this deployment, so there is no link to one.
+    expect(pricing).toBeUndefined();
   });
 
   it('shows a year up front against twelve months, its monthly share and the year due today', async () => {
@@ -560,7 +561,7 @@ describe('ChoosePlanDialog with the first-month offer on', () => {
 
 describe('ChoosePlanDialog from the demo brand', () => {
   const demoBody =
-    'This is a demo brand with sample data, so nothing here runs or costs anything. Pick a plan and Ansvisor starts tracking, writing and fixing for your own brand.';
+    'This is a demo brand with sample data, so nothing here runs or costs anything. Pick a plan and Oppla starts tracking, writing and fixing for your own brand.';
 
   afterEach(() => {
     vi.useRealTimers();
@@ -571,7 +572,7 @@ describe('ChoosePlanDialog from the demo brand', () => {
     expect(dialog().querySelector('[data-slot="upgrade-action"]')?.textContent).toBe(
       'Adding prompts works on your own brand',
     );
-    expect(dialog().querySelector('h2')?.textContent).toBe('Use Ansvisor for your own brand');
+    expect(dialog().querySelector('h2')?.textContent).toBe('Use Oppla for your own brand');
     expect(dialog().textContent).toContain(demoBody);
     expect(choices()).toEqual(['14-day trial', 'Monthly50% off the first month', 'YearlySave 20%']);
     expect(choiceButton('month')?.getAttribute('aria-pressed')).toBe('true');
@@ -654,7 +655,7 @@ describe('ChoosePlanDialog from the demo brand', () => {
 
   it('offers a workspace whose plan ended only buying', async () => {
     await render({ demo: 'first_month' });
-    expect(dialog().querySelector('h2')?.textContent).toBe('Use Ansvisor for your own brand');
+    expect(dialog().querySelector('h2')?.textContent).toBe('Use Oppla for your own brand');
     expect(choiceButton('trial')).toBeNull();
     expect(startButton('starter').textContent).toBe('Buy now');
     expect(terms('starter')).toBeUndefined();
@@ -667,9 +668,9 @@ describe('ChoosePlanDialog from the demo brand', () => {
       activeBrandId: 'demo',
     });
     await render({ demo: 'trial' });
-    expect(dialog().querySelector('h2')?.textContent).toBe('Use Ansvisor for Acme Coffee');
+    expect(dialog().querySelector('h2')?.textContent).toBe('Use Oppla for Acme Coffee');
     expect(dialog().textContent).toContain(
-      'Pick a plan and Ansvisor starts tracking, writing and fixing for Acme Coffee.',
+      'Pick a plan and Oppla starts tracking, writing and fixing for Acme Coffee.',
     );
     expect(dialog().textContent).not.toContain('Brewline Coffee');
   });
@@ -705,7 +706,7 @@ describe("ChoosePlanDialog for a brand that isn't tracked yet", () => {
     await render({ pitch: { from: 'own_brand', offer: 'trial' }, action: null });
     expect(dialog().querySelector('h2')?.textContent).toBe('Choose how to start');
     expect(dialog().textContent).toContain(
-      'Everything you set up is here. Pick a plan and Ansvisor starts tracking, writing and fixing for your brand.',
+      'Everything you set up is here. Pick a plan and Oppla starts tracking, writing and fixing for your brand.',
     );
     expect(dialog().textContent).not.toContain('demo brand');
     expect(startButton('starter').textContent).toBe('Buy now');
@@ -720,7 +721,7 @@ describe("ChoosePlanDialog for a brand that isn't tracked yet", () => {
     });
     await render({ pitch: { from: 'own_brand', offer: 'trial' }, action: null });
     expect(dialog().textContent).toContain(
-      'Everything you set up for Acme Coffee is here. Pick a plan and Ansvisor starts tracking, writing and fixing for it.',
+      'Everything you set up for Acme Coffee is here. Pick a plan and Oppla starts tracking, writing and fixing for it.',
     );
   });
 });

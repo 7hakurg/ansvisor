@@ -113,7 +113,7 @@ describe('marketplace.json', () => {
 
   it('has installs for all but 2, and no security score from the directory (decision 10)', () => {
     expect(MARKETPLACE_SKILLS.filter((skill) => skill.installs === null)).toHaveLength(2);
-    // The Library shows Ansvisor's own scan instead.
+    // The Library shows Oppla's own scan instead.
     for (const skill of MARKETPLACE_SKILLS) {
       expect(Object.keys(skill), skill.id).not.toContain('safe');
       expect(Object.keys(skill), skill.id).not.toContain('security');

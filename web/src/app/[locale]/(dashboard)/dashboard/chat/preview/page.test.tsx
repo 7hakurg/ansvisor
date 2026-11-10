@@ -5,7 +5,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import messages from '../../../../../../../messages/en.json';
 
 /**
- * The Chat pieces preview (Chat P0, D1 and D2): there only for Ansvisor staff
+ * The Chat pieces preview (Chat P0, D1 and D2): there only for Oppla staff
  * (STAFF_EMAILS) with the new Chat on for the workspace, and every piece and
  * run card in every state on it.
  */
@@ -13,7 +13,7 @@ import messages from '../../../../../../../messages/en.json';
 type SessionUser = { id: string; email?: string; email_confirmed_at?: string | null };
 const STAFF: SessionUser = {
   id: 'user-1',
-  email: 'staff@ansvisor.com',
+  email: 'staff@example.com',
   email_confirmed_at: '2026-10-01T00:00:00Z',
 };
 const session = vi.hoisted(() => ({
@@ -70,7 +70,7 @@ beforeEach(() => {
   notFound.mockClear();
   vi.stubEnv('CHAT_AGENTIC', 'true');
   vi.stubEnv('CHAT_AGENTIC_ORGS', '');
-  vi.stubEnv('STAFF_EMAILS', 'staff@ansvisor.com');
+  vi.stubEnv('STAFF_EMAILS', 'staff@example.com');
   // The live runs tray reads its runs.
   vi.stubGlobal(
     'fetch',
@@ -122,7 +122,7 @@ describe('the Chat pieces preview', () => {
     await expect(ChatPiecesPreviewPage()).rejects.toThrow('NEXT_NOT_FOUND');
   });
 
-  // A design sign-off page, Ansvisor's own: with Chat on for everyone, a
+  // A design sign-off page, Oppla's own: with Chat on for everyone, a
   // customer (an Admin too) doesn't get it.
   it('is not found for anyone but staff', async () => {
     session.user = {
@@ -179,7 +179,7 @@ describe('the Chat pieces preview', () => {
       'write:pending',
       'write:saving',
       'write:error',
-      // A skill's draft, and one with an Ansvisor skill's name (W3-08).
+      // A skill's draft, and one with an Oppla skill's name (W3-08).
       'form:pending',
       'form:pending',
       'execute:pending',

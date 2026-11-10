@@ -43,7 +43,7 @@ const NEW_ID = 'aaaaaaaa-0000-4000-8000-000000000009';
 const SETUP: AgentFormSetup = {
   role: 'manager',
   brands: [
-    { id: BRAND, name: 'Ansvisor' },
+    { id: BRAND, name: 'Oppla' },
     { id: 'bbbbbbbb-0000-4000-8000-000000000002', name: 'Brand B' },
   ],
   topics: [],
@@ -202,7 +202,7 @@ describe('AgentForm: new agent', () => {
     expect(one('[data-skill="beat"]')!.getAttribute('aria-checked')).toBe('true');
     expect(summary('skill')).toBe('/beat/compare');
     expect(summary('trigger')).toBe('New Compete signal · +1');
-    expect(summary('scope')).toBe('Ansvisor');
+    expect(summary('scope')).toBe('Oppla');
     expect(summary('mode')).toBe('Auto, ask before changes');
     expect(summary('name')).toBe('Competitor Watch');
     expect(action('agentNew.cancel')[0].getAttribute('href')).toBe('/dashboard/agents?tab=ready');
@@ -265,7 +265,7 @@ describe('AgentForm: new agent', () => {
     await click(one('[data-skill="winback"]')!);
     expect(errors()).toEqual([]);
     // Its name is the skill's, with the brand: the title alone is taken (§O).
-    expect(summary('name')).toBe('Win back lost citations · Ansvisor');
+    expect(summary('name')).toBe('Win back lost citations · Oppla');
     expect(summary('connections')).toBe('Google Search Console, Any CMS');
     await next();
     expect(step()).toBe('1');
@@ -274,12 +274,12 @@ describe('AgentForm: new agent', () => {
     expect(trigger.textContent).toContain('Every Mon 07:00');
     expect(trigger.textContent).toContain('Next run Mon 07:00 · UTC time');
     expect(summary('trigger')).toBe('Every Mon 07:00');
-    expect(summary('scope')).toBe('Ansvisor');
+    expect(summary('scope')).toBe('Oppla');
     await next();
     expect(step()).toBe('2');
     await next();
     expect(step()).toBe('3');
-    expect(one('#agent-name')!.getAttribute('value')).toBe('Win back lost citations · Ansvisor');
+    expect(one('#agent-name')!.getAttribute('value')).toBe('Win back lost citations · Oppla');
     expect((one('#agent-max-run') as HTMLInputElement).value).toBe('10');
     expect(summary('cost')).toBe('Up to 10% of monthly limit per run');
     expect(action('agentNew.saveDraft')).toHaveLength(1);
@@ -295,7 +295,7 @@ describe('AgentForm: new agent', () => {
     // None yet: the Library source says where they come from.
     await render();
     const sources = action('agentNew.skillSource');
-    expect(sources.map((b) => b.textContent)).toEqual(['Ansvisor skills', 'My skills', 'Library']);
+    expect(sources.map((b) => b.textContent)).toEqual(['Oppla skills', 'My skills', 'Library']);
     await click(sources[2]);
     expect(container.textContent).toContain('Library skills an Admin adds show here.');
     act(() => root.unmount());

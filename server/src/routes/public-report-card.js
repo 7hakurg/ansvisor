@@ -7,9 +7,9 @@ import { anonymousIpKey } from '../middleware/rate-limiter.js';
 
 /**
  * POST /public/report-card: the free AI visibility report card's form on
- * www.ansvisor.com (REPORT-CARD §8). Public, so mounted before the
+ * oppla.ai (REPORT-CARD §8). Public, so mounted before the
  * dashboard's CORS, body parsers and sign-in: it answers only the origins
- * in REPORT_CARD_ORIGINS (www.ansvisor.com and ansvisor.com by default),
+ * in REPORT_CARD_ORIGINS (oppla.ai and oppla.ai by default),
  * reads at most 16 KB, and takes REPORT_CARD_IP_HOURLY requests an hour
  * from one address. The bot check and the rest are lib/report-card/intake.js.
  */

@@ -2,7 +2,7 @@
 title: Use Chat
 route: /dashboard/chat
 keywords: [chat, ask chat, welcome card, preparing your data, quick tour, product tour, task finisher, download answer, save to files, export chat, storage, output card, open in content editor, side panel, chat panel, ctrl j, ask about this, page context, agent, new chat, open a chat, chat menu, governance, open governance, agents at work, hide menu, inbox, chat home, for you now, weekly report, pin chat, rename chat, share chat, archive chat, delete chat, run mode, full auto, stop chat, steer, attach files, attach image, send image, read pdf, upload failed, reference data, data used, work in parts, working on parts, split into parts, at the same time, retry, error, reconnecting, question, chat asks, recommended option, skip question, next moves, what to do next, add prompts, pause prompts, add topic, rename topic, add competitors, remove competitor, undo, change draft, send to cms, make report, site audit, open page, read web page, fetch page, why did it change, why did visibility drop, explain change, what explains the change, cited before, cited now, since you left, send to action center, add to action, attach to task, ready for review, complete tasks, /tasks, task strip, tasks ready, close tasks, attach to task and mark done, attach only, mark task done, ai limit, part of a job, remaining ai usage, do the first now, shortcuts, slash menu, /start, /analyze, /new-report, /create, /optimize, /opportunities, /audit, /image, get started, create a report, optimize a page, find opportunities, improve with audit, brand facts, approved facts, /facts, /wrongclaim, fact check, api key in message, paste api key, remove key, where pages open, open here, page beside the chat, back to chat, keep working in chat, page version, what changed, placeholder, undo version, show all questions, mark ready, set ready, voice, microphone, speak, dictate, send to webhook, webhook, workflow webhook, audit card, audit in chat, audit score in chat, open report, agents for you, recommended agents, new member, new teammate, hide agents for you, rules pill, quality pill, rules met, check it against the rules, check rules, open rules, optimize, optimize here, optimize page, rewrite page, optimize in content editor, optimize in the editor here, page chip, suggestions from chat, accept suggestion, reject suggestion]
-synonyms: [assistant, ai agent, agent chat, ask ansvisor]
+synonyms: [assistant, ai agent, agent chat, ask oppla]
 plan: all
 updated: 2026-11-07
 last_checked: 2026-11-07
@@ -11,7 +11,7 @@ app_version: 0.3.0
 approved: true
 sources: [web/messages/en.json, web/src/components/chat/agents-for-you.tsx, web/src/lib/chat/agents-for-you.ts, web/src/lib/actions/agents-for-you.ts]
 ---
-Chat answers questions about your brand from your Ansvisor data, and can do work for you step by step. Open it from **Chat** in the main menu. In the free trial, and while you explore the demo brand, Ansvisor opens on Chat when you sign in. Every chat is saved, so you can come back to it later and pick up where you left off.
+Chat answers questions about your brand from your Oppla data, and can do work for you step by step. Open it from **Chat** in the main menu. In the free trial, and while you explore the demo brand, Oppla opens on Chat when you sign in. Every chat is saved, so you can come back to it later and pick up where you left off.
 
 ## Chat Home
 
@@ -164,7 +164,7 @@ A page's card also shows **Rules 11/12** and **Quality 82**, as the Content Edit
 
 ## Send or publish a page from Chat
 
-A page sent to your CMS (Webflow, WordPress, Framer or Wix) arrives as a draft. Chat can also publish a new page live through Webflow, WordPress or Wix; Framer publishes the whole site, so you publish there. Chat can also send a page to your webhook; Ansvisor can't take that back. A live page goes from the Content Editor.
+A page sent to your CMS (Webflow, WordPress, Framer or Wix) arrives as a draft. Chat can also publish a new page live through Webflow, WordPress or Wix; Framer publishes the whole site, so you publish there. Chat can also send a page to your webhook; Oppla can't take that back. A live page goes from the Content Editor.
 
 Sending and publishing wait for your click, even in **Full auto**, unless an Admin let an agent go live on its own, and have no Undo. If an Admin turned publishing off for Managers, Managers can't send or publish from Chat.
 
@@ -240,7 +240,7 @@ Chat looks at your images, reads PDFs and the text of Word, Excel, CSV, text, Ma
 
 Click the microphone next to the arrow and speak. While it listens, it shows **Listening…** with a red dot; click it again, or pause, to stop. Your words go into the box in your browser's language, and nothing is sent until you send it. Using voice doesn't count toward your AI usage.
 
-Your browser turns the speech into text, not Ansvisor, and Ansvisor keeps no audio. Chrome and Edge send the audio to Google or Microsoft to do it. Firefox has no speech recognition, so there is no microphone there. If the browser asks, allow the microphone; otherwise the box says how.
+Your browser turns the speech into text, not Oppla, and Oppla keeps no audio. Chrome and Edge send the audio to Google or Microsoft to do it. Firefox has no speech recognition, so there is no microphone there. If the browser asks, allow the microphone; otherwise the box says how.
 
 ## An API key in your message
 
@@ -312,7 +312,7 @@ Pages under Chat, such as **Inbox** and **All chats**, show **← Back to Chat**
 
 Esc closes only the box or menu on top, such as search or a **⋯** menu, and never leaves the page.
 
-In Chat, the main menu on the left is a narrow bar of icons, so the chat has room. Point at it to see it whole, or click the Ansvisor logo to keep it open; click the logo again to make it narrow. Chat remembers your choice on every device.
+In Chat, the main menu on the left is a narrow bar of icons, so the chat has room. Point at it to see it whole, or click the Oppla logo to keep it open; click the logo again to make it narrow. Chat remembers your choice on every device.
 
 ## Manage a chat
 

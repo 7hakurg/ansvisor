@@ -4,7 +4,7 @@ import { createClient } from '@/lib/supabase/server';
 import { RoleRequiredError, roleRequiredResponse } from '@/lib/mcp/role-gate';
 
 /**
- * Ansvisor Cloud's read-only mode for the web app's own writes: while a
+ * Oppla Cloud's read-only mode for the web app's own writes: while a
  * workspace's plan isn't active — its trial ended, or it was canceled — the
  * server actions and Next routes that write straight to Supabase refuse, as
  * the API's requireActiveSubscription refuses its writes and the MCP surface

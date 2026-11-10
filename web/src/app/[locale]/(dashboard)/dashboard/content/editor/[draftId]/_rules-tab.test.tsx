@@ -195,7 +195,7 @@ describe('the Rules tab', () => {
       expect(items().map((item) => [item.textContent, item.getAttribute('aria-checked')])).toEqual([
         [`Fix open rules${open.length} rules · small, reviewable changesLess AI usage`, 'true'],
         [
-          'Rewrite the whole pageRecommended · Every rule in “Feature page · Ansvisor default” · one new version, cited passages keptMore AI usage',
+          'Rewrite the whole pageRecommended · Every rule in “Feature page · Oppla default” · one new version, cited passages keptMore AI usage',
           'false',
         ],
       ]);
@@ -688,10 +688,10 @@ describe('the Rules tab', () => {
     );
   });
 
-  it('shows Ansvisor’s set when a draft on My rules has none for its type', async () => {
+  it('shows Oppla’s set when a draft on My rules has none for its type', async () => {
     await render(state(undefined, { source: 'mine', mineTypes: [] }));
     const trigger = container.querySelector('[aria-label="Rule set"]')!;
-    expect(trigger.textContent).toContain('Feature page · Ansvisor default');
+    expect(trigger.textContent).toContain('Feature page · Oppla default');
     expect(trigger.textContent).not.toContain('mine:');
   });
 });

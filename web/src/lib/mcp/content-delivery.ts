@@ -10,7 +10,7 @@ import { assertSubscriptionActive } from './subscription-gate';
  * Where a draft went and whether its shopping links still sell, for the MCP's
  * draft tools (B5), as the Content Library shows them: its last Send to CMS
  * (00262, 00284) and its shopping path's check after each catalog sync
- * (00351, 00352). Ansvisor's MCP never sends a page itself: the user's AI
+ * (00351, 00352). Oppla's MCP never sends a page itself: the user's AI
  * tool does, with its own CMS connector, and marks it published here.
  */
 
@@ -156,7 +156,7 @@ export type McpPublishError = { error: 'invalid_url' | 'not_found'; message: str
 /**
  * A page marked Published at the address it went live at, as the editor's
  * Mark published does (CE-013), for a page the user's own AI tool put on a
- * CMS: Ansvisor then measures that address (the Live page tab, its
+ * CMS: Oppla then measures that address (the Live page tab, its
  * citations and AI visits) and a linked action's Publish task completes
  * once all its pages are live. The API's publishDraft runs it for the key's
  * user through the CRON_SECRET internal endpoint; the draft must be the

@@ -20,7 +20,7 @@ describe('templateDetails', () => {
       expect(TASK_CHECKS, id).toContain(details.check);
       expect(details.source).toBe('template');
     }
-    // The analysis Ansvisor does itself has none: the writer drops it anyway.
+    // The analysis Oppla does itself has none: the writer drops it anyway.
     expect(templateDetails('analyze_citations')).toBeNull();
     expect(templateDetails('no_such_task')).toBeNull();
   });

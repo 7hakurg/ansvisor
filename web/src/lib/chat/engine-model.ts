@@ -18,7 +18,7 @@ import {
  * The models a Chat run calls (CHAT-16 items 5, 12 and 23; W4-03). Auto, the
  * default: Claude Haiku 5.5 reads (picks and runs the reads), Claude Sonnet
  * 5.5 writes (the answer and any change). A model picked in the composer's
- * menu (lib/chat/models.ts) does both: a Claude model on Ansvisor's key or
+ * menu (lib/chat/models.ts) does both: a Claude model on Oppla's key or
  * the workspace's own Anthropic key keeps the two phases; a model through
  * OpenRouter (none offered yet) runs in one phase on OPENROUTER_API_KEY, and
  * without that key the run takes Auto. On another provider's own key that
@@ -68,7 +68,7 @@ export interface ChatModelChoice {
 }
 
 export interface ChatModels {
-  /** Whose key the steps run on: the budget meters Ansvisor's. */
+  /** Whose key the steps run on: the budget meters Oppla's. */
   source: ChatKeySource;
   /** The model the run uses: 'auto' or an offered model's catalog id (W4-03). */
   model: string;
@@ -170,7 +170,7 @@ export function pickedClaudeModels(
 }
 
 /**
- * A model picked through OpenRouter, on Ansvisor's OpenRouter key: one
+ * A model picked through OpenRouter, on Oppla's OpenRouter key: one
  * model does both, in one phase, as on another provider's own key. Its
  * effort is OpenRouter's reasoning effort.
  */
@@ -203,7 +203,7 @@ export function openRouterModels(
 /**
  * The workspace's own key runs a model whose provider an Admin turned off in
  * Settings › Chat (W4-34): Chat stops on it rather than send the run there,
- * or move to Ansvisor's key and the AI limit by itself.
+ * or move to Oppla's key and the AI limit by itself.
  */
 export class ModelProviderOffError extends Error {
   readonly provider: string | null;
@@ -235,7 +235,7 @@ export async function resolveChatModels(
 ): Promise<ChatModels | null> {
   const picked = offeredModel(choice.model);
   if (picked) {
-    // Each provider's own key first, then the own OpenRouter key, then Ansvisor's (W4-06).
+    // Each provider's own key first, then the own OpenRouter key, then Oppla's (W4-06).
     const pickedKey = await resolvePickedModelKey(organizationId, picked.provider, {
       ansvisorOnly,
     });

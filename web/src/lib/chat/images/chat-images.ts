@@ -42,7 +42,7 @@ export interface ImageModelQuestion {
 /**
  * The image model question (CHAT-15 item 17, CHAT-16 items 11 and 25):
  * every image model, the default first (the cheapest by the price data),
- * each with its multiplier against it and, on Ansvisor's key, one image's
+ * each with its multiplier against it and, on Oppla's key, one image's
  * share of the monthly AI limit; on the workspace's own key, "Your key".
  * The question and options are ready for ask_question as they are.
  */

@@ -17,8 +17,8 @@ import { CARD, CARD_HEAD, PILL, ScanList } from './skill-review';
  * A Library skill's detail (CHAT-17 item 9, W4-18; laid out as the
  * review of an import, mockup `#s-skill-review`): its name, line, repo,
  * stars and installs; its SKILL.md read at the commit the catalog pins, as
- * plain text with hidden characters marked; Ansvisor's own safety scan
- * (decision 10); "Edited by Ansvisor" with what the cleanup took out (item
+ * plain text with hidden characters marked; Oppla's own safety scan
+ * (decision 10); "Edited by Oppla" with what the cleanup took out (item
  * 15, in words: the text itself names a competitor); what adding it leaves
  * out; and its source: the file at that commit, the license and its text,
  * and "owner/repo · MIT". Add, or what became of it (W4-19).
@@ -159,7 +159,7 @@ export function LibrarySkill({ id }: { id: string }) {
                   error: detail.read.ok ? '' : detail.read.error,
                 })}
               </p>
-              {/* GitHub may give it later; a file Ansvisor can't take stays so. */}
+              {/* GitHub may give it later; a file Oppla can't take stays so. */}
               {github && (
                 <Button
                   variant="outline"

@@ -9,7 +9,7 @@ import { DEMO_BRAND, DemoBrandError } from '@/lib/subscription-guard';
  * run or spend anything on it, whatever the plan, with the body the web
  * app's writes answer (DEMO_BRAND), which tells the agent the same thing
  * runs on the workspace's own brand once a plan is picked. Demo brands are
- * Ansvisor Cloud's: self-hosted is never checked.
+ * Oppla Cloud's: self-hosted is never checked.
  */
 export { DEMO_BRAND, DemoBrandError };
 

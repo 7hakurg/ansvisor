@@ -25,7 +25,7 @@ Keys are stored encrypted, and nobody can read a saved key back. If the server c
 
 Agents run on the key too. Each agent's **Max per run** and **Monthly cap** still apply, and one more limit covers all agents on the key together: **Agents on your key**, under the keys. It starts at $250 a month; an admin can set it from $10 to $10,000, but can't turn it off. Only admins see it, with this month's use next to it. Chat you use yourself doesn't count toward it.
 
-Ansvisor measures what agents use at the providers' list prices, so these numbers are estimates of your bill. At the limit, agents pause, and they can't be run by hand either. They start again by themselves when the month renews or when an admin raises the limit. Set a spending limit with your provider too: its bill is the real one.
+Oppla measures what agents use at the providers' list prices, so these numbers are estimates of your bill. At the limit, agents pause, and they can't be run by hand either. They start again by themselves when the month renews or when an admin raises the limit. Set a spending limit with your provider too: its bill is the real one.
 
 ## When agents near the limit
 
@@ -41,7 +41,7 @@ On the other plans, Chat runs on the plan's monthly AI limit, and **Settings ›
 
 ## Check a key
 
-Under each saved key, a line says whether it works: **Working · checked …**, **Not working since …** with why, or **Not checked yet**. Click **Test** to check it now: Ansvisor makes one tiny call on the key, which costs your provider well under a cent. A key is also tested when you save it or click **Use for Chat**. A key the provider turns down, or one that can't reach its model, isn't saved. A key whose account is out of credit is saved with a warning.
+Under each saved key, a line says whether it works: **Working · checked …**, **Not working since …** with why, or **Not checked yet**. Click **Test** to check it now: Oppla makes one tiny call on the key, which costs your provider well under a cent. A key is also tested when you save it or click **Use for Chat**. A key the provider turns down, or one that can't reach its model, isn't saved. A key whose account is out of credit is saved with a warning.
 
 ## When your key stops working
 

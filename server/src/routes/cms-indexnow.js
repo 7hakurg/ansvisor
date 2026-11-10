@@ -7,7 +7,7 @@ import { brandOf } from './cms.js';
 
 /**
  * A brand's IndexNow (#2142, part B; 00491), on Settings › Integrations.
- * Members read it; admins and managers turn it on (Ansvisor makes the key,
+ * Members read it; admins and managers turn it on (Oppla makes the key,
  * on the brand's primary domain), check the key's file, and turn it off:
  *   GET    /api/cms/brands/:brandId/indexnow         its key, host, check, and what keeps it off
  *   POST   /api/cms/brands/:brandId/indexnow         turn it on: a new key, not checked yet

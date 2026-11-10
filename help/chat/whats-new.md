@@ -1,5 +1,5 @@
 ---
-title: See what's new in Ansvisor
+title: See what's new in Oppla
 route: /dashboard/chat
 keywords: [whats new, what's new, new features, updates, show me, new line, latest changes, every month, monthly digest, what's new for my plan]
 synonyms: [release notes, changelog, product updates, what changed, recent improvements]
@@ -11,7 +11,7 @@ app_version: 0.3.0
 approved: true
 sources: [web/messages/en.json, whats-new/README.md]
 ---
-**What's new** tells you what Ansvisor added, in a few short lines: why we built it, what it does, how it helps you and what you can do with it. The Ansvisor team writes each update. You see the ones your plan includes.
+**What's new** tells you what Oppla added, in a few short lines: why we built it, what it does, how it helps you and what you can do with it. The Oppla team writes each update. You see the ones your plan includes.
 
 ## On Chat Home
 

@@ -18,7 +18,7 @@ import { createClient } from '@/lib/supabase/server';
  * message id, or its run's id (the handle the page has). `?full={n}` gives
  * step n's whole output as a JSON download ("Download full").
  *
- * Ansvisor staff only, checked here on the server (STAFF_EMAILS,
+ * Oppla staff only, checked here on the server (STAFF_EMAILS,
  * lib/chat/staff.ts): anyone else signed in gets 403, a customer's Admin
  * too. Staff see only the answers they could open themselves (privacy
  * first): in their own workspace, in their own chat or one shared with the

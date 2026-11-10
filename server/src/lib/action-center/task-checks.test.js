@@ -358,7 +358,7 @@ describe('checkPage', () => {
   });
 
   it('asks the bots a CDN or firewall refused again, and stays open while they are refused', async () => {
-    // The page as AnsvisorBot and robots.txt as fetchOf answers them; asked
+    // The page as OpplaBot and robots.txt as fetchOf answers them; asked
     // as a bot named in `answers` (its user-agent token), that bot's status.
     const fetchAs = (pages, answers = {}) => {
       const read = fetchOf(pages);

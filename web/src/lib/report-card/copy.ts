@@ -33,7 +33,7 @@ const noAnswer = (missing: number) =>
     ? '1 question got no answer from one engine'
     : `an engine gave no answer ${missing} times`;
 
-/** Ansvisor's areas, as a finding's tag names them. */
+/** Oppla's areas, as a finding's tag names them. */
 export type FeatureTag =
   | 'contentEditor'
   | 'citations'
@@ -67,7 +67,7 @@ export const en = {
   language: (english: string) => english,
   document: (company: string) => `AI visibility report card: ${company}`,
   footer: (page: number, pages: number) => `${page} / ${pages}`,
-  /** The footer's brand line; null keeps Ansvisor's own ("Generated with Ansvisor"). */
+  /** The footer's brand line; null keeps Oppla's own ("Generated with Oppla"). */
   brand: null as string | null,
   engines: {
     count: (n: number) => plural(n, 'AI engine', 'AI engines'),
@@ -84,7 +84,7 @@ export const en = {
     subtitle: (domain: string, country: string, language: string, date: string) =>
       `${domain} · ${country}, in ${language} · ${date}`,
     oneTime: (date: string) =>
-      `A one-time snapshot: we asked each question once, on ${date}. AI answers change from day to day; in Ansvisor they are asked every day.`,
+      `A one-time snapshot: we asked each question once, on ${date}. AI answers change from day to day; in Oppla they are asked every day.`,
     understood: (domain: string, readers: boolean) =>
       readers
         ? `How we understood ${domain}: a publication on`
@@ -128,7 +128,7 @@ export const en = {
     engineValue: (named: number, answers: number, pct: number) =>
       `${named} of ${answers} · ${pct}%`,
     growthBand: (starter: string) =>
-      `In Ansvisor Growth: Google’s AI engines, measured too. Starter tracks ${starter}; Growth adds these.`,
+      `In Oppla Growth: Google’s AI engines, measured too. Starter tracks ${starter}; Growth adds these.`,
     whoNamed: 'Who AI names',
     noCompetitor: 'No competitor was named.',
     you: (name: string) => `${name} (you)`,
@@ -299,10 +299,10 @@ export const en = {
     eyebrow: 'Your plan',
     title: 'Three findings, and what you’d do in week one',
     subtitle: (company: string) =>
-      `Picked from ${company}’s results by fixed rules: what the card found, the first thing to do about it, and where Ansvisor helps.`,
+      `Picked from ${company}’s results by fixed rules: what the card found, the first thing to do about it, and where Oppla helps.`,
     finding: 'Finding',
     weekOne: 'Week one',
-    inAnsvisor: 'In Ansvisor',
+    inAnsvisor: 'In Oppla',
     feature: {
       contentEditor: 'Content Editor',
       citations: 'Citations',
@@ -330,7 +330,7 @@ export const en = {
     autoTitle: 'Or let agents publish on their own',
     autoBody:
       'In Full auto, with two switches an Admin turns on, chosen agents send or publish pages to your CMS without a click, 1 to 20 a day. A page that fails Quality or your brand facts still waits for you. In Growth.',
-    examplePrompt: 'A prompt Ansvisor would track for you, every day:',
+    examplePrompt: 'A prompt Oppla would track for you, every day:',
   },
 
   // ─── Page 4 ────────────────────────────────────────────────────────────────
@@ -338,7 +338,7 @@ export const en = {
     eyebrow: 'What it’s worth',
     title: 'What AI visits are worth, and the plans for this card',
     subtitle:
-      'AI visits priced at what the same clicks cost in Google Ads, the two plans side by side, and how Ansvisor helps.',
+      'AI visits priced at what the same clicks cost in Google Ads, the two plans side by side, and how Oppla helps.',
     demand: (searches: string, country: string, keywords: number) =>
       `Your questions’ keywords get about ${searches} Google searches a month in ${country} (${plural(keywords, 'keyword', 'keywords')} with a volume).`,
     cpcLine: (cpc: string, keywords: number, total: number) =>
@@ -353,7 +353,7 @@ export const en = {
       `${visits} visits a month cost about ${ads} in Google Ads, every month: ${year} a year, bought again each month.`,
     earning: 'Earning them',
     earningBody: (plan: string, price: string) =>
-      `Ansvisor ${plan} is ${price} a month. Pages AI engines cite keep sending visits for as long as they’re cited.`,
+      `Oppla ${plan} is ${price} a month. Pages AI engines cite keep sending visits for as long as they’re cited.`,
     cheap: (ads: string, plan: string, price: string) =>
       `Clicks are cheap in your market: these visits would cost about ${ads} a month in Ads, less than ${plan} at ${price}. What ads can’t buy is being the name AI recommends when your buyers ask.`,
     slow: 'AI visits build over months: the first month is setup and the first pages, not visits yet.',
@@ -369,9 +369,9 @@ export const en = {
     revenueRow: (visits: string, low: string, high: string) =>
       `${visits} AI visits a month: ${low}–${high} a month`,
     scenarios:
-      'Scenarios, not a forecast or a guarantee. AI Traffic in Ansvisor measures your real AI visits once it’s set up.',
+      'Scenarios, not a forecast or a guarantee. AI Traffic in Oppla measures your real AI visits once it’s set up.',
     planTitle: 'The plans for this card',
-    planName: (plan: string) => `Ansvisor ${plan}`,
+    planName: (plan: string) => `Oppla ${plan}`,
     starterTag: 'Matches this card',
     growthTag: 'Adds Google’s engines',
     perMonth: (price: string) => `${price}/month`,
@@ -393,13 +393,13 @@ export const en = {
     siteAudits: (pages: number) => `Site Audit: ${pages} pages a month.`,
     starterAgents: 'Chat, and Agent Center with agents that ask before every change.',
     growthAgents: 'Full auto: the agents you choose publish on their own.',
-    mcpRead: 'MCP: read your Ansvisor data from AI tools.',
-    mcpReadWrite: 'MCP: read and write your Ansvisor data from AI tools.',
-    workTitle: 'Ansvisor does the work with you',
+    mcpRead: 'MCP: read your Oppla data from AI tools.',
+    mcpReadWrite: 'MCP: read and write your Oppla data from AI tools.',
+    workTitle: 'Oppla does the work with you',
     work: [
       {
         title: 'Chat',
-        body: 'Answers from your own Ansvisor data, prepares this card’s week-one work and reads the files you add.',
+        body: 'Answers from your own Oppla data, prepares this card’s week-one work and reads the files you add.',
       },
       {
         title: 'Agent Center',
@@ -407,7 +407,7 @@ export const en = {
       },
       {
         title: 'MCP',
-        body: 'Use your Ansvisor data from Claude, ChatGPT, Cursor and other AI tools.',
+        body: 'Use your Oppla data from Claude, ChatGPT, Cursor and other AI tools.',
       },
     ],
     ctaTitle: 'Measure your own questions',

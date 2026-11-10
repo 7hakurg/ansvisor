@@ -12,7 +12,7 @@ import { chatActor, runFailure } from '@/lib/chat/run-api';
 /**
  * PATCH /api/chat/skills/library/{name} `{ enabled }`
  *
- * Turns an Ansvisor library skill on or off for the whole workspace
+ * Turns an Oppla library skill on or off for the whole workspace
  * (chat_settings.disabled_skills, 00458): an Admin's. Off, it leaves the /
  * menu and Chat's list, and agents that run it pause (skill_off).
  *

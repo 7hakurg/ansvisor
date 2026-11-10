@@ -460,7 +460,7 @@ function AgentFormBody({
   const activeBrandId = useBrandStore((s) => s.activeBrandId);
 
   const librarySkills = setup.librarySkills ?? [];
-  // An Ansvisor skill's title, a Library skill's own (W4-19), else its /command.
+  // An Oppla skill's title, a Library skill's own (W4-19), else its /command.
   const skillTitle = (id: string) =>
     tSkills.has(id) ? tSkills(id) : (librarySkills.find((s) => s.name === id)?.title ?? id);
   const presetName = preset ? tAgents(`presets.${preset.id}.name`) : null;

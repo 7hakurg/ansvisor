@@ -115,7 +115,7 @@ describe('WelcomeCard', () => {
     expect(text()).toContain('first results in about 15 min');
     expect(q('[role="progressbar"]')?.getAttribute('aria-valuenow')).toBe('25');
     expect(text()).toContain(
-      'While it runs, connect Google Search Console and Google Analytics. Ansvisor then works from your own data too: your real clicks and AI visits.',
+      'While it runs, connect Google Search Console and Google Analytics. Oppla then works from your own data too: your real clicks and AI visits.',
     );
     expect(q('[data-action="welcome.connectGsc"]')?.getAttribute('href')).toBe(
       '/dashboard/settings/integrations#google-search-console',
@@ -140,7 +140,7 @@ describe('WelcomeCard', () => {
   it('drops the progress once the first results are in, and a source once it is connected', async () => {
     await render(card({ run: null, connect: { gsc: false, ga: true } }));
     expect(q('[data-slot="welcome-preparing"]')).toBeNull();
-    expect(text()).toContain('Connect Google Analytics. Ansvisor then works');
+    expect(text()).toContain('Connect Google Analytics. Oppla then works');
     expect(q('[data-action="welcome.connectGsc"]')).toBeNull();
     expect(q('[data-action="welcome.connectGa"]')).not.toBeNull();
 

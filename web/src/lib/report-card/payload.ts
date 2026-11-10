@@ -9,7 +9,7 @@ import { SITE_TYPES } from '@/lib/content/page-types';
  */
 
 /**
- * The engines a card asks, in the order it lists them: Ansvisor Starter's
+ * The engines a card asks, in the order it lists them: Oppla Starter's
  * (ChatGPT and Gemini), then the Google engines only Growth tracks (owner
  * decision 2026-11-04). Copilot stays for the cards that asked it: those
  * made from 2026-11-04 until Copilot was dropped. Cards made before then

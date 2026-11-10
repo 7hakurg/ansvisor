@@ -2,7 +2,7 @@
  * The Cloudflare Worker a brand installs to send AI-bot requests (AT-010,
  * spec §6.1 option A, "lowest cost for us"). It passes every request through
  * untouched, and only for requests whose user agent names a bot on the list
- * sends {userAgent, ip, url, status, at, country} to Ansvisor in batches of
+ * sends {userAgent, ip, url, status, at, country} to Oppla in batches of
  * about 100, after the response, without slowing the page.
  *
  * The bot tokens come from ai-bots.json, so the edge filter and the server's
@@ -25,9 +25,9 @@ export const WORKER_SECRET_NAME = 'ANSVISOR_BOT_SECRET';
 
 export function buildWorkerScript({ endpoint }) {
   const tokens = JSON.stringify(AI_BOTS.map((b) => b.userAgent.toLowerCase()));
-  return `// Ansvisor AI bot report — Cloudflare Worker (AT-010).
+  return `// Oppla AI bot report — Cloudflare Worker (AT-010).
 // Passes every request through; for AI bots only, sends the request line to
-// Ansvisor after the response. Route it on your site's hostname, and add the
+// Oppla after the response. Route it on your site's hostname, and add the
 // connection secret under Settings › Variables and Secrets as a Secret named
 // ${WORKER_SECRET_NAME}.
 const ENDPOINT = ${JSON.stringify(endpoint)};

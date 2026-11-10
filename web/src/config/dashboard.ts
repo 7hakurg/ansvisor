@@ -112,7 +112,7 @@ export const dashboardNav: NavGroup[] = [
     ],
   },
   /**
-   * New Ansvisor: the groups name the two things the product does. Execution
+   * New Oppla: the groups name the two things the product does. Execution
    * does the work (actions, content, page fixes); Analytics shows where the
    * brand stands in AI search.
    */
@@ -129,7 +129,7 @@ export const dashboardNav: NavGroup[] = [
       // keeping /dashboard/content) finds what to write, the Plan says what
       // to do next (CE-014), the Editor goes back to the draft last opened,
       // else starts a new page, and the Library lists every page written or
-      // changed in Ansvisor.
+      // changed in Oppla.
       {
         title: 'Content',
         href: '/dashboard/content',

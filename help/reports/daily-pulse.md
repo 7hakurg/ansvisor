@@ -11,7 +11,7 @@ app_version: 0.3.0
 approved: true
 sources: [docs/guides/daily-pulse.mdx]
 ---
-The Daily Pulse is a short digest for each brand that goes out after its scheduled tracking run. It shows the headline numbers for the period, then lists what went well (highlights) and what needs attention (warnings). It comes by email on Ansvisor Cloud, and can also go to your webhook, on cloud and self-hosted alike.
+The Daily Pulse is a short digest for each brand that goes out after its scheduled tracking run. It shows the headline numbers for the period, then lists what went well (highlights) and what needs attention (warnings). It comes by email on Oppla Cloud, and can also go to your webhook, on cloud and self-hosted alike.
 
 ## Choose how often it comes
 
@@ -56,7 +56,7 @@ A smaller fall shows as **Visibility slipping**, in the email and the webhook al
 
 ## Repeats and collection problems
 
-The same warning about the same subject, such as a surge by the same competitor, isn't repeated within 7 days. Highlights have no such pause. If an AI platform's result volume collapses on Ansvisor's side, the pulse treats it as a collection problem rather than a real change: **Sharp drop**, **Visibility slipping** and **Lost citations** are held back, and the email notes which platforms were affected.
+The same warning about the same subject, such as a surge by the same competitor, isn't repeated within 7 days. Highlights have no such pause. If an AI platform's result volume collapses on Oppla's side, the pulse treats it as a collection problem rather than a real change: **Sharp drop**, **Visibility slipping** and **Lost citations** are held back, and the email notes which platforms were affected.
 
 ## Send it to a webhook
 

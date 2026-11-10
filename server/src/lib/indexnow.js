@@ -5,10 +5,10 @@ import { PageFetchError, fetchPage } from './safe-fetch.js';
 
 /**
  * IndexNow (#2142, part B; 00491): when Send to CMS confirms a page live,
- * Ansvisor tells IndexNow once (Bing, Yandex and the others that share it),
+ * Oppla tells IndexNow once (Bing, Yandex and the others that share it),
  * so search engines and the AI answers built on them hear of it without
  * waiting for a crawl. It is free and needs no sign-in: the site proves it
- * owns the key with a file at its root, https://<host>/<key>.txt. Ansvisor
+ * owns the key with a file at its root, https://<host>/<key>.txt. Oppla
  * makes the key, the person puts the file on the site, and Check reads it
  * back (safe-fetch: public addresses only). A CMS that can't put a file at
  * the site's root (Webflow, Wix) keeps it off.

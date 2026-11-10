@@ -1,6 +1,7 @@
 import { z } from 'zod';
 import { PLANS, hasFeature } from '@/config/plans';
 import { slugify } from '@/lib/slug';
+import { siteConfig } from '@/config/site';
 
 /**
  * White label (00429): an agency's own logo, main color, company name and
@@ -149,7 +150,7 @@ export function whiteLabelOffered({ isCloud }: { isCloud: boolean }): boolean {
 
 /**
  * Whether a workspace's kit is used: its plan has white label and the kit
- * names a company or has a logo. Otherwise everything keeps Ansvisor's look.
+ * names a company or has a logo. Otherwise everything keeps Oppla's look.
  */
 export function kitInUse(
   kit: Pick<WhiteLabelKit, 'companyName' | 'logoPath'> | null,
@@ -183,13 +184,13 @@ export type KitTextInput = z.input<typeof kitTextSchema>;
 
 // ─── Reports and exports ─────────────────────────────────────────────────────
 
-/** A report's own accent without a kit: Ansvisor's indigo. */
+/** A report's own accent without a kit: Oppla's indigo. */
 export const REPORT_ACCENT = '#6366f1';
 /** A report's footer without a kit. */
-export const ANSVISOR_REPORT_FOOTER = 'Generated with Ansvisor · www.ansvisor.com';
+export const ANSVISOR_REPORT_FOOTER = `Generated with ${siteConfig.name} · ${siteConfig.host}`;
 
 /**
- * A kit in use, as a report and its PDF show it; null keeps Ansvisor's
+ * A kit in use, as a report and its PDF show it; null keeps Oppla's
  * look. The logos are the images themselves (data URLs): the PDF is drawn
  * in the browser, and the bucket stays private.
  */
@@ -201,7 +202,7 @@ export interface ReportBranding {
   clientLogo: string | null;
 }
 
-/** What a report looks like: with a kit, or Ansvisor's own without one. */
+/** What a report looks like: with a kit, or Oppla's own without one. */
 export interface ReportLook {
   branded: boolean;
   /** Rules, bars and lines. */
@@ -220,7 +221,7 @@ export function reportLook(branding: ReportBranding | null): ReportLook {
       branded: false,
       accent: REPORT_ACCENT,
       textAccent: REPORT_ACCENT,
-      author: 'Ansvisor',
+      author: 'Oppla',
       footer: ANSVISOR_REPORT_FOOTER,
     };
   }
@@ -237,11 +238,11 @@ export function reportLook(branding: ReportBranding | null): ReportLook {
 
 /**
  * The word a downloaded file's name starts with: the company's, as a slug,
- * with a kit in use; Ansvisor's without one (null); none for a kit with only
+ * with a kit in use; Oppla's without one (null); none for a kit with only
  * a logo.
  */
 export function fileWord(branding: { companyName: string | null } | null): string | null {
-  if (!branding) return 'ansvisor';
+  if (!branding) return siteConfig.fileWord;
   return (
     slugify(branding.companyName ?? '')
       .slice(0, 40)

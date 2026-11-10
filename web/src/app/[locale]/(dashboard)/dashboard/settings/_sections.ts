@@ -28,7 +28,7 @@ export const SETTINGS_SECTIONS = [
 
 export type SettingsSection = (typeof SETTINGS_SECTIONS)[number];
 
-/** Sections only Ansvisor Cloud has: self-host sets its AI key in env, and has no billing. */
+/** Sections only Oppla Cloud has: self-host sets its AI key in env, and has no billing. */
 const CLOUD_ONLY: readonly SettingsSection[] = ['ai-providers', 'billing'];
 
 /** Content Editor Quality's Authors (CE-037): only while its phase is live. */

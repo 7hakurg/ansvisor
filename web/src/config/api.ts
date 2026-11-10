@@ -24,7 +24,5 @@ export const BROWSER_API_BASE_URL = '/api/aeo';
  * belongs on BROWSER_API_BASE_URL instead.
  */
 export function getPublicApiBaseUrl(): string {
-  const isCloud = process.env.NEXT_PUBLIC_IS_CLOUD === 'true';
-
-  return isCloud ? 'https://api.ansvisor.com' : (process.env.NEXT_PUBLIC_API_URL ?? '');
+  return process.env.NEXT_PUBLIC_API_URL ?? '';
 }

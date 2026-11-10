@@ -11,11 +11,11 @@ app_version: 0.3.0
 approved: false
 sources: [docs/guides/action-center.mdx]
 ---
-On an online store, Ansvisor picks the product pages most worth improving for AI shopping answers and opens an **Optimize the product pages AI asks about** action for them. It needs your site type set to an online store and a product catalog.
+On an online store, Oppla picks the product pages most worth improving for AI shopping answers and opens an **Optimize the product pages AI asks about** action for them. It needs your site type set to an online store and a product catalog.
 
 ## Which products
 
-Ansvisor looks at the last 30 days:
+Oppla looks at the last 30 days:
 
 - the AI shopping cards that showed the product for your prompts, weighted by how often those prompts are searched;
 - its orders and AI visits, and its revenue in Google Analytics, matched to your catalog by SKU, GTIN or product name;

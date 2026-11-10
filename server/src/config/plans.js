@@ -157,7 +157,7 @@ export const PLANS = {
       maxVolumeAnalyses: -1,
       // Per-customer: override via organizations.plan_overrides in the DB.
       maxBriefGenerations: -1,
-      // AI usage: $50 at the least, twice Growth's $25. Over that, Ansvisor
+      // AI usage: $50 at the least, twice Growth's $25. Over that, Oppla
       // sets a customer's own in plan_overrides.improveMonthlyBudgetUsd
       // (2026-10-27); the contract's value doesn't raise it.
       improveMonthlyBudgetUsd: 50,

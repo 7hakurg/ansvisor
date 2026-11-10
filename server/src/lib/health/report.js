@@ -486,7 +486,7 @@ function actionCountsBlock(counts) {
 export function renderHealthEmail(report) {
   const issues = findIssues(report);
   const date = report.generatedAt.slice(0, 10);
-  const subject = `${issues.length ? '[ISSUES]' : '[OK]'} Ansvisor daily health — ${date}`;
+  const subject = `${issues.length ? '[ISSUES]' : '[OK]'} Oppla daily health — ${date}`;
 
   const list = (items) =>
     items.length

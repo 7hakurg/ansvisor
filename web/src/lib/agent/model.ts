@@ -4,6 +4,7 @@ import { createGoogleGenerativeAI } from '@ai-sdk/google';
 import { createOpenAI } from '@ai-sdk/openai';
 import { openRouterFetch, openRouterRouting } from './openrouter';
 import { chatModelId, type AiProvider, type AiProviderSettings } from './providers';
+import { siteConfig } from '@/config/site';
 
 /** A provider SDK's language model — each of them builds the same kind. */
 export type AgentModel = ReturnType<ReturnType<typeof createOpenAI>>;
@@ -58,7 +59,7 @@ export function buildAgentModel({ provider, apiKey, settings }: AgentModelConfig
       return createOpenAI({
         apiKey,
         baseURL: 'https://openrouter.ai/api/v1',
-        headers: { 'HTTP-Referer': 'https://ansvisor.com', 'X-Title': 'Ansvisor' },
+        headers: { 'HTTP-Referer': siteConfig.url, 'X-Title': siteConfig.name },
         fetch: openRouterFetch(openRouterRouting(model)),
       }).chat(model);
   }

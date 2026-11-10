@@ -118,7 +118,7 @@ const JOB: ScheduleListItem = {
   title: 'Weekly report',
   skill: 'report',
   prompt: 'Summarise last week',
-  brand: 'Ansvisor',
+  brand: 'Oppla',
   when: { kind: 'recurring', rrule: 'FREQ=WEEKLY;BYDAY=MO;BYHOUR=8;BYMINUTE=0' },
   timezone: 'Europe/Istanbul',
   nextRunAt: '2026-11-09T05:00:00.000Z',
@@ -182,7 +182,7 @@ describe('ScheduledList', () => {
     );
     const [row] = $$('[data-slot="scheduled-row"]');
     expect(row.textContent).toContain('Weekly report');
-    expect(row.textContent).toContain('/report · Ansvisor');
+    expect(row.textContent).toContain('/report · Oppla');
     expect(row.textContent).toContain('Every Monday, 08:00');
     expect(row.textContent).toContain('Next: Mon 9 Nov, 08:00');
     expect(row.textContent).toContain('Done');

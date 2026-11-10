@@ -93,14 +93,14 @@ export async function takeDownContentPage({ orgId, brandId, userId, draftId }) {
 
   const delivery = await publishedSend(draftId);
   if (!delivery || delivery.organization_id !== orgId) {
-    throw new DeliveryError('not_live', 'This page isn’t live through Ansvisor.', 409);
+    throw new DeliveryError('not_live', 'This page isn’t live through Oppla.', 409);
   }
   if (!PUBLISH_TARGETS.includes(delivery.target)) {
     throw new DeliveryError(
       'take_down_unavailable',
       delivery.target === 'framer'
         ? 'Framer publishes the whole site at once: take it down in Framer.'
-        : 'Ansvisor can’t take a webhook send back: your workflow decides what happens to it.',
+        : 'Oppla can’t take a webhook send back: your workflow decides what happens to it.',
       409,
     );
   }

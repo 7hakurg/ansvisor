@@ -277,7 +277,7 @@ describe('QualityTab', () => {
     ).toEqual(new Set(['We are ISO 27001.']));
   });
 
-  it('shows the three scores with their bands, labelled an Ansvisor estimate', async () => {
+  it('shows the three scores with their bands, labelled an Oppla estimate', async () => {
     await render(result);
     const scores = container.querySelector('[aria-label="Quality scores"]')!;
     // Each name says in plain words what it scores (editor UX review 2026-11-03).
@@ -289,7 +289,7 @@ describe('QualityTab', () => {
       '80 and up: Strong · 60 to 79: Can improve · under 60: Needs work',
     );
     expect(scores.textContent).toContain(
-      "Ansvisor estimates based on Google's published quality signals. Not a Google score.",
+      "Oppla estimates based on Google's published quality signals. Not a Google score.",
     );
   });
 
@@ -600,7 +600,7 @@ describe('QualityTab', () => {
     );
     expect(rows.slice(2)).toEqual([
       "Add your own experience · To doIt's in Your input, but the page doesn't use it yet: write it in, or let the agent write from it · +33 E-E-A-TAdd",
-      "Add your own data · To doYour numbers, or Ansvisor data on this page's prompts: the page cites them as yours · +25 E-E-A-TAdd",
+      "Add your own data · To doYour numbers, or Oppla data on this page's prompts: the page cites them as yours · +25 E-E-A-TAdd",
       "Add an expert's quote · To doA real person's words as said, with their name, title and where they said them · +21 TrustAdd",
     ]);
     const add = [...container.querySelectorAll('[aria-label="Your to-dos"] li')]

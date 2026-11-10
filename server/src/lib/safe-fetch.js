@@ -27,6 +27,7 @@ import { TextDecoder } from 'node:util';
 import zlib from 'node:zlib';
 
 import { nestsTooDeep } from './html-depth.js';
+import { BOT_USER_AGENT } from './brand.js';
 
 export const FETCH_TIMEOUT_MS = 10_000;
 export const MAX_PAGE_BYTES = 3 * 1024 * 1024;
@@ -36,7 +37,7 @@ export const MAX_REDIRECTS = 5;
 const HTML_TYPES = /^\s*(text\/html|application\/xhtml\+xml)\b/i;
 const HTML_ACCEPT = 'text/html,application/xhtml+xml;q=0.9,*/*;q=0.1';
 
-export const USER_AGENT = 'Mozilla/5.0 (compatible; AnsvisorBot/1.0; +https://ansvisor.com)';
+export const USER_AGENT = BOT_USER_AGENT;
 
 export class PageFetchError extends Error {
   /**
@@ -267,7 +268,7 @@ function requestOnce(url, { signal, lookup, maxBytes, truncate, types, accept, u
  *   `allowUrl` is a caller's own check of each address, the first and each
  *   redirect's, after safe-fetch's: false refuses it ('not_allowed'). Chat
  *   keeps a page's redirects on the sites a run may open with it.
- *   `userAgent` replaces AnsvisorBot's: Site Audit's bot access test asks
+ *   `userAgent` replaces OpplaBot's: Site Audit's bot access test asks
  *   the page as each AI bot (SA-008).
  * @returns {Promise<{ url: string, status: number, html: string }>} url is the address after redirects
  */

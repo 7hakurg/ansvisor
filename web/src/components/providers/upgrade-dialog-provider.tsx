@@ -36,7 +36,7 @@ import { CHOOSE_PLAN_HREF, UpgradeDialogContext } from './upgrade-gate';
 export { CHOOSE_PLAN_HREF, useUpgradeDialog, useUpgradeGate } from './upgrade-gate';
 
 /**
- * Ansvisor Cloud's read-only mode: a workspace whose trial ended or whose
+ * Oppla Cloud's read-only mode: a workspace whose trial ended or whose
  * plan was canceled can still open every page, but an action (anything that
  * writes, runs or spends) opens "Choose a plan to keep going" instead. The dialog
  * closes with its ×, Escape or a click outside, and opens again on the next

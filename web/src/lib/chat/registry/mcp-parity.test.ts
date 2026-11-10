@@ -4,7 +4,7 @@ import { InMemoryTransport } from '@modelcontextprotocol/sdk/inMemory.js';
 import { beforeAll, describe, expect, it, vi } from 'vitest';
 
 /**
- * Chat and the Ansvisor MCP Server do the same work through the same rows
+ * Chat and the Oppla MCP Server do the same work through the same rows
  * (CHAT-20 §17): every MCP tool a row names is registered on the server, and
  * the server agrees with the row on whether it only reads.
  */

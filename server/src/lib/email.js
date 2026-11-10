@@ -5,7 +5,7 @@ export const ATTACHMENTS_MAX_BYTES = 10 * 1024 * 1024;
 
 /**
  * The sender, with a display name in place of the configured one when
- * given (a white label kit's company): `"Acme Agency" <hello@ansvisor.com>`.
+ * given (a white label kit's company): `"Acme Agency" <hello@oppla.ai>`.
  * The address is always RESEND_FROM_EMAIL's own.
  */
 export function senderOf(from, fromName) {

@@ -1,11 +1,12 @@
 import type { CardCopy, TargetKind } from './copy';
 import { countryIn, languageIn, percentIn } from './copy-names';
+import { siteConfig } from '@/config/site';
 
 /**
  * The report card in German, when the form chooses it (owner decision
  * 2026-11-09), with "Sie". A country never follows a preposition whose
  * article must agree with it ("in den USA", "in der Türkei"): it stands
- * after "Land:". Ansvisor's product, feature and button names stay in
+ * after "Land:". Oppla's product, feature and button names stay in
  * English, as the app shows them (owner decision 2026-11-08).
  */
 
@@ -41,7 +42,7 @@ export const de: CardCopy = {
   language: (english) => languageIn('de', english),
   document: (company) => `KI-Sichtbarkeitsbericht: ${company}`,
   footer: (page, pages) => `${page} / ${pages}`,
-  brand: 'Erstellt mit Ansvisor · www.ansvisor.com',
+  brand: `Erstellt mit ${siteConfig.name} · ${siteConfig.host}`,
   engines: {
     count: (n) => plural(n, 'KI-Engine', 'KI-Engines'),
     /** As "unter …" takes it: "den drei Engines". */
@@ -56,7 +57,7 @@ export const de: CardCopy = {
     subtitle: (domain, country, language, date) =>
       `${domain} · ${country}, auf ${language} · ${date}`,
     oneTime: (date) =>
-      `Eine einmalige Momentaufnahme: Jede Frage wurde am ${date} einmal gestellt. KI-Antworten ändern sich von Tag zu Tag; in Ansvisor werden die Fragen täglich gestellt.`,
+      `Eine einmalige Momentaufnahme: Jede Frage wurde am ${date} einmal gestellt. KI-Antworten ändern sich von Tag zu Tag; in Oppla werden die Fragen täglich gestellt.`,
     understood: (domain, readers) =>
       readers
         ? `So haben wir ${domain} verstanden: eine Publikation über`
@@ -88,7 +89,7 @@ export const de: CardCopy = {
     byEngine: 'Sichtbarkeit nach Engine',
     engineValue: (named, answers, pct) => `${named} von ${answers} · ${pc(pct)}`,
     growthBand: (starter) =>
-      `In Ansvisor Growth: die KI-Engines von Google, ebenfalls gemessen. Starter verfolgt ${starter}; Growth ergänzt diese.`,
+      `In Oppla Growth: die KI-Engines von Google, ebenfalls gemessen. Starter verfolgt ${starter}; Growth ergänzt diese.`,
     whoNamed: 'Wen die KI nennt',
     noCompetitor: 'Kein Wettbewerber wurde genannt.',
     you: (name) => `${name} (Sie)`,
@@ -237,10 +238,10 @@ export const de: CardCopy = {
     eyebrow: 'Ihr Plan',
     title: 'Drei Erkenntnisse und was Sie in Woche 1 tun würden',
     subtitle: (company) =>
-      `Nach festen Regeln aus den Ergebnissen von ${company} ausgewählt: was der Bericht fand, der erste Schritt dazu und wo Ansvisor hilft.`,
+      `Nach festen Regeln aus den Ergebnissen von ${company} ausgewählt: was der Bericht fand, der erste Schritt dazu und wo Oppla hilft.`,
     finding: 'Erkenntnis',
     weekOne: 'Woche 1',
-    inAnsvisor: 'In Ansvisor',
+    inAnsvisor: 'In Oppla',
     feature: {
       contentEditor: 'Content Editor',
       citations: 'Citations',
@@ -269,7 +270,7 @@ export const de: CardCopy = {
     autoTitle: 'Oder Agenten veröffentlichen selbst',
     autoBody:
       'In Full auto, mit zwei Schaltern, die ein Admin aktiviert, senden oder veröffentlichen gewählte Agenten Seiten ohne Klick in Ihr CMS, 1 bis 20 pro Tag. Eine Seite, die Quality oder Ihre Markenfakten nicht besteht, wartet weiter auf Sie. In Growth.',
-    examplePrompt: 'Ein Prompt, den Ansvisor täglich für Sie verfolgen würde:',
+    examplePrompt: 'Ein Prompt, den Oppla täglich für Sie verfolgen würde:',
   },
 
   // ─── Seite 4 ───────────────────────────────────────────────────────────────
@@ -277,7 +278,7 @@ export const de: CardCopy = {
     eyebrow: 'Was es wert ist',
     title: 'Was KI-Besuche wert sind, und die Pläne für diesen Bericht',
     subtitle:
-      'KI-Besuche zum Preis derselben Klicks in Google Ads, beide Pläne im Vergleich, und wie Ansvisor hilft.',
+      'KI-Besuche zum Preis derselben Klicks in Google Ads, beide Pläne im Vergleich, und wie Oppla hilft.',
     demand: (searches, country, keywords) =>
       `Die Keywords Ihrer Fragen haben rund ${searches} Google-Suchen pro Monat (${country}; ${keywords} mit Volumen).`,
     cpcLine: (cpc, keywords, total) =>
@@ -292,7 +293,7 @@ export const de: CardCopy = {
       `${visits} Besuche pro Monat kosten in Google Ads rund ${ads}, jeden Monat: ${year} im Jahr.`,
     earning: 'Verdienen',
     earningBody: (plan, price) =>
-      `Ansvisor ${plan}: ${price} pro Monat. Von der KI zitierte Seiten bringen Besuche, solange sie zitiert werden.`,
+      `Oppla ${plan}: ${price} pro Monat. Von der KI zitierte Seiten bringen Besuche, solange sie zitiert werden.`,
     cheap: (ads, plan, price) =>
       `Klicks sind in Ihrem Markt günstig: Diese Besuche kosten in Ads rund ${ads} pro Monat, weniger als ${plan} für ${price}. Was Werbung nicht kaufen kann: die Marke zu sein, die die KI empfiehlt, wenn Ihre Kunden fragen.`,
     slow: 'KI-Besuche wachsen über Monate: Der erste Monat ist Einrichtung und erste Seiten, noch keine Besuche.',
@@ -307,9 +308,9 @@ export const de: CardCopy = {
       `Ihr durchschnittlicher ${kind === 'order' ? 'Bestellwert' : 'Auftragswert'}: ${value}. Annahme: ${low} bis ${high} der KI-Besuche ${kind === 'order' ? 'bestellen' : 'werden zum Auftrag'}, nicht besser als andere Besuche.`,
     revenueRow: (visits, low, high) => `${visits} KI-Besuche pro Monat: ${low}–${high} pro Monat`,
     scenarios:
-      'Szenarien, keine Prognose oder Garantie. AI Traffic in Ansvisor misst Ihre echten KI-Besuche, sobald es eingerichtet ist.',
+      'Szenarien, keine Prognose oder Garantie. AI Traffic in Oppla misst Ihre echten KI-Besuche, sobald es eingerichtet ist.',
     planTitle: 'Die Pläne für diesen Bericht',
-    planName: (plan) => `Ansvisor ${plan}`,
+    planName: (plan) => `Oppla ${plan}`,
     starterTag: 'Passt zu diesem Bericht',
     growthTag: 'Mit Googles Engines',
     perMonth: (price) => `${price}/Monat`,
@@ -331,13 +332,13 @@ export const de: CardCopy = {
     siteAudits: (pages) => `Site Audit: ${pages} Seiten pro Monat.`,
     starterAgents: 'Chat und Agent Center mit Agenten, die vor jeder Änderung fragen.',
     growthAgents: 'Full auto: Ihre gewählten Agenten veröffentlichen selbst.',
-    mcpRead: 'MCP: Ihre Ansvisor-Daten aus KI-Tools lesen.',
-    mcpReadWrite: 'MCP: Ihre Ansvisor-Daten aus KI-Tools lesen und schreiben.',
-    workTitle: 'Ansvisor erledigt die Arbeit mit Ihnen',
+    mcpRead: 'MCP: Ihre Oppla-Daten aus KI-Tools lesen.',
+    mcpReadWrite: 'MCP: Ihre Oppla-Daten aus KI-Tools lesen und schreiben.',
+    workTitle: 'Oppla erledigt die Arbeit mit Ihnen',
     work: [
       {
         title: 'Chat',
-        body: 'Antwortet aus Ihren eigenen Ansvisor-Daten, bereitet die Arbeit der ersten Woche aus diesem Bericht vor und liest Ihre Dateien.',
+        body: 'Antwortet aus Ihren eigenen Oppla-Daten, bereitet die Arbeit der ersten Woche aus diesem Bericht vor und liest Ihre Dateien.',
       },
       {
         title: 'Agent Center',
@@ -345,7 +346,7 @@ export const de: CardCopy = {
       },
       {
         title: 'MCP',
-        body: 'Nutzen Sie Ihre Ansvisor-Daten in Claude, ChatGPT, Cursor und anderen KI-Tools.',
+        body: 'Nutzen Sie Ihre Oppla-Daten in Claude, ChatGPT, Cursor und anderen KI-Tools.',
       },
     ],
     ctaTitle: 'Messen Sie Ihre eigenen Fragen',

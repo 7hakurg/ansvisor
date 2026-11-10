@@ -8,7 +8,7 @@ import type { LocationQuota } from '@/lib/actions/prompt';
 
 /**
  * Where to go when the limit is reached. Starter can upgrade to Growth in
- * billing; Growth and Enterprise (custom limits) are raised by Ansvisor.
+ * billing; Growth and Enterprise (custom limits) are raised by Oppla.
  */
 export function PromptLimitActions({ planId }: { planId: LocationQuota['planId'] }) {
   const contact = (

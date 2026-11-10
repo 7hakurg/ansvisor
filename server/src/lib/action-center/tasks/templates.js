@@ -11,7 +11,7 @@
  *  - `rerun`: the prompts are run again, for what AI answers say;
  *  - `manual`: the person confirms it, for work outside the page.
  *
- * Analysis Ansvisor does itself (analyze_, identify_, map_) has none: it
+ * Analysis Oppla does itself (analyze_, identify_, map_) has none: it
  * shows its findings, and the task writer drops it. A task measured from a
  * data window (GA4, Search Console) has Done when only: none of the three
  * checks fits it.

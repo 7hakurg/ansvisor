@@ -108,7 +108,7 @@ describe('parseHelpArticle', () => {
         'synonyms: []',
         'approved: false',
         '---',
-        'Prompts are the questions Ansvisor asks AI engines.',
+        'Prompts are the questions Oppla asks AI engines.',
         '',
         '## One at a time',
         'Click Add prompt.',
@@ -127,7 +127,7 @@ describe('parseHelpArticle', () => {
         approved: false,
       },
       sections: [
-        { heading: null, text: 'Prompts are the questions Ansvisor asks AI engines.' },
+        { heading: null, text: 'Prompts are the questions Oppla asks AI engines.' },
         { heading: 'One at a time', text: 'Click Add prompt.' },
         { heading: 'Many at once', text: 'Use Bulk import.' },
       ],

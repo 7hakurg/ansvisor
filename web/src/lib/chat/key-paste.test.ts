@@ -72,7 +72,7 @@ describe('asksToAddKey (W4-06)', () => {
       'Which keywords drive our citations?',
       'What is the key takeaway from last week?',
       'Use the key metrics from my report',
-      'How do API keys work in Ansvisor?',
+      'How do API keys work in Oppla?',
       // "Key" as a word of the question, not a key to add.
       'Add our key competitors to the brief',
       'Use our key topics to write an outline',

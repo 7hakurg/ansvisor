@@ -79,7 +79,7 @@ export const COST_STOPPING = [
 
 /**
  * Requests, under /api, that only delete what the person gave us: open
- * whatever the plan, so leaving needs no purchase (Ansvisor, 2026-10-27).
+ * whatever the plan, so leaving needs no purchase (Oppla, 2026-10-27).
  */
 export const DATA_REMOVAL = [
   // Deletes a brand and all its data (brands.js); admins only, as before.
@@ -136,7 +136,7 @@ export const SUBSCRIPTION_INACTIVE = {
   success: false,
   error: 'plan_limit',
   code: 'subscription_inactive',
-  message: 'Your plan has ended. Choose a plan to use Ansvisor again.',
+  message: 'Your plan has ended. Choose a plan to use Oppla again.',
 };
 
 /** The answer to an onboarding call past the day's ONBOARDING_DAILY_CALLS. */

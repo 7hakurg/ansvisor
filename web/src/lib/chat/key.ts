@@ -15,8 +15,8 @@ import { pickedModelKeyOrder, type OfferedModelProvider } from './models';
 /**
  * Whose key a Chat step runs on (CHAT-16 item 22, owner decision 11 of the
  * Chat P0 plan): the workspace's own, which its provider bills, or
- * Ansvisor's, which draws on the workspace's monthly AI budget (CHAT-04 §C,
- * lib/chat/budget.ts). Both write the step's usage row; only Ansvisor's
+ * Oppla's, which draws on the workspace's monthly AI budget (CHAT-04 §C,
+ * lib/chat/budget.ts). Both write the step's usage row; only Oppla's
  * counts.
  */
 export type ChatKeySource = 'own' | 'ansvisor';
@@ -29,7 +29,7 @@ export interface ChatModelKey {
 /**
  * The workspace's own key is the one Chat runs on, but its saved envelope
  * can't be decrypted (AGENT-OWN-KEY §5.1 `unreadable`): Chat stops on it
- * rather than move to Ansvisor's key and the AI limit.
+ * rather than move to Oppla's key and the AI limit.
  */
 export class OwnKeyUnreadableError extends Error {
   readonly provider: AiProvider;
@@ -142,14 +142,14 @@ export async function ownKeyAccess(organizationId: string): Promise<OwnKeyAccess
  *      Enterprise or for a kept key's 30 days (ownKeyAccess): the provider
  *      bills the workspace, and the usage percent doesn't move. One that
  *      can't be decrypted throws OwnKeyUnreadableError and is marked
- *      failing (lib/chat/key-health.ts): never Ansvisor's key in its place.
- *   2. Ansvisor's (ANTHROPIC_API_KEY; Auto is Anthropic first-party): the
+ *      failing (lib/chat/key-health.ts): never Oppla's key in its place.
+ *   2. Oppla's (ANTHROPIC_API_KEY; Auto is Anthropic first-party): the
  *      step draws on the workspace's AI budget.
  * Null when neither is there. Self-hosted, the operator's own key is
- * Ansvisor's here, with no budget to draw on (the server meters nothing).
+ * Oppla's here, with no budget to draw on (the server meters nothing).
  *
  * Only with CHAT_AGENTIC on for the workspace. Off, it is today's Agent
- * Chat: on the cloud the workspace's own key or nothing, never Ansvisor's
+ * Chat: on the cloud the workspace's own key or nothing, never Oppla's
  * (resolveAgentModelConfig), and nothing is metered; it reads as 'own'.
  */
 export async function resolveChatModelKey(
@@ -161,7 +161,7 @@ export async function resolveChatModelKey(
     return config ? { source: 'own', config } : null;
   }
 
-  // "Use Ansvisor's limit" after the own key failed (W4-06): a person's click, never by itself.
+  // "Use Oppla's limit" after the own key failed (W4-06): a person's click, never by itself.
   const access = ansvisorOnly ? null : await ownKeyAccess(organizationId);
   if (access?.state === 'plan' || access?.state === 'kept') {
     const own = await readActiveKey(organizationId);
@@ -193,13 +193,13 @@ export async function resolveChatModelKey(
  *   1. the workspace's own key for the model's provider, when own keys are
  *      allowed (ownKeyAccess) and the key is for Chat (its Use for);
  *   2. its own OpenRouter key for Chat, which runs the model by its catalog id;
- *   3. Ansvisor's key for the provider (ANTHROPIC_API_KEY or
+ *   3. Oppla's key for the provider (ANTHROPIC_API_KEY or
  *      OPENROUTER_API_KEY), on the AI budget.
  * Steps 1 and 2 are pickedModelKeyOrder's, which the model menu's "Your key"
  * and an agent's Model step read too (pickedModelOwnKey).
  * A key for the step that can't be read stops it, as the active key does:
- * never Ansvisor's in its place. `ansvisorOnly`: the person chose "Use
- * Ansvisor's limit" after their key failed. Null when no key is there.
+ * never Oppla's in its place. `ansvisorOnly`: the person chose "Use
+ * Oppla's limit" after their key failed. Null when no key is there.
  */
 export async function resolvePickedModelKey(
   organizationId: string,
@@ -242,7 +242,7 @@ export async function chatRunsOnOwnKey(organizationId: string): Promise<boolean>
 
 /**
  * The provider of the own key the workspace's Chat runs on, as
- * chatRunsOnOwnKey decides it; null when Chat runs on Ansvisor's key. The
+ * chatRunsOnOwnKey decides it; null when Chat runs on Oppla's key. The
  * model menu marks that provider's models "Your key" (W4-01).
  */
 export async function ownChatKeyProvider(organizationId: string): Promise<AiProvider | null> {
@@ -257,7 +257,7 @@ export async function ownChatKeyProvider(organizationId: string): Promise<AiProv
     .eq('active', true)
     .maybeSingle();
   if (!key?.key_encrypted || !isAiProvider(key.provider)) return null;
-  // A key saved for images only isn't Chat's: Auto runs on Ansvisor's key (W4-06's Use for).
+  // A key saved for images only isn't Chat's: Auto runs on Oppla's key (W4-06's Use for).
   return keyUsesOf(key.provider, key.settings as AiProviderSettings).includes('chat')
     ? key.provider
     : null;

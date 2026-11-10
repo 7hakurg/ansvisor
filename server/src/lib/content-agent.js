@@ -735,7 +735,7 @@ export function placeholderAttributionsInHtml(html, known = null) {
 }
 
 // A list of names: two or more capitalised items with commas and an "and"
-// ("Ansvisor, Profound and LLM Pulse"; und, ve, et, y…), or three with
+// ("Oppla, Profound and LLM Pulse"; und, ve, et, y…), or three with
 // commas; a dot only inside a word, as in a source's name.
 const ITEM_WORD = String.raw`(?<![\p{L}\p{N}&+'’.-])\p{Lu}(?:[\p{L}\p{N}&+'’-]|${NAME_DOT})*`;
 const ITEM = String.raw`${ITEM_WORD}(?:\s+${ITEM_WORD}){0,${MAX_NAME_WORDS - 1}}`;

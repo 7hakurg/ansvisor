@@ -18,7 +18,7 @@ import type { PageVersionRead, VersionRun } from '../page-versions';
  * (lib/chat/precedence.ts).
  */
 
-/** What a call does (CHAT-20 §3): reads, changes data in Ansvisor, or goes live / leaves it. */
+/** What a call does (CHAT-20 §3): reads, changes data in Oppla, or goes live / leaves it. */
 export const TOOL_CLASSES = ['read', 'write', 'execute'] as const;
 export type ToolClass = (typeof TOOL_CLASSES)[number];
 
@@ -260,7 +260,7 @@ interface ToolFields<S extends z.ZodObject> {
   labelKey: string;
   /** The page in the app that shows the same thing (CHAT-19), or null. */
   route: string | null;
-  /** The Ansvisor MCP Server tool that does the same work, or null. */
+  /** The Oppla MCP Server tool that does the same work, or null. */
   mcpTool: string | null;
   /** Its row in CHAT-20 §9. */
   specRow: string;

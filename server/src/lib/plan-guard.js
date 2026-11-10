@@ -40,7 +40,7 @@ export class PlanLimitError extends Error {
  * Enterprise orgs can have per-customer limit overrides stored in
  * organizations.plan_overrides (jsonb) — mirrors web getOrgPlan().
  *
- * The AI budget is the plan's $50 unless Ansvisor sets a customer's own in
+ * The AI budget is the plan's $50 unless Oppla sets a customer's own in
  * `improveMonthlyBudgetUsd` (2026-10-27: $50 or more, set per customer; anything else keeps $50); the
  * contract's value doesn't raise it. `contractMonthlyUsd` is the contract's
  * monthly value, entered when the deal is signed. It sets the relevance
@@ -400,7 +400,7 @@ async function improveSpendThisPeriod(orgId) {
 /**
  * Improve-tab budget (PROMPT-003): a monthly USD budget per organization
  * (plan.limits.improveMonthlyBudgetUsd: Starter $5, Growth $25, Enterprise
- * $50 or a customer's own set by Ansvisor, the free trial $2), charged with each
+ * $50 or a customer's own set by Oppla, the free trial $2), charged with each
  * generation's real token cost so the budget holds for any model. Users see
  * an estimate of generations left, not dollars. -1 is unlimited. `readOnly`
  * as resolveOrgPlanByOrgId: without an active plan, a budget of 0 and

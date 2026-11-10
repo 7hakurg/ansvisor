@@ -102,12 +102,12 @@ describe('POST /api/content-drafts/:draftId/take-down', () => {
 
   it('answers a page it can’t take down with its code', async () => {
     takeDownContentPage.mockRejectedValueOnce(
-      new DeliveryError('not_live', 'This page isn’t live through Ansvisor.', 409),
+      new DeliveryError('not_live', 'This page isn’t live through Oppla.', 409),
     );
     const notLive = await takeDown();
     expect(notLive.status).toBe(409);
     expect(await notLive.json()).toEqual({
-      error: 'This page isn’t live through Ansvisor.',
+      error: 'This page isn’t live through Oppla.',
       code: 'not_live',
     });
     takeDownContentPage.mockRejectedValueOnce(new Error('boom'));

@@ -8,7 +8,7 @@
  *   AI bot list (ai-bots.json, the AI bot logs' list). Google-Extended is a
  *   robots.txt token with no crawler of its own, so only robots.txt says
  *   whether it is let in (signals/trust.js).
- * - A control request comes first, as AnsvisorBot, the user agent Ansvisor
+ * - A control request comes first, as OpplaBot, the user agent Oppla
  *   reads pages with. Only when the site lets it in is a bot's refusal the
  *   bot's: with the control refused, nothing is concluded and the bots
  *   aren't asked at all.
@@ -25,7 +25,7 @@
  *   check compares with the rendered page (SA-009). A site that prerenders
  *   for bots is read as the bots get it.
  *
- * The bots are asked from Ansvisor's servers, not the operators' own
+ * The bots are asked from Oppla's servers, not the operators' own
  * addresses: a firewall that checks a crawler's published IP ranges can
  * treat the real crawler differently. A block here is a block of anything
  * that names the bot.
@@ -33,6 +33,7 @@
 
 import { AI_BOTS } from '../ai-bots.js';
 import { MAX_PAGE_BYTES, fetchPage } from '../safe-fetch.js';
+import { BOT_TOKEN, BRAND_URL } from '../brand.js';
 
 /** The bots fetched by their user agent, in the spec's order (keys in ai-bots.json). */
 export const LIVE_BOT_KEYS = [
@@ -59,7 +60,7 @@ const NOT_A_BLOCK = new Set([408, 429]);
 
 /** The user agent a bot is asked as: its token, and who is asking. */
 export function botUserAgent(token) {
-  return `Mozilla/5.0 (compatible; ${token}/1.0; +https://ansvisor.com) AnsvisorBot/1.0 (AI bot access test)`;
+  return `Mozilla/5.0 (compatible; ${token}/1.0; +${BRAND_URL}) ${BOT_TOKEN}/1.0 (AI bot access test)`;
 }
 
 /** The bots tested, from the verified list. */
@@ -104,7 +105,7 @@ export function liveResult({ http, answer }) {
 }
 
 /**
- * Asks the page as AnsvisorBot, then as each AI bot.
+ * Asks the page as OpplaBot, then as each AI bot.
  *
  * @param {string} url
  * @param {{ fetchImpl?: typeof fetchPage, now?: () => number }} [deps]

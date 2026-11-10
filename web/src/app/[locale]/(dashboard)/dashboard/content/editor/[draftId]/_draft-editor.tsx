@@ -3211,7 +3211,7 @@ export function DraftEditor({
   // HTML edited in the HTML view and not applied isn't in the page to save.
   const htmlUnapplied = htmlSource !== null && htmlEdited;
   // What's waiting goes out first, as for Mark ready: the CMS gets the page
-  // Ansvisor holds, the one its callback later marks Published. A page that
+  // Oppla holds, the one its callback later marks Published. A page that
   // can't be saved (a teammate or the agent changed it meanwhile) isn't sent.
   const openSend = async () => {
     if (preparing) return;

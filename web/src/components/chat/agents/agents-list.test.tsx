@@ -195,7 +195,7 @@ describe('AgentsList (Agent Center › Your agents)', () => {
     );
     expect(cell(first, 'trigger')).toBe('TriggerEvery Mon 09:00 · New Recover signal');
     expect(cell(first, 'nextRun')).toBe('Next runMon 09:00');
-    expect(cell(first, 'scope')).toBe('ScopeAnsvisor');
+    expect(cell(first, 'scope')).toBe('ScopeOppla');
     expect(cell(first, 'lastRun')).toContain('Today 09:14');
     expect(cell(first, 'outcomes')).toBe('Outcomes · 30 days4 improved · 2 pending');
 
@@ -314,7 +314,7 @@ describe('AgentsList (Agent Center › Your agents)', () => {
         ? Response.json(
             {
               ok: true,
-              runs: [{ brand: 'Ansvisor', status: 'queued', repeated: false, coalesced: false }],
+              runs: [{ brand: 'Oppla', status: 'queued', repeated: false, coalesced: false }],
             },
             { status: 202 },
           )
@@ -325,7 +325,7 @@ describe('AgentsList (Agent Center › Your agents)', () => {
       `/api/chat/agents/${AGENT_ID}/run`,
       expect.objectContaining({ method: 'POST' }),
     );
-    expect(toast).toHaveBeenCalledWith('Run queued for Ansvisor');
+    expect(toast).toHaveBeenCalledWith('Run queued for Oppla');
     expect(listCalls()).toHaveLength(2);
   });
 

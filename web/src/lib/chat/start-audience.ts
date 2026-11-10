@@ -2,7 +2,7 @@ import { isCloud, isSubscriptionActive } from '@/config/plans';
 import { planFactsFromOrgRow } from './plan-facts';
 
 /**
- * The people Ansvisor starts on Chat (owner decision 2026-11-06): those new
+ * The people Oppla starts on Chat (owner decision 2026-11-06): those new
  * to it, before they pay.
  *
  *   - `trial`: the workspace is in the free trial (plan-facts' isTrial:

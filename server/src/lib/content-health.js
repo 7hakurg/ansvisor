@@ -227,7 +227,7 @@ function linesOf(html) {
  * own words: the page (`html`), `texts` (the brand's name and description,
  * its rules, the writer's rules, its products' names) and Brief › Your
  * input among the numbered sources (its experience, its data, the quotes it
- * gave; never Ansvisor data's prompt, a buyer's words). A claim it makes in
+ * gave; never Oppla data's prompt, a buyer's words). A claim it makes in
  * a question or a disclaimer isn't one it made.
  */
 export function healthGuard(brand, { html = '', texts = [], numbered = [] } = {}) {

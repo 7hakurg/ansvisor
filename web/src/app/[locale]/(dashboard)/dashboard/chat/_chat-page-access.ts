@@ -36,7 +36,7 @@ export interface ChatShellPrefs {
   menuOpen: boolean;
   /** The app sidebar expanded beside Chat, or the rail (the default; CHAT-01 4f). */
   railOpen: boolean;
-  /** Ansvisor staff (STAFF_EMAILS): the chat's ⋯ menu offers Debug (CHAT-03 item 25). */
+  /** Oppla staff (STAFF_EMAILS): the chat's ⋯ menu offers Debug (CHAT-03 item 25). */
   staff: boolean;
 }
 

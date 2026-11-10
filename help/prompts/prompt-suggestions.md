@@ -15,9 +15,9 @@ sources: [docs/guides/prompts.mdx]
 
 ## Where suggestions come from
 
-Suggestions come from four sources. The sources filter (**All sources**) shows one of them, **From your data** for both Google sources, or **Ansvisor Agents only**:
+Suggestions come from four sources. The sources filter (**All sources**) shows one of them, **From your data** for both Google sources, or **Oppla Agents only**:
 
-- **Ansvisor Agents**: written by AI from your brand and tracking data. Each shows an estimated monthly AI volume as a grey range.
+- **Oppla Agents**: written by AI from your brand and tracking data. Each shows an estimated monthly AI volume as a grey range.
 - **Google Search Console**: queries people already search, with their impressions over the last 28 days.
 - **Google Analytics (GA4)**: pages that earn revenue or conversions, or already get AI visits, with that evidence on the row.
 - **Your catalog**: for an online shop with a product catalog, the questions a shopper asks before buying in its categories, using their price bands. Hover the badge for the category; the **Shopping** filter lists them.

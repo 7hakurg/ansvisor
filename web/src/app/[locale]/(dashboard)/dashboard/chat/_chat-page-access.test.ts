@@ -144,7 +144,7 @@ describe('chatShellPrefs', () => {
     expect(importLegacyChats).not.toHaveBeenCalled();
   });
 
-  it('says whether the person is Ansvisor staff: a confirmed e-mail in STAFF_EMAILS (W1-15)', async () => {
+  it('says whether the person is Oppla staff: a confirmed e-mail in STAFF_EMAILS (W1-15)', async () => {
     vi.stubEnv('STAFF_EMAILS', 'ops@ansvisor.com, Jo@Example.com');
     expect((await chatShellPrefs())?.staff).toBe(false);
     db.confirmedAt = '2026-10-01T09:00:00.000Z';

@@ -1,7 +1,7 @@
 ---
 title: Take the product tour
 route: /dashboard/chat
-keywords: [product tour, take the tour, quick tour, show me everything, ansvisor tour, next topic, another topic, end the tour]
+keywords: [product tour, take the tour, quick tour, show me everything, oppla tour, next topic, another topic, end the tour]
 synonyms: [walkthrough, guided tour, show me around, how to get started, restart the tour, tour again]
 plan: all
 updated: 2026-11-06
@@ -11,7 +11,7 @@ app_version: 0.3.0
 approved: false
 sources: [web/messages/en.json]
 ---
-The product tour shows you Ansvisor's main pages one at a time. Each topic opens its page with Chat in the side panel beside it, where a few short lines explain what the page shows. The tour's text is written ahead, so it uses none of your AI usage. In the free trial, and while you explore the demo brand, Chat Home offers it on its welcome card.
+The product tour shows you Oppla's main pages one at a time. Each topic opens its page with Chat in the side panel beside it, where a few short lines explain what the page shows. The tour's text is written ahead, so it uses none of your AI usage. In the free trial, and while you explore the demo brand, Chat Home offers it on its welcome card.
 
 ## Start the tour
 
@@ -29,7 +29,7 @@ The tour has five topics, in this order:
 
 ## Move through the tour
 
-The panel says where you are, such as **Ansvisor tour · 2 of 5**. Under each explanation:
+The panel says where you are, such as **Oppla tour · 2 of 5**. Under each explanation:
 
 - **Next** opens the next topic's page, with the panel still open.
 - On Prompts, **Suggest prompts for me** asks Chat for prompt ideas, as any question does.
@@ -56,7 +56,7 @@ The tour follows **Answer language** in Chat's settings. With a language picked 
 
 ## Take the tour again
 
-The tour is kept as a chat named **Ansvisor tour** in your chats, so you can read it again. To take it again, open **Settings** in the chat menu and click **Take the tour** under **Product tour**. It starts from the first topic and adds to the same chat.
+The tour is kept as a chat named **Oppla tour** in your chats, so you can read it again. To take it again, open **Settings** in the chat menu and click **Take the tour** under **Product tour**. It starts from the first topic and adds to the same chat.
 
 ## When the tour isn't offered
 

@@ -15,7 +15,7 @@ When an action's work is writing, a new page or a better existing one, its drawe
 
 ## What to do for your kind of site
 
-When an action asks for new content for prompts or a topic, Ansvisor reads what those prompts ask and picks the page to write. Overview then starts with **What to do for an online store** (or a SaaS, an app, a travel brand) and the page, such as **Write a comparison page**, with why: how many of the prompts ask for it and their share of the estimated AI searches. A page qualifies when at least 15% of the searches ask for it.
+When an action asks for new content for prompts or a topic, Oppla reads what those prompts ask and picks the page to write. Overview then starts with **What to do for an online store** (or a SaaS, an app, a travel brand) and the page, such as **Write a comparison page**, with why: how many of the prompts ask for it and their share of the estimated AI searches. A page qualifies when at least 15% of the searches ask for it.
 
 **Also worth doing here** lists up to two more pages the same prompts ask for. When the prompts' search intents aren't known yet, nothing is picked.
 

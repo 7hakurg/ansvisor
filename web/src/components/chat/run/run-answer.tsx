@@ -107,8 +107,8 @@ export function RunAnswer({
   /** Retry on a run that ended in error: sends its question again (item 18). */
   onRetry?: () => void;
   /**
-   * The own key failed (W4-06): "Use Ansvisor's limit" sends it again on
-   * Ansvisor's key, for an Admin, while the AI limit has room. Never by itself.
+   * The own key failed (W4-06): "Use Oppla's limit" sends it again on
+   * Oppla's key, for an Admin, while the AI limit has room. Never by itself.
    */
   onUseAnsvisorLimit?: () => void;
   /** The run's own cards (an approval, a denial), under the answer. */

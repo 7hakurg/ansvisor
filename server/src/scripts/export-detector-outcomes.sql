@@ -9,7 +9,7 @@
 -- actions with linked signals but no baseline of them (older ones) are left
 -- out, and counted on the last line.
 --
--- Run it on one brand (Ansvisor's own, or your own self-hosted data).
+-- Run it on one brand (Oppla's own, or your own self-hosted data).
 -- Running it across customers' brands is not supported; it waits on the
 -- cross-brand learning decision (C5) and a privacy policy update.
 --

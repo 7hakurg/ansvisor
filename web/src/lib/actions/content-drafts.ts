@@ -378,7 +378,7 @@ export interface DraftPage {
   pageType: string | null;
   /** A new page (method create): its schema gives the published date too. */
   isNew: boolean;
-  /** The person left out the Article schema Ansvisor adds (00448). */
+  /** The person left out the Article schema Oppla adds (00448). */
   schemaLeftOut: boolean;
 }
 
@@ -1432,7 +1432,7 @@ export async function confirmDraftAuthor(
 }
 
 /**
- * Leaves out, or adds back, the Article schema Ansvisor adds to the page it
+ * Leaves out, or adds back, the Article schema Oppla adds to the page it
  * sends to a CMS and exports (customer priorities item 7, 00448): for a CMS
  * that writes its own. Never throws; false when it couldn't be saved.
  */
@@ -1597,7 +1597,7 @@ const readyAnyway = z.object({
 
 /**
  * Mark ready: a draft, or an agent's draft in review, is ready to publish.
- * Ansvisor never publishes it; the person does (CE-013 records the URL).
+ * Oppla never publishes it; the person does (CE-013 records the URL).
  * Returns the status the draft has after, so a draft already ready or
  * published keeps its own, and how many of its action's tasks it completed
  * (CE-022; completeDraftTasks). Marked ready past Before you publish's

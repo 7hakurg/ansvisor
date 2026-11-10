@@ -4,7 +4,7 @@
  * subset, not arbitrary YAML"), turned into the one-line form the format
  * reader takes (format.ts): each value on one line, quoted, and metadata
  * one level deep. Only for skills added from the Library (import.ts's
- * `library`); uploads, GitHub imports and Ansvisor's own skills keep the
+ * `library`); uploads, GitHub imports and Oppla's own skills keep the
  * strict form.
  *
  * The subset, block style only:

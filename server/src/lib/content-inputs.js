@@ -4,7 +4,7 @@ import { qualityPhase } from './content-quality.js';
 /**
  * Brief › Your input (Content Editor Quality spec §6, CE-048): what only the
  * person can give a page (content_draft_inputs, 00265) — their first-hand
- * experience, their data (their own tables, and Ansvisor data they chose)
+ * experience, their data (their own tables, and Oppla data they chose)
  * and expert quotes — numbered after the draft's other sources, as the
  * person gave them. The agent writes from them and adds nothing beyond
  * them: a number it writes must be in a source's words (content-sources.js)
@@ -35,7 +35,7 @@ const textOf = (value, max) =>
     : '';
 const listOf = (value) => (Array.isArray(value) ? value : []);
 
-/** "2026-10-24" as Ansvisor data is cited: "October 2026". */
+/** "2026-10-24" as Oppla data is cited: "October 2026". */
 function monthOf(day) {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(day ?? '')) return null;
   const date = new Date(`${day}T12:00:00Z`);
@@ -57,11 +57,11 @@ export async function readDraftInputs(draftId) {
 
 /**
  * The input as sources, in the order Brief › Your input lists it: the
- * experience, each table, each prompt's Ansvisor data, each quote. An item
+ * experience, each table, each prompt's Oppla data, each quote. An item
  * missing what makes it real (a quote without its name, title, words or an
- * http(s) source) is left out. `brandName` is who Ansvisor data counts.
+ * http(s) source) is left out. `brandName` is who Oppla data counts.
  *
- * What only places a source (a quote's address, the days Ansvisor data
+ * What only places a source (a quote's address, the days Oppla data
  * covers) is its `note`: the model reads it, the guards don't, so its
  * digits are no number the agent may write (sourceWords). Refs are by
  * place in the list, for a chip to open Your input by: an item removed
@@ -126,7 +126,7 @@ export function inputSources(row, brandName) {
       label: prompt,
       // The days are the data the person chose: the page may say them. The
       // date is a note: its digits are no figure.
-      detail: `Ansvisor data: ${brandName || 'the brand'} was named in ${d.mentioned} of ${d.answers} AI answers to this prompt over the last ${d.days} days${share}. Cite it as "Ansvisor data, ${month}"`,
+      detail: `Oppla data: ${brandName || 'the brand'} was named in ${d.mentioned} of ${d.answers} AI answers to this prompt over the last ${d.days} days${share}. Cite it as "Oppla data, ${month}"`,
       note: `to ${d.asOf}`,
     });
   }

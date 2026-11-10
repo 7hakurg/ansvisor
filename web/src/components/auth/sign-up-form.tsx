@@ -149,27 +149,29 @@ export function SignUpForm() {
       <OrDivider label={t('orContinueWith')} />
       <OAuthButtons next={nextPath} />
 
-      <p className="text-center text-sm text-muted-foreground">
-        {t('termsAgreement')}{' '}
-        <a
-          href={siteConfig.legal.terms}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="underline-offset-4 hover:text-foreground hover:underline"
-        >
-          {t('termsOfService')}
-        </a>{' '}
-        {t('and')}{' '}
-        <a
-          href={siteConfig.legal.privacy}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="underline-offset-4 hover:text-foreground hover:underline"
-        >
-          {t('privacyPolicy')}
-        </a>
-        .
-      </p>
+      {siteConfig.legal.terms && siteConfig.legal.privacy ? (
+        <p className="text-center text-sm text-muted-foreground">
+          {t('termsAgreement')}{' '}
+          <a
+            href={siteConfig.legal.terms}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline-offset-4 hover:text-foreground hover:underline"
+          >
+            {t('termsOfService')}
+          </a>{' '}
+          {t('and')}{' '}
+          <a
+            href={siteConfig.legal.privacy}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline-offset-4 hover:text-foreground hover:underline"
+          >
+            {t('privacyPolicy')}
+          </a>
+          .
+        </p>
+      ) : null}
     </div>
   );
 }

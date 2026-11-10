@@ -1,7 +1,7 @@
 ---
 title: Skills in Chat
 route: /dashboard/chat
-keywords: [skills, skill, setup guide, /setup, create a skill, skill draft, save these steps as a skill, slash menu, ansvisor skills, used skill, save a skill, my skills, skills page, turn off a skill, schedule a skill, import a skill, upload a skill, skill from github, skill from skills.sh, skills.sh, review a skill, skill update, update available, library, skill library, library skills, add a skill from the library, third-party skills, mit skills, pending approval, faq from fan-outs, weekly report, win back citations, ready to publish, buyer questions, rival brief, listing gaps, fan-out gaps, fanout, sub-questions ai searches, prompt portfolio, prompts to add, prompts to pause]
+keywords: [skills, skill, setup guide, /setup, create a skill, skill draft, save these steps as a skill, slash menu, oppla skills, used skill, save a skill, my skills, skills page, turn off a skill, schedule a skill, import a skill, upload a skill, skill from github, skill from skills.sh, skills.sh, review a skill, skill update, update available, library, skill library, library skills, add a skill from the library, third-party skills, mit skills, pending approval, faq from fan-outs, weekly report, win back citations, ready to publish, buyer questions, rival brief, listing gaps, fan-out gaps, fanout, sub-questions ai searches, prompt portfolio, prompts to add, prompts to pause]
 synonyms: [slash commands, playbooks, how-tos, templates, marketplace, skills directory]
 plan: all
 updated: 2026-11-07
@@ -11,7 +11,7 @@ app_version: 0.3.0
 approved: true
 sources: [web/messages/en.json, skills/README.md]
 ---
-Skills teach Chat how to do a task the way Ansvisor recommends: what to read, the steps to take and what the result looks like. Chat has twenty-four Ansvisor skills, such as **Win back lost citations**, **FAQ from fan-outs**, **Fan-out gaps**, **Prompt portfolio**, **Ready to publish**, **Weekly report**, **Buyer questions**, **Rival brief** and **Setup guide**.
+Skills teach Chat how to do a task the way Oppla recommends: what to read, the steps to take and what the result looks like. Chat has twenty-four Oppla skills, such as **Win back lost citations**, **FAQ from fan-outs**, **Fan-out gaps**, **Prompt portfolio**, **Ready to publish**, **Weekly report**, **Buyer questions**, **Rival brief** and **Setup guide**.
 
 ## Use a skill
 
@@ -21,7 +21,7 @@ You can also type a skill's command yourself, at the start of your message. One 
 
 ## The Skills page
 
-Open **Skills** in the Chat menu to see every skill. **Ansvisor skills** lists Ansvisor's, and **All**, **Content**, **Visibility**, **Product Visibility**, **Technical** and **Reports** narrow them. **Library** lists skills by other people to add (below). **My skills** lists your workspace's own, with where each came from and whether it waits for review.
+Open **Skills** in the Chat menu to see every skill. **Oppla skills** lists Oppla's, and **All**, **Content**, **Visibility**, **Product Visibility**, **Technical** and **Reports** narrow them. **Library** lists skills by other people to add (below). **My skills** lists your workspace's own, with where each came from and whether it waits for review.
 
 A card shows the connections the skill uses on the brand you have open: green when connected, grey when not. **Run** starts a chat with the skill. **Schedule** opens Chat with "Every Monday at 9:00, /skill" in the box, to change before you send. **Create agent** starts an agent on it.
 
@@ -29,7 +29,7 @@ Admins turn a skill on or off for the whole workspace, and you turn your own sav
 
 ## When Chat picks a skill
 
-Chat also picks a skill by itself when one fits your question. Either way, the steps above the answer show **Used skill:** with the skill's name, and where it comes from under it: **Ansvisor library**, or **You** for a skill you saved. A shortcut shows **Used shortcut:** with its name.
+Chat also picks a skill by itself when one fits your question. Either way, the steps above the answer show **Used skill:** with the skill's name, and where it comes from under it: **Oppla library**, or **You** for a skill you saved. A shortcut shows **Used shortcut:** with its name.
 
 Analysts and Agency partners have no **/** menu, but Chat still uses a skill for them when one fits.
 
@@ -39,7 +39,7 @@ Admins and Managers can keep steps they repeat as a skill of their own. Start wi
 
 After an answer that did a few things, click **Save these steps as a skill** under it. Chat drafts the skill from those steps, keeping their date range and platforms, without numbers or your brand's details.
 
-The skill is private to you and joins your **/** menu right away. It can't take the name of an Ansvisor skill or a shortcut, such as **/analyze**. Your plan sets how many skills your workspace keeps.
+The skill is private to you and joins your **/** menu right away. It can't take the name of an Oppla skill or a shortcut, such as **/analyze**. Your plan sets how many skills your workspace keeps.
 
 ## Import a skill
 
@@ -51,22 +51,22 @@ An imported skill stays off until an Admin reviews it. **Review** shows the clea
 
 The **Library** tab lists 701 skills that other people share on GitHub under the MIT license, for SEO, content, brand, analytics, social, CRO, email, paid ads, growth and go-to-market work. Pick a topic, or search by a skill's name, what it does or its repository. **Most stars** sorts by the repository's GitHub stars, **Most installs** by its installs on skills.sh. The first 30 show; **Show more** adds 30 at a time.
 
-Click a skill to read it before you add it: its SKILL.md at the version the Library lists, Ansvisor's own safety scan, what adding it leaves out, its file on GitHub and its license. **Edited by Ansvisor** says what Ansvisor took out of a few skills, such as a promotion.
+Click a skill to read it before you add it: its SKILL.md at the version the Library lists, Oppla's own safety scan, what adding it leaves out, its file on GitHub and its license. **Edited by Oppla** says what Oppla took out of a few skills, such as a promotion.
 
 ## Add a skill from the Library
 
 Admins and Managers on a paid plan can click **Add**. The skill comes in as an imported skill does: instructions only, cleaned, scanned and kept with its license and source. It stays off until an Admin reviews it. An Admin's **Add** opens the review; a Manager's asks the Admins. The card then says **Pending approval**, then **Added** once an Admin approves it, and the skill is under **My skills**, on for whoever added it.
 
-Each skill is added once per workspace and stays at the version it was added at. Analysts and Agency partners can browse the Library but can't add. Its review lists a price, an email address or a tracking link in the skill as worth a look. A skill the scan blocks as unsafe, or whose file Ansvisor can't read, can't be added: its page says why.
+Each skill is added once per workspace and stays at the version it was added at. Analysts and Agency partners can browse the Library but can't add. Its review lists a price, an email address or a tracking link in the skill as worth a look. A skill the scan blocks as unsafe, or whose file Oppla can't read, can't be added: its page says why.
 
 ## Updates to an imported skill
 
-Once a week, Ansvisor checks the source of each approved GitHub skill. When its SKILL.md changed, its card in **My skills** shows **Update available**. **Review update** shows what changed, line by line, and the safety scan of the new version. Nothing changes until an Admin clicks **Approve update**, and the new version is cleaned and scanned again first. A skill whose saved file was changed some other way is turned off.
+Once a week, Oppla checks the source of each approved GitHub skill. When its SKILL.md changed, its card in **My skills** shows **Update available**. **Review update** shows what changed, line by line, and the safety scan of the new version. Nothing changes until an Admin clicks **Approve update**, and the new version is cleaned and scanned again first. A skill whose saved file was changed some other way is turned off.
 ## What a skill can't change
 
 A skill shapes how Chat works, not what it may do. It gives Chat no new tools, doesn't skip the card a change waits on, and doesn't publish by itself: only an agent an Admin allows may send pages on its own. Your role, your plan and your workspace's Chat settings still decide what Chat can change, and a change still asks you first where it should.
 
-## The Ansvisor skills
+## The Oppla skills
 
 Win back lost citations, Complete this week’s tasks, Quality pass, FAQ from fan-outs, Weekly report, Beat a competitor, Refresh for this year, Ready to publish, AI shopping readiness, Fix wrong claims about us, Answer-first rewrite, Brand facts check, Comparison page, Translate a page, Buyer questions, How AI compares us, No clear leader, Who AI recommends by market, Listing gaps, Rival brief, Site audit fixes, Setup guide, Fan-out gaps and Prompt portfolio.
 

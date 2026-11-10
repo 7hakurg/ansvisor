@@ -1,5 +1,6 @@
 import approved from './approved-articles.json';
 import type { HelpArticle, HelpPlan, HelpSection } from './articles';
+import { BRAND_NAME } from '@/config/site';
 
 /**
  * Help retrieval for Chat (CHAT-19 §5 step 3; Chat Wave 1 W1-30): the
@@ -66,7 +67,7 @@ const STOPWORDS = new Set(
     'a an the to do does did done i we you he she they it its my our your their me us them ' +
     'how where what which when who why can could should would will is are was were be been ' +
     'in on at of for with from by and or not no this that these those there here please ' +
-    'into onto about find see get go going want need way some any all one ansvisor app page tab'
+    `into onto about find see get go going want need way some any all one ${BRAND_NAME.toLowerCase()} app page tab`
   ).split(' '),
 );
 

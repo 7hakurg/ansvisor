@@ -124,7 +124,7 @@ app.use('/', botIngestRoutes);
 // whatever its content type, never by the 50 MB parsers below.
 app.use('/', trafficRoutes);
 
-// --- The free report card's form on www.ansvisor.com (routes/public-report-card.js) ---
+// --- The free report card's form on oppla.ai (routes/public-report-card.js) ---
 // Public like /track: its own CORS (REPORT_CARD_ORIGINS), limiter and 16 KB
 // body, before the dashboard's CORS and the 50 MB parsers below.
 app.use('/public/report-card', publicReportCardRoutes);
@@ -942,8 +942,8 @@ server.listen(PORT, async () => {
     startFollowUpChecks();
   }
 
-  // The free report cards from www.ansvisor.com's form (lib/report-card):
-  // Ansvisor's own marketing, so the cloud server's only. Every minute the
+  // The free report cards from oppla.ai's form (lib/report-card):
+  // Oppla's own marketing, so the cloud server's only. Every minute the
   // due cards start within the day's cap and the month's budget.
   if (isCloud()) startReportCardQueue();
 

@@ -258,7 +258,7 @@ describe('POST /opportunities/generate with a focus (CONTENT-003)', () => {
     expect(request()).toMatchObject({ promptId: PROMPT, explicit: true });
   });
 
-  it("leaves a topic's or Ansvisor's own choice to the usual rules", async () => {
+  it("leaves a topic's or Oppla's own choice to the usual rules", async () => {
     expect((await generate({ count: 3, topicId: TOPIC })).status).toBe(202);
     expect(request()).toMatchObject({ topicId: TOPIC, explicit: false });
   });

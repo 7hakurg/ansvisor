@@ -413,13 +413,13 @@ describe('keepSuggestions', () => {
     const listed = [
       {
         tag: 'p',
-        text: 'Ansvisor, Profound and LLM Pulse track ChatGPT, Gemini and Claude.',
+        text: 'Oppla, Profound and LLM Pulse track ChatGPT, Gemini and Claude.',
       },
     ];
     const change = (after, rules = ['dated']) =>
       suggestion({
         passage: 1,
-        before: 'Ansvisor, Profound and LLM Pulse track ChatGPT, Gemini and Claude',
+        before: 'Oppla, Profound and LLM Pulse track ChatGPT, Gemini and Claude',
         after,
         rules,
         sources: [],
@@ -431,18 +431,18 @@ describe('keepSuggestions', () => {
     expect(
       kept(
         change(
-          'According to Zapier, Ansvisor, Profound and LLM Pulse track ChatGPT, Gemini and Claude',
+          'According to Zapier, Oppla, Profound and LLM Pulse track ChatGPT, Gemini and Claude',
         ),
       ),
     ).toEqual([]);
-    expect(kept(change('Ansvisor, Profound and LLM Pulse track ChatGPT and Gemini'))).toEqual([]);
+    expect(kept(change('Oppla, Profound and LLM Pulse track ChatGPT and Gemini'))).toEqual([]);
     // Every name kept, no source made up: kept.
     expect(
-      kept(change('Ansvisor, Profound and LLM Pulse each track ChatGPT, Gemini and Claude')),
+      kept(change('Oppla, Profound and LLM Pulse each track ChatGPT, Gemini and Claude')),
     ).toHaveLength(1);
     // A banned word taken out may go.
     expect(
-      kept(change('Ansvisor, Profound and LLM Pulse track ChatGPT and Gemini', ['bannedWords'])),
+      kept(change('Oppla, Profound and LLM Pulse track ChatGPT and Gemini', ['bannedWords'])),
     ).toHaveLength(1);
     // An insert that gives a claim to a source it wasn't given isn't kept either.
     expect(
@@ -505,9 +505,9 @@ describe('keepSuggestions', () => {
 
   it('reads a dropped name only in a list: any capitalised word may be a noun, an acronym or a month', () => {
     expect(
-      drops('Ansvisor tracks ChatGPT, Gemini and Claude.', 'Ansvisor tracks ChatGPT and Gemini.'),
+      drops('Oppla tracks ChatGPT, Gemini and Claude.', 'Oppla tracks ChatGPT and Gemini.'),
     ).toBe(true);
-    expect(drops('Teams use Ansvisor daily.', 'Teams use it daily.')).toBe(false);
+    expect(drops('Teams use Oppla daily.', 'Teams use it daily.')).toBe(false);
     expect(drops('Most AI search tools track it.', 'Most answer engines track it.')).toBe(false);
     expect(drops('Funktionen für Marketing Teams im März.', 'Werkzeuge für Marketing-Teams.')).toBe(
       false,
@@ -552,11 +552,11 @@ describe('keepSuggestions', () => {
   });
 
   it('reads a name dropped through a short replace, in the passage as changed', () => {
-    const passage = 'Ansvisor tracks ChatGPT, Gemini and Claude.';
+    const passage = 'Oppla tracks ChatGPT, Gemini and Claude.';
     expect(dropsName(passage, 'Gemini and Claude', 'Gemini')).toBe(true);
     expect(dropsName(passage, 'Gemini and Claude', 'Gemini and Claude too')).toBe(false);
     // Items the replace doesn't touch stay as they are.
-    expect(dropsName(passage, 'Ansvisor tracks', 'It tracks')).toBe(false);
+    expect(dropsName(passage, 'Oppla tracks', 'It tracks')).toBe(false);
   });
 
   it('ends a name at its sentence: the next sentence’s first word isn’t part of it', () => {
@@ -579,8 +579,8 @@ describe('keepSuggestions', () => {
     ).toBe('Teams forecast, according to [source]. The plan is monthly.');
     expect(
       drops(
-        'Ansvisor tracks ChatGPT, Gemini and Claude. Each answer counts.',
-        'Ansvisor tracks ChatGPT, Gemini and Claude, so you see each answer.',
+        'Oppla tracks ChatGPT, Gemini and Claude. Each answer counts.',
+        'Oppla tracks ChatGPT, Gemini and Claude, so you see each answer.',
       ),
     ).toBe(false);
   });
@@ -705,7 +705,7 @@ describe('keepSuggestions', () => {
   it('reads two names as a list when one is shaped as a brand’s, and "&"', () => {
     expect(drops('Track ChatGPT and Claude.', 'Track ChatGPT.')).toBe(true);
     expect(drops('Sync Shopify & WooCommerce stores.', 'Sync Shopify stores.')).toBe(true);
-    expect(drops('Ansvisor, Profound & Peec AI track it.', 'Ansvisor and Profound track it.')).toBe(
+    expect(drops('Oppla, Profound & Peec AI track it.', 'Oppla and Profound track it.')).toBe(
       true,
     );
     // Two nouns, two terms: not a list.
@@ -1138,9 +1138,9 @@ describe('attributions as the review of #1537 read them', () => {
       ],
       false,
     );
-    // The brand's own: "Panelinizdeki Ansvisor verilerine göre" reads Ansvisor, known.
-    const known = attributableSources('<p>Ansvisor</p>', [], [], 'tr', ['Ansvisor']);
-    expect(addsAttribution('', 'Panelinizdeki Ansvisor verilerine göre trafik arttı.', known)).toBe(
+    // The brand's own: "Panelinizdeki Oppla verilerine göre" reads Oppla, known.
+    const known = attributableSources('<p>Oppla</p>', [], [], 'tr', ['Oppla']);
+    expect(addsAttribution('', 'Panelinizdeki Oppla verilerine göre trafik arttı.', known)).toBe(
       false,
     );
     expect(placeholderAttributions("Google Analytics'e göre trafik arttı.", none)).toBe(
@@ -2807,7 +2807,7 @@ describe('Quality’s hand-off (CE-051)', () => {
     );
     expect(dropsPlaceholder(page, 'Brew it', 'Steep it')).toBe(false);
     // A "before" that cuts into the brackets fills it all the same.
-    expect(dropsPlaceholder('Buy [product name] today.', 'product name', 'Ansvisor Pro')).toBe(
+    expect(dropsPlaceholder('Buy [product name] today.', 'product name', 'Oppla Pro')).toBe(
       true,
     );
     expect(dropsPlaceholder('See note [1].', 'See note', 'See the note')).toBe(false);

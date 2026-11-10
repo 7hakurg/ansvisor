@@ -162,7 +162,7 @@ export function cleanPublishHtml(html) {
   return $.html();
 }
 
-/** `sha256=<hex>`: the body signed with the webhook's secret, for X-Ansvisor-Signature. */
+/** `sha256=<hex>`: the body signed with the webhook's secret, for X-Oppla-Signature. */
 export function signBody(secret, body) {
   return `sha256=${crypto.createHmac('sha256', secret).update(body).digest('hex')}`;
 }
@@ -427,7 +427,7 @@ async function sendToWebhooks({ delivery, page, brand, html, jsonLd, configs }) 
     if (signed) {
       // The secret as the other webhooks send it, and the body signed with it.
       headers['X-Webhook-Secret'] = config.webhook_secret;
-      headers['X-Ansvisor-Signature'] = signBody(config.webhook_secret, body);
+      headers['X-Oppla-Signature'] = signBody(config.webhook_secret, body);
     }
     try {
       const res = await postJson(config.webhook_url, body, { headers });

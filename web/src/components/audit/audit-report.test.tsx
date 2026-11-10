@@ -136,7 +136,7 @@ describe('AuditReport recommendations', () => {
   });
 
   it('adds no note to copy without placeholders, or to an older audit without code', () => {
-    render([rec({ draft: 'Ansvisor pricing: AI visibility plans for every team size' })]);
+    render([rec({ draft: 'Oppla pricing: AI visibility plans for every team size' })]);
 
     expect(container.querySelectorAll('pre')).toHaveLength(1);
     expect(marks()).toEqual([]);
@@ -428,7 +428,7 @@ describe('AI bot access (SA-008)', () => {
       ['ClaudeBot200', false],
       ['Google-ExtendedAllowed', false],
     ]);
-    expect(panel()?.textContent).toContain("Asked once as each bot, from Ansvisor's servers.");
+    expect(panel()?.textContent).toContain("Asked once as each bot, from Oppla's servers.");
   });
 
   it('names the bots robots.txt keeps out', () => {
@@ -467,7 +467,7 @@ describe('AI bot access (SA-008)', () => {
     });
     open();
     expect(panel()?.textContent).toContain(
-      "Finding: Your site turned away Ansvisor's own request (403), so the bots weren't tested.",
+      "Finding: Your site turned away Oppla's own request (403), so the bots weren't tested.",
     );
     expect(cells().map(([text]) => text)).toContain('GPTBotAllowed');
   });

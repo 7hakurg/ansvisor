@@ -3,7 +3,7 @@ import { fileWord, withFileWord } from './kit';
 
 /**
  * White label on what a page downloads (00429): a CSV's, a sheet's or a
- * Word file's name starts with the agency's name instead of Ansvisor's
+ * Word file's name starts with the agency's name instead of Oppla's
  * while the workspace's kit is in use, and a Word file names the agency as
  * its author. The kit is read once a page load, at the first download.
  */
@@ -19,7 +19,7 @@ export function exportBranding(): Promise<ExportBranding> {
     .then((read) => {
       if (read.ok) return read.branding;
       // Not kept: the next download asks again. Meanwhile a name with
-      // neither the agency's nor Ansvisor's word.
+      // neither the agency's nor Oppla's word.
       branding = null;
       return { companyName: null };
     });
@@ -31,12 +31,12 @@ export function forgetExportBranding() {
   branding = null;
 }
 
-/** The word a download's name starts with (fileWord): the agency's, Ansvisor's, or none. */
+/** The word a download's name starts with (fileWord): the agency's, Oppla's, or none. */
 export async function exportFileWord(): Promise<string | null> {
   return fileWord(await exportBranding());
 }
 
-/** A download's name: `rest` after the agency's word, or Ansvisor's without a kit. */
+/** A download's name: `rest` after the agency's word, or Oppla's without a kit. */
 export async function exportFileName(rest: string, separator = '_'): Promise<string> {
   return withFileWord(await exportFileWord(), rest, separator);
 }

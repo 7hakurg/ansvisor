@@ -113,7 +113,7 @@ const refused = (code: GithubRefusalCode, detail?: GithubRefusal['detail']) => (
 async function get(url: string, accept: string, max: number, options: GithubOptions): Promise<Got> {
   const target = new URL(url);
   if (target.protocol !== 'https:' || !GITHUB_HOSTS.has(target.host)) return refused('github_url');
-  const headers: Record<string, string> = { Accept: accept, 'User-Agent': 'Ansvisor' };
+  const headers: Record<string, string> = { Accept: accept, 'User-Agent': 'Oppla' };
   const token = options.token === undefined ? process.env.GITHUB_TOKEN : options.token;
   if (target.host === 'api.github.com') {
     headers['X-GitHub-Api-Version'] = '2022-11-28';

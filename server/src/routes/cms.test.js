@@ -133,7 +133,7 @@ beforeEach(async () => {
   composio.connectWebflowToken.mockReset().mockResolvedValue('ca_new');
   composio.deleteConnection.mockReset().mockResolvedValue(undefined);
   composio.forgetWebflowAccounts.mockReset().mockResolvedValue(undefined);
-  webflow.listSites.mockReset().mockResolvedValue([{ id: 's1', name: 'Ansvisor' }]);
+  webflow.listSites.mockReset().mockResolvedValue([{ id: 's1', name: 'Oppla' }]);
   webflow.listCollections
     .mockReset()
     .mockResolvedValue([{ id: 'c1', name: 'Blog Posts', slug: 'post' }]);
@@ -168,7 +168,7 @@ const connectedRow = (extra = {}) => ({
   composio_entity_id: `brand_${BRAND}`,
   status: 'connected',
   site_id: 's1',
-  site_name: 'Ansvisor',
+  site_name: 'Oppla',
   collection_id: 'c1',
   collection_name: 'Blog Posts',
   field_map: { body: 'post-body' },
@@ -186,7 +186,7 @@ describe('GET the connection', () => {
     expect(body.connection).toEqual({
       status: 'connected',
       siteId: 's1',
-      siteName: 'Ansvisor',
+      siteName: 'Oppla',
       collectionId: 'c1',
       collectionName: 'Blog Posts',
       fieldMap: { body: 'post-body' },
@@ -213,7 +213,7 @@ describe('POST connect', () => {
     const res = await call('POST', '', { token: ` ${TOKEN} ` });
     expect(res.status).toBe(200);
     const body = await res.json();
-    expect(body.sites).toEqual([{ id: 's1', name: 'Ansvisor' }]);
+    expect(body.sites).toEqual([{ id: 's1', name: 'Oppla' }]);
     expect(body.connection).toMatchObject({
       status: 'connected',
       siteId: 's1',
@@ -300,7 +300,7 @@ describe('collections and their fields', () => {
   it('lists the site’s collections, and a collection’s fields with the map they suggest', async () => {
     rows.push(connectedRow({ collection_id: null, field_map: {} }));
     expect(await (await call('GET', '/collections')).json()).toEqual({
-      sites: [{ id: 's1', name: 'Ansvisor' }],
+      sites: [{ id: 's1', name: 'Oppla' }],
       siteId: 's1',
       collections: [{ id: 'c1', name: 'Blog Posts', slug: 'post' }],
     });
@@ -442,7 +442,7 @@ describe('races and Webflow’s answers', () => {
     expect(webflow.getCollection).not.toHaveBeenCalled();
     // Another of the token's sites, named.
     webflow.listSites.mockResolvedValueOnce([
-      { id: 's1', name: 'Ansvisor' },
+      { id: 's1', name: 'Oppla' },
       { id: 's2', name: 'Docs' },
     ]);
     webflow.listCollections.mockResolvedValueOnce([{ id: 'c7', name: 'Guides', slug: 'guide' }]);

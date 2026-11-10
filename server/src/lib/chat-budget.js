@@ -7,7 +7,7 @@
  *
  * Every step writes one prompt_improve_usage row, named by its run and step
  * (00405):
- *   - On Ansvisor's key, the row is a hold of the step's worst case, taken
+ *   - On Oppla's key, the row is a hold of the step's worst case, taken
  *     by reserve_chat_ai_usage under the organization's lock only while the
  *     period's spend, holds in flight included, plus that worst case stays
  *     within the budget: runs at once can't pass it (item 13). Stricter than
@@ -519,7 +519,7 @@ export async function refreshAgentRunShare(orgId, agentRunId) {
 /**
  * Keeps a scheduled job's run's use (chat_schedule_runs.usage_share,
  * CHAT-12 item 24: "0.6%" in its run history) as its Chat run's spend on
- * Ansvisor's key over the plan's included monthly budget: after each charge
+ * Oppla's key over the plan's included monthly budget: after each charge
  * or release of one of its steps. Own-key steps don't draw on the limit,
  * so they don't count. Never dollars. Without a budget (self-hosted) there
  * is no share. A failure is logged: the step is settled all the same.
@@ -669,7 +669,7 @@ const ESTIMATE_ROWS = 5000;
  * "≈ 2% of monthly AI usage per run", CHAT-12 item 7): the workspace's
  * Chat and scheduled runs over the last 30 days, each run's spend summed,
  * averaged, over the plan's included budget (credits left out, as agent
- * shares are). On Ansvisor's key only: own-key rows are the workspace's.
+ * shares are). On Oppla's key only: own-key rows are the workspace's.
  * Null with no run to go on. Shares only: no dollars leave the server.
  * No budget (self-hosted): unlimited.
  */

@@ -4,7 +4,7 @@ import { defineTool } from './define-tool';
 
 /**
  * What's new (CHAT-11 §C, CHAT-20 §9 row 3; Chat Wave 4 W4-20): the
- * team's notes on what Ansvisor added, for the person's plan. It reads no
+ * team's notes on what Oppla added, for the person's plan. It reads no
  * brand data and costs no AI usage.
  */
 export const WHATS_NEW_READS = [
@@ -13,7 +13,7 @@ export const WHATS_NEW_READS = [
     class: 'read',
     area: 'account',
     description:
-      'What\'s new in Ansvisor for the person\'s plan: up to 3 updates, the feature they named first, then the ones new for them, then the newest. Each has the feature, its lines (why it was built, what it does, how it helps, what to do), the page to try it, and on_plans when their plan doesn\'t include it. The updates show as cards under your answer: don\'t repeat their lines; add at most one sentence tying an update to what the person asked, and when they write in another language give the lines in it. Benefit only: never add a price or a technical detail. Next moves: "Try it on my brand" and, when older_updates is true, "Show older updates" (call again with shown listing the feature of every update already shown in this conversation).',
+      'What\'s new in Oppla for the person\'s plan: up to 3 updates, the feature they named first, then the ones new for them, then the newest. Each has the feature, its lines (why it was built, what it does, how it helps, what to do), the page to try it, and on_plans when their plan doesn\'t include it. The updates show as cards under your answer: don\'t repeat their lines; add at most one sentence tying an update to what the person asked, and when they write in another language give the lines in it. Benefit only: never add a price or a technical detail. Next moves: "Try it on my brand" and, when older_updates is true, "Show older updates" (call again with shown listing the feature of every update already shown in this conversation).',
     minRole: 'analyst',
     planGate: null,
     brandOf: null,

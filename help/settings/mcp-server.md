@@ -1,8 +1,8 @@
 ---
-title: Use Ansvisor in AI assistants with MCP
+title: Use Oppla in AI assistants with MCP
 route: /dashboard/settings/api-keys
 keywords: [mcp, mcp server, api key, claude, cursor, codex, connect assistant]
-synonyms: [model context protocol, use ansvisor in claude, ai assistant integration, connector]
+synonyms: [model context protocol, use oppla in claude, ai assistant integration, connector]
 plan: all
 updated: 2026-10-30
 last_checked: 2026-10-30
@@ -11,7 +11,7 @@ app_version: 0.3.0
 approved: true
 sources: [docs/guides/mcp-server.mdx, web/messages/en.json]
 ---
-Ansvisor has an MCP (Model Context Protocol) server, so AI assistants such as Claude, Codex, Cursor, VS Code, Windsurf, Gemini CLI and Zed can query your Ansvisor data in a normal conversation. There is nothing to install: the assistant connects with an API key from **Settings › MCP & API Keys**.
+Oppla has an MCP (Model Context Protocol) server, so AI assistants such as Claude, Codex, Cursor, VS Code, Windsurf, Gemini CLI and Zed can query your Oppla data in a normal conversation. There is nothing to install: the assistant connects with an API key from **Settings › MCP & API Keys**.
 
 ## Create an API key
 
@@ -23,13 +23,13 @@ Ansvisor has an MCP (Model Context Protocol) server, so AI assistants such as Cl
 
 The dialog that shows the key also has a ready-to-paste setup for each assistant under **Connect a client**, with the key filled in. Pick yours, click **Copy setup**, and follow the line under it, which says where the setup goes. Because it includes the key, copy it before you close the dialog.
 
-In Claude's desktop app, for example, you add Ansvisor under **Settings › Connectors › Add custom connector**. On Claude's Team and Enterprise plans, an owner adds the connector in the organization settings first.
+In Claude's desktop app, for example, you add Oppla under **Settings › Connectors › Add custom connector**. On Claude's Team and Enterprise plans, an owner adds the connector in the organization settings first.
 
-On a self-hosted install, the assistant connects to your own Ansvisor instead.
+On a self-hosted install, the assistant connects to your own Oppla instead.
 
 ## Check the connection
 
-Ask your assistant "List my Ansvisor brands". It should show your brands. If it reports a 401 error, the key is missing from the setup or was revoked.
+Ask your assistant "List my Oppla brands". It should show your brands. If it reports a 401 error, the key is missing from the setup or was revoked.
 
 ## What you can ask
 
@@ -44,7 +44,7 @@ The assistant can read visibility, mentions, citations, prompts, AI traffic, sav
 
 ## What your plan includes
 
-On Ansvisor Cloud, every plan can read over MCP, the free trial included. Changes, runs and anything that uses credits, such as accepting a suggestion, writing a content draft or starting a Site Audit, need the Growth plan or above, paid. On Starter and in the free trial, the assistant still sees those requests, but Ansvisor refuses them and says they need Growth, so it can tell you why. The same applies to the API and to every assistant: Claude, ChatGPT, Cursor and the others. An admin can upgrade in **Settings › Billing**. A self-hosted instance can do everything.
+On Oppla Cloud, every plan can read over MCP, the free trial included. Changes, runs and anything that uses credits, such as accepting a suggestion, writing a content draft or starting a Site Audit, need the Growth plan or above, paid. On Starter and in the free trial, the assistant still sees those requests, but Oppla refuses them and says they need Growth, so it can tell you why. The same applies to the API and to every assistant: Claude, ChatGPT, Cursor and the others. An admin can upgrade in **Settings › Billing**. A self-hosted instance can do everything.
 
 ## What your key may do
 
@@ -54,11 +54,11 @@ Adding prompts or topics, reviewing tasks, dismissing, and work that costs AI, s
 
 ## Publish a draft from your assistant
 
-Ansvisor never sends a page to your CMS through MCP. Instead, the assistant can get a draft as a page ready for your CMS, put it there with its own CMS connector, and then mark the draft published at the address it went live at, so Ansvisor measures it.
+Oppla never sends a page to your CMS through MCP. Instead, the assistant can get a draft as a page ready for your CMS, put it there with its own CMS connector, and then mark the draft published at the address it went live at, so Oppla measures it.
 
 ## When the plan has ended
 
-On Ansvisor Cloud, a workspace without an active plan is read-only. Its API keys keep working for reading, but every change is refused until an admin chooses a plan in **Settings › Billing**. Retrying doesn't help. New API keys can still be created; on a read-only workspace they only read. A self-hosted instance is never read-only.
+On Oppla Cloud, a workspace without an active plan is read-only. Its API keys keep working for reading, but every change is refused until an admin chooses a plan in **Settings › Billing**. Retrying doesn't help. New API keys can still be created; on a read-only workspace they only read. A self-hosted instance is never read-only.
 
 ## Revoke a key
 

@@ -1,5 +1,5 @@
 /**
- * Ansvisor staff, for Chat's Debug view (CHAT-03 items 25–26; Chat Wave 1,
+ * Oppla staff, for Chat's Debug view (CHAT-03 items 25–26; Chat Wave 1,
  * W1-15) and its design preview (/dashboard/chat/preview). The app has no
  * staff role yet, so staff are the people whose
  * sign-in e-mail is in STAFF_EMAILS: comma-separated, any case, blanks
@@ -26,7 +26,7 @@ export function staffEmails(): string[] {
     .filter(Boolean);
 }
 
-/** Whether the person signed in is Ansvisor staff: a confirmed e-mail in STAFF_EMAILS. */
+/** Whether the person signed in is Oppla staff: a confirmed e-mail in STAFF_EMAILS. */
 export function isChatStaff(user: StaffCandidate | null | undefined): boolean {
   const email = user?.email?.trim().toLowerCase();
   if (!email || !user?.email_confirmed_at) return false;

@@ -102,7 +102,7 @@ export async function POST(req: Request) {
 
   // BYOK gate. Cloud customers paste a provider key in Settings › AI
   // Providers and the agent uses *that* key, with the provider they picked —
-  // Ansvisor never pays for the customer's tokens. Missing key = 403 with a
+  // Oppla never pays for the customer's tokens. Missing key = 403 with a
   // code the UI can intercept to render the "add your key" CTA instead of a
   // generic error.
   const modelConfig = await resolveAgentModelConfig(organizationId);

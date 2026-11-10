@@ -17,7 +17,7 @@ A scheduled job can send its results by email as well as to Chat. On the schedul
 
 The email goes to the person who made the job, and to teammates from your workspace the job names. It never goes to an address outside your workspace by itself.
 
-Before each email is sent, Ansvisor checks again that each person still belongs to the workspace and can still see the job's brand. Anyone who can't is left out of that email.
+Before each email is sent, Oppla checks again that each person still belongs to the workspace and can still see the job's brand. Anyone who can't is left out of that email.
 
 ## What the email says
 
@@ -25,7 +25,7 @@ The email has the job's name and the first few lines of its result. **Open in Ch
 
 When the result fits in a PDF of 5 MB or less, the PDF is attached. A bigger result comes as the **Open in Chat** link only. A run that finds **No change** sends no email.
 
-If your workspace has a white label kit with a company name, the email comes from that name instead of Ansvisor.
+If your workspace has a white label kit with a company name, the email comes from that name instead of Oppla.
 
 ## When a job didn't run
 

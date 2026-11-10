@@ -20,7 +20,7 @@ import { draftPage, draftTitle, pageChanges } from './targets';
 /**
  * Chat's Content Library rows beyond create_draft (CHAT-20 §9 rows 55, 57, 58):
  * changing a draft and marking it Ready (WRITEs), and sending one to the brand's CMS as a draft
- * (an EXECUTE in the publishing group: it leaves Ansvisor). Each calls a
+ * (an EXECUTE in the publishing group: it leaves Oppla). Each calls a
  * server action over the editor's own path, as the signed-in member; a
  * change also has its write for a run without a session (runFor). Both
  * are Admins' and Managers' (DECISIONS T: an Analyst's Chat only creates
@@ -257,7 +257,7 @@ export const CONTENT_TOOLS = [
   }),
   defineTool({
     name: 'push_cms_draft',
-    // It leaves Ansvisor and has no Undo (a CMS item can't be taken back from here; an
+    // It leaves Oppla and has no Undo (a CMS item can't be taken back from here; an
     // item updated in Framer or Webflow goes live with the site's next publish): an
     // EXECUTE, so only the person's click sends it, in every mode, Full auto included,
     // and no Admin "Always" lifts it; only an agent an Admin allowed sends it on its own
@@ -327,13 +327,13 @@ export const CONTENT_TOOLS = [
   defineTool({
     name: 'trigger_content_webhook',
     // It hands the page to the brand's own workflow (Zapier, Make, n8n), which may publish it,
-    // and Ansvisor can't take it back: an EXECUTE, only the person's click, or an agent an Admin
+    // and Oppla can't take it back: an EXECUTE, only the person's click, or an agent an Admin
     // let go live on its own (goLive). No address in its input: only the brand's saved webhook.
     class: 'execute',
     executeGroup: 'publishing',
     area: 'content',
     description:
-      "Send a Library page to the brand's saved webhook, for its workflow (Zapier, Make, n8n), as the Content Editor's Send to webhook does: the workflow decides what happens next, and Ansvisor can't take it back. Not for a page that is live already. Only when the person asked for this page to go to their webhook.",
+      "Send a Library page to the brand's saved webhook, for its workflow (Zapier, Make, n8n), as the Content Editor's Send to webhook does: the workflow decides what happens next, and Oppla can't take it back. Not for a page that is live already. Only when the person asked for this page to go to their webhook.",
     minRole: 'manager',
     // A connection, not a plan: the API says when the brand has no webhook (not_connected).
     planGate: null,
@@ -362,7 +362,7 @@ export const CONTENT_TOOLS = [
     executeGroup: null,
     area: 'content',
     description:
-      'Take a page published through Ansvisor (Webflow, WordPress or Wix) down to a draft in that CMS: it leaves the site at once, and links and AI answers that cited it may still point to it for a while. Only when the person asked for this page to come down.',
+      'Take a page published through Oppla (Webflow, WordPress or Wix) down to a draft in that CMS: it leaves the site at once, and links and AI answers that cited it may still point to it for a while. Only when the person asked for this page to come down.',
     minRole: 'manager',
     planGate: null,
     brandOf: { lookup: 'content_drafts', idField: 'draft_id' },

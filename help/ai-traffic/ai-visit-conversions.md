@@ -28,7 +28,7 @@ Under **Use this tag**, copy the tag with the copy button on its code, and use i
 
 To turn conversions off, untick **Track conversions from AI visits** and put the tag without them back.
 
-## Tell Ansvisor when a visitor agrees
+## Tell Oppla when a visitor agrees
 
 With **Wait for the visitor's consent**, your cookie banner has to tell the snippet when the visitor agrees, and when they say no or take consent back. Google Consent Mode needs nothing more. A banner set up inside Google Tag Manager needs a tag there for agreeing and one for refusing.
 

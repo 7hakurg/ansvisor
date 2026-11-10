@@ -9,7 +9,7 @@
  *
  * Each primitive declares, in the specification's terms:
  *
- *  - `mode` — SYSTEM (a deterministic comparison Ansvisor does), AGENT,
+ *  - `mode` — SYSTEM (a deterministic comparison Oppla does), AGENT,
  *    HUMAN, or HUMAN_OR_AGENT (either, depending on the tools connected);
  *  - `permission` — READ, WRITE (changes the brand's own content) or EXECUTE
  *    (acts externally: publishing, sending outreach). WRITE and EXECUTE need a
@@ -175,7 +175,7 @@ export const TASKS = Object.freeze({
     outputs: ['failingSignals'],
   }),
   // Learning C4: what the brand's winning pages have that its other audited
-  // pages don't, read by Ansvisor overnight.
+  // pages don't, read by Oppla overnight.
   analyze_winning_pages: system('analyze_winning_pages', {
     requires: ['site_audits'],
     outputs: ['patterns', 'missingPages'],

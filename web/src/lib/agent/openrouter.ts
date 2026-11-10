@@ -1,5 +1,5 @@
 /**
- * How Ansvisor's web calls OpenRouter (W4-34; owner decision 2026-11-02
+ * How Oppla's web calls OpenRouter (W4-34; owner decision 2026-11-02
  * evening): every call asks OpenRouter to route only to providers that
  * don't keep or train on the request (`provider.data_collection: "deny"`),
  * and a DeepSeek model only to providers that host it in the US or the EU,

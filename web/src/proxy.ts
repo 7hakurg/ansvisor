@@ -4,6 +4,7 @@ import { routing } from '@/i18n/routing';
 import { updateSession } from '@/lib/supabase/middleware';
 import { nextFromRequest } from '@/lib/auth-next';
 import { chatAgenticForUser, chatPathOfAgentPath } from '@/lib/chat/legacy-route';
+import { siteConfig } from '@/config/site';
 
 const intlMiddleware = createMiddleware(routing);
 
@@ -57,11 +58,10 @@ export async function proxy(request: NextRequest) {
     return NextResponse.redirect(new URL(target, request.url));
   }
 
-  // The pricing page lives on the marketing site (ansvisor.com/pricing) now,
-  // not the app subdomain — redirect any stale links / bookmarks so they
-  // land on the canonical page instead of 404'ing (#113).
+  // Pricing isn't a page of the app: stale links and bookmarks go to where
+  // plans are asked about (siteConfig.links.pricing) instead of 404'ing (#113).
   if (pathnameWithoutLocale === '/pricing') {
-    return NextResponse.redirect('https://ansvisor.com/pricing', 302);
+    return NextResponse.redirect(siteConfig.links.pricing ?? siteConfig.links.contactSales, 302);
   }
 
   if (isProtected(pathnameWithoutLocale) && !user) {

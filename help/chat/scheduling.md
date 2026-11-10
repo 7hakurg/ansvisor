@@ -71,7 +71,7 @@ A job can also e-mail up to 5 people outside your workspace, such as a client. A
 
 Chat never sends these by itself, not even on Full auto. Each run prepares the e-mail, and your **Inbox** shows a card such as **Send to jane@client.com** with what it says and the PDF attached. Nothing goes until you click **Send**; **Cancel** drops it. A card not sent within 7 days expires.
 
-The recipient gets only the summary and the report's PDF, with no links into Ansvisor, and a last line saying you sent it from your workspace via Ansvisor. Replies come to you. A workspace can send 50 of these a day. Each Send and Cancel is in the Activity log.
+The recipient gets only the summary and the report's PDF, with no links into Oppla, and a last line saying you sent it from your workspace via Oppla. Replies come to you. A workspace can send 50 of these a day. Each Send and Cancel is in the Activity log.
 
 ## Who sees what
 

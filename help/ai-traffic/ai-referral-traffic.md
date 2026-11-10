@@ -11,7 +11,7 @@ app_version: 0.3.0
 approved: true
 sources: [docs/guides/ai-traffic-analytics.mdx]
 ---
-**AI Referral Traffic** in the sidebar opens the **AI Traffic Analytics** page. It measures real visits to your site from AI assistants, what those visits are worth, and whether AI is changing your Google traffic. Most analytics tools count these visits as direct or referral traffic; Ansvisor tells each assistant apart.
+**AI Referral Traffic** in the sidebar opens the **AI Traffic Analytics** page. It measures real visits to your site from AI assistants, what those visits are worth, and whether AI is changing your Google traffic. Most analytics tools count these visits as direct or referral traffic; Oppla tells each assistant apart.
 
 ## Date range and changes
 
@@ -65,4 +65,4 @@ ChatGPT, Perplexity, Claude, Gemini, Copilot, Grok, DeepSeek, Meta AI, You.com, 
 
 Every Monday, an e-mail about the week before goes to each brand's Daily Pulse recipients, if the brand had AI visits that week or the one before. It shows AI visits with the change, the top platform, the summary line, visits by day and platform, and the top changes.
 
-To turn it off for a brand, untick **AI Traffic weekly digest** in **Settings › Notifications**; admins and managers can change it. It isn't sent while the brand's Daily Pulse is **Off**. The e-mail is on Ansvisor Cloud only.
+To turn it off for a brand, untick **AI Traffic weekly digest** in **Settings › Notifications**; admins and managers can change it. It isn't sent while the brand's Daily Pulse is **Off**. The e-mail is on Oppla Cloud only.

@@ -59,7 +59,7 @@ const INDEX: HelpIndex = buildHelpIndex([
       synonyms: ['add queries'],
     },
     [
-      { heading: null, text: 'A prompt is a question Ansvisor asks the AI engines.' },
+      { heading: null, text: 'A prompt is a question Oppla asks the AI engines.' },
       { heading: 'Add one prompt', text: 'On Tracked Prompts, click Add prompt.' },
       { heading: 'Add many at once', text: 'Open the Bulk import tab and upload a file.' },
       { heading: 'What counts on your plan', text: 'Every prompt counts on the limit.' },
@@ -144,6 +144,6 @@ describe('searchHelp', () => {
   });
 
   it('reads words as matching sees them', () => {
-    expect(helpWords('How do I add Prompts to Ansvisor?')).toEqual(['add', 'prompt']);
+    expect(helpWords('How do I add Prompts to Oppla?')).toEqual(['add', 'prompt']);
   });
 });

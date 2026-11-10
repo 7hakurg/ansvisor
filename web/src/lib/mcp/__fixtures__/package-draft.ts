@@ -44,7 +44,7 @@ export const DRAFT_ROW = {
   reviewer_id: null,
   author_real_at: null,
   rules: null,
-  // An article with its own Article JSON-LD: Ansvisor adds none (00448).
+  // An article with its own Article JSON-LD: Oppla adds none (00448).
   page_type: 'blog_post',
   method: 'create',
   schema_left_out: false,

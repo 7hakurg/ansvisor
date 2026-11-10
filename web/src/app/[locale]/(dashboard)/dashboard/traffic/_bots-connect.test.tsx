@@ -79,7 +79,7 @@ afterEach(() => {
 });
 
 const openUpgrade = vi.fn();
-/** `planId`: on Ansvisor Cloud, the plan the workspace is (or was) on. */
+/** `planId`: on Oppla Cloud, the plan the workspace is (or was) on. */
 async function render(canConnect = true, isLocked = false, planId?: PlanId) {
   const source = <BotsSource brandId="b1" canConnect={canConnect} />;
   if (planId) vi.stubEnv('NEXT_PUBLIC_IS_CLOUD', 'true');

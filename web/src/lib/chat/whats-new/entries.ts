@@ -3,7 +3,7 @@ import index from './entries.json';
 
 /**
  * What's new (CHAT-11, Chat Wave 4 W4-20): short, benefit-only notes on
- * what Ansvisor added, written by the team and approved by Cihan in the
+ * what Oppla added, written by the team and approved by Cihan in the
  * pull request (owner decision 13), kept in the repo's /whats-new folder as
  * Help articles are. Chat picks, orders and may translate them; it never
  * writes or changes one. Pure: the approved ones are copied into

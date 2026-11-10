@@ -37,13 +37,13 @@ import { useBrandStore } from '@/stores/use-brand-store';
 
 /**
  * Skills (CHAT-13 items 8–10; Chat Wave 3 W3-07; mockup `#s-skills`):
- * Ansvisor's skills, the Library (CHAT-17, W4-18: third-party skills to
+ * Oppla's skills, the Library (CHAT-17, W4-18: third-party skills to
  * add, marketplace-tab.tsx) and the workspace's own, with search and the
  * library's filter chips. A card shows its
  * /command, what it does and the connections it uses on the brand open
  * (green when connected, grey with Connect when not), and Run (a new chat
  * with the skill), Schedule (Chat Home's box filled with "Every Monday at
- * 9:00, /{name} "), Create agent (an Ansvisor skill's) and its on/off
+ * 9:00, /{name} "), Create agent (an Oppla skill's) and its on/off
  * switch for an Admin, or the skill's creator. Its details open on its
  * title: where it came from, its review, and Share or Delete.
  */

@@ -5,9 +5,9 @@ describe('stripEntityMarkup', () => {
   it('replaces each entity tag with its value', () => {
     const text =
       '1. **<Entity category="software" value="Tesseract" disambig="Adlift AI search optimization platform"/>** — tracks answers.\n' +
-      '2. **<Entity category="software" value="Ansvisor" />** — open source.';
+      '2. **<Entity category="software" value="Oppla" />** — open source.';
     expect(stripEntityMarkup(text)).toBe(
-      '1. **Tesseract** — tracks answers.\n2. **Ansvisor** — open source.',
+      '1. **Tesseract** — tracks answers.\n2. **Oppla** — open source.',
     );
   });
 

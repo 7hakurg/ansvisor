@@ -30,6 +30,7 @@ import { ctrPct, impressionsRise } from '@/lib/traffic-google-pages';
 import { botName } from '@/lib/ai-bot-names';
 import { visitChange } from '@/lib/traffic-change';
 import { googleSourceStatus, snippetStateOf, type GoogleSourceStatus } from '@/lib/traffic-sources';
+import { siteConfig } from '@/config/site';
 
 /** Every section, in the page's order. */
 export const TRAFFIC_EXPORT_SECTIONS = [
@@ -686,7 +687,7 @@ export function fileSlug(value: string): string {
 /**
  * ansvisor-ai-traffic-{brand}-{from}_{to}.{ext} (spec §3.9); a single table
  * adds its name. All time has no first day. A white label kit's word takes
- * Ansvisor's place (00429), or none.
+ * Oppla's place (00429), or none.
  */
 export function trafficExportFileName({
   brand,
@@ -694,7 +695,7 @@ export function trafficExportFileName({
   to,
   ext,
   table,
-  word = 'ansvisor',
+  word = siteConfig.fileWord,
 }: {
   brand: string;
   from: string | null;

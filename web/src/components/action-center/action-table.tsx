@@ -194,7 +194,7 @@ export function PriorityBadge({
 
 export function AssigneeAvatar({ assignee }: { assignee: ActionItem['assignee'] }) {
   const t = useTranslations('actionCenter.actionsPage');
-  // New Ansvisor (AC-ALT2): an action with no one on it is the whole
+  // New Oppla (AC-ALT2): an action with no one on it is the whole
   // workspace's, until someone takes it.
   if (!assignee) {
     return (

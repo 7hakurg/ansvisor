@@ -10,7 +10,7 @@ metadata:
 
 # Get started
 
-The playbook of the /start shortcut ("Help me get started. What should I set up first?"): what to set up next in Ansvisor, from where the brand stands today.
+The playbook of the /start shortcut ("Help me get started. What should I set up first?"): what to set up next in Oppla, from where the brand stands today.
 
 ## Data plan
 

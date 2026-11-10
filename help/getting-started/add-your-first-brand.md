@@ -11,7 +11,7 @@ app_version: 0.3.0
 approved: true
 sources: [docs/guides/add-your-first-brand.mdx]
 ---
-When you start with Ansvisor, a setup wizard walks you through your first brand. It usually takes a few minutes, and you need the website of the brand you want to track. The wizard has five steps on a self-hosted install and seven on the cloud: the extra two ask what you work on and pick your plan. From the second step on, your progress is saved as you go, so if you leave, you pick up where you stopped.
+When you start with Oppla, a setup wizard walks you through your first brand. It usually takes a few minutes, and you need the website of the brand you want to track. The wizard has five steps on a self-hosted install and seven on the cloud: the extra two ask what you work on and pick your plan. From the second step on, your progress is saved as you go, so if you leave, you pick up where you stopped.
 
 ## Step 1: Brand basics
 
@@ -19,7 +19,7 @@ When you start with Ansvisor, a setup wizard walks you through your first brand.
 
 - **Brand name**: exactly how the brand is named in the wild, not an abbreviation. Mention detection ignores upper and lower case.
 - **Website**: your main domain, such as example.com; the https part is already filled in. It's used to recognize citations of your site and to suggest competitors.
-- **Describe your brand** (optional, but recommended): one to three sentences on your industry and your audience. It helps Ansvisor suggest better topics, prompts and competitors.
+- **Describe your brand** (optional, but recommended): one to three sentences on your industry and your audience. It helps Oppla suggest better topics, prompts and competitors.
 
 There's no separate industry field: put your industry in the description.
 
@@ -37,7 +37,7 @@ You can track prompts in more locations later.
 
 ## Step 3: Topics
 
-On **Choose topics to monitor**, Ansvisor uses your brand details and an AI model to suggest topics: themes your customers care about. The first seven come checked.
+On **Choose topics to monitor**, Oppla uses your brand details and an AI model to suggest topics: themes your customers care about. The first seven come checked.
 
 Check the topics that fit your brand and uncheck any that don't apply, up to 10. You can also type a topic name of your own and add it with **+**. If suggestions can't be fetched, add your own. **Looks good** moves on.
 
@@ -45,7 +45,7 @@ Aim for four to seven topics. Too few gives a narrow view; too many is noisy and
 
 ## Step 4: Prompts
 
-On **Review your prompts**, Ansvisor writes five starter prompts for each topic you chose: real questions a potential customer would ask an AI engine. Review the list:
+On **Review your prompts**, Oppla writes five starter prompts for each topic you chose: real questions a potential customer would ask an AI engine. Review the list:
 
 - remove prompts that don't fit;
 - remove a whole topic from its **…** menu with **Remove topic**;
@@ -57,11 +57,11 @@ Keep prompts free of your brand name. A question about your brand by name almost
 
 ## Step 5: Competitors
 
-On **Add your competitors**, Ansvisor suggests competitors for your brand. Check the real rivals, and uncheck or remove the ones that aren't comparable. Add your own with a company name and domain, using the name as it appears in AI answers rather than the website address.
+On **Add your competitors**, Oppla suggests competitors for your brand. Check the real rivals, and uncheck or remove the ones that aren't comparable. Add your own with a company name and domain, using the name as it appears in AI answers rather than the website address.
 
 Select at least one competitor to continue. **Start tracking with N competitors** finishes the brand. Competitor tracking is on every plan.
 
-If your site looks like an online store, Ansvisor turns on Product Visibility for the brand and says so on this step. You can turn it off in the brand settings.
+If your site looks like an online store, Oppla turns on Product Visibility for the brand and says so on this step. You can turn it off in the brand settings.
 
 ## Step 6 on the cloud: What do you work on?
 

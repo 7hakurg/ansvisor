@@ -2,7 +2,7 @@ import { isValidElement, type ReactNode } from 'react';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 /**
- * Onboarding on Ansvisor Cloud once a member has finished it: a workspace
+ * Onboarding on Oppla Cloud once a member has finished it: a workspace
  * whose plan ended opens the dashboard read-only instead of the wizard (where
  * the brand could be set up again); only an admin of a new account that never
  * subscribed keeps the plan step.

@@ -1,6 +1,6 @@
 /**
  * The skills an agent is made of (CHAT-21 §D step 1) until Chat's skills
- * registry (CHAT-13) lists them: Ansvisor's own skills (Chat agentic plan
+ * registry (CHAT-13) lists them: Oppla's own skills (Chat agentic plan
  * §4), the governance mockup's ten first, with the connections each one
  * uses, Required or Optional (§D step 4). Their titles are
  * chatAgents.skills.{id}. Pure.
@@ -15,7 +15,7 @@
  * (§H item 42).
  *
  * Then CHAT-24 §5's seven for the focus areas (W2-23b), in the library's
- * order (SKILL_ORDER). Their SKILL.md files read only Ansvisor's own data
+ * order (SKILL_ORDER). Their SKILL.md files read only Oppla's own data
  * (answers, fan-outs, citations, mentions, the site audit and the pages
  * they fetch) and save page work as drafts, so they use no connection:
  * /listings reads the sites AI cites, not a catalog, and /audit-fix writes
@@ -143,7 +143,7 @@ export function requiredBy(skillIds: readonly string[], key: string): string | n
 
 /** What an agent's checks know of its skills now (skills/store.ts agentSkillStates). */
 export interface AgentSkillStates {
-  /** The Ansvisor skills the workspace turned off. */
+  /** The Oppla skills the workspace turned off. */
   disabled: ReadonlySet<string>;
   /** The workspace's own skills it names, each true when the person it acts as may run it. */
   workspace: ReadonlyMap<string, boolean>;
@@ -151,7 +151,7 @@ export interface AgentSkillStates {
 
 /**
  * The first of an agent's skills it can't run now, or null (CHAT-21 §G item
- * 34: the agent pauses with skill_off): an Ansvisor skill the workspace
+ * 34: the agent pauses with skill_off): an Oppla skill the workspace
  * turned off, or a workspace skill that is off, not approved, gone, not the
  * person's to use, or no longer matching its checksum.
  */

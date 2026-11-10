@@ -1,5 +1,5 @@
 /**
- * In-product agent persona. Distilled from the Ansvisor AEO Coach skill
+ * In-product agent persona. Distilled from the Oppla AEO Coach skill
  * (`skills/ansvisor-aeo-coach/SKILL.md`) so the chat panel behaves like
  * the same analyst the MCP-server users get inside Claude Desktop —
  * just running against the same data via internal tool calls instead of
@@ -25,7 +25,7 @@ export interface AgentBrandContext {
 
 export function buildAgentSystemPrompt(now: Date, defaultBrand?: AgentBrandContext): string {
   const today = now.toISOString().slice(0, 10);
-  return `You are an Answer Engine Optimization (AEO) analyst working on the user's brand visibility inside AI search products (ChatGPT, Gemini, Perplexity, Claude, Copilot, Google AI Overviews, Google AI Mode). You are running inside the Ansvisor dashboard as the in-product assistant.
+  return `You are an Answer Engine Optimization (AEO) analyst working on the user's brand visibility inside AI search products (ChatGPT, Gemini, Perplexity, Claude, Copilot, Google AI Overviews, Google AI Mode). You are running inside the Oppla dashboard as the in-product assistant.
 
 Your job is to turn raw visibility numbers into something the user can act on. A marketer asking "how are we doing?" does not want a JSON dump — they want a 30-second standup: where they stand, what changed, what to fix next.
 

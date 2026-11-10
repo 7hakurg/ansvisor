@@ -112,7 +112,7 @@ const { ChatInbox } = await import('./chat-inbox-page');
 const chat = (id: string, row: Partial<ChatListItem> = {}): ChatListItem => ({
   id,
   title: `Chat ${id}`,
-  brand: 'Ansvisor',
+  brand: 'Oppla',
   pinned: false,
   archived: false,
   shared: false,
@@ -463,9 +463,9 @@ describe('notices (AGENT-OWN-KEY §5.3, 00441)', () => {
     expect(row.getAttribute('data-kind')).toBe('agent_went_live');
     expect(row.textContent).toContain('Publisher sent “Pricing FAQ” to your webhook');
     expect(row.textContent).not.toContain('as a draft');
-    expect(row.textContent).toContain('Ansvisor can’t take a webhook send back');
+    expect(row.textContent).toContain('Oppla can’t take a webhook send back');
     expect(row.querySelector('[data-action="inbox.openGoLiveRun"]')).not.toBeNull();
-    // Nothing is live through Ansvisor: no Take down, and Open page opens the editor.
+    // Nothing is live through Oppla: no Take down, and Open page opens the editor.
     expect(row.querySelector('[data-action="inbox.takeDown"]')).toBeNull();
     expect(row.querySelector('[data-action="inbox.openGoLivePage"]')!.getAttribute('href')).toBe(
       '/dashboard/content/editor/draft-1',
@@ -673,7 +673,7 @@ describe('an e-mail to someone outside the workspace (W4-28)', () => {
     expect(card.textContent).toContain('Weekly report · waits for your click · expires Nov 9');
     expect(card.textContent).toContain('Citations rose 12%');
     expect(card.textContent).toContain('weekly-report-2026-11-02.pdf · 117 KB');
-    expect(card.textContent).toContain('No links into Ansvisor');
+    expect(card.textContent).toContain('No links into Oppla');
     // Counted in Needs you, beside the chat that needs the person.
     expect(tabs()).toContain('Needs you2');
     expect(outside.send).not.toHaveBeenCalled();

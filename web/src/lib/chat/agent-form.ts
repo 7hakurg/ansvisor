@@ -200,7 +200,7 @@ export const WRITING_MODEL = 'anthropic/claude-sonnet-5.5';
  * the model as the plan allows it (runChoiceOf: the free trial, and a model
  * no longer offered, run Auto); a picked model on the own key for its
  * provider, else the OpenRouter one (pickedModelOwnKey); Auto on the key
- * Auto runs on. Null: Ansvisor's key, on the monthly AI limit.
+ * Auto runs on. Null: Oppla's key, on the monthly AI limit.
  */
 export function modelKeyProvider(
   model: string,

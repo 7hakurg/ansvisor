@@ -123,7 +123,7 @@ function fakeQueryBuilder(table: string) {
 }
 
 // No engine tracked today always shares its searches: Copilot and Perplexity
-// did until Ansvisor stopped tracking them on 2026-11-06
+// did until Oppla stopped tracking them on 2026-11-06
 // (config/fanout-platforms.ts). The look-back stays for the next one, so
 // Perplexity stands in for it here.
 vi.mock('@/config/fanout-platforms', async (importOriginal) => ({

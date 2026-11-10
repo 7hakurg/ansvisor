@@ -282,7 +282,7 @@ function SignInForm({
             id={id('key')}
             aria-describedby={id('hint')}
             type="password"
-            // Not a sign-in to Ansvisor: no saved password is offered here.
+            // Not a sign-in to Oppla: no saved password is offered here.
             autoComplete="new-password"
             spellCheck={false}
             value={apiKey}

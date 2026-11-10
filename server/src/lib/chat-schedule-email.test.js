@@ -5,7 +5,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
  * its creator and the workspace's people it names, checked as it is sent
  * (still a member, still reaching its brand); the first lines of the
  * answer, Open in Chat and Pause this job; the PDF attached up to 5 MB;
- * from "Ansvisor" or the white label kit's company; once per run, its
+ * from "Oppla" or the white label kit's company; once per run, its
  * outcome kept on the run.
  */
 
@@ -129,8 +129,8 @@ describe('sendScheduleEmail', () => {
     expect(message.html).toContain('https://app.ansvisor.test/dashboard/chat/scheduled/job-1');
     expect(message.html).toContain('The report is attached as a PDF.');
     expect(message.attachments).toEqual([pdf(1000)]);
-    // Starter has no white label: from Ansvisor.
-    expect(message.fromName).toBe('Ansvisor');
+    // Starter has no white label: from Oppla.
+    expect(message.fromName).toBe('Oppla');
     expect(db.tables.chat_schedule_runs[0]).toMatchObject({
       email_status: 'sent',
       resend_message_id: 'resend-1',
@@ -154,7 +154,7 @@ describe('sendScheduleEmail', () => {
     await send();
     expect(deliver.mock.calls[0][0].fromName).toBe('Northwind Agency');
     db.tables.white_label_kits[0].company_name = '  ';
-    expect(await mail.senderNameOf(ORG)).toBe('Ansvisor');
+    expect(await mail.senderNameOf(ORG)).toBe('Oppla');
   });
 
   it('says a run didn’t run, or the job paused, with why, Retry and Open in Chat', async () => {

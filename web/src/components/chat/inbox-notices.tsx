@@ -223,7 +223,7 @@ const TAKE_DOWN_MS = 30 * 24 * 60 * 60 * 1000;
 
 /**
  * An agent sent a page out on its own (AUTONOMOUS-GO-LIVE §6.4): what, to
- * which CMS, as a draft there, or to the brand's webhook, which Ansvisor
+ * which CMS, as a draft there, or to the brand's webhook, which Oppla
  * can't take back (PR 11); Open page, and Open run beside why it could.
  */
 function WentLiveRow({ notice }: { notice: Extract<ChatNotice, { kind: 'agent_went_live' }> }) {

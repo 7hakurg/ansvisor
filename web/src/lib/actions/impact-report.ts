@@ -16,7 +16,7 @@ import {
 import { createClient } from '@/lib/supabase/server';
 
 /**
- * Reports › "What Ansvisor did for you" (CHAT-22 feature 2 item 5), behind
+ * Reports › "What Oppla did for you" (CHAT-22 feature 2 item 5), behind
  * CHAT_AGENTIC: a brand's changes shipped in a month and what each did,
  * read through the person's session from the ledger W2-20's job writes
  * (ship_events, impact_measurements, 00421; brand access 00424, so an

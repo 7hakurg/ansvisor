@@ -41,11 +41,11 @@ Above the cards, **Goal**, **Business type** and **Role** sit side by side, each
 
 ## Agents for your site and your work
 
-Agents made for the site type of the brand you have open are marked **For your site type**, and agents made for one of your work areas **For your role**. They come first among the agents you can use, and first among the **Soon** ones. A brand's site type is **E-commerce**, **B2B SaaS** or **B2C**, under **Site type** in the brand's settings; until someone sets it, Ansvisor guesses it. Change your work areas in **Settings › Account › Your work areas**. **Mobile app** agents show under **Business type** only: a brand can't be set to Mobile app yet.
+Agents made for the site type of the brand you have open are marked **For your site type**, and agents made for one of your work areas **For your role**. They come first among the agents you can use, and first among the **Soon** ones. A brand's site type is **E-commerce**, **B2B SaaS** or **B2C**, under **Site type** in the brand's settings; until someone sets it, Oppla guesses it. Change your work areas in **Settings › Account › Your work areas**. **Mobile app** agents show under **Business type** only: a brand can't be set to Mobile app yet.
 
 ## Onboarding & Help
 
-**Onboarding & Help** gets a new brand or a new teammate going. Its skill is **Setup guide** (**/setup**). It starts on **All brands** with **When a brand is added**: once it's on, each brand someone adds gets one run, which acts as the agent's owner and shows in their Inbox. You can also click **Run now** on its page. Each run says how many **Getting started** steps are done, lists the open ones with a link to each page, then recommends 3 to 5 ready-to-use agents for the brand's site type and your work areas, each linked to its card in **Ready to use**. It never turns an agent on: you click **Use this agent**, then **Turn on**. It runs on **Ask me first**, so it asks before every change, such as adding competitors. Ask it how to do something in Ansvisor, and Chat answers from Help.
+**Onboarding & Help** gets a new brand or a new teammate going. Its skill is **Setup guide** (**/setup**). It starts on **All brands** with **When a brand is added**: once it's on, each brand someone adds gets one run, which acts as the agent's owner and shows in their Inbox. You can also click **Run now** on its page. Each run says how many **Getting started** steps are done, lists the open ones with a link to each page, then recommends 3 to 5 ready-to-use agents for the brand's site type and your work areas, each linked to its card in **Ready to use**. It never turns an agent on: you click **Use this agent**, then **Turn on**. It runs on **Ask me first**, so it asks before every change, such as adding competitors. Ask it how to do something in Oppla, and Chat answers from Help.
 
 ## Prompt Portfolio Manager
 
@@ -80,11 +80,11 @@ To compare agents, open **Settings › Billing**. Under **This period's AI usage
 
 On an agent's page, **What this agent did** covers the last 30 days. **Changes shipped** counts the pages that went live from its runs. **Improved** says how many of those with a verdict improved, counting only Medium and High confidence verdicts, as **Reports** does. A **Pending** change gets its first verdict 14 days after it goes live.
 
-Each change shows the run it came from, its outcome and its next check, and how it went live: **on its own**, **you approved** when you sent or published it on a card in the run's chat, or **by** and the name of the teammate who did. A line counts the agent's drafts that aren't live yet: drafts aren't measured until they go live. You see only the brands you have access to. **Open in Reports** opens **What Ansvisor did for you**, where each change has its details.
+Each change shows the run it came from, its outcome and its next check, and how it went live: **on its own**, **you approved** when you sent or published it on a card in the run's chat, or **by** and the name of the teammate who did. A line counts the agent's drafts that aren't live yet: drafts aren't measured until they go live. You see only the brands you have access to. **Open in Reports** opens **What Oppla did for you**, where each change has its details.
 
 ## What a run's outcome means
 
-A run's **Outcome** in **Run history** shows what the pages it took live did in AI answers, measured as in **What Ansvisor did for you**. A page counts for the run once it is live, when the agent sent or published it on its own, or when you approved sending or publishing it on a card in the run's chat. A page you send or publish later from the Content Editor or the Library counts as yours, not the agent's.
+A run's **Outcome** in **Run history** shows what the pages it took live did in AI answers, measured as in **What Oppla did for you**. A page counts for the run once it is live, when the agent sent or published it on its own, or when you approved sending or publishing it on a card in the run's chat. A page you send or publish later from the Content Editor or the Library counts as yours, not the agent's.
 
 A run that took nothing live shows "—". Once the run has ended and one of its pages is live, it shows **Pending**. Day 14 gives the first verdict, such as **Improved** or **No meaningful change**, and days 30 and 90 can change it. A finished run is never **Improved** by itself.
 
@@ -114,7 +114,7 @@ Click **Save as draft** to keep it off, or **Turn on**. If something needs fixin
 
 ## Skills an agent can use
 
-Step 1 lists the same skills Chat offers. Besides **Win back lost citations**, **Weekly report** and the other content and reporting skills, there are the skills for what you focus on: **Buyer questions**, **How AI compares us**, **No clear leader**, **Who AI recommends by market**, **Listing gaps**, **Rival brief** and **Site audit fixes**. Each card says which connections it uses. These seven work from your Ansvisor data and public pages, so they need no connection. An agent can run up to 2 follow-on skills after its first one, for example **Comparison page** after **How AI compares us**.
+Step 1 lists the same skills Chat offers. Besides **Win back lost citations**, **Weekly report** and the other content and reporting skills, there are the skills for what you focus on: **Buyer questions**, **How AI compares us**, **No clear leader**, **Who AI recommends by market**, **Listing gaps**, **Rival brief** and **Site audit fixes**. Each card says which connections it uses. These seven work from your Oppla data and public pages, so they need no connection. An agent can run up to 2 follow-on skills after its first one, for example **Comparison page** after **How AI compares us**.
 
 **Library** lists the skills your workspace added from the Library that an Admin approved and you may run: the shared ones and your own. Pick one to start the agent on it.
 

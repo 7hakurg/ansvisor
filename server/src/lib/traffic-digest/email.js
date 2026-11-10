@@ -214,7 +214,7 @@ export function renderTrafficDigestEmail({
 <tr><td align="center" style="padding:24px 12px;">
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:600px;background:${WHITE};border:1px solid ${LINE};border-radius:16px;overflow:hidden;font-family:${FONT};">
   <tr><td class="pad" style="background:${INK};padding:26px 28px;">
-    <div style="font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:${LINE};">Ansvisor · AI Traffic weekly</div>
+    <div style="font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:${LINE};">Oppla · AI Traffic weekly</div>
     <div style="font-size:26px;font-weight:500;letter-spacing:-0.03em;color:${WHITE};margin:8px 0 4px 0;">${escapeHtml(brandName)}</div>
     <div style="font-size:14px;color:${SAND};opacity:0.8;">Visits from AI assistants to your site, ${escapeHtml(range)}</div>
   </td></tr>

@@ -40,14 +40,14 @@ export interface InputPrompt {
 
 const EMPTY_QUOTE: InputQuote = { name: '', title: '', text: '', sourceUrl: '' };
 
-/** A day, "2026-10-24", as its month and year: how Ansvisor data is cited. */
+/** A day, "2026-10-24", as its month and year: how Oppla data is cited. */
 const monthOf = (day: string) => new Date(`${day.slice(0, 7)}-01T12:00:00Z`);
 
 /**
  * Brief › Your input (Content Editor Quality spec §6, CE-048), at the top
  * of Brief: what only the person can give, used only as they write it.
- * Their experience; their data, from Ansvisor (a prompt's answers and the
- * brand's mentions, cited as "Ansvisor data, {month year}") or from a CSV
+ * Their experience; their data, from Oppla (a prompt's answers and the
+ * brand's mentions, cited as "Oppla data, {month year}") or from a CSV
  * or Excel file read here in the browser, or pasted; expert quotes, each
  * with the four things that make it real. Under it, what the agent never
  * does. Each change is kept at once (`onChange`, made to the input as it
@@ -61,7 +61,7 @@ export function YourInput({
   scrollRequest = null,
 }: {
   inputs: DraftInputs;
-  /** The draft's prompts, those it targets first: Ansvisor data offered from them. */
+  /** The draft's prompts, those it targets first: Oppla data offered from them. */
   prompts: InputPrompt[];
   onChange: (update: InputsUpdate) => void;
   /** A Quality "Add" (a new number each time), with Brief showing: the block scrolls into view. */

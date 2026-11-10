@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Inter, Plus_Jakarta_Sans } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/next';
 import { PostHogProvider } from '@/components/providers/posthog-provider';
 import './globals.css';
+import { siteConfig } from '@/config/site';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -25,29 +26,29 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'https://app.ansvisor.com'),
+  metadataBase: new URL(siteConfig.appUrl),
   title: {
-    default: 'Ansvisor',
-    template: '%s | Ansvisor',
+    default: siteConfig.name,
+    template: `%s | ${siteConfig.name}`,
   },
   description:
     "Monitor, analyze, and optimize your brand's visibility in AI-powered search engines.",
   openGraph: {
-    title: 'Ansvisor',
+    title: siteConfig.name,
     description:
       'Track how AI search engines mention your brand — ChatGPT, Gemini, Google AI, Claude.',
     url: '/',
-    siteName: 'Ansvisor',
+    siteName: siteConfig.name,
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Ansvisor',
+    title: siteConfig.name,
     description:
       'Track how AI search engines mention your brand — ChatGPT, Gemini, Google AI, Claude.',
   },
-  // The product app at app.ansvisor.com should not appear in search results;
-  // ansvisor.com (the Webflow marketing site) is the indexable surface.
+  // The product app should not appear in search results; the marketing site
+  // (siteConfig.url) is the indexable surface.
   robots: {
     index: false,
     follow: false,

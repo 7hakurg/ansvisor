@@ -6,6 +6,7 @@
  */
 
 import { nestsTooDeep } from '../html-depth.js';
+import { productAgent } from '../brand.js';
 
 const SCRAPEDO_API = 'https://api.scrape.do';
 
@@ -62,7 +63,7 @@ async function fetchTextDirect(url, { timeoutMs = 8000 } = {}) {
   try {
     const res = await fetch(url, {
       signal: controller.signal,
-      headers: { 'user-agent': 'AnsvisorSiteAudit/1.0 (+https://ansvisor.com)' },
+      headers: { 'user-agent': productAgent('SiteAudit') },
       redirect: 'follow',
     });
     if (res.ok) return { body: await res.text(), blocked: false };

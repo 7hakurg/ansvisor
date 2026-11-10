@@ -62,7 +62,7 @@ const { ChatAllChats, passesFilter } = await import('./chat-all-chats');
 const chat = (id: string, row: Partial<ChatListItem> = {}): ChatListItem => ({
   id,
   title: `Chat ${id}`,
-  brand: 'Ansvisor',
+  brand: 'Oppla',
   pinned: false,
   archived: false,
   shared: false,

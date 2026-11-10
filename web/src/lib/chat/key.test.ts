@@ -3,7 +3,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 /**
  * Whose key a Chat step runs on: with Chat on, the workspace's own on
  * Enterprise, or for 30 days when it saved one before Chat (CHAT-16 items 19
- * and 28, owner decision 2026-10-30); else Ansvisor's, which draws on the AI
+ * and 28, owner decision 2026-10-30); else Oppla's, which draws on the AI
  * budget. With Chat off, today's Agent Chat: the workspace's own key or
  * nothing on the cloud.
  */
@@ -161,7 +161,7 @@ describe('resolveChatModelKey, Chat on', () => {
     expect(await resolveChatModelKey(ORG)).toEqual(OWN);
   });
 
-  it('runs Growth and Starter on Ansvisor’s key, their own key left aside', async () => {
+  it('runs Growth and Starter on Oppla’s key, their own key left aside', async () => {
     for (const plan of ['growth', 'starter']) {
       org = orgOn(plan);
       ownKey = CUSTOMER;
@@ -182,7 +182,7 @@ describe('resolveChatModelKey, Chat on', () => {
     expect(await resolveChatModelKey(ORG)).toEqual(ANSVISOR);
   });
 
-  it('stops on an own key that can’t be read, marked failing, never Ansvisor’s key in its place', async () => {
+  it('stops on an own key that can’t be read, marked failing, never Oppla’s key in its place', async () => {
     org = orgOn('enterprise');
     ownKey = { ...CUSTOMER, key_encrypted: 'bad' };
     markKeyFailing.mockClear();
@@ -201,7 +201,7 @@ describe('resolveChatModelKey, Chat on', () => {
     await expect(resolveChatModelKey(ORG)).rejects.toBeInstanceOf(OwnKeyUnreadableError);
   });
 
-  it('falls back to Ansvisor’s key when an Enterprise workspace has none', async () => {
+  it('falls back to Oppla’s key when an Enterprise workspace has none', async () => {
     org = orgOn('enterprise');
     expect(await resolveChatModelKey(ORG)).toEqual(ANSVISOR);
   });
@@ -230,7 +230,7 @@ describe('resolveChatModelKey, Chat off', () => {
     expect(reads).toEqual(['organization_ai_keys']);
   });
 
-  it('never falls back to Ansvisor’s key on the cloud', async () => {
+  it('never falls back to Oppla’s key on the cloud', async () => {
     org = orgOn('enterprise');
     expect(await resolveChatModelKey(ORG)).toBeNull();
   });
@@ -248,7 +248,7 @@ describe('chatRunsOnOwnKey', () => {
     ownKey = CUSTOMER;
     expect(await chatRunsOnOwnKey(ORG)).toBe(true);
 
-    // No key saved, or the plan leaves it aside: Ansvisor's key, on the budget.
+    // No key saved, or the plan leaves it aside: Oppla's key, on the budget.
     ownKey = null;
     expect(await chatRunsOnOwnKey(ORG)).toBe(false);
     ownKey = CUSTOMER;
@@ -264,7 +264,7 @@ describe('chatRunsOnOwnKey', () => {
     expect(await chatRunsOnOwnKey(ORG)).toBe(false);
   });
 
-  it('names the own key’s provider for the model menu’s Your key, none on Ansvisor’s', async () => {
+  it('names the own key’s provider for the model menu’s Your key, none on Oppla’s', async () => {
     org = orgOn('enterprise');
     ownKey = CUSTOMER;
     expect(await ownChatKeyProvider(ORG)).toBe(CUSTOMER.provider);
@@ -272,7 +272,7 @@ describe('chatRunsOnOwnKey', () => {
     expect(await ownChatKeyProvider(ORG)).toBeNull();
   });
 
-  it('leaves out an active key that isn’t for Chat: Auto runs on Ansvisor’s key, on the limit', async () => {
+  it('leaves out an active key that isn’t for Chat: Auto runs on Oppla’s key, on the limit', async () => {
     org = orgOn('enterprise');
     ownKey = { ...CUSTOMER, settings: { useFor: ['images'] } };
     expect(await ownChatKeyProvider(ORG)).toBeNull();

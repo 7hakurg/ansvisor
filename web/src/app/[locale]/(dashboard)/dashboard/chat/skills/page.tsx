@@ -4,7 +4,7 @@ import { chatPageOpen } from '../_chat-page-access';
 
 /**
  * Skills (mockup #s-skills; CHAT-13 items 8–10, Chat Wave 3 W3-07):
- * Ansvisor's skills and the workspace's own, to run, schedule, build an
+ * Oppla's skills and the workspace's own, to run, schedule, build an
  * agent on, or turn on and off. Only with the new Chat on for the
  * workspace (CHAT_AGENTIC).
  */

@@ -68,7 +68,7 @@ function keyReadOf(
  *   (lib/chat/key.ts): a key that can't be read stops it.
  *
  * Never returns the env key on cloud (avoid the footgun of one customer
- * falling back to Ansvisor's own quota).
+ * falling back to Oppla's own quota).
  */
 export async function resolveAgentModelConfig(
   organizationId: string,

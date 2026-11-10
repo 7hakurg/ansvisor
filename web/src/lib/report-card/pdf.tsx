@@ -75,12 +75,12 @@ import {
  *      trial invitation with its button (owner review 2026-11-08).
  *
  * Drawn on the server, on the Reports PDF's base: the same renderer, Inter,
- * Ansvisor's look without a kit (reportLook) and its footer.
+ * Oppla's look without a kit (reportLook) and its footer.
  */
 
 const FAMILY = 'ReportCardInter';
 /**
- * Ansvisor's own colors (the brand style guide, owner decision 2026-11-03):
+ * Oppla's own colors (the brand style guide, owner decision 2026-11-03):
  * ink for text, rules, the company's own bars and buttons; a warm grey for
  * secondary text and for the competitors' bars, lighter; a cream band and a
  * sand border.

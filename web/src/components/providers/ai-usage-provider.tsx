@@ -42,7 +42,7 @@ const AiUsageContext = createContext<AiUsageState>({ usage: null, refresh: () =>
  * The workspace's AI usage this period, read once for every page's header
  * meter (AI usage spec §3.1), so moving between pages doesn't blink it. It
  * is read again on a page change or a return to the tab once the last read
- * is a minute old. Only Ansvisor Cloud meters AI: self-hosted reads nothing.
+ * is a minute old. Only Oppla Cloud meters AI: self-hosted reads nothing.
  * Reaching 80% of the allowance toasts once a period in a browser (spec §4);
  * the banners under the header rows stay.
  */

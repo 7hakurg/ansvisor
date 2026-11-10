@@ -11,7 +11,7 @@ app_version: 0.3.0
 approved: true
 sources: [docs/guides/looker-studio.mdx]
 ---
-The Ansvisor connector for Looker Studio pulls your AI visibility metrics into Looker Studio. One dashboard can then show AI visibility next to organic traffic, such as GA4 sessions and Search Console clicks, on one date axis. For now, the connector is shared by link: ask Ansvisor for the current one.
+The Oppla connector for Looker Studio pulls your AI visibility metrics into Looker Studio. One dashboard can then show AI visibility next to organic traffic, such as GA4 sessions and Search Console clicks, on one date axis. For now, the connector is shared by link: ask Oppla for the current one.
 
 ## Connect
 
@@ -36,7 +36,7 @@ Visibility Trend is built for blending: join it to a GA4 source on the **Date** 
 
 ## Good to know
 
-- Results are kept for five minutes per user, so a dashboard with many charts doesn't ask Ansvisor again for each one.
+- Results are kept for five minutes per user, so a dashboard with many charts doesn't ask Oppla again for each one.
 - A key belongs to its creator's organization: only that organization's brands appear in the brand picker.
 - Revoking the key in **Settings › MCP & API Keys** breaks the data source at once, and Looker Studio asks for a new key.
-- The shared connector reads Ansvisor Cloud. A self-hosted install needs its own copy of the connector, pointed at its own server.
+- The shared connector reads Oppla Cloud. A self-hosted install needs its own copy of the connector, pointed at its own server.

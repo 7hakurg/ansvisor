@@ -48,7 +48,7 @@ async function readKeys(): Promise<KeyRow[] | 'failed'> {
  * keys, opened from the model menu. Each key with its last four
  * characters, whether Auto runs on it, what it is for (Chat, Images; a
  * picked model runs on its provider's key, then the OpenRouter key, then
- * Ansvisor's), Test, and Add API key. Admins only, on Enterprise or with a
+ * Oppla's), Test, and Add API key. Admins only, on Enterprise or with a
  * key kept from before Chat; the full page stays in Settings.
  */
 export function YourKeysDialog({ open, onClose }: { open: boolean; onClose: () => void }) {

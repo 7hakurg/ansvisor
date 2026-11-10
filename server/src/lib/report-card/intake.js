@@ -13,7 +13,7 @@ import { reportCardStore } from './store.js';
 import { verifyBotToken } from './turnstile.js';
 
 /**
- * A free report card request from the www.ansvisor.com form (REPORT-CARD
+ * A free report card request from the oppla.ai form (REPORT-CARD
  * §3, §4, §8), answered with the code the form shows a message for:
  *
  *   - queued (200): a new card is on its way;

@@ -1,5 +1,5 @@
 /**
- * Ansvisor Help (CHAT-19 §4): one Markdown article per page, feature,
+ * Oppla Help (CHAT-19 §4): one Markdown article per page, feature,
  * metric, setting and main task, in the repo's /help/{area}/{slug}.md, that
  * Chat answers how-to questions from (only approved ones), section by
  * section. This reads an article's front matter and splits it into the

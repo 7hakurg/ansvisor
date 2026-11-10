@@ -11,7 +11,7 @@ app_version: 0.3.0
 approved: true
 sources: [docs/guides/prompts.mdx]
 ---
-A prompt is a question Ansvisor asks the AI engines for your brand every day, such as "best project management tool for agencies". Its answers show where your brand is named and cited. You can add prompts one at a time, many at once, or from suggestions. Admins and managers can add prompts.
+A prompt is a question Oppla asks the AI engines for your brand every day, such as "best project management tool for agencies". Its answers show where your brand is named and cited. You can add prompts one at a time, many at once, or from suggestions. Admins and managers can add prompts.
 
 ## Add a topic first
 
@@ -35,4 +35,4 @@ A prompt has no results until it is first asked. **Add prompt** and **Bulk impor
 
 ## What counts on your plan
 
-Every prompt counts on your plan's prompt limit, once in each location it is tracked in. Paused prompts don't count. If adding would pass the limit, Ansvisor adds the prompts that fit and says how many weren't added. Once the limit is reached, it adds nothing until you pause or remove prompts.
+Every prompt counts on your plan's prompt limit, once in each location it is tracked in. Paused prompts don't count. If adding would pass the limit, Oppla adds the prompts that fit and says how many weren't added. Once the limit is reached, it adds nothing until you pause or remove prompts.

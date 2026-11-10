@@ -132,7 +132,7 @@ function SizeIcon({ size }: { size: PanelSize }) {
  * open; × keeps one off on this page until New chat. The empty panel offers
  * the page's suggestions, which fill the box; Ask about this attaches its
  * object as an @ chip. On the product tour's chat, while the tour is on,
- * "Ansvisor tour · n of 5" sits over it and the tour's chips under its
+ * "Oppla tour · n of 5" sits over it and the tour's chips under its
  * latest turn.
  */
 export function ChatSidePanel() {

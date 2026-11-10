@@ -171,7 +171,7 @@ function HoverTip({ content, children }: { content: string; children: React.Reac
 /**
  * Where a suggestion came from, as badges (#659).
  *
- * Every suggestion is phrased by our own generation step, so `Ansvisor Agents`
+ * Every suggestion is phrased by our own generation step, so `Oppla Agents`
  * is always present; a data source badge joins it when the suggestion was
  * mined from the brand's own Search Console or Analytics, or drawn from its
  * catalog (ECOM-003), rather than from the model alone. Two badges is the
@@ -236,10 +236,10 @@ function SourceBadges({ suggestion }: { suggestion: PromptSuggestion }) {
           </Badge>
         </HoverTip>
       )}
-      <HoverTip content="Phrased by Ansvisor from your brand, the prompts you already track, and the competitors cited in your AI answers.">
+      <HoverTip content="Phrased by Oppla from your brand, the prompts you already track, and the competitors cited in your AI answers.">
         <Badge variant="outline" className="gap-1.5 bg-card text-xs font-normal">
           <Shield className="h-3.5 w-3.5 text-muted-foreground" />
-          Ansvisor Agents
+          Oppla Agents
         </Badge>
       </HoverTip>
     </div>
@@ -259,7 +259,7 @@ const SOURCE_FILTER_LABELS: Record<Exclude<SourceFilter, 'shopping'>, string> = 
   data: 'From your data',
   gsc: 'Google Search Console',
   ga: 'Google Analytics (GA4)',
-  agents: 'Ansvisor Agents only',
+  agents: 'Oppla Agents only',
 };
 
 function isMeasuredSuggestion(s: PromptSuggestion): boolean {

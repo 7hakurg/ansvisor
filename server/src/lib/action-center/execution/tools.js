@@ -5,7 +5,7 @@
  * is the only way anything automated reaches data or a third-party system.
  * That is the point of having a registry rather than letting each task call
  * whatever it likes: what the engine can touch is enumerable, and what it can
- * touch *outside Ansvisor* is a property declared on the tool rather than a
+ * touch *outside Oppla* is a property declared on the tool rather than a
  * fact discovered afterwards in a log.
  *
  * Each tool declares:
@@ -14,7 +14,7 @@
  *    registry and the planner already use. A brand without it never has the
  *    task planned, and the runner refuses anyway;
  *  - `writesExternally` — whether running it *changes* something outside
- *    Ansvisor. Reading a third-party system is not that: the brand
+ *    Oppla. Reading a third-party system is not that: the brand
  *    authorised the analytics connection and we already read it nightly, and
  *    asking for approval before every read would teach people to approve
  *    without looking. What needs a person is a change they would have to

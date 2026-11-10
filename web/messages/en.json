@@ -4,7 +4,7 @@
     "workspace": "This brand isn't in your workspace. Switch to one of your brands.",
     "not_found": "This no longer exists. Reload the page and start again.",
     "plan": "Your plan doesn't include this. Upgrade to use it.",
-    "subscription": "Your workspace's plan isn't active, so changes are paused. Choose a plan to use Ansvisor again.",
+    "subscription": "Your workspace's plan isn't active, so changes are paused. Choose a plan to use Oppla again.",
     "limit": "You've used this month's allowance. Upgrade, or wait until it resets.",
     "busy": "Too many requests. Wait a minute and try again.",
     "failed": "Something went wrong. Try again.",
@@ -173,23 +173,23 @@
     "noPlan": "No active plan",
     "demo": {
       "dialog": {
-        "title": "Use Ansvisor for your own brand",
-        "titleFor": "Use Ansvisor for {brand}",
-        "body": "This is a demo brand with sample data, so nothing here runs or costs anything. Pick a plan and Ansvisor starts tracking, writing and fixing for your own brand.",
-        "bodyFor": "This is a demo brand with sample data, so nothing here runs or costs anything. Pick a plan and Ansvisor starts tracking, writing and fixing for {brand}.",
+        "title": "Use Oppla for your own brand",
+        "titleFor": "Use Oppla for {brand}",
+        "body": "This is a demo brand with sample data, so nothing here runs or costs anything. Pick a plan and Oppla starts tracking, writing and fixing for your own brand.",
+        "bodyFor": "This is a demo brand with sample data, so nothing here runs or costs anything. Pick a plan and Oppla starts tracking, writing and fixing for {brand}.",
         "action": "{action} works on your own brand",
         "label": "This is a demo brand with sample data"
       },
       "ownBrand": {
         "title": "This is a demo brand",
-        "body": "It shows Ansvisor with sample data, so nothing here runs. Switch to your own brand to do this."
+        "body": "It shows Oppla with sample data, so nothing here runs. Switch to your own brand to do this."
       },
       "switchToOwnBrand": "Switch to your brand"
     },
     "trialOffer": {
       "title": "Choose how to start",
-      "body": "Everything you set up is here. Pick a plan and Ansvisor starts tracking, writing and fixing for your brand.",
-      "bodyFor": "Everything you set up for {brand} is here. Pick a plan and Ansvisor starts tracking, writing and fixing for it.",
+      "body": "Everything you set up is here. Pick a plan and Oppla starts tracking, writing and fixing for your brand.",
+      "bodyFor": "Everything you set up for {brand} is here. Pick a plan and Oppla starts tracking, writing and fixing for it.",
       "label": "Your brand isn't tracked yet"
     },
     "actions": {
@@ -419,7 +419,7 @@
     },
     "onboarding": {
       "title": "Not ready to add a card? Explore a demo brand",
-      "body": "See Ansvisor with sample data: prompts, AI answers, content and reports. No card needed. {brand} stays saved, and tracking starts when you pick a plan.",
+      "body": "See Oppla with sample data: prompts, AI answers, content and reports. No card needed. {brand} stays saved, and tracking starts when you pick a plan.",
       "yourBrand": "Your brand",
       "cta": "Explore the demo"
     },
@@ -555,9 +555,9 @@
     "toggleSubmenu": "Show or hide {label}",
     "menuOff": "{count, plural, one {# section} other {# sections}} off your menu.",
     "menuOffChange": "Change",
-    "expandRail": "Expand the Ansvisor menu",
-    "collapseRail": "Collapse the Ansvisor menu",
-    "railTip": "Ansvisor · hover or click to expand"
+    "expandRail": "Expand the Oppla menu",
+    "collapseRail": "Collapse the Oppla menu",
+    "railTip": "Oppla · hover or click to expand"
   },
   "brandVisibility": {
     "title": "Visibility",
@@ -595,14 +595,14 @@
   "actionCenter": {
     "dismissReason": {
       "title": "Why dismiss it?",
-      "description": "This helps Ansvisor suggest the work that fits you.",
+      "description": "This helps Oppla suggest the work that fits you.",
       "not_relevant": {
         "label": "It doesn't matter to us",
         "hint": "What it's about isn't something the brand works on."
       },
       "already_done": {
         "label": "It's already done",
-        "hint": "The work was done before, or somewhere Ansvisor doesn't see."
+        "hint": "The work was done before, or somewhere Oppla doesn't see."
       },
       "wrong_data": {
         "label": "The data behind it is wrong",
@@ -678,7 +678,7 @@
       },
       "empty": {
         "title": "No KPIs configured yet",
-        "description": "Choose a KPI framework to define what Ansvisor should prioritize for this brand.",
+        "description": "Choose a KPI framework to define what Oppla should prioritize for this brand.",
         "cta": "Configure KPIs"
       },
       "allInactive": "No active KPIs for this brand.",
@@ -702,7 +702,7 @@
     },
     "drawer": {
       "title": "Configure KPI Framework",
-      "description": "Customize the KPIs Ansvisor tracks for this brand.",
+      "description": "Customize the KPIs Oppla tracks for this brand.",
       "steps": {
         "template": {
           "title": "1 · Choose KPI template",
@@ -1902,7 +1902,7 @@
           "task_checked": "Checked automatically and done: {task}{title}",
           "task_ran": "{task} — carried out automatically ({tool})",
           "task_run_failed": "{task} — the automatic attempt failed; it needs doing by hand",
-          "task_awaiting_approval": "{task} — waiting for your approval before it reaches outside Ansvisor",
+          "task_awaiting_approval": "{task} — waiting for your approval before it reaches outside Oppla",
           "position_outcome_recorded": "{measurable, plural, =0 {30-day result: not enough data to compare positions} other {30-day result: position improved on {improved} of # platforms}}",
           "outcome_measured": "{day, plural, =0 {} other {Day #{final, select, yes {, final} other {}} · }}{outcome, select, improved {Result: metrics improved after this action closed} mixed {Result: mixed after this action closed} declined {Result: metrics declined after this action closed} no_meaningful_change {Result: no meaningful change in metrics after this action closed} not_measurable {Result: could not be measured} other {Result measured}}",
           "agent_run_started": "Agent run started{named, select, yes { · {agent}} other {}}",
@@ -2611,7 +2611,7 @@
       },
       "secondBrand": {
         "title": "Run Getting started for {brand}?",
-        "body": "You already know Ansvisor. Run the setup steps for this brand, or skip them.",
+        "body": "You already know Oppla. Run the setup steps for this brand, or skip them.",
         "runLine": "Run: KPIs, competitors, topics and prompts for {brand}, guided",
         "skipLine": "Skip: go straight to the actions list",
         "run": "Run Getting started",
@@ -3602,7 +3602,7 @@
     "emptyBodyOr": "or",
     "emptyExample2": "“who's gaining share of voice this month?”",
     "keyMissingTitle": "Add an AI provider key",
-    "keyMissingBody": "Chat uses your own key for Anthropic, OpenAI, Google Gemini, Microsoft Azure OpenAI or OpenRouter — usage is billed to that account, not to Ansvisor. Add a key in Settings to unlock the chat.",
+    "keyMissingBody": "Chat uses your own key for Anthropic, OpenAI, Google Gemini, Microsoft Azure OpenAI or OpenRouter — usage is billed to that account, not to Oppla. Add a key in Settings to unlock the chat.",
     "goToSettings": "Go to Settings",
     "planGateTitle": "Agent is a {plan} feature",
     "planGateBody": "Upgrade your plan to chat with your dashboard about visibility, competitors, citations, and content gaps."
@@ -4287,7 +4287,7 @@
       "checkedFacts": "Checked facts",
       "factsMatch": "Every figure matches the data",
       "factsRemoved": "{count, plural, one {# figure wasn't in the data, so it was left out} other {# figures weren't in the data, so they were left out}}",
-      "readHelp": "Read Ansvisor Help",
+      "readHelp": "Read Oppla Help",
       "readFiles": "Read your attached files",
       "ask": "Waiting for your answer",
       "askSkipped": "Skipped · used {option}",
@@ -4298,7 +4298,7 @@
       "modelDroppedDetail": "The model this chat used is no longer available",
       "modelProviderOffDetail": "Your Admin turned off this model's provider",
       "usedSkill": "Used skill: {title}",
-      "skillFromLibrary": "Ansvisor library",
+      "skillFromLibrary": "Oppla library",
       "skillFromYou": "You",
       "skillFromWorkspace": "Your workspace",
       "skillFromRepo": "{owner} on GitHub",
@@ -4415,7 +4415,7 @@
     },
     "keyFix": "Open AI Providers",
     "keyAskAdmin": "An Admin can fix it in Settings › AI Providers.",
-    "keyUseAnsvisor": "Use Ansvisor's limit",
+    "keyUseAnsvisor": "Use Oppla's limit",
     "tasks": {
       "title": "{due, plural, =0 {Action Center tasks} other {Action Center tasks · # due}}",
       "progress": "Tasks ready",
@@ -5012,8 +5012,8 @@
       "content": "Content",
       "connections": "Connections"
     },
-    "chatTitle": "Ansvisor tour",
-    "label": "Ansvisor tour · {n} of {total}",
+    "chatTitle": "Oppla tour",
+    "label": "Oppla tour · {n} of {total}",
     "next": "Next: {topic}",
     "showPage": "Show me this page",
     "another": "Another topic",
@@ -5040,10 +5040,10 @@
       },
       "body": {
         "visibility": "I’ve opened **Visibility**. It shows how often AI answers name and cite your brand for the prompts you track.\n\n1. **Overview**: your Visibility score from 0 to 100, your rank among the brands you track, and what changed.\n2. **Mentions**: where AI answers name you, in what tone, and next to which competitors.\n3. **Citations**: the sites and pages AI answers cite, and the ones they cite for competitors but not for you.\n4. The date range, platform, country and topic you pick stay set as you switch tabs.\n\nAsk me anything about what you see here.",
-        "prompts": "This is **Prompts**: the questions your buyers ask AI, which Ansvisor asks the AI engines for you every day.\n\n1. **Tracked Prompts** lists every prompt with its results over the date range you pick.\n2. **Topics** groups your prompts by theme, so you see how you do at a higher level.\n3. **Prompt Suggestions** offers new prompts worth tracking. Press **+** on one to start tracking it.\n4. A prompt you add gets its first results with the next daily run.\n\nWant me to suggest a few prompts for you?",
+        "prompts": "This is **Prompts**: the questions your buyers ask AI, which Oppla asks the AI engines for you every day.\n\n1. **Tracked Prompts** lists every prompt with its results over the date range you pick.\n2. **Topics** groups your prompts by theme, so you see how you do at a higher level.\n3. **Prompt Suggestions** offers new prompts worth tracking. Press **+** on one to start tracking it.\n4. A prompt you add gets its first results with the next daily run.\n\nWant me to suggest a few prompts for you?",
         "positions": "Back on **Tracked Prompts**, this time for where you stand in each answer.\n\n1. **Positions** shows your average position in AI answers and its change. Hover it for each platform, or open its chart for the positions panel.\n2. **Performance** groups prompts by where you’re named: Best, Good, Late or Missing.\n3. The **Table | Locations** switch compares each prompt across the countries, states and cities you track.\n4. **Track in more locations** adds places to your prompts. Each prompt counts once per location on your plan.\n\nClick any prompt to open its own page, with every platform’s answers.",
-        "content": "This is **Opportunities**, under **Content**: what to write or change so AI answers name you where they don’t yet.\n\n1. Ansvisor suggests opportunities on its own as your tracking data comes in, each with its **Impact** and **Score**.\n2. **Write this**, in a row’s **…** menu, has the Content Agent brief and write the page for you to review.\n3. **Plan** ranks what to create, optimize or protect next.\n4. **Library** keeps your drafts, and sends a finished page to your CMS.\n\nYour first opportunities come once tracking has data.",
-        "connections": "This is **Settings › Integrations**, where Ansvisor connects to your own tools.\n\n1. **Google Search Console**: your real search queries and impressions, for prompt suggestions and search-vs-AI insights.\n2. **Google Analytics**: sessions and conversions from GA4, the base of your AI traffic history.\n3. Once one is connected, pick the property each brand reads.\n4. Your CMS (Webflow, WordPress, Framer or Wix) takes pages straight from the Content Editor.\n\nOnly admins and managers can connect or change an integration."
+        "content": "This is **Opportunities**, under **Content**: what to write or change so AI answers name you where they don’t yet.\n\n1. Oppla suggests opportunities on its own as your tracking data comes in, each with its **Impact** and **Score**.\n2. **Write this**, in a row’s **…** menu, has the Content Agent brief and write the page for you to review.\n3. **Plan** ranks what to create, optimize or protect next.\n4. **Library** keeps your drafts, and sends a finished page to your CMS.\n\nYour first opportunities come once tracking has data.",
+        "connections": "This is **Settings › Integrations**, where Oppla connects to your own tools.\n\n1. **Google Search Console**: your real search queries and impressions, for prompt suggestions and search-vs-AI insights.\n2. **Google Analytics**: sessions and conversions from GA4, the base of your AI traffic history.\n3. Once one is connected, pick the property each brand reads.\n4. Your CMS (Webflow, WordPress, Framer or Wix) takes pages straight from the Content Editor.\n\nOnly admins and managers can connect or change an integration."
       },
       "firstRun": {
         "soon": "Your first results are still coming in; this page fills in as they arrive.",
@@ -5193,8 +5193,8 @@
         "etaMinutes": "first results in about {minutes} min",
         "etaHours": "{hours, plural, one {first results in about # hour} other {first results in about # hours}}",
         "progress": "{current} of {total} checks",
-        "connectWhileRuns": "While it runs, connect {missing, select, gsc {Google Search Console} ga {Google Analytics} other {Google Search Console and Google Analytics}}. Ansvisor then works from your own data too: your real clicks and AI visits.",
-        "connect": "Connect {missing, select, gsc {Google Search Console} ga {Google Analytics} other {Google Search Console and Google Analytics}}. Ansvisor then works from your own data too: your real clicks and AI visits.",
+        "connectWhileRuns": "While it runs, connect {missing, select, gsc {Google Search Console} ga {Google Analytics} other {Google Search Console and Google Analytics}}. Oppla then works from your own data too: your real clicks and AI visits.",
+        "connect": "Connect {missing, select, gsc {Google Search Console} ga {Google Analytics} other {Google Search Console and Google Analytics}}. Oppla then works from your own data too: your real clicks and AI visits.",
         "connectGsc": "Connect Search Console",
         "connectGa": "Connect Google Analytics",
         "tourTitle": "Want a quick tour?",
@@ -5218,7 +5218,7 @@
         "publishMessage": "Check the {count, plural, one {# ready draft} other {# ready drafts}}, fill their page fields and send them to our CMS as drafts. Going live stays my click.",
         "more": "More",
         "whatsNewUnread": "You have updates you haven’t read",
-        "whatsNewMessage": "What’s new in Ansvisor and how can it help me?",
+        "whatsNewMessage": "What’s new in Oppla and how can it help me?",
         "whatsNew": "What’s new"
       },
       "byFocus": {
@@ -5447,7 +5447,7 @@
         "wentLiveDetail": "On its own, after Quality and your brand facts",
         "publishedDetail": "Live on {site} · on its own, after Quality and your brand facts",
         "sentToWebhook": "{agent} sent “{title}” to your webhook",
-        "sentToWebhookDetail": "Ansvisor can’t take a webhook send back: your workflow decides what happens to it.",
+        "sentToWebhookDetail": "Oppla can’t take a webhook send back: your workflow decides what happens to it.",
         "takenDown": "Taken down · a draft in {cms} again",
         "openPage": "Open page",
         "openRun": "Open run",
@@ -5463,7 +5463,7 @@
         "title": "Send to {to}",
         "line": "{job} · waits for your click · expires {date}",
         "subject": "Subject:",
-        "footer": "They get only this summary and the PDF, signed “Sent by you from your workspace via Ansvisor”. No links into Ansvisor. Replies come to you.",
+        "footer": "They get only this summary and the PDF, signed “Sent by you from your workspace via Oppla”. No links into Oppla. Replies come to you.",
         "send": "Send",
         "sending": "Sending…",
         "cancel": "Cancel",
@@ -6758,7 +6758,7 @@
       "skill": {
         "sourcesLabel": "Where skills come from",
         "sources": {
-          "ansvisor": "Ansvisor skills",
+          "ansvisor": "Oppla skills",
           "mine": "My skills",
           "marketplace": "Library"
         },
@@ -7206,7 +7206,7 @@
       },
       "onboarding-help": {
         "name": "Onboarding & Help",
-        "description": "Walks you through the open Getting started steps, then recommends 3 to 5 agents for your site type and role. Questions about Ansvisor get answers from Help."
+        "description": "Walks you through the open Getting started steps, then recommends 3 to 5 agents for your site type and role. Questions about Oppla get answers from Help."
       },
       "shopping-readiness": {
         "name": "AI Shopping Readiness",
@@ -7488,9 +7488,9 @@
       "not_found": "This skill isn't available.",
       "role": "Only Admins and Managers save skills.",
       "role_manage": "Only an Admin or the person who made this skill can change it.",
-      "role_library": "Only Admins turn Ansvisor skills on or off for the workspace.",
+      "role_library": "Only Admins turn Oppla skills on or off for the workspace.",
       "read_only": "Your workspace is read-only, so skills can't be changed.",
-      "library_name": "/{name} is an Ansvisor skill or shortcut. Pick another name.",
+      "library_name": "/{name} is an Oppla skill or shortcut. Pick another name.",
       "name_taken": "A skill named /{name} already exists in this workspace. Pick another name.",
       "skill_limit": "Your plan keeps up to {limit, plural, one {# skill} other {# skills}} in My skills. Delete one to save another.",
       "not_approved": "This skill isn't approved yet, so it can't be turned on or shared.",
@@ -7506,7 +7506,7 @@
       "binary_file": "{path} isn't a text file. A skill holds instructions only.",
       "no_skill_file": "There's no SKILL.md in it. A skill is a folder with a SKILL.md.",
       "several_skills": "It holds more than one SKILL.md. Import one skill at a time.",
-      "license": "This skill's license isn't one Ansvisor accepts: MIT, Apache-2.0, BSD-2-Clause, BSD-3-Clause or ISC.",
+      "license": "This skill's license isn't one Oppla accepts: MIT, Apache-2.0, BSD-2-Clause, BSD-3-Clause or ISC.",
       "import_plan": "Importing skills starts with the Starter plan.",
       "github_url": "Use a github.com link to a public repository, or to a folder or a SKILL.md in it.",
       "github_not_found": "That GitHub repository or folder couldn't be found. Only public repositories can be imported.",
@@ -7537,7 +7537,7 @@
       "noTool": "It shapes how Chat works: it adds no tool and skips no card.",
       "nameRequired": "Give it a name.",
       "nameFormat": "Use lowercase letters, digits and single hyphens, such as pricing-faq.",
-      "nameReserved": "/{name} is an Ansvisor skill or shortcut. Pick another name.",
+      "nameReserved": "/{name} is an Oppla skill or shortcut. Pick another name.",
       "saved": "Saved skill: /{name}",
       "savedDetail": "Private to you · Skills › My skills"
     },
@@ -7549,7 +7549,7 @@
       "title": "Skills",
       "subtitle": "What Chat knows how to do. Run one, schedule it, or build an agent on it.",
       "agents": "Agents",
-      "tabs": { "ansvisor": "Ansvisor skills", "marketplace": "Library", "mine": "My skills" },
+      "tabs": { "ansvisor": "Oppla skills", "marketplace": "Library", "mine": "My skills" },
       "limit": "{used} of {max} in your plan",
       "search": "Search skills",
       "filters": {
@@ -7586,7 +7586,7 @@
         "workspace": "Workspace"
       },
       "source": {
-        "library": "Ansvisor library",
+        "library": "Oppla library",
         "you": "Made in Chat by you",
         "workspace": "Made in Chat by a teammate",
         "upload": "Uploaded",
@@ -7744,16 +7744,16 @@
       "loadFailed": "This skill couldn't be loaded.",
       "notFound": "This skill isn't in the Library.",
       "readFailed": "Its SKILL.md couldn't be read from GitHub just now. {error}",
-      "unreadable": "Ansvisor can't take this skill as it is, so it can't be added. {error}",
+      "unreadable": "Oppla can't take this skill as it is, so it can't be added. {error}",
       "retry": "Retry",
       "cleaned": "SKILL.md · at the pinned commit",
       "plain": "Plain text · nothing runs",
       "hidden": "{count, plural, one {# hidden character is} other {# hidden characters are}} marked in the text.",
-      "scan": "Ansvisor's safety scan",
+      "scan": "Oppla's safety scan",
       "blocks": "Blocks it",
       "warns": "Worth a look",
       "clean": "Nothing found.",
-      "edited": "Edited by Ansvisor",
+      "edited": "Edited by Oppla",
       "edits": {
         "research-lines": "Removed {lines, plural, one {# line} other {# lines}} citing a competitor's research.",
         "extension-line": "Removed a competitor's extension from {lines, plural, one {# line} other {# lines}}.",
@@ -8236,7 +8236,7 @@
       "pagesSubOther": "+ {count} on other sites",
       "coverageOf": "of {count, plural, one {# site page} other {# site pages}}",
       "coverageSub": "{never} never audited · {stale} not in {days} days",
-      "coverageTip": "Pages of your site with an audit in the last {days} days, of those Ansvisor keeps from your sitemap, Google Analytics and the pages AI cites (up to 500). Pages you exclude in Site Audit settings, and checkout, login and legal pages, aren't counted.",
+      "coverageTip": "Pages of your site with an audit in the last {days} days, of those Oppla keeps from your sitemap, Google Analytics and the pages AI cites (up to 500). Pages you exclude in Site Audit settings, and checkout, login and legal pages, aren't counted.",
       "seeNotAudited": "See the {count} not audited →",
       "authority": "Authority · E-E-A-T",
       "authorityTip": "The Authority and E-E-A-T scores, averaged over each page's latest audit, and the signals that fail or warn on the most pages.",
@@ -8517,8 +8517,8 @@
       "firewall": "{count, plural, one {{bots} is} other {{bots} are}} blocked by your CDN or firewall, though robots.txt lets {count, plural, one {it} other {them}} in.",
       "robots": "robots.txt keeps out {bots}.",
       "allLetIn": "Every AI bot tested was let in.",
-      "inconclusive": "Your site turned away Ansvisor's own request ({status}), so the bots weren't tested.",
-      "note": "Asked once as each bot, from Ansvisor's servers. A firewall that checks a crawler's own addresses can treat the real crawler differently.",
+      "inconclusive": "Your site turned away Oppla's own request ({status}), so the bots weren't tested.",
+      "note": "Asked once as each bot, from Oppla's servers. A firewall that checks a crawler's own addresses can treat the real crawler differently.",
       "cell": {
         "robots": "robots.txt",
         "noAnswer": "No answer",
@@ -8644,8 +8644,6 @@
       }
     },
     "footer": {
-      "openSource": "Open source under",
-      "mitLicense": "MIT license",
       "terms": "Terms",
       "privacy": "Privacy"
     }
@@ -9401,7 +9399,7 @@
       "formerMember": "Former member",
       "empty": {
         "title": "Nothing written yet",
-        "body": "Pages you and the Content Agent write or change in Ansvisor show up here."
+        "body": "Pages you and the Content Agent write or change in Oppla show up here."
       },
       "emptyTab": {
         "draft": "Nothing in progress.",
@@ -9666,7 +9664,7 @@
         "copyFailed": "Couldn't copy. Open Edit and copy the code from there.",
         "addTitle": "Add an HTML block",
         "editTitle": "Edit the HTML block",
-        "description": "Code the page carries as written: an embed, a widget, a form. Ansvisor never runs it; Copy HTML gives it back unchanged.",
+        "description": "Code the page carries as written: an embed, a widget, a form. Oppla never runs it; Copy HTML gives it back unchanged.",
         "codeLabel": "Code",
         "placeholder": "For example {example}",
         "count": "{count} / {max} characters",
@@ -10774,7 +10772,7 @@
         "updated": "Updated {date}"
       },
       "qualityChip": "Quality {score}",
-      "qualityChipHint": "The average of E-E-A-T, Trust and Readability: an Ansvisor estimate, not a Google score. Open Quality.",
+      "qualityChipHint": "The average of E-E-A-T, Trust and Readability: an Oppla estimate, not a Google score. Open Quality.",
       "qualityChipReading": "Quality · reading…",
       "qualityChipUpdating": "updating as the page is read",
       "nextStep": {
@@ -11063,23 +11061,23 @@
           "added": "Search engine details (Article schema), with the author",
           "addedNoAuthor": "Search engine details (Article schema)",
           "addedPill": "Added",
-          "addedDetail": "Ansvisor adds it to the page it sends to your CMS and to exports, with {author} as the author. The page's text doesn't change. WordPress leaves it out: add it with your SEO plugin.",
-          "addedDetailNoAuthor": "Ansvisor adds it to the page it sends to your CMS and to exports, without an author: your CMS names the one your site shows. The page's text doesn't change. WordPress leaves it out: add it with your SEO plugin.",
+          "addedDetail": "Oppla adds it to the page it sends to your CMS and to exports, with {author} as the author. The page's text doesn't change. WordPress leaves it out: add it with your SEO plugin.",
+          "addedDetailNoAuthor": "Oppla adds it to the page it sends to your CMS and to exports, without an author: your CMS names the one your site shows. The page's text doesn't change. WordPress leaves it out: add it with your SEO plugin.",
           "leaveOut": "Leave it out",
           "leaveOutFailed": "Couldn't save that. Try again.",
           "leftOut": "Search engine details left out",
-          "leftOutDetail": "You left Ansvisor's search engine details (Article schema) out of this page, for a CMS that adds its own. If yours doesn't, paste the code below into the page.",
+          "leftOutDetail": "You left Oppla's search engine details (Article schema) out of this page, for a CMS that adds its own. If yours doesn't, paste the code below into the page.",
           "addBack": "Add it back",
           "own": "Search engine details on the page",
-          "ownDetail": "Your page already has its search engine details (Article schema), so Ansvisor leaves its own out.",
-          "codeAdded": "The code Ansvisor adds to the page",
-          "showAdded": "Show the code Ansvisor adds",
+          "ownDetail": "Your page already has its search engine details (Article schema), so Oppla leaves its own out.",
+          "codeAdded": "The code Oppla adds to the page",
+          "showAdded": "Show the code Oppla adds",
           "product": "Product schema with its price",
           "productDetail": "Price read from the page: {price}. Check it's the product's. Often added by your shop's theme; if not, paste the code below into the page. Availability, SKU and reviews come from a product feed, once one is connected.",
           "itemList": "ItemList schema with {count, plural, one {# product} other {# products}}",
           "itemListDetail": "Often added by your shop's theme on a collection page. If not, paste the code below into the page. Each product's price and stock go in its own page's Product schema.",
           "itemListNone": "ItemList schema needs links to your products",
-          "itemListNoneDetail": "{count, plural, =0 {Ansvisor finds no links to your product pages here} one {Ansvisor finds one link to your product pages here} other {Ansvisor finds # links to your product pages here}} (/products/…, /product/…): link at least two of the products it lists to their own pages on your site, and the code lists them in the page's order.",
+          "itemListNoneDetail": "{count, plural, =0 {Oppla finds no links to your product pages here} one {Oppla finds one link to your product pages here} other {Oppla finds # links to your product pages here}} (/products/…, /product/…): link at least two of the products it lists to their own pages on your site, and the code lists them in the page's order.",
           "itemListTitle": "ItemList schema",
           "itemListReading": "Reading the page's links to your product pages…",
           "itemListUnknown": "Your brand's domains couldn't be read, so its product links can't be told: check the ItemList your CMS adds.",
@@ -11090,8 +11088,8 @@
           "productSeveral": "Product schema needs one price",
           "productSeveralDetail": "The page states more than one price ({prices}), so the code doesn't guess which is the product's. Write its price once, or its range as one (\"$119–$139\"), or connect your product feed.",
           "other": "Schema for this page type",
-          "otherDetail": "Check what your CMS adds for it (Product, ItemList…). The code Ansvisor gives here is for articles.",
-          "otherDetailTyped": "Check what your CMS adds for it. The code Ansvisor gives here is for articles, product pages and category pages."
+          "otherDetail": "Check what your CMS adds for it (Product, ItemList…). The code Oppla gives here is for articles.",
+          "otherDetailTyped": "Check what your CMS adds for it. The code Oppla gives here is for articles, product pages and category pages."
         },
         "shopping": {
           "title": "Shopping links",
@@ -11158,9 +11156,9 @@
         },
         "data": {
           "label": "Your data",
-          "offer": "From your Ansvisor data: in {answers, plural, one {# answer} other {# answers}} to “{prompt}” over the last {days, number} days, {mentioned, plural, =0 {you weren't named} one {you were named once} other {you were named # times}}.",
+          "offer": "From your Oppla data: in {answers, plural, one {# answer} other {# answers}} to “{prompt}” over the last {days, number} days, {mentioned, plural, =0 {you weren't named} one {you were named once} other {you were named # times}}.",
           "ansvisor": "In {answers, plural, one {# answer} other {# answers}} to “{prompt}” over the last {days, number} days, {mentioned, plural, =0 {you weren't named} one {you were named once} other {you were named # times}}.",
-          "cited": "Cited as “Ansvisor data, {month}”.",
+          "cited": "Cited as “Oppla data, {month}”.",
           "use": "Use this",
           "upload": "Upload CSV or Excel",
           "paste": "Or paste numbers, one row a line, separated by commas",
@@ -11198,7 +11196,7 @@
           "improve": "Can improve",
           "needsWork": "Needs work"
         },
-        "estimate": "Ansvisor estimates based on Google's published quality signals. Not a Google score.",
+        "estimate": "Oppla estimates based on Google's published quality signals. Not a Google score.",
         "about": {
           "eeat": "Who stands behind the page",
           "trust": "Sources, links and dated facts",
@@ -11253,7 +11251,7 @@
           "originalData": {
             "title": "Add your own data",
             "next": "add your own data",
-            "detail": "Your numbers, or Ansvisor data on this page's prompts: the page cites them as yours",
+            "detail": "Your numbers, or Oppla data on this page's prompts: the page cites them as yours",
             "given": "It's in Your input, but the page uses none of its numbers yet",
             "done": "The page uses your data"
           },
@@ -11552,7 +11550,7 @@
           "edit": "Edit",
           "note": "The Content Agent follows them on every {brand} page, before the rules below."
         },
-        "setName": "{type} · Ansvisor default",
+        "setName": "{type} · Oppla default",
         "pickSet": "Pick a page type",
         "met": "{met}/{total} rules met",
         "metReading": "Reading the rules…",
@@ -11897,7 +11895,7 @@
       "plan": "{plan} plan",
       "resets": "Resets {date}",
       "upgrade": "Upgrade plan",
-      "tooltip": "Every new opportunity counts once, whether Ansvisor suggested it or you asked for it; dismissed and deleted ones still count, merged duplicates don't. Generating a brief counts separately. Unused allowance doesn't carry over.",
+      "tooltip": "Every new opportunity counts once, whether Oppla suggested it or you asked for it; dismissed and deleted ones still count, merged duplicates don't. Generating a brief counts separately. Unused allowance doesn't carry over.",
       "tooltipResets": "Both reset on {date}, when your subscription renews."
     },
     "kpi": {
@@ -11977,7 +11975,7 @@
       "badge": "Another angle",
       "of": "Another angle on",
       "title": "Another angle",
-      "description": "Ansvisor writes one more opportunity for the same need, with a different content type, format, audience or approach. Both stay in the list so you can keep the one you prefer.",
+      "description": "Oppla writes one more opportunity for the same need, with a different content type, format, audience or approach. Both stay in the list so you can keep the one you prefer.",
       "direction": "Direction (optional)",
       "directionPlaceholder": "e.g. more technical, a video instead of a blog post, aimed at agencies",
       "uses": "Uses 1 of your {remaining} remaining this month → {after} left after this.",
@@ -11992,7 +11990,7 @@
     },
     "dismissReason": {
       "title": "Why dismiss it?",
-      "description": "This helps Ansvisor suggest better opportunities.",
+      "description": "This helps Oppla suggest better opportunities.",
       "not_relevant": {
         "label": "The topic doesn't matter to us",
         "hint": "It won't be suggested again in this form for 90 days."
@@ -12004,10 +12002,10 @@
     },
     "newDialog": {
       "title": "New content opportunities",
-      "description": "Get suggestions now. Ansvisor also writes up to 3 a night by itself, one per topic, for needs that have no opportunity yet, and once none are left, at most 1 a night as another angle.",
+      "description": "Get suggestions now. Oppla also writes up to 3 a night by itself, one per topic, for needs that have no opportunity yet, and once none are left, at most 1 a night as another angle.",
       "focus": "Focus (optional)",
       "focusOptions": {
-        "auto": "Let Ansvisor choose",
+        "auto": "Let Oppla choose",
         "topic": "Topic",
         "prompt": "Prompt"
       },
@@ -12606,12 +12604,12 @@
         },
         "vercel_drain": {
           "name": "Vercel Drain",
-          "what": "Vercel sends your request logs; Ansvisor keeps the AI bots and drops the rest.",
+          "what": "Vercel sends your request logs; Oppla keeps the AI bots and drops the rest.",
           "cost": "Vercel Pro and Enterprise only, at $0.50 per GB of drained data on your Vercel bill."
         },
         "log_webhook": {
           "name": "Any server (webhook)",
-          "what": "Any server or CDN: your log shipper posts your access log as JSON lines; Ansvisor keeps the AI bots and drops the rest.",
+          "what": "Any server or CDN: your log shipper posts your access log as JSON lines; Oppla keeps the AI bots and drops the rest.",
           "cost": "Nothing on a Cloudflare or Vercel bill: only what your own log shipper costs to run."
         }
       },
@@ -12713,7 +12711,7 @@
       "unmappedTitle": "Choose a property for this brand",
       "unmapped": "{source} is connected, but no property is chosen for this brand yet.",
       "notConfiguredTitle": "Not set up on this server",
-      "notConfigured": "{source} needs its connection keys on this Ansvisor server before anyone can connect it.",
+      "notConfigured": "{source} needs its connection keys on this Oppla server before anyone can connect it.",
       "noData": "No data for this range in {source}",
       "showAllTime": "Show all time",
       "sections": {
@@ -13025,7 +13023,7 @@
     "gaps": "Content Gaps",
     "suggestions": {
       "loadFailed": "Couldn't load suggestions",
-      "loadUnavailable": "Ansvisor isn't answering right now. Try again in a moment.",
+      "loadUnavailable": "Oppla isn't answering right now. Try again in a moment.",
       "retry": "Retry",
       "clearAllConfirm": {
         "title": "Clear all suggestions?",
@@ -13364,7 +13362,7 @@
     "mix": "Confidence by prompt: {high} high, {medium} medium, {low} low.",
     "sources": "Sources: Google search volume from DataForSEO ({month}) and an AI answer share of {rate}%.",
     "sourcesSnapshot": "Source: the opportunity's question's estimate, kept when it was made.",
-    "sourcesGuess": "Source: Ansvisor's AI, from your tracked prompts' estimates.",
+    "sourcesGuess": "Source: Oppla's AI, from your tracked prompts' estimates.",
     "sourcesUndated": "Sources: Google search volume from DataForSEO and an AI answer share of {rate}%.",
     "confidence": "Confidence: {level} · updated {date}",
     "confidenceSuggested": "Confidence: {level} · suggested {date}",
@@ -13820,12 +13818,12 @@
       "changedBadge": "{count, plural, one {# page changed} other {# pages changed}}",
       "events": "What happened to their pages",
       "firstCited": "First cited in your tracked answers",
-      "firstCitedAnswers": "{count, plural, one {# answer had cited it} other {# answers had cited it}} when Ansvisor found it",
+      "firstCitedAnswers": "{count, plural, one {# answer had cited it} other {# answers had cited it}} when Oppla found it",
       "changed": "Changed",
       "gained": "now has {checks}",
       "lost": "no longer has {checks}",
       "changedWords": "its words changed",
-      "noEvents": "Nothing yet: Ansvisor reads {competitor}'s pages cited in your answers each night, and the ones cited most again each week. Their first citations and changes show here.",
+      "noEvents": "Nothing yet: Oppla reads {competitor}'s pages cited in your answers each night, and the ones cited most again each week. Their first citations and changes show here.",
       "note": "Pages are read for free from their public address, within a few reads a day, never from a site whose robots.txt keeps crawlers out; only what Site Audit's checks found and a summary of the words are kept, never the text.",
       "showAll": "Show all {count}",
       "loadError": "Couldn't load the timeline. Try again in a moment."
@@ -13865,8 +13863,8 @@
     "title": "Product Visibility",
     "description": "Which of your products AI recommends, why, and what it sells.",
     "why": {
-      "button": "Why Ansvisor Product Visibility?",
-      "eyebrow": "Why Ansvisor Product Visibility?",
+      "button": "Why Oppla Product Visibility?",
+      "eyebrow": "Why Oppla Product Visibility?",
       "title": "From AI shelf to cart",
       "lead": "AI assistants now pick products for your shoppers. See which of yours make the shelf, fix the ones that don't, and know what it sells.",
       "steps": {
@@ -13887,7 +13885,7 @@
           "body": "Orders and revenue from AI, per product, tied to the questions that brought them."
         }
       },
-      "closing": "Most tools tell you if you're visible. Ansvisor shows why, fixes it and shows the sales.",
+      "closing": "Most tools tell you if you're visible. Oppla shows why, fixes it and shows the sales.",
       "gotIt": "Got it",
       "connectGa": "Connect Google Analytics",
       "ga": "Google Analytics"
@@ -13936,7 +13934,7 @@
     },
     "readiness": {
       "title": "AI shopping readiness",
-      "lead": "What Ansvisor can read of your catalog, your feed and the answers. Each check says where its fix starts.",
+      "lead": "What Oppla can read of your catalog, your feed and the answers. Each check says where its fix starts.",
       "channelsLabel": "AI shopping channels",
       "market": {
         "us": "Market: United States. In the US, ChatGPT picks products from OpenAI's own product index, built from feeds.",
@@ -14306,7 +14304,7 @@
     "drawerRegion": "Region",
     "matchScore": {
       "title": "Match with each prompt",
-      "estimate": "Ansvisor estimate",
+      "estimate": "Oppla estimate",
       "description": "How well this product's title matches each prompt it was shown for, with the searches AI ran for it: a keyword match from 0 to 100. It's our estimate, not ChatGPT's own score.",
       "yours": "This product",
       "shownFirst": "Shown first",
@@ -14366,9 +14364,9 @@
     }
   },
   "reports": {
-    "impactLink": "What Ansvisor did for you",
+    "impactLink": "What Oppla did for you",
     "impact": {
-      "title": "What Ansvisor did for you",
+      "title": "What Oppla did for you",
       "subtitle": "{brand} · shipped actions measured against untouched similar prompts",
       "subtitleNoBrand": "Shipped actions measured against untouched similar prompts",
       "generated": "Generated {date} · {time}",
@@ -14469,9 +14467,9 @@
       "capped": "Showing the first {count, number} changes shipped in {month}; the counts above cover only these.",
       "empty": "Nothing shipped in {month}.",
       "emptyFilter": "No actions with this outcome in {month}.",
-      "loadFailed": "Couldn't load what Ansvisor did. Try again.",
+      "loadFailed": "Couldn't load what Oppla did. Try again.",
       "retry": "Retry",
-      "noBrand": "Pick a brand to see what Ansvisor did for it.",
+      "noBrand": "Pick a brand to see what Oppla did for it.",
       "drawer": {
         "baseline": "Baseline",
         "baselineValue": "{from} – {to} · 14 days before ship",
@@ -14693,9 +14691,9 @@
     "chatSettings": "Chat",
     "whiteLabel": {
       "title": "White label",
-      "description": "Your agency's brand on what you send clients: your logo, main color, company name and footer instead of Ansvisor's.",
+      "description": "Your agency's brand on what you send clients: your logo, main color, company name and footer instead of Oppla's.",
       "lockedTitle": "White label comes with the {plan} plan",
-      "lockedDescription": "Send clients reports with your agency's logo, color and name instead of Ansvisor's.",
+      "lockedDescription": "Send clients reports with your agency's logo, color and name instead of Oppla's.",
       "upgrade": "Upgrade",
       "askAdmin": "Ask an admin of your workspace to upgrade the plan.",
       "adminOnly": "Only admins change the white label kit.",
@@ -14722,7 +14720,7 @@
       "previewClient": "Your client",
       "previewPreparedFor": "Prepared for {brand}",
       "inUse": "The kit is in use.",
-      "notInUse": "Add a company name or a logo to use the kit. Until then, everything keeps Ansvisor's look.",
+      "notInUse": "Add a company name or a logo to use the kit. Until then, everything keeps Oppla's look.",
       "lastChanged": "Last changed {date} by {name}",
       "lastChangedNoName": "Last changed {date}",
       "saved": "White label saved.",
@@ -15179,10 +15177,10 @@
       "audits": "{count, number} site audits a month",
       "aiUsage": "{count}x AI usage",
       "aiUsageCustom": "Custom AI usage, from {count}x",
-      "aiUsageHint": "A monthly allowance for Ansvisor's AI features: Improve suggestions, the Content Editor's AI and the Action Center's task writing. Agent Chat runs on your own AI key. The free trial comes with a smaller allowance.",
-      "aiUsageCustomHint": "A monthly allowance for Ansvisor's AI features: Improve suggestions, the Content Editor's AI and the Action Center's task writing. Agent Chat runs on your own AI key. Ansvisor sets the amount with you.",
-      "aiUsageHintChat": "A monthly allowance for Ansvisor's AI features: Chat and agents, Improve suggestions, the Content Editor's AI and the Action Center's task writing. Your own AI key comes with Enterprise only. The free trial comes with a smaller allowance.",
-      "aiUsageCustomHintChat": "A monthly allowance for Ansvisor's AI features: Chat and agents, Improve suggestions, the Content Editor's AI and the Action Center's task writing. On Enterprise, Chat can also run on your own AI key. Ansvisor sets the amount with you."
+      "aiUsageHint": "A monthly allowance for Oppla's AI features: Improve suggestions, the Content Editor's AI and the Action Center's task writing. Agent Chat runs on your own AI key. The free trial comes with a smaller allowance.",
+      "aiUsageCustomHint": "A monthly allowance for Oppla's AI features: Improve suggestions, the Content Editor's AI and the Action Center's task writing. Agent Chat runs on your own AI key. Oppla sets the amount with you.",
+      "aiUsageHintChat": "A monthly allowance for Oppla's AI features: Chat and agents, Improve suggestions, the Content Editor's AI and the Action Center's task writing. Your own AI key comes with Enterprise only. The free trial comes with a smaller allowance.",
+      "aiUsageCustomHintChat": "A monthly allowance for Oppla's AI features: Chat and agents, Improve suggestions, the Content Editor's AI and the Action Center's task writing. On Enterprise, Chat can also run on your own AI key. Oppla sets the amount with you."
     },
     "contactUs": "Contact Us",
     "integrations": "Integrations",
@@ -15193,7 +15191,7 @@
     "agent_removeKeyConfirm": "Remove the {provider} API key? If Chat uses it, Chat switches to the most recently saved other key, or stays locked until a new one is saved.",
     "agent_removeKeyConfirmChat": "Remove the {provider} API key? If Chat uses it, Chat switches to the most recently saved other key, or to your plan’s monthly AI limit when there is none. Agents paused because this key failed start again.",
     "remove": "Remove",
-    "apiKeys_description": "Long-lived tokens for the Ansvisor MCP server and other external clients. Keys are shown once at creation — store them somewhere safe.",
+    "apiKeys_description": "Long-lived tokens for the Oppla MCP server and other external clients. Keys are shown once at creation — store them somewhere safe.",
     "apiKeys_mcpEndpoint": "MCP endpoint",
     "apiKeys_mcpEndpointHint": "Create a key to get a ready-to-paste setup for Claude, Codex, Cursor and other MCP clients. See the <link>MCP guide</link>.",
     "apiKeys_planNote": "On Starter and in the free trial, MCP tools and the API can read. Changes need Growth.",
@@ -15224,14 +15222,14 @@
       "zed": "Add to your Zed settings.json."
     },
     "apiKeys_name": "Name",
-    "agent_description": "Ansvisor's Chat answers with an AI model on your own account with its provider, so the usage is billed to that account rather than to Ansvisor. Add a key for one or more providers and choose the one Chat uses. Keys are stored encrypted; Ansvisor support cannot read them.",
+    "agent_description": "Oppla's Chat answers with an AI model on your own account with its provider, so the usage is billed to that account rather than to Oppla. Add a key for one or more providers and choose the one Chat uses. Keys are stored encrypted; Oppla support cannot read them.",
     "agent_usedByChat": "Used by Chat",
     "agent_keySaved": "Key saved",
     "agent_savedAt": "Saved {date}",
     "agent_savedBy": "by {email}",
     "agent_modelInUse": "Model {model}",
     "agent_noKey": "No key yet. Chat stays locked for everyone in this organization until a key is saved.",
-    "agent_descriptionMetered": "Chat runs on your plan's monthly AI limit. On the Enterprise plan, an admin can connect your own account with an AI provider instead: Chat then runs on it, and the provider bills that account. Keys are stored encrypted; Ansvisor support cannot read them.",
+    "agent_descriptionMetered": "Chat runs on your plan's monthly AI limit. On the Enterprise plan, an admin can connect your own account with an AI provider instead: Chat then runs on it, and the provider bills that account. Keys are stored encrypted; Oppla support cannot read them.",
     "agent_kept": "Your saved key keeps running Chat until {date}. After that, Chat uses your plan's monthly AI limit. Own AI keys come with the Enterprise plan.",
     "agent_locked": "Own AI keys come with the Enterprise plan. Chat runs on your plan's monthly AI limit.",
     "agent_comparePlans": "Compare plans",
@@ -15501,7 +15499,7 @@
         "connect_failed": "This Google sign-in can't open that account. Pick another one.",
         "unreachable": "Merchant Center couldn't be reached. Try again in a moment.",
         "duplicate": "This account is added to the brand already.",
-        "not_configured": "Merchant Center isn't set up correctly on this server, or this Google account can't open Merchant Center. Ask whoever runs your Ansvisor server, or check the account's users in Merchant Center.",
+        "not_configured": "Merchant Center isn't set up correctly on this server, or this Google account can't open Merchant Center. Ask whoever runs your Oppla server, or check the account's users in Merchant Center.",
         "failed": "Couldn't read the Merchant Center accounts."
       }
     },
@@ -15524,7 +15522,7 @@
       "tokenSteps": {
         "label": "How to get a site token",
         "open": "In Webflow, go to Site settings › Apps & Integrations › API access and click Generate API token.",
-        "name": "Enter a token name (4–80 characters), e.g. “Ansvisor connector”.",
+        "name": "Enter a token name (4–80 characters), e.g. “Oppla connector”.",
         "permissions": "Under Permissions, set CMS to Read and write and Sites to Read-only. Leave everything else on No access.",
         "copy": "Click Generate token, copy the token and paste it into the field below."
       },
@@ -15607,7 +15605,7 @@
       "passwordLabel": "Application Password",
       "passwordPlaceholder": "xxxx xxxx xxxx xxxx xxxx xxxx",
       "passwordShort": "That's shorter than an Application Password: WordPress makes one of 24 letters and digits. Paste the one it made, not the user's own password.",
-      "passwordHint": "In WordPress: Users › Profile › Application Passwords. Name it Ansvisor, add it, and paste it here. A separate user with the Author role is enough: Ansvisor writes drafts only. It's kept encrypted by our API, never shown again.",
+      "passwordHint": "In WordPress: Users › Profile › Application Passwords. Name it Oppla, add it, and paste it here. A separate user with the Author role is enough: Oppla writes drafts only. It's kept encrypted by our API, never shown again.",
       "connect": "Connect",
       "connecting": "Checking the site…",
       "connectedToast": "WordPress connected",
@@ -15737,7 +15735,7 @@
       "sitePlaceholder": "The site's id, or its dashboard address",
       "keyLabel": "API key",
       "keyPlaceholder": "Paste the API key",
-      "keyHint": "In Wix, the site's owner makes it: Account Settings › API Keys Manager › Generate API Key, with this site picked and the Manage Blog (Wix Blog) and Manage Ricos Document (Ricos) permissions. The site id is the long code after manage.wix.com/dashboard/ in the dashboard's address. The key is kept encrypted by our API, never shown again. Ansvisor writes drafts only.",
+      "keyHint": "In Wix, the site's owner makes it: Account Settings › API Keys Manager › Generate API Key, with this site picked and the Manage Blog (Wix Blog) and Manage Ricos Document (Ricos) permissions. The site id is the long code after manage.wix.com/dashboard/ in the dashboard's address. The key is kept encrypted by our API, never shown again. Oppla writes drafts only.",
       "connect": "Connect",
       "connecting": "Checking the site…",
       "connectedToast": "Wix connected",
@@ -16154,7 +16152,7 @@
           "calls": "Other conversions",
           "callsHelp": "Call these from your own code, on a thank-you page or after a purchase. The tag's first line keeps them until it loads.",
           "shopify": "Shopify store",
-          "shopifyHelp": "In Shopify admin, open Settings › Customer events › Add custom pixel and name it Ansvisor. Under Customer privacy, set Permission to Analytics and Data sale to \"Data collected does not qualify as data sale\". Paste this code, save, then connect it.",
+          "shopifyHelp": "In Shopify admin, open Settings › Customer events › Add custom pixel and name it Oppla. Under Customer privacy, set Permission to Analytics and Data sale to \"Data collected does not qualify as data sale\". Paste this code, save, then connect it.",
           "shopifyConsent": "Your store asks for consent: add this to your theme (theme.liquid, after the tag) so Shopify's cookie banner gives its answer.",
           "shopifyHeadless": "A headless store whose checkout is on another domain can't link its orders this way.",
           "showPixel": "Show the Shopify pixel"
@@ -16343,7 +16341,7 @@
       },
       "looker_studio": {
         "name": "Looker Studio",
-        "description": "Ansvisor data in your dashboards."
+        "description": "Oppla data in your dashboards."
       },
       "slack": {
         "name": "Slack",
@@ -16355,13 +16353,13 @@
       },
       "zapier": {
         "name": "Zapier",
-        "description": "Start Ansvisor skills from other tools."
+        "description": "Start Oppla skills from other tools."
       }
     },
     "disconnect": {
       "title": "Disconnect {name} from {brand}?",
       "cms": "Pages won’t be sent to {name} for this brand until it’s connected again. Pages already sent stay there.",
-      "property": "Ansvisor stops reading {name} for this brand. Other brands keep theirs, and the data already read stays.",
+      "property": "Oppla stops reading {name} for this brand. Other brands keep theirs, and the data already read stays.",
       "stops": "{count, plural, one {This agent needs it and will pause:} other {These agents need it and will pause:}}",
       "cancel": "Cancel",
       "confirm": "Disconnect",
@@ -16436,7 +16434,7 @@
   },
   "reportCardAdmin": {
     "title": "Free report cards",
-    "description": "Ansvisor staff only. Requests from the form on www.ansvisor.com, the cards made and what they cost. No names or e-mails are shown.",
+    "description": "Oppla staff only. Requests from the form on oppla.ai, the cards made and what they cost. No names or e-mails are shown.",
     "today": "Today (UTC)",
     "todayValue": "{started} of {cap} cards",
     "todaySub": "{requests, plural, one {# request} other {# requests}} · {resent} sent again · {capped} for tomorrow",

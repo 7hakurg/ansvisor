@@ -24,7 +24,7 @@ const QUOTED = 'AI assistants quote this sentence about tracking today.';
 const TABLE = '<table><tbody><tr><td><p>Plan</p></td><td><p></p></td></tr></tbody></table>';
 const PAGE =
   '<h1>Best AEO tools</h1>' +
-  '<p>Ansvisor tracks AI answers across <a href="https://acme.example/engines?ref=aff12#top">six engines</a>.</p>' +
+  '<p>Oppla tracks AI answers across <a href="https://acme.example/engines?ref=aff12#top">six engines</a>.</p>' +
   `<p>${QUOTED}</p>` +
   TABLE +
   '<div data-html-block="PGI+aGk8L2I+"></div>' +

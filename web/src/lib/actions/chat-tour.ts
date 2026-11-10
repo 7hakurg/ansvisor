@@ -20,7 +20,7 @@ import { createClient } from '@/lib/supabase/server';
 
 /**
  * The product tour's turns (owner decision 2026-11-06; 00486), kept as the
- * person's "Ansvisor tour" chat in their Chats: each topic adds the line
+ * person's "Oppla tour" chat in their Chats: each topic adds the line
  * they clicked and the page's explanation, scripted (lib/chat/tour-script.ts)
  * and with no run, so a tour costs no AI. The chat is the person's own and
  * written by the server, as every chat; a question typed in it afterwards
@@ -85,7 +85,7 @@ async function readTour(
 }
 
 /**
- * A new "Ansvisor tour" chat, opened in the side panel on the topic's page:
+ * A new "Oppla tour" chat, opened in the side panel on the topic's page:
  * about the brand on screen when the person may use it, else the workspace.
  */
 async function startTourChat(person: Person, brandId: string | null, topic: TourTopic) {

@@ -11,11 +11,11 @@ app_version: 0.3.0
 approved: true
 sources: [docs/guides/citations.mdx]
 ---
-Every URL that AI engines cite has its own page in Ansvisor. Open it from the **URLs** tab of the **Top Sources** card, on Visibility's **Citations** tab, by clicking a page's title. It opens with the Citations tab's date range, platform and region, but not its topic or prompt. You can change the date range and platform on the URL's page. **Citations** at the top goes back.
+Every URL that AI engines cite has its own page in Oppla. Open it from the **URLs** tab of the **Top Sources** card, on Visibility's **Citations** tab, by clicking a page's title. It opens with the Citations tab's date range, platform and region, but not its topic or prompt. You can change the date range and platform on the URL's page. **Citations** at the top goes back.
 
 ## The header
 
-The header shows the page's title and address, and its source type. When Ansvisor can tell from the address and title, it also shows the article type: **Topic Guide**, **How-to Guide**, **Review**, **Ranked List** or **Comparison**.
+The header shows the page's title and address, and its source type. When Oppla can tell from the address and title, it also shows the article type: **Topic Guide**, **How-to Guide**, **Review**, **Ranked List** or **Comparison**.
 
 Your own pages are marked **Owned**. Any other page has **Add as competitor**, which adds the page's domain to your tracked competitors.
 

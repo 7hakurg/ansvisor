@@ -243,7 +243,7 @@ export async function logActionRunEvent(
 
 /**
  * The skill an agent for a kind of action starts from ("Create an agent for
- * this kind of action", §D item 15): the Ansvisor skill whose work fits the
+ * this kind of action", §D item 15): the Oppla skill whose work fits the
  * category (W2-15's catalog), `/tasks` for any other.
  */
 export const ACTION_CATEGORY_SKILL: Record<ActionCategory, string> = {

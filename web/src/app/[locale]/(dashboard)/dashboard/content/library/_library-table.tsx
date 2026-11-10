@@ -77,11 +77,11 @@ export interface LibraryRowActions {
   onExport: (draft: ContentDraftListItem, format: DraftExportFormat) => void;
   /** Send to CMS (#1331), for admins and managers. */
   onSend: (draft: ContentDraftListItem) => void;
-  /** Take down a page published through Ansvisor (AUTONOMOUS-GO-LIVE PR 10), for admins and managers. */
+  /** Take down a page published through Oppla (AUTONOMOUS-GO-LIVE PR 10), for admins and managers. */
   onTakeDown: (draft: ContentDraftListItem, sent: CmsStatus) => void;
 }
 
-/** Where a page published through Ansvisor can be taken down from its row. */
+/** Where a page published through Oppla can be taken down from its row. */
 const TAKE_DOWN_TARGETS: readonly CmsStatus['target'][] = ['webflow', 'wordpress', 'wix'];
 
 /** The rows picked for a bulk Send to CMS (#1331): admins and managers, drafts not archived. */

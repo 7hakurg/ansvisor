@@ -693,7 +693,7 @@ const MATCH_MAX_SEARCHES = 20;
 export interface ProductPromptMatch {
   promptId: string;
   promptText: string;
-  /** The product's keyword match with the prompt and its searches, 0–100 (Ansvisor estimate). */
+  /** The product's keyword match with the prompt and its searches, 0–100 (Oppla estimate). */
   score: number;
   /** The query's words the product's title doesn't have. */
   missing: string[];

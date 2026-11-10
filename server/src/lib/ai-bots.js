@@ -1,5 +1,5 @@
 /**
- * The AI bots Ansvisor counts reading a brand's site (AT-010, spec §3.7): one
+ * The AI bots Oppla counts reading a brand's site (AT-010, spec §3.7): one
  * versioned list, in ai-bots.json, of each bot's user-agent token, its type
  * (training crawler, search crawler, or a fetch a person asked for) and the
  * URL where its operator publishes the IP ranges it crawls from.

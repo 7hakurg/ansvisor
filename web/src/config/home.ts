@@ -1,7 +1,7 @@
 import type { ChatStartAudience } from '@/lib/chat/start-audience';
 
 /**
- * Where a signed-in user starts (New Ansvisor, AC-ALT2 §3): the Action
+ * Where a signed-in user starts (New Oppla, AC-ALT2 §3): the Action
  * Center's Actions, where Getting started and the actions live. The free
  * trial and the demo start on Chat Home instead (landingPageFor). /dashboard
  * sends each person to theirs, and sign-in, onboarding, payment and a new

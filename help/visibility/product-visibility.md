@@ -31,7 +31,7 @@ A second row of tabs holds its views, as on the Mentions tab:
 
 ## Filters, market and sources
 
-Under the views: **Date range** (7, 30 or 90 days, or All time), **Platform** and **Region**, shared by every view. The **ChatGPT Shopping market** switch picks the US or Europe, where ChatGPT's products come from different sources. The **Data sources** strip shows your product catalog, Google Analytics and Search Console, with **Connect** where one is missing. **Why Ansvisor Product Visibility?** in the header explains what the tab does.
+Under the views: **Date range** (7, 30 or 90 days, or All time), **Platform** and **Region**, shared by every view. The **ChatGPT Shopping market** switch picks the US or Europe, where ChatGPT's products come from different sources. The **Data sources** strip shows your product catalog, Google Analytics and Search Console, with **Connect** where one is missing. **Why Oppla Product Visibility?** in the header explains what the tab does.
 
 ## Loading
 

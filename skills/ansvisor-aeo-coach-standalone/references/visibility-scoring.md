@@ -1,6 +1,6 @@
 # Visibility scoring reference
 
-The Ansvisor **AI Visibility Score** (0–100) is the Visibility number the
+The Oppla **AI Visibility Score** (0–100) is the Visibility number the
 dashboard shows everywhere. Over the MCP server it is
 `totals.aiVisibilityScore` in `get_visibility_summary`, and each
 competitor's `score`. Knowing the breakdown lets you tell the user

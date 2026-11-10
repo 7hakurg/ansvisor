@@ -130,7 +130,7 @@ function table() {
   const builder: Record<string, unknown> = {
     select: () => builder,
     eq: () => builder,
-    single: async () => ({ data: { name: 'Ansvisor', logo_url: null }, error: null }),
+    single: async () => ({ data: { name: 'Oppla', logo_url: null }, error: null }),
     then: (resolve: (v: typeof result) => unknown) => resolve(result),
   };
   return builder;

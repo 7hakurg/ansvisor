@@ -80,7 +80,7 @@ const HINTED = new Set([
  * now. "N of M rules met" counts the rules on that the page can say; the
  * header's chip shows the same. Rules in the person's own words follow
  * ("Your text rules"); Save as my rules keeps the set for the workspace's
- * drafts of the type, and Reset goes back to Ansvisor's default.
+ * drafts of the type, and Reset goes back to Oppla's default.
  */
 /** Fix open rules with the agent (CE-018), as the editor runs it. */
 export interface AgentFix {
@@ -301,7 +301,7 @@ export function RulesTab({
       : null);
 
   // A draft on My rules for a type the workspace has none for (its type
-  // changed, or My rules couldn't be read) shows Ansvisor's set for it.
+  // changed, or My rules couldn't be read) shows Oppla's set for it.
   const source =
     state.source === 'mine' && state.setType && state.mineTypes.includes(state.setType)
       ? 'mine'

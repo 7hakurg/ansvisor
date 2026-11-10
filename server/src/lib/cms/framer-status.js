@@ -8,7 +8,7 @@ import { FramerError, readPublished } from './framer.js';
 
 /**
  * Pages sent to Framer, published there since (Send to CMS #1331, phase 2;
- * 00295): nothing calls back when a Framer site is published, so Ansvisor
+ * 00295): nothing calls back when a Framer site is published, so Oppla
  * reads the items its sends made, in one connection to the project. An item
  * goes live with the site's publish once it isn't a draft, so a send is
  * marked published at the item's page (the site's address, the collection's

@@ -6,7 +6,7 @@ import messages from '../../../../messages/en.json';
 import type { SkillList, WorkspaceSkillView } from '@/lib/chat/skills/store';
 
 /**
- * Skills (mockup #s-skills; CHAT-13 items 8–10, W3-07): Ansvisor's skills,
+ * Skills (mockup #s-skills; CHAT-13 items 8–10, W3-07): Oppla's skills,
  * the Library (W4-18, marketplace-tab.test.tsx) and the workspace's own in
  * three tabs with their counts; search and the
  * library's filter chips; a card's connections on the brand open, Connect
@@ -169,10 +169,10 @@ afterEach(() => {
 });
 
 describe('ChatSkills', () => {
-  it('lists Ansvisor’s skills with the brand’s connections, and the tabs with their counts', async () => {
+  it('lists Oppla’s skills with the brand’s connections, and the tabs with their counts', async () => {
     await render();
     expect(all('[role="tab"]').map((tab) => tab.textContent)).toEqual([
-      'Ansvisor skills 3',
+      'Oppla skills 3',
       'Library 701',
       'My skills 2',
     ]);
@@ -276,7 +276,7 @@ describe('ChatSkills', () => {
     expect(nav.push).not.toHaveBeenCalled();
   });
 
-  it('lets an Admin turn an Ansvisor skill on or off for the workspace; an off one doesn’t run', async () => {
+  it('lets an Admin turn an Oppla skill on or off for the workspace; an off one doesn’t run', async () => {
     await render();
     expect(inCard('publish', 'skills.run')).toBeNull();
     expect(card('publish').textContent).toContain('Off');

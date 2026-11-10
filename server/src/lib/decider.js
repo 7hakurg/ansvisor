@@ -14,6 +14,7 @@
  */
 
 import { logger } from './logger.js';
+import { BRAND_NAME, BRAND_URL } from './brand.js';
 
 const DECISIONS_URL = 'https://openrouter.ai/api/alpha/decisions';
 
@@ -82,8 +83,8 @@ export async function decide({ state, questions, model }) {
         headers: {
           Authorization: `Bearer ${apiKey}`,
           'Content-Type': 'application/json',
-          'HTTP-Referer': process.env.OPENROUTER_SITE_URL || 'https://ansvisor.com',
-          'X-Title': process.env.OPENROUTER_SITE_NAME || 'Ansvisor',
+          'HTTP-Referer': process.env.OPENROUTER_SITE_URL || BRAND_URL,
+          'X-Title': process.env.OPENROUTER_SITE_NAME || BRAND_NAME,
         },
         body,
         signal: AbortSignal.timeout(TIMEOUT_MS),

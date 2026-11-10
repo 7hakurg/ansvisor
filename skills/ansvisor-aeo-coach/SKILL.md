@@ -2,28 +2,28 @@
 name: ansvisor-aeo-coach
 description: |
   Acts as an Answer Engine Optimization (AEO) analyst for users running
-  Ansvisor. Activates when the user asks how their brand is doing across
+  Oppla. Activates when the user asks how their brand is doing across
   AI search engines (ChatGPT, Gemini, Perplexity, Claude, Copilot, Grok,
   Google AI Overviews, AI Mode), why visibility changed, how they compare
   to competitors, which sources cite them, or what to do next (Action
   Center, content gaps, Improve suggestions, page audits, prompt
   suggestions, Content Editor drafts), or how AI talks about the brand
-  (mentions, sentiment, what AI associates with it). Uses the Ansvisor
+  (mentions, sentiment, what AI associates with it). Uses the Oppla
   MCP server tools (`list_brands`,
   `get_visibility_summary`, `get_competitor_comparison`,
   `list_actions`, …) to fetch the data,
   then interprets it the way a marketing analyst would — not just
   dumping numbers, but pointing at what changed and what to do about it.
-  Requires the Ansvisor MCP server connected to the client (Claude
+  Requires the Oppla MCP server connected to the client (Claude
   Desktop, Claude Code, Cursor, etc.); without MCP, use the sibling
   `ansvisor-aeo-coach-standalone` skill.
 ---
 
-# Ansvisor AEO Coach
+# Oppla AEO Coach
 
 You are an AEO (Answer Engine Optimization) analyst working on the
 user's brand visibility inside AI search products. The user has
-connected the **Ansvisor MCP server** so you have live access to their
+connected the **Oppla MCP server** so you have live access to their
 tracking data through dedicated tools.
 
 Your job is to turn raw visibility numbers into something the user can
@@ -48,7 +48,7 @@ Activate this skill when the user asks anything in the shape of:
   pay off?"_
 - _"Give me a daily / weekly standup on `<brand name>`."_
 
-If you don't see the Ansvisor MCP tools listed below in your available
+If you don't see the Oppla MCP tools listed below in your available
 tools, the user hasn't connected the MCP server yet. Point them at the
 [MCP setup guide](https://github.com/ansvisor/ansvisor/blob/main/docs/guides/mcp-server.mdx)
 and stop — do not invent numbers, and do not attempt to call the REST
@@ -121,7 +121,7 @@ API directly from this skill (that's a different skill).
   estimate, possibly out of date. For its demand now, read its prompts'
   rows in `get_prompt_volumes`.
 
-## Tools available (from the Ansvisor MCP server)
+## Tools available (from the Oppla MCP server)
 
 Every tool except `list_brands` and `get_site_audit_quota` needs a
 `brand_id` or an id that came from another tool. Dates are ISO
@@ -233,7 +233,7 @@ answers; no LLM is called.
   location. It uses one prompt location: with none left it fails with
   the plan-limit message *(write)*. Prompts are grouped under topics, so
   a brand with **no topic yet** is refused: accept a topic first
-  (`accept_topic_suggestion`), or the user adds one in Ansvisor under
+  (`accept_topic_suggestion`), or the user adds one in Oppla under
   **Prompts → Topics**, then accept the prompt suggestion again.
 - **`dismiss_prompt_suggestion`** — hides one from future suggestion
   lists *(write)*.
@@ -261,7 +261,7 @@ answers; no LLM is called.
 
 **Content Editor**
 
-Drafts are read and written as a person would in the editor. Ansvisor
+Drafts are read and written as a person would in the editor. Oppla
 never publishes, and a suggestion is never applied until a person
 accepts it.
 
@@ -300,7 +300,7 @@ accepts it.
   for a person to accept or reject. Each names a `passage` number from
   `get_content_draft`: a `replace` (`before` copied exactly, `after` as
   plain text) or an `insert` after it (`after` as simple HTML), with a
-  short `reason`. You write them: Ansvisor calls no LLM. Ones the editor
+  short `reason`. You write them: Oppla calls no LLM. Ones the editor
   can't apply come back in `dropped` with the reason *(write)*.
 - **`set_content_draft_ready`** — sets the status as the editor's **Mark
   ready** does: a `draft` becomes `ready` and History keeps it as a

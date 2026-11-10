@@ -8,7 +8,7 @@ import { pageKey } from '@/lib/content/feed-match';
 /**
  * Product Visibility's Readiness (ECOM-015, spec §3.4 / §3.4b): how ready
  * the brand is for AI shopping, as a checklist scored 0–100. Only what
- * Ansvisor can read is checked: the catalog and its feed, Merchant Center,
+ * Oppla can read is checked: the catalog and its feed, Merchant Center,
  * OpenAI's product index in the US, the prices AI answers show, resellers
  * and Amazon's share. What it can't read yet (product page schema, return
  * policies, AI bots on product pages, colors as separate items) isn't

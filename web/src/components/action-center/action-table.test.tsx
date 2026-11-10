@@ -229,7 +229,7 @@ describe('ActionTable row menu', () => {
   });
 });
 
-// New Ansvisor (AC-ALT2): no one assigned means the whole workspace's.
+// New Oppla (AC-ALT2): no one assigned means the whole workspace's.
 describe('ActionTable assignee', () => {
   const assigneeCell = () => container.querySelectorAll('tbody tr td')[3];
 

@@ -5,7 +5,7 @@ import { parseCsv } from '@/lib/prompt-import';
  * Brief › Your input (Content Editor Quality spec §6, CE-048): what only the
  * person can give a page, used only as they write it. Their first-hand
  * experience; their data (tables read from a CSV or Excel file in the
- * browser, or pasted, and Ansvisor data they chose to use); and expert
+ * browser, or pasted, and Oppla data they chose to use); and expert
  * quotes from real people, word for word, each with its source. Kept per
  * draft beside the brief (content_draft_inputs, 00265): a rebuilt brief
  * leaves them.
@@ -82,9 +82,9 @@ export const dataTableSchema = z.object({
 export type InputTable = z.infer<typeof dataTableSchema>;
 
 /**
- * Ansvisor data the person chose to use: one tracked prompt's answers and
+ * Oppla data the person chose to use: one tracked prompt's answers and
  * the brand's mentions in them, over the `days` up to `asOf` (Sources'
- * SOURCES_DAYS). Cited as "Ansvisor data, {month year}" of `asOf`.
+ * SOURCES_DAYS). Cited as "Oppla data, {month year}" of `asOf`.
  */
 export const ansvisorDataSchema = z.object({
   promptId: z.guid(),
@@ -268,7 +268,7 @@ const saidOf = (text: string) => plain(text).replace(/^[\p{P}\s]+|[\p{P}\s]+$/gu
  * What the page uses of the person's input, only as far as it can be read:
  * - a quote word for word;
  * - a figure from their data (figuresIn), or a prompt's answers and mentions
- *   from Ansvisor data in one sentence;
+ *   from Oppla data in one sentence;
  * - their experience by its own words: EXPERIENCE_SHARE of its runs of three
  *   words, EXPERIENCE_RUNS at least.
  * An input not given isn't used.

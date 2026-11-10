@@ -252,7 +252,7 @@ describe('tellWentLive for a page published live (PR 9)', () => {
 });
 
 describe('the e-mail for a webhook send (PR 11)', () => {
-  it('says it went to the webhook and that Ansvisor can’t take it back', () => {
+  it('says it went to the webhook and that Oppla can’t take it back', () => {
     const { subject, html } = renderWentLiveEmail({
       kind: 'webhook',
       agent: 'Publisher',
@@ -264,7 +264,7 @@ describe('the e-mail for a webhook send (PR 11)', () => {
     });
     expect(subject).toBe('Publisher sent “Pour-over guide” to your webhook');
     expect(html).toContain('to your webhook, without a click');
-    expect(html).toContain('Ansvisor can’t take a webhook send back');
+    expect(html).toContain('Oppla can’t take a webhook send back');
     expect(html).not.toContain('as a draft');
   });
 });

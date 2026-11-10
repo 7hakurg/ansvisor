@@ -18,7 +18,7 @@ import { READABILITY_WEIGHTS, type ReadabilityCheckId } from './readability';
  * disclosure. Every other type reads as an article (a blog post or a guide).
  *
  * A weight of 0 leaves the check out, and the score is rescaled over the
- * rest, as for a check not live yet. Ansvisor estimates, until calibrated
+ * rest, as for a check not live yet. Oppla estimates, until calibrated
  * with citation data (CE-055).
  */
 

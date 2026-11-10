@@ -202,7 +202,7 @@ export default function ReportsPage() {
             <p className="text-muted-foreground">{t('description')}</p>
           </div>
           <div className="flex items-center gap-2">
-            {/* What Ansvisor did for you (CHAT-22 §2 item 5): kept only with the new Chat on. */}
+            {/* What Oppla did for you (CHAT-22 §2 item 5): kept only with the new Chat on. */}
             {chatAgentic && (
               <Link
                 href="/dashboard/reports/impact"

@@ -293,7 +293,7 @@ describe('useUpgradeGate on the demo brand', () => {
     await runAll();
     expect(action).not.toHaveBeenCalled();
     // The workspace's own brand, by name.
-    expect(dialog()?.textContent).toContain('Use Ansvisor for Acme');
+    expect(dialog()?.textContent).toContain('Use Oppla for Acme');
     expect(document.querySelector('[data-slot="upgrade-action"]')?.textContent).toBe(
       'Adding prompts works on your own brand',
     );
@@ -307,7 +307,7 @@ describe('useUpgradeGate on the demo brand', () => {
     selectBrand('demo');
     await render({ active: false, status: 'canceled' });
     await runAll();
-    expect(dialog()?.textContent).toContain('Use Ansvisor for Acme');
+    expect(dialog()?.textContent).toContain('Use Oppla for Acme');
     // Opened without a label: what the demo is.
     expect(document.querySelector('[data-slot="upgrade-action"]')?.textContent).toBe(
       'This is a demo brand with sample data',

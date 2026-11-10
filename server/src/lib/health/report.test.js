@@ -460,7 +460,7 @@ describe('renderHealthEmail', () => {
   it('says OK when nothing needs attention', () => {
     const { subject, issues } = renderHealthEmail(clean);
     expect(issues).toEqual([]);
-    expect(subject).toBe('[OK] Ansvisor daily health — 2026-10-06');
+    expect(subject).toBe('[OK] Oppla daily health — 2026-10-06');
   });
 
   it('lists slow reads and nightly problems, and escapes brand names', () => {

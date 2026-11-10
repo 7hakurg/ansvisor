@@ -31,7 +31,7 @@ When the Default view arrived, everyone started on it, people who had picked are
 
 With a focus, the chips under **For you now** come from your areas, taken in turn so each one shows: for example **Competitor moves**, **Fact check** or **Buyer questions**. **Complete tasks**, **Win back citations** and **Ready to publish** keep their counts and show only when there is something to do.
 
-**Start with a question** offers four questions from your areas, filled with your own competitors, topics and markets where Ansvisor knows them. Select one to start a new chat with it.
+**Start with a question** offers four questions from your areas, filled with your own competitors, topics and markets where Oppla knows them. Select one to start a new chat with it.
 
 **New for you** lists up to four new skills for your areas, such as **Rival brief** or **Buyer questions**; select one to start a chat with it.
 

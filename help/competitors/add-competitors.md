@@ -11,7 +11,7 @@ app_version: 0.3.0
 approved: true
 sources: [docs/guides/competitors.mdx, docs/guides/citations.mdx, docs/guides/add-your-first-brand.mdx]
 ---
-Competitors are the brands Ansvisor compares with yours in AI answers to your tracked prompts. You add and remove them on the **Competitors** page, right under **Reports** in the sidebar, and each one then appears in **Tracked Competitors** for a head-to-head comparison.
+Competitors are the brands Oppla compares with yours in AI answers to your tracked prompts. You add and remove them on the **Competitors** page, right under **Reports** in the sidebar, and each one then appears in **Tracked Competitors** for a head-to-head comparison.
 
 ## Open the Competitors page
 
@@ -29,8 +29,8 @@ Only admins and managers add, suggest and remove competitors; other members see 
 
 Click **Add Competitor** and fill in:
 
-- **Name**: as AI answers write it, not the web address. Ansvisor looks for the name in every answer.
-- **Domain** (optional): Ansvisor also looks for the domain in answers, counts citations of the competitor's pages, and marks those pages **Competitor** on Visibility's **Citations** tab. The card that follows the competitor's pages over time needs it too.
+- **Name**: as AI answers write it, not the web address. Oppla looks for the name in every answer.
+- **Domain** (optional): Oppla also looks for the domain in answers, counts citations of the competitor's pages, and marks those pages **Competitor** on Visibility's **Citations** tab. The card that follows the competitor's pages over time needs it too.
 
 Click **Add**.
 
@@ -48,7 +48,7 @@ On Visibility's **Citations** tab, the **+** button (**Add as competitor**) on a
 
 A competitor is counted in the answers tracked after you add it; earlier answers aren't counted again. Until an answer in the date range is measured for it, its card says **No data**.
 
-When a competitor is added, Ansvisor also reads back 90 days of your answers once, to find the first time AI cited one of its pages.
+When a competitor is added, Oppla also reads back 90 days of your answers once, to find the first time AI cited one of its pages.
 
 ## How many to track
 
@@ -62,4 +62,4 @@ Hover the competitor's card in **Tracked Competitors**, click the bin icon, then
 
 ## When the workspace is read-only
 
-On Ansvisor Cloud, while the workspace is read-only, **Add Competitor**, **Suggest competitors** and removing a competitor open the plan dialog instead.
+On Oppla Cloud, while the workspace is read-only, **Add Competitor**, **Suggest competitors** and removing a competitor open the plan dialog instead.

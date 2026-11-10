@@ -16,7 +16,7 @@
  */
 
 /**
- * Ansvisor writes opportunities and prompts since 2025. A year before that in
+ * Oppla writes opportunities and prompts since 2025. A year before that in
  * one is history ("since 2019"), not the year it was written in.
  */
 export const FIRST_WRITTEN_YEAR = 2025;

@@ -381,7 +381,7 @@ export function EditorSidePanel({
         : null,
     [reads.sources, title, draft.sourceUrl],
   );
-  // Ansvisor data Your input offers: the draft's prompts with answers, those
+  // Oppla data Your input offers: the draft's prompts with answers, those
   // it targets first, the most answered first.
   const inputPrompts = useMemo<InputPrompt[]>(
     () =>

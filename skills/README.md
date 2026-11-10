@@ -1,11 +1,11 @@
-# Ansvisor Skills
+# Oppla Skills
 
 A collection of opinionated [Anthropic Skills](https://docs.anthropic.com/claude/docs/skills)
-that turn Claude into an AEO analyst with live access to your Ansvisor
+that turn Claude into an AEO analyst with live access to your Oppla
 account.
 
 Most skills come in **two flavours**: one that talks to the
-[Ansvisor MCP server](../docs/guides/mcp-server.mdx) (cleaner UX in
+[Oppla MCP server](../docs/guides/mcp-server.mdx) (cleaner UX in
 clients that support it) and one that calls the REST API directly with
 code execution (works anywhere). Pick the flavour that matches your
 Claude client — see the table below.
@@ -18,12 +18,12 @@ behaves like an AEO analyst who's been on your account for six months.
 
 | Skill | Flavour | What it's for |
 | --- | --- | --- |
-| [`ansvisor-aeo-coach`](./ansvisor-aeo-coach) | **MCP (preferred)** | Brand snapshots, visibility deep-dives, competitor watch, citation sources, prompt coverage and prompt suggestions, Action Center (what to do next, did it work, sending Improve suggestions), mentions and sentiment (how AI talks about the brand, why sentiment moved, what AI associates it with), Content Editor drafts (sources, suggestions for review, Mark ready, what the live page earns), saved reports. Use this when your client (Claude Desktop, Claude Code, Cursor, Zed) is connected to the Ansvisor MCP server. |
+| [`ansvisor-aeo-coach`](./ansvisor-aeo-coach) | **MCP (preferred)** | Brand snapshots, visibility deep-dives, competitor watch, citation sources, prompt coverage and prompt suggestions, Action Center (what to do next, did it work, sending Improve suggestions), mentions and sentiment (how AI talks about the brand, why sentiment moved, what AI associates it with), Content Editor drafts (sources, suggestions for review, Mark ready, what the live page earns), saved reports. Use this when your client (Claude Desktop, Claude Code, Cursor, Zed) is connected to the Oppla MCP server. |
 | [`ansvisor-aeo-coach-standalone`](./ansvisor-aeo-coach-standalone) | **REST (fallback)** | Same skill, no MCP needed. Use this when you're on claude.ai web without a Connector, or any surface where setting up MCP isn't an option. |
 
-## Ansvisor skills (Chat)
+## Oppla skills (Chat)
 
-Chat in Ansvisor uses the twenty-four skills below. Each is one `SKILL.md` in
+Chat in Oppla uses the twenty-four skills below. Each is one `SKILL.md` in
 the [Agent Skills](https://agentskills.io/specification) format:
 instructions only, no scripts or reference files. Chat lists their names and
 descriptions, and loads a skill's text when it picks the skill or when you
@@ -92,7 +92,7 @@ in `web/` and commit `library.json`, which Chat reads.
 | Claude Desktop | **MCP** — install the [MCP server](../docs/guides/mcp-server.mdx) once, then `ansvisor-aeo-coach` |
 | Claude Code | **MCP** — same as above |
 | Cursor / Zed / other MCP-aware tools | **MCP** — it's their native primitive |
-| claude.ai web with the Ansvisor Connector configured | **MCP** |
+| claude.ai web with the Oppla Connector configured | **MCP** |
 | claude.ai web without a Connector | **Standalone** — single install, no extra setup |
 | Anywhere else with Skills + code execution | **Standalone** |
 
@@ -102,14 +102,14 @@ fetches numbers — typed tool calls vs. inline Python HTTP requests.
 
 ## Prerequisites
 
-You need an **Ansvisor API key** in either flavour:
+You need an **Oppla API key** in either flavour:
 
-1. Open your Ansvisor dashboard → **Settings → MCP & API Keys**
+1. Open your Oppla dashboard → **Settings → MCP & API Keys**
 2. Click **New key**, give it a memorable name (e.g. _Claude — laptop_)
 3. Copy the token (`ans_...`). It's shown **once** — store it in your
    password manager
 
-If you self-host Ansvisor, both flavours work against your own instance
+If you self-host Oppla, both flavours work against your own instance
 — you'll just provide a different base URL when prompted (MCP: in your
 client config; standalone: when the skill asks).
 
@@ -125,7 +125,7 @@ supports the Skills feature.
 3. Paste the contents of your chosen flavour's `SKILL.md`
 4. Save
 
-The first time you use the MCP flavour, you also need the **Ansvisor
+The first time you use the MCP flavour, you also need the **Oppla
 Connector** added to your Claude.ai account (see the MCP guide). The
 standalone flavour will ask you for your API key in the conversation
 itself.
@@ -141,7 +141,7 @@ cp -r ansvisor/skills/ansvisor-aeo-coach-standalone ~/.claude/skills/
 
 Restart your Claude client and the skill is live. If you chose the MCP
 flavour, also configure the
-[Ansvisor MCP server](../docs/guides/mcp-server.mdx) in your client.
+[Oppla MCP server](../docs/guides/mcp-server.mdx) in your client.
 
 ## Use
 
@@ -167,10 +167,10 @@ you ask for that specific change.
 ## Contributing
 
 Every folder under `skills/` other than the two AEO coach flavours is one of
-Chat's Ansvisor skills or shortcut playbooks, and CI checks it as one. So
+Chat's Oppla skills or shortcut playbooks, and CI checks it as one. So
 there are two kinds of contribution:
 
-**A skill for Chat.** Ansvisor's own skills are the twenty-four listed above.
+**A skill for Chat.** Oppla's own skills are the twenty-four listed above.
 Adding one (or changing one) means, in the same PR:
 
 ```
@@ -220,4 +220,4 @@ conventions, and PR workflow.
 
 ## License
 
-[MIT](../LICENSE) — part of [Ansvisor](https://github.com/ansvisor/ansvisor).
+[MIT](../LICENSE) — part of [Oppla](https://github.com/ansvisor/ansvisor).

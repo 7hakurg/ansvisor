@@ -29,7 +29,7 @@ const SECTIONS = [
  * Workspace Settings, top right of the brands page and a brand's page: the
  * settings that aren't a brand's (account, organization, team, billing), each
  * opening its section of /dashboard/settings. Admins and managers only;
- * Billing only where the settings page has it (Ansvisor Cloud).
+ * Billing only where the settings page has it (Oppla Cloud).
  */
 export function WorkspaceSettingsMenu() {
   const t = useTranslations('settings');

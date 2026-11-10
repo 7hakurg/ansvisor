@@ -3,11 +3,12 @@ import { deliverEmail } from '../email.js';
 import logger from '../logger.js';
 import { countryInSentence, countryNameIn, reportLanguage } from './countries.js';
 import { reportCardStore } from './store.js';
+import { BRAND_HOST, PRIVACY_URL } from '../brand.js';
 
 /**
  * The report card's e-mail (REPORT-CARD §1, §4, §7): first that the PDF is
  * attached (owner review 2026-11-08), then the headline figures, and a
- * "Start a free trial" invitation; from Ansvisor
+ * "Start a free trial" invitation; from Oppla
  * (REPORT_CARD_FROM_EMAIL, else RESEND_FROM_EMAIL). Each minute the queue
  * sends what is waiting: a new card once it's ready, a card sent again
  * (resent), and a short note when a card couldn't be made, each in the
@@ -16,7 +17,7 @@ import { reportCardStore } from './store.js';
  * figures, in the same language, once a card and language a sweep.
  */
 
-export const PRIVACY_URL = 'https://www.ansvisor.com/privacy-policy';
+export { PRIVACY_URL };
 /** Requests one sweep sends at most. */
 const SWEEP_LIMIT = 20;
 /** How often a PDF the web couldn't draw is tried, a sweep apart, before the e-mail is given up. */
@@ -46,11 +47,11 @@ export function signUpUrl(origin = webAppOrigin()) {
   return `${origin}/en/sign-up?utm_source=report-card&utm_medium=email`;
 }
 
-/** "ansvisor-ai-visibility-report-card-acme.com.pdf" */
+/** "oppla-ai-visibility-report-card-acme.com.pdf" */
 export const pdfName = (site) =>
-  `ansvisor-ai-visibility-report-card-${String(site).replace(/[^a-z0-9.-]/gi, '-')}.pdf`;
+  `oppla-ai-visibility-report-card-${String(site).replace(/[^a-z0-9.-]/gi, '-')}.pdf`;
 
-/** Ansvisor's colors (the brand style guide): ink, a warm grey and a sand border. */
+/** Oppla's colors (the brand style guide): ink, a warm grey and a sand border. */
 const INK = '#1C1A17';
 const GREY = '#464442';
 const SAND = '#EBE6DE';
@@ -73,7 +74,7 @@ const privacy = (label) => `<a href="${PRIVACY_URL}" style="color:${GREY};">${la
  * The e-mail's words, in the request's language (owner decision
  * 2026-11-09: the form may choose it), else the card's country's: Turkish
  * for Türkiye, English elsewhere (2026-11-04), as the PDF (web
- * lib/report-card/copy.ts). Ansvisor's product, feature and button names
+ * lib/report-card/copy.ts). Oppla's product, feature and button names
  * stay in English, as the app shows them (2026-11-08). Names and sites
  * never take a case ending ("{site} için"), and the country stands where
  * no article or preposition must agree with it: "(pays : États-Unis)".
@@ -83,16 +84,16 @@ const EMAIL_COPY = {
     locale: 'en-US',
     and: 'and',
     country: (code, name) => countryInSentence(code, name),
-    footer: `You asked for this report card on ansvisor.com. AI answers change from day to day, so it is a snapshot. How we use your details: ${privacy('Privacy Notice')}.`,
+    footer: `You asked for this report card on ${BRAND_HOST}. AI answers change from day to day, so it is a snapshot. How we use your details: ${privacy('Privacy Notice')}.`,
     title: 'Your AI visibility report card',
     hi: (name) => `Hi ${name},`,
     attached: (site) => `Your AI visibility report card for ${site} is attached: a 4-page PDF.`,
     resent: (site, made, next) =>
       `It is the card we made for ${site} on ${made}, sent again; a new one can be made from ${next}.`,
     intro: (engines, starter, questions, readers, country, site) =>
-      `We asked ${engines}${starter ? ', the engines in Ansvisor Starter,' : ''} ${questions} questions your ${readers ? 'readers' : 'buyers'} ask, in ${country}. Here is what came back for ${site}.`,
+      `We asked ${engines}${starter ? ', the engines in Oppla Starter,' : ''} ${questions} questions your ${readers ? 'readers' : 'buyers'} ask, in ${country}. Here is what came back for ${site}.`,
     growth: (engines) =>
-      ` We asked ${engines} too: they are in Ansvisor Growth, and the PDF shows them apart.`,
+      ` We asked ${engines} too: they are in Oppla Growth, and the PDF shows them apart.`,
     visibility: (engines, named, answers) =>
       `AI visibility${engines ? ` in ${engines}` : ''}: named in ${named} of ${answers} answers`,
     leader: (answers) => `Top competitor: named in ${answers} answers`,
@@ -101,9 +102,9 @@ const EMAIL_COPY = {
     cited: (answers) => `Answers that cite your site, of ${answers}`,
     pages: (questions) =>
       `The 4 pages hold where you start and who AI names instead, all ${questions} questions we asked and what each engine said, what you’d do in your first week, and what AI visits are worth with Starter and Growth side by side.`,
-    work: 'In Ansvisor, Chat and ready-to-use agents do the week-one work with you.',
+    work: 'In Oppla, Chat and ready-to-use agents do the week-one work with you.',
     button: 'Start a free trial',
-    own: 'Want to measure your own questions too? In the free trial, Ansvisor asks this card’s questions and yours every day, and ranks what to do next.',
+    own: 'Want to measure your own questions too? In the free trial, Oppla asks this card’s questions and yours every day, and ranks what to do next.',
     subject: (domain) => `Your AI visibility report card: ${domain}`,
     failedTitle: 'We couldn’t finish your report card',
     failed: (site) =>
@@ -114,16 +115,16 @@ const EMAIL_COPY = {
     locale: 'tr-TR',
     and: 've',
     country: (code, name) => countryNameIn(code, 'tr') ?? name,
-    footer: `Bu karneyi ansvisor.com üzerinden istediniz. Yapay zekâ yanıtları her gün değişir; bu bir anlık ölçümdür. Bilgilerinizi nasıl kullandığımız: ${privacy('Gizlilik Bildirimi')}.`,
+    footer: `Bu karneyi ${BRAND_HOST} üzerinden istediniz. Yapay zekâ yanıtları her gün değişir; bu bir anlık ölçümdür. Bilgilerinizi nasıl kullandığımız: ${privacy('Gizlilik Bildirimi')}.`,
     title: 'Yapay zekâ görünürlük karneniz',
     hi: (name) => `Merhaba ${name},`,
     attached: (site) => `${site} için yapay zekâ görünürlük karneniz ekte: 4 sayfalık bir PDF.`,
     resent: (site, made, next) =>
       `Bu, ${site} için ${made} tarihinde hazırladığımız karne, yeniden gönderildi; yenisi ${next} tarihinden itibaren hazırlanabilir.`,
     intro: (engines, starter, questions, readers, country, site) =>
-      `${engines}${starter ? ' (Ansvisor Starter’ın motorları)' : ''} motorlarına ${country} konumundan, ${readers ? 'okurlarınızın' : 'alıcılarınızın'} sorduğu ${questions} soruyu sorduk. ${site} için sonuçlar aşağıda.`,
+      `${engines}${starter ? ' (Oppla Starter’ın motorları)' : ''} motorlarına ${country} konumundan, ${readers ? 'okurlarınızın' : 'alıcılarınızın'} sorduğu ${questions} soruyu sorduk. ${site} için sonuçlar aşağıda.`,
     growth: (engines) =>
-      ` ${engines} motorlarına da sorduk: bunlar Ansvisor Growth’ta; PDF bunları ayrı gösteriyor.`,
+      ` ${engines} motorlarına da sorduk: bunlar Oppla Growth’ta; PDF bunları ayrı gösteriyor.`,
     visibility: (engines, named, answers) =>
       `Yapay zekâ görünürlüğü${engines ? ` (${engines})` : ''}: ${answers} yanıtın ${named} tanesinde adınız geçiyor`,
     leader: (answers) => `Öne çıkan rakip: ${answers} yanıtta anılıyor`,
@@ -132,9 +133,9 @@ const EMAIL_COPY = {
     cited: (answers) => `${answers} yanıttan sitenizi kaynak gösteren`,
     pages: (questions) =>
       `4 sayfada: nereden başladığınız ve yapay zekânın sizin yerinize kimi önerdiği, sorduğumuz ${questions} sorunun tamamı ve her motorun yanıtı, ilk haftanızda yapacaklarınız, yapay zekâ ziyaretlerinin değeri ve yan yana Starter ile Growth.`,
-    work: 'Ansvisor’da Chat ve kullanıma hazır ajanlar ilk haftanın işlerini sizinle birlikte yapar.',
+    work: 'Oppla’da Chat ve kullanıma hazır ajanlar ilk haftanın işlerini sizinle birlikte yapar.',
     button: 'Ücretsiz denemeyi başlatın',
-    own: 'Kendi sorularınızı da ölçmek ister misiniz? Ücretsiz denemede Ansvisor bu karnenin sorularını ve sizinkileri her gün sorar, sıradaki işleri öncelik sırasıyla verir.',
+    own: 'Kendi sorularınızı da ölçmek ister misiniz? Ücretsiz denemede Oppla bu karnenin sorularını ve sizinkileri her gün sorar, sıradaki işleri öncelik sırasıyla verir.',
     subject: (domain) => `Yapay zekâ görünürlük karneniz: ${domain}`,
     failedTitle: 'Karnenizi tamamlayamadık',
     failed: (site) =>
@@ -146,7 +147,7 @@ const EMAIL_COPY = {
     locale: 'fr-FR',
     and: 'et',
     country: (code, name) => countryNameIn(code, 'fr') ?? name,
-    footer: `Vous avez demandé ce rapport sur ansvisor.com. Les réponses de l’IA changent d’un jour à l’autre\u00a0: ce rapport est un instantané. Comment nous utilisons vos données\u00a0: ${privacy('Politique de confidentialité')}.`,
+    footer: `Vous avez demandé ce rapport sur ${BRAND_HOST}. Les réponses de l’IA changent d’un jour à l’autre\u00a0: ce rapport est un instantané. Comment nous utilisons vos données\u00a0: ${privacy('Politique de confidentialité')}.`,
     title: 'Votre rapport de visibilité IA',
     hi: (name) => `Bonjour ${name},`,
     attached: (site) =>
@@ -154,9 +155,9 @@ const EMAIL_COPY = {
     resent: (site, made, next) =>
       `Nous vous renvoyons le rapport établi pour ${site} le ${made}. Un nouveau rapport pourra être établi à partir du ${next}.`,
     intro: (engines, starter, questions, readers, country, site) =>
-      `Nous avons posé à ${engines}${starter ? ', les moteurs d’Ansvisor Starter,' : ''} ${questions} questions que se posent vos ${readers ? 'lecteurs' : 'clients'} (pays\u00a0: ${country}). Voici les résultats pour ${site}.`,
+      `Nous avons posé à ${engines}${starter ? ', les moteurs d’Oppla Starter,' : ''} ${questions} questions que se posent vos ${readers ? 'lecteurs' : 'clients'} (pays\u00a0: ${country}). Voici les résultats pour ${site}.`,
     growth: (engines) =>
-      ` Nous avons aussi interrogé ${engines}\u00a0: ils font partie d’Ansvisor Growth, et le PDF les présente à part.`,
+      ` Nous avons aussi interrogé ${engines}\u00a0: ils font partie d’Oppla Growth, et le PDF les présente à part.`,
     visibility: (engines, named, answers) =>
       `Visibilité IA${engines ? ` dans ${engines}` : ''}\u00a0: vous êtes mentionné dans ${named} réponses sur ${answers}`,
     leader: (answers) =>
@@ -166,9 +167,9 @@ const EMAIL_COPY = {
     cited: (answers) => `réponses sur ${answers} citent votre site`,
     pages: (questions) =>
       `Les 4 pages présentent votre point de départ et les marques que l’IA cite à votre place, les ${questions} questions posées avec la réponse de chaque moteur, ce que vous feriez la première semaine, et ce que valent les visites venues de l’IA, avec Starter et Growth côte à côte.`,
-    work: 'Dans Ansvisor, Chat et des agents prêts à l’emploi font avec vous le travail de la première semaine.',
+    work: 'Dans Oppla, Chat et des agents prêts à l’emploi font avec vous le travail de la première semaine.',
     button: 'Commencer l’essai gratuit',
-    own: 'Vous voulez aussi mesurer vos propres questions\u202f? Pendant l’essai gratuit, Ansvisor pose chaque jour les questions de ce rapport et les vôtres, et classe les prochaines actions par priorité.',
+    own: 'Vous voulez aussi mesurer vos propres questions\u202f? Pendant l’essai gratuit, Oppla pose chaque jour les questions de ce rapport et les vôtres, et classe les prochaines actions par priorité.',
     subject: (domain) => `Votre rapport de visibilité IA\u00a0: ${domain}`,
     failedTitle: 'Nous n’avons pas pu terminer votre rapport',
     failed: (site) =>
@@ -179,7 +180,7 @@ const EMAIL_COPY = {
     locale: 'es-ES',
     and: 'y',
     country: (code, name) => countryNameIn(code, 'es') ?? name,
-    footer: `Pediste este informe en ansvisor.com. Las respuestas de la IA cambian de un día para otro, así que es una foto del momento. Cómo usamos tus datos: ${privacy('Aviso de privacidad')}.`,
+    footer: `Pediste este informe en ${BRAND_HOST}. Las respuestas de la IA cambian de un día para otro, así que es una foto del momento. Cómo usamos tus datos: ${privacy('Aviso de privacidad')}.`,
     title: 'Tu informe de visibilidad en IA',
     hi: (name) => `Hola, ${name}:`,
     attached: (site) =>
@@ -187,9 +188,9 @@ const EMAIL_COPY = {
     resent: (site, made, next) =>
       `Te reenviamos el informe que preparamos para ${site} el ${made}. Podremos preparar uno nuevo a partir del ${next}.`,
     intro: (engines, starter, questions, readers, country, site) =>
-      `Hicimos a ${engines}${starter ? ', los motores de Ansvisor Starter,' : ''} ${questions} preguntas que hacen tus ${readers ? 'lectores' : 'clientes'} en ${country}. Esto es lo que obtuvimos para ${site}.`,
+      `Hicimos a ${engines}${starter ? ', los motores de Oppla Starter,' : ''} ${questions} preguntas que hacen tus ${readers ? 'lectores' : 'clientes'} en ${country}. Esto es lo que obtuvimos para ${site}.`,
     growth: (engines) =>
-      ` También preguntamos a ${engines}: están en Ansvisor Growth, y el PDF los muestra aparte.`,
+      ` También preguntamos a ${engines}: están en Oppla Growth, y el PDF los muestra aparte.`,
     visibility: (engines, named, answers) =>
       `Visibilidad en IA${engines ? ` (${engines})` : ''}: te mencionan en ${named} de ${answers} respuestas`,
     leader: (answers) =>
@@ -199,9 +200,9 @@ const EMAIL_COPY = {
     cited: (answers) => `de ${answers} respuestas citan tu sitio`,
     pages: (questions) =>
       `En sus 4 páginas verás tu punto de partida y a quién menciona la IA en tu lugar, las ${questions} preguntas que hicimos y qué respondió cada motor, lo que harías en tu primera semana, y cuánto valen las visitas que llegan desde la IA, con Starter y Growth lado a lado.`,
-    work: 'En Ansvisor, Chat y agentes listos para usar hacen contigo el trabajo de la primera semana.',
+    work: 'En Oppla, Chat y agentes listos para usar hacen contigo el trabajo de la primera semana.',
     button: 'Empieza tu prueba gratis',
-    own: '¿Quieres medir también tus propias preguntas? En la prueba gratis, Ansvisor hace cada día las preguntas de este informe y las tuyas, y ordena por prioridad lo siguiente que conviene hacer.',
+    own: '¿Quieres medir también tus propias preguntas? En la prueba gratis, Oppla hace cada día las preguntas de este informe y las tuyas, y ordena por prioridad lo siguiente que conviene hacer.',
     subject: (domain) => `Tu informe de visibilidad en IA: ${domain}`,
     failedTitle: 'No pudimos terminar tu informe',
     failed: (site) =>
@@ -212,7 +213,7 @@ const EMAIL_COPY = {
     locale: 'de-DE',
     and: 'und',
     country: (code, name) => countryNameIn(code, 'de') ?? name,
-    footer: `Sie haben diesen Bericht auf ansvisor.com angefordert. KI-Antworten ändern sich von Tag zu Tag, er ist also eine Momentaufnahme. Wie wir Ihre Daten verwenden: ${privacy('Datenschutzhinweis')}.`,
+    footer: `Sie haben diesen Bericht auf ${BRAND_HOST} angefordert. KI-Antworten ändern sich von Tag zu Tag, er ist also eine Momentaufnahme. Wie wir Ihre Daten verwenden: ${privacy('Datenschutzhinweis')}.`,
     title: 'Ihr KI-Sichtbarkeitsbericht',
     hi: (name) => `Hallo ${name},`,
     attached: (site) =>
@@ -220,9 +221,9 @@ const EMAIL_COPY = {
     resent: (site, made, next) =>
       `Wir senden Ihnen erneut den Bericht, den wir am ${made} für ${site} erstellt haben. Ein neuer kann ab dem ${next} erstellt werden.`,
     intro: (engines, starter, questions, readers, country, site) =>
-      `Wir haben ${engines}${starter ? ', den Engines in Ansvisor Starter,' : ''} ${questions} Fragen gestellt, die Ihre ${readers ? 'Leser' : 'Kunden'} stellen (Land: ${country}). Das sind die Ergebnisse für ${site}.`,
+      `Wir haben ${engines}${starter ? ', den Engines in Oppla Starter,' : ''} ${questions} Fragen gestellt, die Ihre ${readers ? 'Leser' : 'Kunden'} stellen (Land: ${country}). Das sind die Ergebnisse für ${site}.`,
     growth: (engines) =>
-      ` Auch ${engines} haben wir gefragt: Diese sind in Ansvisor Growth enthalten, und das PDF zeigt sie gesondert.`,
+      ` Auch ${engines} haben wir gefragt: Diese sind in Oppla Growth enthalten, und das PDF zeigt sie gesondert.`,
     visibility: (engines, named, answers) =>
       `KI-Sichtbarkeit${engines ? ` in ${engines}` : ''}: in ${named} von ${answers} Antworten genannt`,
     leader: (answers) =>
@@ -232,9 +233,9 @@ const EMAIL_COPY = {
     cited: (answers) => `von ${answers} Antworten zitieren Ihre Website`,
     pages: (questions) =>
       `Auf den 4 Seiten: wo Sie stehen und wen die KI stattdessen nennt, alle ${questions} gestellten Fragen mit der Antwort jeder Engine, was Sie in der ersten Woche tun würden, und was KI-Besuche wert sind, mit Starter und Growth im Vergleich.`,
-    work: 'In Ansvisor erledigen Chat und einsatzbereite Agenten die Arbeit der ersten Woche gemeinsam mit Ihnen.',
+    work: 'In Oppla erledigen Chat und einsatzbereite Agenten die Arbeit der ersten Woche gemeinsam mit Ihnen.',
     button: 'Jetzt kostenlos testen',
-    own: 'Möchten Sie auch Ihre eigenen Fragen messen? Im kostenlosen Test stellt Ansvisor die Fragen dieses Berichts und Ihre eigenen jeden Tag und ordnet die nächsten Schritte nach Priorität.',
+    own: 'Möchten Sie auch Ihre eigenen Fragen messen? Im kostenlosen Test stellt Oppla die Fragen dieses Berichts und Ihre eigenen jeden Tag und ordnet die nächsten Schritte nach Priorität.',
     subject: (domain) => `Ihr KI-Sichtbarkeitsbericht: ${domain}`,
     failedTitle: 'Wir konnten Ihren Bericht nicht fertigstellen',
     failed: (site) =>
@@ -245,7 +246,7 @@ const EMAIL_COPY = {
     locale: 'pt-BR',
     and: 'e',
     country: (code, name) => countryNameIn(code, 'pt') ?? name,
-    footer: `Você pediu este relatório em ansvisor.com. As respostas da IA mudam de um dia para o outro, então ele é um retrato do momento. Como usamos seus dados: ${privacy('Aviso de Privacidade')}.`,
+    footer: `Você pediu este relatório em ${BRAND_HOST}. As respostas da IA mudam de um dia para o outro, então ele é um retrato do momento. Como usamos seus dados: ${privacy('Aviso de Privacidade')}.`,
     title: 'Seu relatório de visibilidade em IA',
     hi: (name) => `Olá, ${name},`,
     attached: (site) =>
@@ -253,9 +254,9 @@ const EMAIL_COPY = {
     resent: (site, made, next) =>
       `Estamos reenviando o relatório que fizemos para ${site} em ${made}. Um novo poderá ser feito a partir de ${next}.`,
     intro: (engines, starter, questions, readers, country, site) =>
-      `Fizemos ${questions} perguntas que seus ${readers ? 'leitores' : 'clientes'} fazem nos motores ${engines}${starter ? ', os do Ansvisor Starter' : ''} (país: ${country}). Veja o resultado para ${site}.`,
+      `Fizemos ${questions} perguntas que seus ${readers ? 'leitores' : 'clientes'} fazem nos motores ${engines}${starter ? ', os do Oppla Starter' : ''} (país: ${country}). Veja o resultado para ${site}.`,
     growth: (engines) =>
-      ` Também perguntamos nos motores ${engines}: eles estão no Ansvisor Growth, e o PDF os mostra à parte.`,
+      ` Também perguntamos nos motores ${engines}: eles estão no Oppla Growth, e o PDF os mostra à parte.`,
     visibility: (engines, named, answers) =>
       `Visibilidade em IA${engines ? ` (${engines})` : ''}: você aparece em ${named} de ${answers} respostas`,
     leader: (answers) =>
@@ -265,9 +266,9 @@ const EMAIL_COPY = {
     cited: (answers) => `de ${answers} respostas citam seu site`,
     pages: (questions) =>
       `As 4 páginas mostram seu ponto de partida e quem a IA menciona no seu lugar, as ${questions} perguntas que fizemos e o que cada motor respondeu, o que você faria na primeira semana, e quanto valem as visitas vindas da IA, com Starter e Growth lado a lado.`,
-    work: 'No Ansvisor, o Chat e agentes prontos para uso fazem com você o trabalho da primeira semana.',
+    work: 'No Oppla, o Chat e agentes prontos para uso fazem com você o trabalho da primeira semana.',
     button: 'Comece seu teste grátis',
-    own: 'Quer medir também as suas próprias perguntas? No teste grátis, o Ansvisor faz todos os dias as perguntas deste relatório e as suas, e ordena por prioridade o que fazer em seguida.',
+    own: 'Quer medir também as suas próprias perguntas? No teste grátis, o Oppla faz todos os dias as perguntas deste relatório e as suas, e ordena por prioridade o que fazer em seguida.',
     subject: (domain) => `Seu relatório de visibilidade em IA: ${domain}`,
     failedTitle: 'Não conseguimos concluir seu relatório',
     failed: (site) =>
@@ -278,7 +279,7 @@ const EMAIL_COPY = {
     locale: 'it-IT',
     and: 'e',
     country: (code, name) => countryNameIn(code, 'it') ?? name,
-    footer: `Hai richiesto questo report su ansvisor.com. Le risposte dell’IA cambiano di giorno in giorno, quindi è un’istantanea. Come usiamo i tuoi dati: ${privacy('Informativa sulla privacy')}.`,
+    footer: `Hai richiesto questo report su ${BRAND_HOST}. Le risposte dell’IA cambiano di giorno in giorno, quindi è un’istantanea. Come usiamo i tuoi dati: ${privacy('Informativa sulla privacy')}.`,
     title: 'Il tuo report di visibilità nell’IA',
     hi: (name) => `Ciao ${name},`,
     attached: (site) =>
@@ -286,9 +287,9 @@ const EMAIL_COPY = {
     resent: (site, made, next) =>
       `Ti inviamo di nuovo il report che abbiamo preparato per ${site} il ${made}. Potremo prepararne uno nuovo dal ${next}.`,
     intro: (engines, starter, questions, readers, country, site) =>
-      `Abbiamo posto a ${engines}${starter ? ', i motori di Ansvisor Starter,' : ''} ${questions} domande che fanno i tuoi ${readers ? 'lettori' : 'clienti'} (paese: ${country}). Ecco cosa è emerso per ${site}.`,
+      `Abbiamo posto a ${engines}${starter ? ', i motori di Oppla Starter,' : ''} ${questions} domande che fanno i tuoi ${readers ? 'lettori' : 'clienti'} (paese: ${country}). Ecco cosa è emerso per ${site}.`,
     growth: (engines) =>
-      ` Abbiamo interrogato anche ${engines}: sono inclusi in Ansvisor Growth, e il PDF li mostra a parte.`,
+      ` Abbiamo interrogato anche ${engines}: sono inclusi in Oppla Growth, e il PDF li mostra a parte.`,
     visibility: (engines, named, answers) =>
       `Visibilità nell’IA${engines ? ` (${engines})` : ''}: compari in ${named} risposte su ${answers}`,
     leader: (answers) =>
@@ -298,9 +299,9 @@ const EMAIL_COPY = {
     cited: (answers) => `risposte su ${answers} citano il tuo sito`,
     pages: (questions) =>
       `Le 4 pagine mostrano il tuo punto di partenza e chi l’IA menziona al posto tuo, tutte le ${questions} domande poste con la risposta di ogni motore, cosa faresti nella prima settimana e quanto valgono le visite dall’IA, con Starter e Growth a confronto.`,
-    work: 'In Ansvisor, Chat e agenti pronti all’uso svolgono con te il lavoro della prima settimana.',
+    work: 'In Oppla, Chat e agenti pronti all’uso svolgono con te il lavoro della prima settimana.',
     button: 'Inizia la prova gratuita',
-    own: 'Vuoi misurare anche le tue domande? Nella prova gratuita, Ansvisor pone ogni giorno le domande di questo report e le tue, e mette in ordine di priorità le prossime azioni.',
+    own: 'Vuoi misurare anche le tue domande? Nella prova gratuita, Oppla pone ogni giorno le domande di questo report e le tue, e mette in ordine di priorità le prossime azioni.',
     subject: (domain) => `Il tuo report di visibilità nell’IA: ${domain}`,
     failedTitle: 'Non siamo riusciti a completare il tuo report',
     failed: (site) =>
@@ -311,7 +312,7 @@ const EMAIL_COPY = {
     locale: 'nl-NL',
     and: 'en',
     country: (code, name) => countryNameIn(code, 'nl') ?? name,
-    footer: `Je hebt dit rapport aangevraagd op ansvisor.com. AI-antwoorden veranderen van dag tot dag, dus dit is een momentopname. Hoe we je gegevens gebruiken: ${privacy('Privacyverklaring')}.`,
+    footer: `Je hebt dit rapport aangevraagd op ${BRAND_HOST}. AI-antwoorden veranderen van dag tot dag, dus dit is een momentopname. Hoe we je gegevens gebruiken: ${privacy('Privacyverklaring')}.`,
     title: 'Je AI-zichtbaarheidsrapport',
     hi: (name) => `Hallo ${name},`,
     attached: (site) =>
@@ -319,9 +320,9 @@ const EMAIL_COPY = {
     resent: (site, made, next) =>
       `We sturen je opnieuw het rapport dat we op ${made} voor ${site} hebben gemaakt. Vanaf ${next} kan er een nieuw worden gemaakt.`,
     intro: (engines, starter, questions, readers, country, site) =>
-      `We hebben ${engines}${starter ? ', de engines in Ansvisor Starter,' : ''} ${questions} vragen gesteld die je ${readers ? 'lezers' : 'klanten'} stellen (land: ${country}). Dit kwam eruit voor ${site}.`,
+      `We hebben ${engines}${starter ? ', de engines in Oppla Starter,' : ''} ${questions} vragen gesteld die je ${readers ? 'lezers' : 'klanten'} stellen (land: ${country}). Dit kwam eruit voor ${site}.`,
     growth: (engines) =>
-      ` We hebben ook ${engines} gevraagd: die zitten in Ansvisor Growth, en de pdf toont ze apart.`,
+      ` We hebben ook ${engines} gevraagd: die zitten in Oppla Growth, en de pdf toont ze apart.`,
     visibility: (engines, named, answers) =>
       `AI-zichtbaarheid${engines ? ` in ${engines}` : ''}: genoemd in ${named} van ${answers} antwoorden`,
     leader: (answers) =>
@@ -331,9 +332,9 @@ const EMAIL_COPY = {
     cited: (answers) => `van de ${answers} antwoorden citeren je website`,
     pages: (questions) =>
       `De 4 pagina’s tonen waar je staat en wie AI in jouw plaats noemt, alle ${questions} vragen die we stelden met het antwoord van elke engine, wat je in je eerste week zou doen, en wat AI-bezoeken waard zijn, met Starter en Growth naast elkaar.`,
-    work: 'In Ansvisor doen Chat en kant-en-klare agents samen met jou het werk van de eerste week.',
+    work: 'In Oppla doen Chat en kant-en-klare agents samen met jou het werk van de eerste week.',
     button: 'Start je gratis proefperiode',
-    own: 'Wil je ook je eigen vragen meten? In de gratis proefperiode stelt Ansvisor elke dag de vragen van dit rapport en die van jou, en zet het de volgende stappen op volgorde van prioriteit.',
+    own: 'Wil je ook je eigen vragen meten? In de gratis proefperiode stelt Oppla elke dag de vragen van dit rapport en die van jou, en zet het de volgende stappen op volgorde van prioriteit.',
     subject: (domain) => `Je AI-zichtbaarheidsrapport: ${domain}`,
     failedTitle: 'We konden je rapport niet afmaken',
     failed: (site) =>

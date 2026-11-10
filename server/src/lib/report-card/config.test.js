@@ -42,11 +42,11 @@ describe('reportCardLimits', () => {
 });
 
 describe('reportCardOrigins', () => {
-  it('is www.ansvisor.com and ansvisor.com unless set', () => {
-    expect(reportCardOrigins({})).toEqual(['https://www.ansvisor.com', 'https://ansvisor.com']);
+  it('is the marketing site, with and without www, unless set', () => {
+    expect(reportCardOrigins({})).toEqual(['https://oppla.ai', 'https://www.oppla.ai']);
     expect(
-      reportCardOrigins({ REPORT_CARD_ORIGINS: 'https://www.ansvisor.com/, https://x.webflow.io' }),
-    ).toEqual(['https://www.ansvisor.com', 'https://x.webflow.io']);
+      reportCardOrigins({ REPORT_CARD_ORIGINS: 'https://www.oppla.ai/, https://x.webflow.io' }),
+    ).toEqual(['https://www.oppla.ai', 'https://x.webflow.io']);
   });
 });
 

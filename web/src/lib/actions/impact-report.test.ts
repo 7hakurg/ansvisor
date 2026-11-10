@@ -2,7 +2,7 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 /**
- * Reports › "What Ansvisor did for you" read (CHAT-22 feature 2 item 5):
+ * Reports › "What Oppla did for you" read (CHAT-22 feature 2 item 5):
  * the brand's month of ship events with their measurements, read through
  * the person's session (brand access is the database's, 00424); the month
  * before's count; teammates named; AI traffic to the changed pages from

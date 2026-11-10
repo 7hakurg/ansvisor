@@ -1,5 +1,5 @@
 /**
- * The AI assistants Ansvisor counts traffic from (AT-004, spec §5.1): one
+ * The AI assistants Oppla counts traffic from (AT-004, spec §5.1): one
  * list, in ai-sources.json, for the tracking snippet and the Google Analytics
  * sync, so the two name the same engine the same way and never disagree on
  * what counts.

@@ -11,14 +11,14 @@ app_version: 0.3.0
 approved: true
 sources: [docs/guides/content-optimization.mdx, docs/guides/content-editor.mdx]
 ---
-The **Opportunities** page, under **Content** in the sidebar, lists content opportunities: what to write or change so AI answers name you where they don't yet. Ansvisor suggests them on its own as tracking data comes in. An opportunity is built for a group of related prompts that one piece of content can answer, or for a single prompt. From each one you can start writing, plan it, brief it or send it on.
+The **Opportunities** page, under **Content** in the sidebar, lists content opportunities: what to write or change so AI answers name you where they don't yet. Oppla suggests them on its own as tracking data comes in. An opportunity is built for a group of related prompts that one piece of content can answer, or for a single prompt. From each one you can start writing, plan it, brief it or send it on.
 
 ## What each row shows
 
 - the action to take, with what it was built for: a topic and its number of prompts, **Single prompt**, or the Action Center action it came from;
 - when it was **Suggested**, with a dot on the rows suggested since your last visit;
 - its **Type**: **Owned** or **Earned**, and, where it applies, what to do with your page: Create, Optimize, Expand, Refresh, Consolidate or Defend;
-- its **Impact**, **High**, **Medium** or **Low**, which Ansvisor rates when it writes the opportunity, and its **Score**, from 0 to 100;
+- its **Impact**, **High**, **Medium** or **Low**, which Oppla rates when it writes the opportunity, and its **Score**, from 0 to 100;
 - its **Status**: New, Reviewed, Sent to Workflow, In Progress, Done, Dismissed or Archived.
 
 Above the list, cards count the **Total Opportunities** and the **High Impact** ones, and give the **Avg. Score**. On plans with monthly limits, **This billing period** shows how many new opportunities and content briefs are left, and when they reset.
@@ -54,7 +54,7 @@ Admins and managers tick rows, or the box in the header for every row shown, the
 
 ## Ask for new opportunities
 
-Admins and managers click **New** to get suggestions now, instead of waiting for the next automatic run. Pick a **Focus**: **Let Ansvisor choose**, a **Topic** or a **Prompt**. You can add your own idea, up to 500 characters, and set **How many**. New opportunities also follow the brand's rules from **Settings › Content › Brand rules**, such as topics to stay away from.
+Admins and managers click **New** to get suggestions now, instead of waiting for the next automatic run. Pick a **Focus**: **Let Oppla choose**, a **Topic** or a **Prompt**. You can add your own idea, up to 500 characters, and set **How many**. New opportunities also follow the brand's rules from **Settings › Content › Brand rules**, such as topics to stay away from.
 
 Opportunities are written per group of prompts: prompts of one topic that a single page could answer, and that already have tracked answers. Each group gets one opportunity; only **Another angle** adds a second take on it.
 
@@ -62,7 +62,7 @@ Titles leave years out unless the need is about one. A year that has passed in a
 
 ## What each focus picks
 
-- **Let Ansvisor choose** takes the highest-scoring groups that have no opportunity yet, one from each topic first.
+- **Let Oppla choose** takes the highest-scoring groups that have no opportunity yet, one from each topic first.
 - **Topic** takes only that topic's groups. Each topic in the list shows how many new groups it has, or **All covered**.
 - **Prompt** takes only that prompt's group, so it writes at most one opportunity, and **How many** stays at 1. If the group already has an open opportunity, the dialog says so and offers **Open existing** instead; prompts like that show **Has one** in the list. A prompt whose opportunity was dismissed or done can be asked for again.
 
@@ -72,11 +72,11 @@ The dialog shows how many groups in your focus have no opportunity yet, and how 
 
 ## Another angle when groups run out
 
-When **Let Ansvisor choose** or a **Topic** runs out of groups without an opportunity, New writes the rest as another angle on groups your brand is still barely seen for: mentioned or cited in fewer than 1 in 5 answers. Only where the existing opportunity had its chance: it's done, dismissed (not as "The topic doesn't matter to us"), or has been open for 30 days. The list marks these **Another angle**, the message names their groups, and they use the monthly allowance like any other.
+When **Let Oppla choose** or a **Topic** runs out of groups without an opportunity, New writes the rest as another angle on groups your brand is still barely seen for: mentioned or cited in fewer than 1 in 5 answers. Only where the existing opportunity had its chance: it's done, dismissed (not as "The topic doesn't matter to us"), or has been open for 30 days. The list marks these **Another angle**, the message names their groups, and they use the monthly allowance like any other.
 
 ## No duplicates
 
-Ansvisor never writes the same work twice. When a new opportunity would cover the same need as one you have, because their prompts and AI searches largely overlap, it's added to that one instead and skipped.
+Oppla never writes the same work twice. When a new opportunity would cover the same need as one you have, because their prompts and AI searches largely overlap, it's added to that one instead and skipped.
 
 A question also gets only one open opportunity. When a new one would answer the same question as an open one, in the same words (years aside) or from the same group of prompts, it's added to the open one. That holds for automatic suggestions, **New**, a prompt's suggestion and a task sent from the Action Center. Its prompts, AI searches and sources join the open one, which keeps the stronger score and counts what was added. The task's History says where it went.
 
@@ -92,11 +92,11 @@ When a run writes fewer than you asked for, or none, the message says why:
 
 ## How many you get
 
-New opportunities come from a monthly allowance set by your plan, with a cap on how many one request asks for; on limited plans the page shows what's left. Skipped duplicates and opportunities that couldn't be written don't count; **Another angle** counts as one new opportunity. The opportunities Ansvisor writes by itself come from the same allowance.
+New opportunities come from a monthly allowance set by your plan, with a cap on how many one request asks for; on limited plans the page shows what's left. Skipped duplicates and opportunities that couldn't be written don't count; **Another angle** counts as one new opportunity. The opportunities Oppla writes by itself come from the same allowance.
 
 ## Automatic suggestions
 
-After each day's tracking run, Ansvisor writes new opportunities by itself, on a plan with an active subscription:
+After each day's tracking run, Oppla writes new opportunities by itself, on a plan with an active subscription:
 
 - **Up to 3 a night**, one per topic, for groups of prompts with tracked answers and no opportunity yet. That's at most 21 a week, but only as many as there are such groups: new groups come when you add prompts.
 - **When no group is left, at most 1 a night** as another angle (at most 7 a week). It goes to the group with the most estimated AI volume whose opportunity has been done for 30 days, where your brand is still mentioned or cited in fewer than 1 in 5 answers. On many nights nothing qualifies, and nothing is written.

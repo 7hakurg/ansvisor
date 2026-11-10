@@ -181,12 +181,12 @@ describe('saveSkill (CHAT-13 item 12)', () => {
     expect(skills()).toEqual([]);
   });
 
-  it("never takes an Ansvisor skill's or a shortcut's name, nor one the workspace has", async () => {
+  it("never takes an Oppla skill's or a shortcut's name, nor one the workspace has", async () => {
     const as = await viewer(PEOPLE.manager);
     const library = await store.saveSkill(as, { ...valid, name: 'faq' });
     expect(library).toMatchObject({ ok: false, refusal: { code: 'library_name', status: 409 } });
     expect(!library.ok && library.refusal.message).toBe(
-      '/faq is an Ansvisor skill or shortcut. Pick another name.',
+      '/faq is an Oppla skill or shortcut. Pick another name.',
     );
     // The / menu's shortcuts (W2-09) keep their /commands.
     for (const name of SHORTCUT_IDS) {
@@ -395,7 +395,7 @@ describe('who changes a skill (Wave 3 decision 10)', () => {
     expect(skill(row.name)).toMatchObject({ enabled: true, visibility: 'private' });
   });
 
-  it("turns an Ansvisor skill on or off for the workspace: an Admin's", async () => {
+  it("turns an Oppla skill on or off for the workspace: an Admin's", async () => {
     const admin = await viewer(PEOPLE.admin);
     expect(await store.setLibrarySkillEnabled(admin, 'faq', false)).toEqual({
       ok: true,
@@ -594,8 +594,8 @@ describe("a skill's source under its step (item 4)", () => {
       PEOPLE.manager,
     );
 
-  it('says Ansvisor library, You, Your workspace or the repo owner', () => {
-    expect(words({ source: 'library' })).toBe('Ansvisor library');
+  it('says Oppla library, You, Your workspace or the repo owner', () => {
+    expect(words({ source: 'library' })).toBe('Oppla library');
     expect(words({ createdBy: PEOPLE.manager })).toBe('You');
     expect(words({ createdBy: PEOPLE.admin })).toBe('Your workspace');
     expect(

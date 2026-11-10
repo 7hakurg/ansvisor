@@ -33,7 +33,7 @@ On another server or CDN, choose **Any server (webhook)**. Your log shipper, suc
 
 Under **Or upload a log file** in the same dialog, click **Upload a log file** and pick an access log: the combined log format (Apache's and nginx's default), or one request a line with the same fields as the webhook. A gzipped file works too. The dialog says how large a file can be and how many lines it may hold.
 
-Ansvisor reads the file once and says how many lines it read, how many AI bot requests it found, and how many lines it left out: older than 7 days, for another site, or without a user agent. The common log format has no user agent, so it shows no bots. A file uploaded again isn't read twice. Only admins and managers can upload.
+Oppla reads the file once and says how many lines it read, how many AI bot requests it found, and how many lines it left out: older than 7 days, for another site, or without a user agent. The common log format has no user agent, so it shows no bots. A file uploaded again isn't read twice. Only admins and managers can upload.
 
 ## Manage connections
 

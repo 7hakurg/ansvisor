@@ -43,7 +43,7 @@ let address = 0;
 /** Each test from its own address, so the hourly limit is the test's own. */
 const from = () => `198.51.100.${++address}`;
 
-const post = (body, { origin = 'https://www.ansvisor.com', ip = from(), type } = {}) =>
+const post = (body, { origin = 'https://www.oppla.ai', ip = from(), type } = {}) =>
   fetch(base, {
     method: 'POST',
     headers: {
@@ -58,7 +58,7 @@ describe('POST /public/report-card', () => {
   it('answers the form’s origin, with the code and the caller’s address for the bot check', async () => {
     const res = await post({ email: 'ayse@acme.example' }, { ip: '203.0.113.7' });
     expect(res.status).toBe(200);
-    expect(res.headers.get('access-control-allow-origin')).toBe('https://www.ansvisor.com');
+    expect(res.headers.get('access-control-allow-origin')).toBe('https://www.oppla.ai');
     expect(await res.json()).toEqual({ code: 'queued', domain: 'acme.example' });
     expect(submit).toHaveBeenCalledWith({ email: 'ayse@acme.example' }, { ip: '203.0.113.7' });
   });
@@ -70,13 +70,13 @@ describe('POST /public/report-card', () => {
     expect((await post({})).status).toBe(422);
   });
 
-  it('answers ansvisor.com’s preflight, and nobody else’s', async () => {
+  it('answers oppla.ai’s preflight, and nobody else’s', async () => {
     const ok = await fetch(base, {
       method: 'OPTIONS',
-      headers: { Origin: 'https://ansvisor.com', 'Access-Control-Request-Method': 'POST' },
+      headers: { Origin: 'https://oppla.ai', 'Access-Control-Request-Method': 'POST' },
     });
     expect(ok.status).toBe(204);
-    expect(ok.headers.get('access-control-allow-origin')).toBe('https://ansvisor.com');
+    expect(ok.headers.get('access-control-allow-origin')).toBe('https://oppla.ai');
     expect(ok.headers.get('access-control-allow-methods')).toBe('POST, OPTIONS');
 
     const other = await fetch(base, {

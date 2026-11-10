@@ -1,3 +1,4 @@
+import { productAgent } from '../brand.js';
 /**
  * External-data audit signals (Faz 2). Currently just brand-entity, which
  * checks whether the brand has a Wikidata entity (a Q-number) that AI engines
@@ -32,7 +33,7 @@ export async function evaluateBrandEntity(brandName) {
   try {
     const res = await fetch(`${WIKIDATA_API}?${params.toString()}`, {
       signal: controller.signal,
-      headers: { 'user-agent': 'AnsvisorSiteAudit/1.0 (+https://ansvisor.com)' },
+      headers: { 'user-agent': productAgent('SiteAudit') },
     });
     if (!res.ok) {
       return { key, status: 'na', score: null, evidence: { error: `wikidata ${res.status}` } };

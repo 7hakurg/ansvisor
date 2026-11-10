@@ -1,3 +1,5 @@
+import { siteConfig } from '@/config/site';
+
 export const FEATURES = [
   'basic_insights',
   'advanced_analytics',
@@ -295,7 +297,7 @@ export const PLANS: Record<PlanId, Plan> = {
       maxVolumeAnalyses: -1,
       // Per-customer: override via organizations.plan_overrides in the DB.
       maxBriefGenerations: -1,
-      // AI usage: $50 at the least, twice Growth's $25. Over that, Ansvisor
+      // AI usage: $50 at the least, twice Growth's $25. Over that, Oppla
       // sets a customer's own in plan_overrides.improveMonthlyBudgetUsd
       // (2026-10-27); the contract's value doesn't raise it.
       improveMonthlyBudgetUsd: 50,
@@ -344,13 +346,13 @@ export const PLAN_ORDER: PlanId[] = ['starter', 'growth', 'enterprise'];
 export const SUBSCRIBABLE_PLANS: PlanId[] = ['starter', 'growth'];
 
 /** Where a plan the app can't sell by itself (Enterprise, add-ons) is asked for. */
-export const CONTACT_SALES_URL = 'https://www.ansvisor.com/contact-us';
+export const CONTACT_SALES_URL = siteConfig.links.contactSales;
 
 /** What a custom (Enterprise) plan starts at a month, in dollars, as the pricing page has it. */
 export const CUSTOM_PLAN_STARTING_PRICE = 499;
 
-/** The pricing page: every plan's features side by side. */
-export const PRICING_URL = 'https://www.ansvisor.com/pricing';
+/** The pricing page: every plan's features side by side; null where the deployment has none. */
+export const PRICING_URL = siteConfig.links.pricing;
 
 /**
  * The first-month offer with "Buy now": a Stripe promotion code taking

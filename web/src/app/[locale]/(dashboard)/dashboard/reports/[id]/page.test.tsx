@@ -9,7 +9,7 @@ import type { ReportBranding } from '@/lib/white-label/kit';
 /**
  * A report's page with a white label kit (00429): the kit's cover above the
  * report, and the PDF drawn and named with it; without one, as before. A kit
- * that couldn't be read makes no PDF in Ansvisor's look.
+ * that couldn't be read makes no PDF in Oppla's look.
  */
 
 vi.mock('next/navigation', () => ({ useParams: () => ({ id: 'r1' }) }));
@@ -107,13 +107,13 @@ async function download() {
 }
 
 describe('ReportDetailPage with white label', () => {
-  it('stays as before without a kit: no cover, Ansvisor’s file name', async () => {
+  it('stays as before without a kit: no cover, Oppla’s file name', async () => {
     await render();
     expect(getReportBranding).toHaveBeenCalledWith(report.brandId);
     expect(container.textContent).not.toContain('Prepared for');
     await download();
     expect(drawn[0]).toEqual({ report, branding: null });
-    expect(downloaded).toEqual(['ansvisor_northwind_report_2026-10-31.pdf']);
+    expect(downloaded).toEqual(['oppla_northwind_report_2026-10-31.pdf']);
   });
 
   it('shows the kit’s cover, and draws and names the PDF with it', async () => {

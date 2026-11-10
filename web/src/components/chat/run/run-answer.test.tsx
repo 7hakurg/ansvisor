@@ -276,7 +276,7 @@ describe('RunAnswer', () => {
     expect(box().textContent).not.toContain('AI Providers');
   });
 
-  it('offers an Admin "Use Ansvisor’s limit" after the own key failed, only where the page does (W4-06)', async () => {
+  it('offers an Admin "Use Oppla’s limit" after the own key failed, only where the page does (W4-06)', async () => {
     const onUseAnsvisorLimit = vi.fn();
     const failed = run({ status: 'error', errorReason: 'The key failed.', keyFailed: true });
     const as = async (role: TeamRole, handler?: () => void) =>
@@ -293,7 +293,7 @@ describe('RunAnswer', () => {
       container.querySelector<HTMLButtonElement>('[data-action="run.useAnsvisorLimit"]');
 
     await as('admin', onUseAnsvisorLimit);
-    expect(use()?.textContent).toBe("Use Ansvisor's limit");
+    expect(use()?.textContent).toBe("Use Oppla's limit");
     await act(async () => use()!.click());
     expect(onUseAnsvisorLimit).toHaveBeenCalledTimes(1);
 

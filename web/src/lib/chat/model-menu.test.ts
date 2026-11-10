@@ -200,7 +200,7 @@ describe('readModelMenu', () => {
   it('still lists the offered models, unlabelled, when the API server doesn’t answer', async () => {
     fetchMock.mockRejectedValue(new Error('timeout'));
     const menu = await readModelMenu();
-    // A model through OpenRouter shows only with Ansvisor's OpenRouter key, unset here (W4-03).
+    // A model through OpenRouter shows only with Oppla's OpenRouter key, unset here (W4-03).
     expect(menu.models.map((m) => [m.id, m.multiplier, m.tone])).toEqual(
       OFFERED_MODELS.filter((m) => m.provider === 'anthropic').map((m) => [m.id, null, null]),
     );

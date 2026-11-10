@@ -61,6 +61,6 @@ export function pickReferences(
   return out;
 }
 
-/** A page's address as a label: no scheme, no trailing slash ("ansvisor.com/pricing"). */
+/** A page's address as a label: no scheme, no trailing slash ("example.com/pricing"). */
 export const pageLabel = (url: string) =>
   url.replace(/^https?:\/\/(www\.)?/i, '').replace(/\/$/, '');

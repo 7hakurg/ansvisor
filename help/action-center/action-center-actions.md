@@ -11,7 +11,7 @@ app_version: 0.3.0
 approved: true
 sources: [docs/guides/action-center.mdx]
 ---
-An action is one piece of work with an outcome, built from the evidence behind it. Ansvisor groups many signals into one action: six valuable pages with no AI traffic become one "Capture AI traffic" action with six linked signals, not six rows. New actions are added after the daily tracking run, on the **Actions** tab.
+An action is one piece of work with an outcome, built from the evidence behind it. Oppla groups many signals into one action: six valuable pages with no AI traffic become one "Capture AI traffic" action with six linked signals, not six rows. New actions are added after the daily tracking run, on the **Actions** tab.
 
 ## Today
 

@@ -23,7 +23,7 @@ import { readSkillName } from '@/lib/chat/skills/skill-name';
  *     secret, personal data, a rule change: Save stays off), and "Replaces"
  *     only while the line still goes to the replaced one's scope;
  *   - a skill's draft (W3-08): why its /name can't be kept (the format, an
- *     Ansvisor skill's or a shortcut's name), which keeps Save skill off
+ *     Oppla skill's or a shortcut's name), which keeps Save skill off
  *     until it can.
  *
  * The server checks the same again on Save: this only says it sooner.

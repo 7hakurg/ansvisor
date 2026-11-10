@@ -57,7 +57,7 @@ On a domain that isn't yours or a tracked competitor's, the **+** button (**Add 
 
 ## The URLs tab
 
-The **URLs** tab ranks each cited page by its citations, with **Platforms**, **Usage** and **Citations**. Click a page's title to open its own page in Ansvisor, with every answer that cited it; the small icon beside the title opens the page itself.
+The **URLs** tab ranks each cited page by its citations, with **Platforms**, **Usage** and **Citations**. Click a page's title to open its own page in Oppla, with every answer that cited it; the small icon beside the title opens the page itself.
 
 The tab lists up to the 2,000 most-cited URLs, and its count gives the full number. Both the Domains and URLs tables show 100 rows a page.
 
@@ -73,7 +73,7 @@ The tab lists up to the 2,000 most-cited URLs, and its count gives the full numb
 
 ## Source types
 
-Ansvisor gives every cited domain one of eight types:
+Oppla gives every cited domain one of eight types:
 
 - **You**: your brand's domains and their subdomains.
 - **Competitor**: the domains of the competitors you track, and their subdomains.

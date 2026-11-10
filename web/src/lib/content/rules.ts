@@ -343,7 +343,7 @@ export const draftRulesSchema = z.object({
   /** The page type whose set applies; null follows the draft's type. */
   set: z.enum(PAGE_TYPES).nullable(),
   /**
-   * The set the draft started from: Ansvisor's default, or the workspace's
+   * The set the draft started from: Oppla's default, or the workspace's
    * My rules (00214). Null until the person changes something: the
    * workspace's My rules for the type apply, if it has them.
    */

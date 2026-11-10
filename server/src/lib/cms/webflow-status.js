@@ -7,7 +7,7 @@ import { WebflowError, getItem, listCollections, listSites } from './webflow.js'
 
 /**
  * Pages sent to Webflow, published there since (Send to CMS #1331, phase
- * 2): nothing calls back when a Webflow item goes live, so Ansvisor reads
+ * 2): nothing calls back when a Webflow item goes live, so Oppla reads
  * the items its sends made, and marks one published at the page's address
  * on the site (its host, the collection's slug and the item's: the
  * collection page Webflow makes) once Webflow published it after the send.

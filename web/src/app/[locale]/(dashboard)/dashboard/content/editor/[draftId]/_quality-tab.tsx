@@ -124,7 +124,7 @@ export interface HandOff {
 
 /**
  * Instructions › Quality (Quality spec §3, CE-039): the three scores read
- * from the draft and its author, each labelled an Ansvisor estimate, then
+ * from the draft and its author, each labelled an Oppla estimate, then
  * what only the person can do (Your to-dos, CE-040) and what would raise
  * them, the biggest gain first. A score shows once one of its checks is
  * live for the page.

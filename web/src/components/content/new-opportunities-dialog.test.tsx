@@ -124,7 +124,7 @@ describe('New content opportunities', () => {
   it('brings the chosen count back when the focus leaves the prompt', async () => {
     await render();
     await click(button('Prompt'));
-    await click(button('Let Ansvisor choose'));
+    await click(button('Let Oppla choose'));
     expect(button('Generate 3')).toBeDefined();
     expect(text()).not.toContain('One per prompt.');
   });

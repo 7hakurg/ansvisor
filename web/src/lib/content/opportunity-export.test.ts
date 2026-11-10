@@ -119,10 +119,10 @@ describe('opportunityDocx with a white label kit', () => {
 describe('opportunityExportFileName', () => {
   it('names the file after the opportunity', () => {
     expect(opportunityExportFileName(doc, 'docx')).toBe(
-      'ansvisor_opportunity_office-coffee-subscriptions-for-teams.docx',
+      'oppla_opportunity_office-coffee-subscriptions-for-teams.docx',
     );
     expect(opportunityExportFileName({ ...doc, title: '—' }, 'csv')).toBe(
-      'ansvisor_opportunity_export.csv',
+      'oppla_opportunity_export.csv',
     );
   });
 

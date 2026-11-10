@@ -7,7 +7,7 @@ import type { ImpactReport } from '@/lib/actions/impact-report';
 import type { ImpactRow } from '@/lib/impact/report';
 
 /**
- * Reports › "What Ansvisor did for you" (mockup signature #f-impact): the
+ * Reports › "What Oppla did for you" (mockup signature #f-impact): the
  * month's headline (Improved counts Medium and High verdicts only), the
  * method, outcome filters with counts, a row a change with its 7 · 14 · 30
  * · 90 day checkpoints, its evidence, Export as CSV, and the month picker
@@ -188,7 +188,7 @@ describe('ImpactReportView', () => {
 
   it('shows the month’s headline, its method and a row a change, as the mockup does', async () => {
     await render();
-    expect($('h1')?.textContent).toBe('What Ansvisor did for you');
+    expect($('h1')?.textContent).toBe('What Oppla did for you');
     expect(text()).toContain(
       'Acme Coffee · shipped actions measured against untouched similar prompts',
     );
@@ -504,9 +504,9 @@ describe('ImpactReportView', () => {
     await click($('[data-action="impact.exportCsv"]')!);
     expect(download.saveBlob).toHaveBeenCalledWith(
       expect.objectContaining({ type: 'text/csv;charset=utf-8' }),
-      'ansvisor-impact-2026-10.csv',
+      'oppla-impact-2026-10.csv',
     );
-    expect(toast).toHaveBeenCalledWith('Downloaded ansvisor-impact-2026-10.csv');
+    expect(toast).toHaveBeenCalledWith('Downloaded oppla-impact-2026-10.csv');
   });
 
   it('goes back a month, never past this one', async () => {
@@ -545,7 +545,7 @@ describe('ImpactReportView', () => {
   it('says it couldn’t load, and tries again', async () => {
     read.mockResolvedValueOnce({ ok: false, failure: 'failed' });
     await render();
-    expect(text()).toContain("Couldn't load what Ansvisor did. Try again.");
+    expect(text()).toContain("Couldn't load what Oppla did. Try again.");
     await click([...document.querySelectorAll('button')].find((b) => b.textContent === 'Retry')!);
     expect(read).toHaveBeenCalledTimes(2);
     expect($('[data-row="r1"]')).not.toBeNull();

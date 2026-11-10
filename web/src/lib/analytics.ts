@@ -1,7 +1,7 @@
 /**
  * Thin wrapper around PostHog that no-ops when PostHog is not configured.
  *
- * Cloud (`app.ansvisor.com`) sets NEXT_PUBLIC_POSTHOG_KEY in Vercel env, so
+ * Cloud (`aeo.oppla.ai`) sets NEXT_PUBLIC_POSTHOG_KEY in Vercel env, so
  * the provider boots PostHog at startup. Self-hosted instances leave the
  * env var unset by default, which means PostHog never initialises and these
  * helpers compile down to cheap no-ops — no network, no bundle on the wire.

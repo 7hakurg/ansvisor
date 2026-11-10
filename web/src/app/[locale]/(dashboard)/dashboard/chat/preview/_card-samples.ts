@@ -52,7 +52,7 @@ export const TASKS_PLAN = {
     },
     {
       label: 'Publish the Webflow draft',
-      detail: 'Goes live on ansvisor.com/pricing',
+      detail: 'Goes live on example.com/pricing',
       cls: 'execute',
     },
   ] satisfies PlanStep[],
@@ -105,7 +105,7 @@ export const RUN_STEPS = {
     step(
       2,
       'done',
-      'Opened ansvisor.com/pricing',
+      'Opened example.com/pricing',
       'No FAQ block and no FAQPage schema found',
       'open_page',
     ),
@@ -113,7 +113,7 @@ export const RUN_STEPS = {
   ],
   waiting: [
     step(1, 'done', 'Read Action Center', '4 tasks due this week'),
-    step(2, 'done', 'Opened ansvisor.com/pricing', undefined, 'open_page'),
+    step(2, 'done', 'Opened example.com/pricing', undefined, 'open_page'),
     step(3, 'done', 'Drafted FAQ block · /pricing', undefined, 'write'),
     step(4, 'waiting', 'Change one cited passage on /pricing', 'Waiting for your OK', 'write'),
   ],
@@ -121,7 +121,7 @@ export const RUN_STEPS = {
     step(1, 'done', 'Thinking · 3s', '3 tasks are due this week.', 'thinking'),
     step(2, 'done', 'Read Action Center', '4 tasks due this week'),
     step(3, 'done', 'Read Citations', 'Pricing prompts · Last 30 days · ChatGPT, Gemini · 42 rows'),
-    step(4, 'done', 'Opened ansvisor.com/pricing', undefined, 'open_page'),
+    step(4, 'done', 'Opened example.com/pricing', undefined, 'open_page'),
     step(5, 'done', 'Read Prompts', '12 prompts'),
     step(6, 'done', 'Checked facts', 'Plan names and prices match your Billing page', 'check'),
     step(7, 'done', 'Saved draft in Content', 'FAQ block · /pricing', 'write'),
@@ -134,7 +134,7 @@ export const RUN_STEPS = {
   ],
   stopped: [
     step(1, 'done', 'Read Action Center', '4 tasks due this week'),
-    step(2, 'skipped', 'Opened ansvisor.com/pricing', undefined, 'open_page'),
+    step(2, 'skipped', 'Opened example.com/pricing', undefined, 'open_page'),
   ],
   error: [
     step(1, 'done', 'Read Action Center', '4 tasks due this week'),
@@ -160,7 +160,7 @@ export const APPROVAL = {
   sources: [
     'Brand fact · Plans (approved)',
     'Cited page · /pricing',
-    'Fan-out · ansvisor plans platforms',
+    'Fan-out · example plans platforms',
   ],
   dontAskAgainLabel: 'Don’t ask again for brand-fact fixes',
   doneLabel: 'cited passage changed',
@@ -287,12 +287,12 @@ export const PUBLISH = {
   title: 'Publish the Webflow draft for /pricing',
   summary:
     'FAQ block (6 questions), FAQPage schema, 1 changed passage and 2 link fixes · Webflow draft “Pricing”',
-  note: 'Goes live on ansvisor.com/pricing · same in every mode',
+  note: 'Goes live on example.com/pricing · same in every mode',
   actionLabel: 'Publish',
   busyLabel: 'Publishing…',
   previewLabel: 'Preview in Webflow',
   disabledReason: 'After the draft is approved',
-  doneLabel: 'Published to ansvisor.com/pricing · 14:32 · by you',
+  doneLabel: 'Published to example.com/pricing · 14:32 · by you',
 };
 
 /** A page sent to the brand's webhook (AUTONOMOUS-GO-LIVE PR 11): what its card names. */
@@ -357,7 +357,7 @@ export const DENIALS = {
   role: {
     title: 'I can’t add these prompts for you',
     subtitle: 'Answered in 1 s · you are signed in as Analyst',
-    asked: 'Add 5 prompts to Tracked Prompts for Ansvisor.',
+    asked: 'Add 5 prompts to Tracked Prompts for Oppla.',
     askedItems: [
       'best aeo tools',
       'aeo vs seo',

@@ -119,7 +119,7 @@ describe('the note for other kinds of estimate', () => {
     render(<EstimateRange estimate={guessedVolumeEstimate(1200, '2026-10-22T08:00:00Z')} />);
     const note = await noteOf(container.querySelector('button')!);
     expect(note).toContain("An AI's estimate for a prompt you don't track yet");
-    expect(note).toContain("Source: Ansvisor's AI, from your tracked prompts' estimates.");
+    expect(note).toContain("Source: Oppla's AI, from your tracked prompts' estimates.");
     expect(note).toContain('Confidence: Low · suggested Oct 22, 2026');
     expect(note).not.toContain('DataForSEO');
   });

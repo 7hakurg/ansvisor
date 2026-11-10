@@ -76,7 +76,7 @@ describe('table export', () => {
         status: 200,
         headers: {
           'Content-Disposition':
-            'attachment; filename="ansvisor-ai-traffic-acme-visits-2026-10-11_2026-10-18.csv"',
+            'attachment; filename="oppla-ai-traffic-acme-visits-2026-10-11_2026-10-18.csv"',
         },
       }),
     );
@@ -98,7 +98,7 @@ describe('table export', () => {
     expect(clicked).toEqual([
       {
         href: 'blob:export',
-        download: 'ansvisor-ai-traffic-acme-visits-2026-10-11_2026-10-18.csv',
+        download: 'oppla-ai-traffic-acme-visits-2026-10-11_2026-10-18.csv',
       },
     ]);
     expect(toast.error).not.toHaveBeenCalled();

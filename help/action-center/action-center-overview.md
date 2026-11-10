@@ -11,7 +11,7 @@ app_version: 0.3.0
 approved: true
 sources: [docs/guides/action-center.mdx]
 ---
-The **Action Center** is where Ansvisor turns what changed in AI search into a ranked list of work. On a paid plan it is the first page you see after you sign in; in the free trial, and while you explore the demo brand, Ansvisor opens on **Chat** instead. Everything in it is per brand: switch brands to see another brand's work.
+The **Action Center** is where Oppla turns what changed in AI search into a ranked list of work. On a paid plan it is the first page you see after you sign in; in the free trial, and while you explore the demo brand, Oppla opens on **Chat** instead. Everything in it is per brand: switch brands to see another brand's work.
 
 ## The tabs
 
@@ -24,7 +24,7 @@ Admins and managers also see **Needs review**, where tasks the AI wrote without 
 
 ## How the work flows
 
-Signals are detected after your daily tracking run. Ansvisor groups related signals into one action, so a long list of findings becomes a few pieces of work. At most five new actions are added per brand per day, so the list stays short enough to act on. Each action comes with tasks. When you close an action as **Completed**, History measures what changed afterwards.
+Signals are detected after your daily tracking run. Oppla groups related signals into one action, so a long list of findings becomes a few pieces of work. At most five new actions are added per brand per day, so the list stays short enough to act on. Each action comes with tasks. When you close an action as **Completed**, History measures what changed afterwards.
 
 ## While the first tracking runs
 

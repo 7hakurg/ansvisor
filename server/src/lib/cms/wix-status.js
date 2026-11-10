@@ -8,7 +8,7 @@ import { WixError, readDraftPost, webAddress } from './wix.js';
 
 /**
  * Pages sent to Wix, published there since (Send to CMS #1331, phase 2;
- * 00372): nothing calls back when a post goes live, so Ansvisor reads the
+ * 00372): nothing calls back when a post goes live, so Oppla reads the
  * posts its sends made. A send writes a draft, or a live post's draft
  * version (cms/wix-delivery.js), so a post published with no changes left
  * unpublished was put live after the send: it is marked published at the

@@ -11,7 +11,7 @@ app_version: 0.3.0
 approved: true
 sources: [docs/guides/content-editor.mdx]
 ---
-The **Library**, under **Content** in the sidebar, lists every page you, your teammates and the Content Agent wrote or changed in Ansvisor. Click a row to open the draft in the editor.
+The **Library**, under **Content** in the sidebar, lists every page you, your teammates and the Content Agent wrote or changed in Oppla. Click a row to open the draft in the editor.
 
 ## The tabs
 

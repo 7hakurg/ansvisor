@@ -39,7 +39,7 @@ import { refreshConnections, useConnections } from './use-connections';
  * unlock, and up to two Suggested. Admins connect (the tool's card in
  * Settings › Integrations) and disconnect (asks first and lists the
  * agents that would stop); the others ask their Admin. Soon cards have
- * nothing to click. "Request a connection" goes to Ansvisor's contact page.
+ * nothing to click. "Request a connection" goes to Oppla's contact page.
  */
 
 /** connections.ts's CONNECTION_CATEGORIES, kept here: that module is the server's. */

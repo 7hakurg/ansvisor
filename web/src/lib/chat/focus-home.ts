@@ -24,7 +24,7 @@ export const FOCUS_SHORTCUTS = {
 export type FocusShortcut = (typeof FOCUS_SHORTCUTS)[FocusArea][number];
 
 /**
- * The Ansvisor skill a shortcut asks with, where it has one (skills/): its
+ * The Oppla skill a shortcut asks with, where it has one (skills/): its
  * message starts with the skill's /name, so the skill loads. The focus
  * areas' seven skills (W2-23) take their chips' jobs too (W2-09).
  */

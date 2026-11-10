@@ -216,7 +216,7 @@ describe('the Product Visibility tab', () => {
       'Readiness',
       'Competitors',
     ]);
-    expect(container.textContent).toContain('Why Ansvisor Product Visibility?');
+    expect(container.textContent).toContain('Why Oppla Product Visibility?');
   });
 
   it("sends the window's reads together, not one after another", async () => {

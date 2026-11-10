@@ -5,7 +5,7 @@
  * The person picks the topic and its suggestions; which suggestions count is
  * read again here (the brand's, in this topic, relevant, and still open or
  * tracked from the card, not dismissed), so the
- * action states the demand as Ansvisor has it, not as a client says it is.
+ * action states the demand as Oppla has it, not as a client says it is.
  * The work follows a library plan chosen by how far the brand already is in
  * the topic: G16 (create_content_for_topics) when none of its prompts track
  * the topic yet, G05 (expand_topic_visibility) when some do. It is measured

@@ -68,7 +68,7 @@ export function renderOwnKeyEmail({ provider, failureClass, workspace, reminder 
   const why = escapeHtml(keyWhy(provider, failureClass));
   const name = escapeHtml(workspace);
   const html = `<div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;max-width:600px;margin:0 auto;padding:24px;">
-  <h1 style="font-size:18px;color:#111827;margin:0 0 8px 0;">Your AI key for Ansvisor isn't working</h1>
+  <h1 style="font-size:18px;color:#111827;margin:0 0 8px 0;">Your AI key for Oppla isn't working</h1>
   <p style="font-size:14px;color:#111827;margin:0 0 16px 0;">${why} Chat and agents in ${name} run on this key, so agents that use it are paused. None of their runs moved to your plan's AI limit.</p>
   <p style="font-size:14px;color:#111827;margin:0 0 16px 0;">Open Settings › AI Providers to replace or test the key. Agents paused for this start again by themselves once the key works.</p>
   <div style="margin:24px 0;">
@@ -80,8 +80,8 @@ export function renderOwnKeyEmail({ provider, failureClass, workspace, reminder 
 </div>`;
   return {
     subject: reminder
-      ? "Reminder: your AI key for Ansvisor still isn't working"
-      : "Your AI key for Ansvisor isn't working",
+      ? "Reminder: your AI key for Oppla still isn't working"
+      : "Your AI key for Oppla isn't working",
     html,
   };
 }

@@ -75,7 +75,7 @@ The finding shows the score with its formula and language, then its parts: words
 
 **AI bot access** checks robots.txt for GPTBot, OAI-SearchBot, ChatGPT-User, PerplexityBot, ClaudeBot and Google-Extended, then asks the page once as each of the first five, to catch a CDN or firewall that turns them away. Open it to see each bot's answer: the page's status, such as 200 or 403, **robots.txt** when robots.txt keeps it out, or **Allowed**. Google-Extended has no crawler of its own, so only robots.txt counts for it.
 
-A bot robots.txt keeps out, by name or with "User-agent: *", fails the check. A bot your CDN or firewall refuses while robots.txt lets it in only warns: the bots are asked from Ansvisor's servers, and a firewall that checks a crawler's own addresses can still let the real one in. A slow or busy answer isn't a block. If your site turns away Ansvisor's own request too, the bots aren't asked and robots.txt decides.
+A bot robots.txt keeps out, by name or with "User-agent: *", fails the check. A bot your CDN or firewall refuses while robots.txt lets it in only warns: the bots are asked from Oppla's servers, and a firewall that checks a crawler's own addresses can still let the real one in. A slow or busy answer isn't a block. If your site turns away Oppla's own request too, the bots aren't asked and robots.txt decides.
 
 ## Main text without JavaScript
 

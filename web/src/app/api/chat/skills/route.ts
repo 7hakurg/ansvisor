@@ -6,7 +6,7 @@ import { chatActor, runFailure } from '@/lib/chat/run-api';
 /**
  * GET /api/chat/skills
  *
- * Chat's skills (CHAT-13 items 8, 10; W3-06): the Ansvisor library with
+ * Chat's skills (CHAT-13 items 8, 10; W3-06): the Oppla library with
  * what the workspace turned off, the workspace's own skills the person sees
  * (an Admin all; anyone else theirs and the approved shared ones), the
  * plan's My skills limit and what the person may do with each. Every role

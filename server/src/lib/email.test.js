@@ -16,7 +16,7 @@ const fetchMock = vi.fn();
 
 beforeEach(() => {
   vi.stubEnv('RESEND_API_KEY', 're_test');
-  vi.stubEnv('RESEND_FROM_EMAIL', 'Ansvisor <hello@acme.example>');
+  vi.stubEnv('RESEND_FROM_EMAIL', 'Oppla <hello@acme.example>');
   vi.stubGlobal('fetch', fetchMock);
   fetchMock.mockReset();
 });
@@ -38,16 +38,16 @@ describe('deliverEmail', () => {
     fetchMock.mockResolvedValueOnce(answer(200));
     await deliverEmail({
       ...message,
-      from: 'Ansvisor <reports@acme.example>',
+      from: 'Oppla <reports@acme.example>',
       attachments: [{ filename: 'card.pdf', content: 'JVBERi0=' }],
     });
     const body = JSON.parse(fetchMock.mock.calls[0][1].body);
-    expect(body.from).toBe('Ansvisor <reports@acme.example>');
+    expect(body.from).toBe('Oppla <reports@acme.example>');
     expect(body.attachments).toEqual([{ filename: 'card.pdf', content: 'JVBERi0=' }]);
     fetchMock.mockResolvedValueOnce(answer(200));
     await deliverEmail(message);
     const plain = JSON.parse(fetchMock.mock.calls[1][1].body);
-    expect(plain.from).toBe('Ansvisor <hello@acme.example>');
+    expect(plain.from).toBe('Oppla <hello@acme.example>');
     expect(plain).not.toHaveProperty('attachments');
   });
 
@@ -94,7 +94,7 @@ describe('deliverEmailWithId', () => {
     expect(body.from).toBe('"Northwind Agency" <hello@acme.example>');
     expect(body.attachments).toEqual([{ filename: 'report.pdf', content: 'aGk=' }]);
     expect(senderOf('hello@acme.example', 'Acme')).toBe('"Acme" <hello@acme.example>');
-    expect(senderOf('Ansvisor <hello@acme.example>', null)).toBe('Ansvisor <hello@acme.example>');
+    expect(senderOf('Oppla <hello@acme.example>', null)).toBe('Oppla <hello@acme.example>');
   });
 
   it('refuses attachments past the limit without calling Resend, and sends none it isn’t given', async () => {

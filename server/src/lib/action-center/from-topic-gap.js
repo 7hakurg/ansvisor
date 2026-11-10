@@ -4,7 +4,7 @@
  *
  * The person picks the topic and the competitor; the scores are worked out
  * again here from the same rollups the heat map reads (00137), so the action
- * states the gap as Ansvisor measures it, not as a client says it is. The
+ * states the gap as Oppla measures it, not as a client says it is. The
  * work is C04's (close_topic_coverage_gap) plan, measured afterwards on the
  * topic's prompts like a content opportunity (basket-metrics.js).
  */

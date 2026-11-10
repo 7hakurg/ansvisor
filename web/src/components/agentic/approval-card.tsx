@@ -96,7 +96,7 @@ export function ApprovalCard({
   /** An EXECUTE's one line of what goes live. */
   summary?: string;
   sources?: string[];
-  /** The footer's note: "Draft only · nothing goes live", "Goes live on ansvisor.com/pricing · same in every mode". */
+  /** The footer's note: "Draft only · nothing goes live", "Goes live on example.com/pricing · same in every mode". */
   note?: string;
   /** The precedence's offerDontAskAgain (A3): Growth+, policy allows auto, not always_card, never an EXECUTE. */
   canDontAskAgain?: boolean;
@@ -113,7 +113,7 @@ export function ApprovalCard({
   status?: ApprovalCardStatus;
   /** The plain reason a change failed (CHAT-23 P9). */
   error?: string;
-  /** The green line once approved: "Cited passage changed", "Published to ansvisor.com/pricing · 14:32". */
+  /** The green line once approved: "Cited passage changed", "Published to example.com/pricing · 14:32". */
   doneLabel?: string;
   onApprove?: (answer: ApprovalAnswer) => void;
   onSkip?: () => void;

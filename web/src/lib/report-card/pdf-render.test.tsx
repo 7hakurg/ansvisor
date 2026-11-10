@@ -185,8 +185,8 @@ describe('reportCardPdf', () => {
         .toString('latin1')
         .match(/\/URI \([^)]*\)/g),
     ).toEqual([
-      '/URI (https://app.ansvisor.com/en/sign-up?utm_source=report-card&utm_medium=pdf&utm_content=page1)',
-      '/URI (https://app.ansvisor.com/en/sign-up?utm_source=report-card&utm_medium=pdf&utm_content=page4)',
+      '/URI (https://aeo.oppla.ai/en/sign-up?utm_source=report-card&utm_medium=pdf&utm_content=page1)',
+      '/URI (https://aeo.oppla.ai/en/sign-up?utm_source=report-card&utm_medium=pdf&utm_content=page4)',
     ]);
   }, 30_000);
 

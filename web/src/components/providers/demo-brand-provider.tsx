@@ -13,7 +13,7 @@ export interface DemoBrandInfo {
 
 export interface DemoBrandState {
   /**
-   * The selected brand is the demo brand (Ansvisor Cloud only): the
+   * The selected brand is the demo brand (Oppla Cloud only): the
    * dashboard is locked as a read-only one is, and the plan dialog makes the
    * demo's offer.
    */

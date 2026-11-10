@@ -59,7 +59,7 @@ describe('renderReportCardEmail', () => {
     expect(html).toContain('all 25 questions we asked and what each engine said');
     expect(html).toContain('with Starter and Growth side by side.');
     expect(html).toContain(
-      'In Ansvisor, Chat and ready-to-use agents do the week-one work with you.',
+      'In Oppla, Chat and ready-to-use agents do the week-one work with you.',
     );
     expect(html).toContain('Want to measure your own questions too?');
     expect(html).toContain('border-radius:100px');
@@ -89,10 +89,10 @@ describe('renderReportCardEmail', () => {
       madeAt: '2026-11-04T10:00:00Z',
     });
     expect(html).toContain(
-      'We asked ChatGPT and Microsoft Copilot, the engines in Ansvisor Starter, 20 questions your buyers ask, in the United States.',
+      'We asked ChatGPT and Microsoft Copilot, the engines in Oppla Starter, 20 questions your buyers ask, in the United States.',
     );
     expect(html).toContain(
-      'We asked Gemini and Google AI Overviews too: they are in Ansvisor Growth, and the PDF shows them apart.',
+      'We asked Gemini and Google AI Overviews too: they are in Oppla Growth, and the PDF shows them apart.',
     );
     expect(html).toContain('10%');
     expect(html).toContain(
@@ -126,10 +126,10 @@ describe('renderReportCardEmail', () => {
     expect(html.match(/ekte/g)).toHaveLength(1);
     expect(html).toContain('4 sayfada: nereden başladığınız');
     expect(html).toContain(
-      'Ansvisor’da Chat ve kullanıma hazır ajanlar ilk haftanın işlerini sizinle birlikte yapar.',
+      'Oppla’da Chat ve kullanıma hazır ajanlar ilk haftanın işlerini sizinle birlikte yapar.',
     );
     expect(html).toContain(
-      'ChatGPT ve Microsoft Copilot (Ansvisor Starter’ın motorları) motorlarına Türkiye konumundan, alıcılarınızın sorduğu 25 soruyu sorduk.',
+      'ChatGPT ve Microsoft Copilot (Oppla Starter’ın motorları) motorlarına Türkiye konumundan, alıcılarınızın sorduğu 25 soruyu sorduk.',
     );
     expect(html).toContain('50 yanıtın 0 tanesinde adınız geçiyor');
     expect(html).toContain('Ücretsiz denemeyi başlatın');
@@ -326,7 +326,7 @@ describe('renderReportCardEmail', () => {
 
 describe('names and links', () => {
   it('names the PDF after the site, and links the trial from the app’s origin', () => {
-    expect(pdfName('acme.example')).toBe('ansvisor-ai-visibility-report-card-acme.example.pdf');
+    expect(pdfName('acme.example')).toBe('oppla-ai-visibility-report-card-acme.example.pdf');
     expect(signUpUrl('http://localhost:3000')).toBe(
       'http://localhost:3000/en/sign-up?utm_source=report-card&utm_medium=email',
     );
@@ -411,7 +411,7 @@ describe('deliverReportCards', () => {
       send,
       now: () => NOW,
       env: {
-        REPORT_CARD_FROM_EMAIL: 'Ansvisor <reports@ansvisor.com>',
+        REPORT_CARD_FROM_EMAIL: 'Oppla <reports@ansvisor.com>',
         REPORT_CARD_REPLY_TO: 'hello@ansvisor.com',
       },
     });
@@ -420,10 +420,10 @@ describe('deliverReportCards', () => {
     const [first, second, third] = send.mock.calls.map(([message]) => message);
     expect(first).toMatchObject({
       to: ['r1@acme.example'],
-      from: 'Ansvisor <reports@ansvisor.com>',
+      from: 'Oppla <reports@ansvisor.com>',
       replyTo: 'hello@ansvisor.com',
       attachments: [
-        { filename: 'ansvisor-ai-visibility-report-card-acme.example.pdf', content: 'JVBERg==' },
+        { filename: 'oppla-ai-visibility-report-card-acme.example.pdf', content: 'JVBERg==' },
       ],
     });
     expect(first.html).toContain('is attached: a 4-page PDF.');

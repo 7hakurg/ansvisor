@@ -14,7 +14,7 @@ import {
  * synced daily into chat_model_prices (00404), behind CHAT_AGENTIC.
  *
  * The catalog needs no key. A sync upserts every model it lists and removes
- * none: a failed or short read keeps the last good prices. A model Ansvisor
+ * none: a failed or short read keeps the last good prices. A model Oppla
  * runs on some providers only (DeepSeek, LIMITED_HOSTS) is priced from its
  * endpoints at the dearest of them, not at the catalog's price. After a sync, and
  * when the server starts, the rows are loaded into model-price-cache.js, where
@@ -29,7 +29,7 @@ import {
 
 export const CATALOG_URL = 'https://openrouter.ai/api/v1/models';
 
-/** One model's providers and their prices, for a model Ansvisor runs on some providers only. */
+/** One model's providers and their prices, for a model Oppla runs on some providers only. */
 export const endpointsUrl = (modelId) => `${CATALOG_URL}/${modelId}/endpoints`;
 
 /** Fewer models than this in a read means a broken one: nothing is written. */
@@ -61,7 +61,7 @@ export const AUTO_MIX = Object.freeze({
 });
 
 /**
- * Model makers whose models Ansvisor runs on some of OpenRouter's providers
+ * Model makers whose models Oppla runs on some of OpenRouter's providers
  * only (W4-34; owner decision 2026-11-02 evening): DeepSeek's on hosts in the
  * US or the EU, never DeepSeek's own API. The web routes each call by the
  * same list (web/src/lib/agent/openrouter.ts; web's models.test.ts keeps the
@@ -127,7 +127,7 @@ export function hostsPrice(endpoints, hosts) {
 }
 
 /**
- * Prices each row of a model Ansvisor runs on some providers only at the
+ * Prices each row of a model Oppla runs on some providers only at the
  * dearest of them (hostsPrice), ENDPOINTS_AT_ONCE reads at a time. Its
  * overrides go: they are the catalog provider's (DeepSeek's own off-peak
  * prices, say). A row whose endpoints can't be read, or that none of its

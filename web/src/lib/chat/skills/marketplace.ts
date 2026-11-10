@@ -7,7 +7,7 @@ import {
 
 /**
  * The Library (CHAT-17, "701 · MIT"; Chat Wave 4, W4-17): third-party skills
- * a workspace can add, as a catalog. Not Ansvisor's own skills, which are
+ * a workspace can add, as a catalog. Not Oppla's own skills, which are
  * library.ts's: in code the third-party catalog is the "marketplace", so the
  * two never mix.
  *
@@ -30,7 +30,7 @@ import {
  * with the skill, as for any import (00458).
  *
  * The directory's own security score is left out (owner decision 10): the
- * Library shows Ansvisor's own scan instead, when a skill is read. Only MIT
+ * Library shows Oppla's own scan instead, when a skill is read. Only MIT
  * skills are listed (decision 11). Server only: the page gets what an API
  * route hands it.
  */

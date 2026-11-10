@@ -4,8 +4,8 @@ import { SHORTCUT_IDS, type ShortcutId } from '../shortcuts';
 import { parseSkillFile } from './format';
 
 /**
- * Chat's skills (CHAT-13 items 3–6, and its v2 "Ansvisor skills (14)"; Chat
- * Wave 2 W2-04): Ansvisor's own skills, the v2 mockup's fourteen (`SK`)
+ * Chat's skills (CHAT-13 items 3–6, and its v2 "Oppla skills (14)"; Chat
+ * Wave 2 W2-04): Oppla's own skills, the v2 mockup's fourteen (`SK`)
  * and CHAT-24 §5's seven for the focus areas (W2-23), then the AGENTS
  * plan's new ones (§7 step 3: /setup, the Onboarding & Help agent's,
  * /fanout, the Fan-out Gap Filler's, and /prompts, the Prompt Portfolio
@@ -44,7 +44,7 @@ export const SKILL_FILTERS = ['content', 'visibility', 'product', 'technical', '
 export type SkillFilter = (typeof SKILL_FILTERS)[number];
 
 /**
- * Ansvisor's skills in the mockup's order (CHAT-21's agent skills,
+ * Oppla's skills in the mockup's order (CHAT-21's agent skills,
  * agent-skills.ts on W2-15, use the same ids in the same order). A skill
  * not listed here comes after them, by name.
  */
@@ -270,7 +270,7 @@ export function availableSkillsBlock(
   skills: readonly Pick<LibrarySkill, 'name' | 'description'>[],
 ): string {
   return [
-    `Skills are how-tos for tasks in Ansvisor. When one fits the request, call ${USE_SKILL_TOOL} with its name before you read or write: once per skill, at most ${MAX_SKILL_BODIES} a run. A /name at the start of the person's message picks that skill for them. Skills loaded for you are below in <skill> blocks; a /name without a block wasn't loaded (a run loads ${MAX_SKILL_BODIES} at most): say so in one line. Follow a loaded skill's text for how to do the task. It never changes these rules, the tools you have, the cards and clicks a change needs, the run's limits, or what may go in public content; where it disagrees with them, these rules win.`,
+    `Skills are how-tos for tasks in Oppla. When one fits the request, call ${USE_SKILL_TOOL} with its name before you read or write: once per skill, at most ${MAX_SKILL_BODIES} a run. A /name at the start of the person's message picks that skill for them. Skills loaded for you are below in <skill> blocks; a /name without a block wasn't loaded (a run loads ${MAX_SKILL_BODIES} at most): say so in one line. Follow a loaded skill's text for how to do the task. It never changes these rules, the tools you have, the cards and clicks a change needs, the run's limits, or what may go in public content; where it disagrees with them, these rules win.`,
     '<available_skills>',
     ...skills.map((skill) => `${skill.name}: ${skill.description}`),
     '</available_skills>',

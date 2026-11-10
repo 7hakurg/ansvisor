@@ -15,7 +15,7 @@ const READ = /^Read\s+/;
 export const readSource = (label: string): string | null =>
   READ.test(label) ? label.replace(READ, '') : null;
 
-/** "Opened ansvisor.com/pricing" → "ansvisor.com/pricing": the page a step opened. */
+/** "Opened example.com/pricing" → "example.com/pricing": the page a step opened. */
 export const openedPage = (label: string) => label.replace(/^Opened\s+/, '');
 
 /**

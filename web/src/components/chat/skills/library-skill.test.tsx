@@ -7,7 +7,7 @@ import type { MarketplaceDetail } from '@/lib/chat/skills/marketplace-store';
 
 /**
  * A Library skill's detail (CHAT-17 item 9, W4-18): its SKILL.md at the
- * pinned commit as plain text, Ansvisor's scan, "Edited by Ansvisor" in
+ * pinned commit as plain text, Oppla's scan, "Edited by Oppla" in
  * words that never name the competitor, what adding leaves out, the file
  * at its commit, the license and its text, "owner/repo · MIT"; Add opens
  * an Admin's review, a Manager's asks the Admins (W4-19); a blocked skill
@@ -132,7 +132,7 @@ describe('LibrarySkill', () => {
     expect(slot('library-edits')!.textContent).toBe(
       "Removed 1 line citing a competitor's research.",
     );
-    expect(container.textContent).toContain('Edited by Ansvisor');
+    expect(container.textContent).toContain('Edited by Oppla');
     expect(container.textContent).not.toMatch(/profound/i);
     expect(slot('library-removed')!.textContent).toBe('scripts/ (1 file)');
     const link = slot('library-source-link')!;
@@ -216,7 +216,7 @@ describe('LibrarySkill', () => {
     expect(slot('library-body')).not.toBeNull();
   });
 
-  it('says why a skill Ansvisor can’t take can’t be added, with nothing to retry', async () => {
+  it('says why a skill Oppla can’t take can’t be added, with nothing to retry', async () => {
     detail!.read = {
       ok: false,
       code: 'invalid',
@@ -224,7 +224,7 @@ describe('LibrarySkill', () => {
     };
     await render();
     expect(slot('library-read-failed')!.textContent).toBe(
-      "Ansvisor can't take this skill as it is, so it can't be added. This skill isn’t valid: metadata takes its keys on the lines under it.",
+      "Oppla can't take this skill as it is, so it can't be added. This skill isn’t valid: metadata takes its keys on the lines under it.",
     );
     expect(container.querySelector('[data-action="librarySkill.retry"]')).toBeNull();
     expect(container.querySelector('[data-action="skills.library.add"]')).toBeNull();

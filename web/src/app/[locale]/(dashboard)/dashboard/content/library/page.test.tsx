@@ -13,7 +13,7 @@ const setContentDraftStatus = vi.fn();
 const archiveContentDraft = vi.fn();
 const deleteContentDraft = vi.fn();
 const getContentDraftPages = vi.fn();
-// No white label kit: downloads keep Ansvisor's names (export-name.test.ts has a kit's).
+// No white label kit: downloads keep Oppla's names (export-name.test.ts has a kit's).
 vi.mock('@/lib/actions/white-label', () => ({
   getExportBranding: async () => ({ ok: true, branding: null }),
 }));
@@ -414,7 +414,7 @@ describe('the Content Library', () => {
     await renderPage();
     expect(container.textContent).toContain('Nothing written yet');
     expect(container.textContent).toContain(
-      'Pages you and the Content Agent write or change in Ansvisor show up here.',
+      'Pages you and the Content Agent write or change in Oppla show up here.',
     );
   });
 
@@ -1392,7 +1392,7 @@ describe('a Library row’s menu (00233)', () => {
     await act(async () => {});
     expect(getContentDraftPages).toHaveBeenCalledWith('brand-1', ['d1']);
     const [blob, name] = saveBlob.mock.calls[0] as [Blob, string];
-    expect(name).toBe('ansvisor_content_pipeline-forecasting.md');
+    expect(name).toBe('oppla_content_pipeline-forecasting.md');
     expect(await readText(blob)).toBe('# Pipeline forecasting\n\nTeams trust it.\n');
   });
 
@@ -1402,7 +1402,7 @@ describe('a Library row’s menu (00233)', () => {
     await pick('Pipeline forecasting', 'Export CSV');
     await act(async () => {});
     const [blob, name] = saveBlob.mock.calls[0] as [Blob, string];
-    expect(name).toBe('ansvisor_content_pipeline-forecasting.csv');
+    expect(name).toBe('oppla_content_pipeline-forecasting.csv');
     const [header, line] = (await readText(blob)).replace(/^\uFEFF/, '').split('\n');
     expect(header.split(',')[3]).toBe('Slug');
     // Title, Meta title, Meta description, then the live page's slug.
@@ -1497,7 +1497,7 @@ describe('the Library’s Export and Created filter (CE-002)', () => {
 
     expect(getContentDraftPages).toHaveBeenCalledWith('brand-1', ['d1', 'd2']);
     const [blob, name] = saveBlob.mock.calls[0] as [Blob, string];
-    expect(name).toMatch(/^ansvisor_content_library_all_\d{4}-\d{2}-\d{2}\.csv$/);
+    expect(name).toMatch(/^oppla_content_library_all_\d{4}-\d{2}-\d{2}\.csv$/);
     const csv = await readText(blob);
     expect(csv).toContain(
       'Pipeline forecasting,In review,Optimize,Feature page,Ada Lovelace,2026-10-18',

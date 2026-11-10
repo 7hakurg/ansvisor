@@ -195,7 +195,7 @@ export function articleSchemaInput({
 
 /**
  * The schema.org types that are an Article or a kind of one: a page whose
- * JSON-LD already names one has its own, and Ansvisor adds none.
+ * JSON-LD already names one has its own, and Oppla adds none.
  */
 const ARTICLE_TYPES = new Set([
   'Article',
@@ -244,7 +244,7 @@ export function hasArticleSchema(html: string): boolean {
 }
 
 /**
- * What Ansvisor does with an article page's Article schema as it goes to a
+ * What Oppla does with an article page's Article schema as it goes to a
  * CMS or an export (customer priorities item 7, 00448): `added`; `leftOut`
  * by the person, for a CMS that writes its own; `own`, the page has one
  * already; `none` for a page type that isn't an article.
@@ -261,7 +261,7 @@ export function articleSchemaPlan(
   return leftOut ? 'leftOut' : 'added';
 }
 
-/** What the Article schema Ansvisor adds is made of, with the page's type and the person's choice. */
+/** What the Article schema Oppla adds is made of, with the page's type and the person's choice. */
 export interface AddedArticleSchema {
   input: Omit<ArticleSchemaInput, 'image' | 'today'>;
   pageType: string | null;

@@ -1,3 +1,4 @@
+import { BRAND_HOST, BRAND_URL } from '../brand.js';
 /**
  * The free AI visibility report card's limits (Customer priorities §5;
  * owner decisions 2026-11-02), each from the environment so they change
@@ -32,7 +33,9 @@ export const DEFAULTS = Object.freeze({
   volumeUsd: 0.075,
 });
 /** Where the form may post from, with nothing set. */
-export const DEFAULT_ORIGINS = ['https://www.ansvisor.com', 'https://ansvisor.com'];
+export const DEFAULT_ORIGINS = [
+  ...new Set([BRAND_URL, `https://${BRAND_HOST}`, `https://www.${BRAND_HOST}`]),
+];
 
 /** A non-negative number from the environment, or the fallback. */
 function envNumber(name, fallback, env) {

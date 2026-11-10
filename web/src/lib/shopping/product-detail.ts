@@ -54,7 +54,7 @@ export interface ProductShelfLine {
   rank: number | null;
   /** The shelf's first product not the brand's own, above this one; null when none is. */
   winner: ShelfProduct | null;
-  /** Its keyword match with the question and AI's searches, 0–100 (Ansvisor estimate). */
+  /** Its keyword match with the question and AI's searches, 0–100 (Oppla estimate). */
   score: number;
   winnerScore: number | null;
   /** The question's words the product's title and opening don't have. */

@@ -3,7 +3,7 @@ import { ImpactReportView } from '@/components/reports/impact-report';
 import { chatPageOpen } from '../../chat/_chat-page-access';
 
 /**
- * Reports › "What Ansvisor did for you" (CHAT-22 feature 2 item 5, mockup
+ * Reports › "What Oppla did for you" (CHAT-22 feature 2 item 5, mockup
  * signature #f-impact): the month's shipped changes on the brand on screen,
  * measured against untouched similar prompts. Only with the new Chat on for
  * the workspace (CHAT_AGENTIC), which is when the ledger is kept.

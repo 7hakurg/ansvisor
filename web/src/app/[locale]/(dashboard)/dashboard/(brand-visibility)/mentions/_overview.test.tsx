@@ -124,11 +124,11 @@ afterEach(() => {
 
 describe('Headline', () => {
   it('writes the summary from the figures, and says what it is built from', () => {
-    render(<Headline overview={overview} brand="Ansvisor" />);
+    render(<Headline overview={overview} brand="Oppla" />);
     const [summary, basis] = container.querySelectorAll('p');
     expect(summary.textContent).toBe(
       'Net sentiment is +34 (↓ 6 vs the previous 30 days). Most of the drop is on ' +
-        'Gemini (−18). AI usually names Ansvisor next to Profound and Peec AI.',
+        'Gemini (−18). AI usually names Oppla next to Profound and Peec AI.',
     );
     expect(basis.textContent).toBe(
       'Built from aggregates with a fixed template, no LLM call · Sep 18 – Oct 17 · ' +
@@ -144,7 +144,7 @@ describe('Headline', () => {
           current: totals({ answers: 2, mentions: 2, negative: 1 }),
           competitors: [],
         }}
-        brand="Ansvisor"
+        brand="Oppla"
       />,
     );
     expect(container.querySelector('p')?.textContent).toBe(
@@ -154,21 +154,21 @@ describe('Headline', () => {
 
   it('says so when the brand was never named', () => {
     render(
-      <Headline overview={{ ...overview, current: totals({ answers: 12 }) }} brand="Ansvisor" />,
+      <Headline overview={{ ...overview, current: totals({ answers: 12 }) }} brand="Oppla" />,
     );
     expect(container.querySelector('p')?.textContent).toBe(
-      "AI didn't name Ansvisor in the tracked responses of this period.",
+      "AI didn't name Oppla in the tracked responses of this period.",
     );
   });
 });
 
 describe('OverviewKpis', () => {
   it('shows each figure with its change and context', () => {
-    render(<OverviewKpis overview={overview} brand="Ansvisor" />);
+    render(<OverviewKpis overview={overview} brand="Oppla" />);
     const text = container.textContent;
     // Every time a response names the brand, as on Insights: 260 vs 200.
     expect(text).toContain('260+30%');
-    expect(text).toContain('times responses named Ansvisor');
+    expect(text).toContain('times responses named Oppla');
     expect(text).toContain('25.0%+5');
     expect(text).toContain('of 400 tracked responses');
     expect(text).toContain('15+25%');
@@ -205,7 +205,7 @@ describe('OverviewKpis', () => {
             }),
           },
         }}
-        brand="Ansvisor"
+        brand="Oppla"
       />,
     );
     const text = container.textContent;
@@ -233,7 +233,7 @@ describe('OverviewKpis', () => {
             previous: totals({ answers: 30, mentions: 15, positive: 5, negative: 5 }),
           },
         }}
-        brand="Ansvisor"
+        brand="Oppla"
       />,
     );
     const text = container.textContent ?? '';
@@ -250,7 +250,7 @@ describe('OverviewKpis', () => {
           ...overview,
           current: totals({ answers: 400, mentions: 12, positive: 6, negative: 1 }),
         }}
-        brand="Ansvisor"
+        brand="Oppla"
       />,
     );
     expect(container.textContent).toContain('Low sample · 12 responses');
@@ -278,7 +278,7 @@ describe('PlatformTable', () => {
 
 describe('CompetitorTable', () => {
   it('puts you first, then competitors by mentions and how often they name you too', () => {
-    render(<CompetitorTable overview={overview} brand="Ansvisor" />);
+    render(<CompetitorTable overview={overview} brand="Oppla" />);
     const headers = [...container.querySelectorAll('th')].map((th) => th.textContent);
     // Responses naming each brand: occurrences aren't kept for competitors.
     expect(headers).toEqual(['Brand', 'Responses', 'Rate', 'Also names you']);
@@ -286,7 +286,7 @@ describe('CompetitorTable', () => {
       [...r.querySelectorAll('td')].map((td) => td.textContent),
     );
     // The last column asks about competitors: empty for you, not "—".
-    expect(rows[0]).toEqual(['AnsvisorYou', '100', '25.0%', '']);
+    expect(rows[0]).toEqual(['OpplaYou', '100', '25.0%', '']);
     // Each competitor's mentions that name you too, and their share.
     expect(rows.slice(1)).toEqual([
       ['Profound', '260', '65.0%', '41 · 16%'],
@@ -305,7 +305,7 @@ describe('MentionsOverviewTab', () => {
     vi.useFakeTimers();
     getMentionsOverview.mockResolvedValue(overview);
     render(
-      <MentionsOverviewTab brandId="b1" brand="Ansvisor" filters={DEFAULT_MENTIONS_FILTERS} />,
+      <MentionsOverviewTab brandId="b1" brand="Oppla" filters={DEFAULT_MENTIONS_FILTERS} />,
     );
     expect(getMentionsOverview).toHaveBeenCalledTimes(1);
     expect(getMentionsOverview.mock.calls[0][0]).toBe('b1');
@@ -318,7 +318,7 @@ describe('MentionsOverviewTab', () => {
     render(
       <MentionsOverviewTab
         brandId="b1"
-        brand="Ansvisor"
+        brand="Oppla"
         filters={{ ...DEFAULT_MENTIONS_FILTERS, q: 'espresso' }}
       />,
     );
@@ -333,7 +333,7 @@ describe('MentionsOverviewTab', () => {
     vi.useFakeTimers();
     getMentionsOverview.mockRejectedValueOnce(new Error('offline'));
     render(
-      <MentionsOverviewTab brandId="b1" brand="Ansvisor" filters={DEFAULT_MENTIONS_FILTERS} />,
+      <MentionsOverviewTab brandId="b1" brand="Oppla" filters={DEFAULT_MENTIONS_FILTERS} />,
     );
     await act(async () => {
       await vi.advanceTimersByTimeAsync(250);
@@ -359,7 +359,7 @@ describe('MentionsOverviewTab', () => {
     render(
       <MentionsOverviewTab
         brandId="b1"
-        brand="Ansvisor"
+        brand="Oppla"
         filters={{ ...DEFAULT_MENTIONS_FILTERS, range: '90d' }}
       />,
     );
@@ -371,7 +371,7 @@ describe('MentionsOverviewTab', () => {
     render(
       <MentionsOverviewTab
         brandId="b1"
-        brand="Ansvisor"
+        brand="Oppla"
         filters={{ ...DEFAULT_MENTIONS_FILTERS, range: '7d' }}
       />,
     );
@@ -383,7 +383,7 @@ describe('MentionsOverviewTab', () => {
     render(
       <MentionsOverviewTab
         brandId="b1"
-        brand="Ansvisor"
+        brand="Oppla"
         filters={{ ...DEFAULT_MENTIONS_FILTERS, range: 'custom' }}
       />,
     );
@@ -395,7 +395,7 @@ describe('MentionsOverviewTab', () => {
     vi.useFakeTimers();
     getMentionsOverview.mockResolvedValueOnce({ ...overview, current: totals({}) });
     render(
-      <MentionsOverviewTab brandId="b1" brand="Ansvisor" filters={DEFAULT_MENTIONS_FILTERS} />,
+      <MentionsOverviewTab brandId="b1" brand="Oppla" filters={DEFAULT_MENTIONS_FILTERS} />,
     );
     await act(async () => {
       await vi.advanceTimersByTimeAsync(250);

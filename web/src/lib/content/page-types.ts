@@ -8,7 +8,7 @@ import { jsonLdScripts } from './html-allowlist';
  * comparison and pricing pages; a shop, product and category pages; a B2C
  * site, destination and help pages; a mobile app's site (00456), feature,
  * pricing and help pages. Every kind also writes the formats
- * www.ansvisor.com offers that fit it: how-to guides, comparisons,
+ * www.example.com offers that fit it: how-to guides, comparisons,
  * definitions, best-of lists and FAQs; alternatives, collections and sizing
  * guides where they apply. The brand's site type is set in its settings
  * (brands.site_type, 00205), guessed until someone does.

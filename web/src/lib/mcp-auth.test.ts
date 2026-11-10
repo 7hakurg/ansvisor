@@ -2,7 +2,7 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 /**
- * authenticateMcpRequest on a read-only workspace (Ansvisor Cloud, plan not
+ * authenticateMcpRequest on a read-only workspace (Oppla Cloud, plan not
  * active): the REST routes' reads go through, their writes answer 402
  * subscription_inactive; the MCP endpoint gates its tools instead.
  */

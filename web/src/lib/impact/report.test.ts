@@ -15,7 +15,7 @@ import {
 } from './report';
 
 /**
- * Reports › "What Ansvisor did for you" (CHAT-22 feature 2 item 5): a row
+ * Reports › "What Oppla did for you" (CHAT-22 feature 2 item 5): a row
  * as the measuring job kept it, its checkpoints, the headline (Medium and
  * High confidence verdicts only), the CSV, and words that never claim a
  * change caused anything.

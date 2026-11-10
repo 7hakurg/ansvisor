@@ -419,15 +419,17 @@ export function ChoosePlanDialog({
           </span>
           <span className="inline-flex flex-wrap items-center gap-x-4 gap-y-1">
             <PlanDetailsToggle open={details} onToggle={() => setDetails((open) => !open)} />
-            <a
-              href={PRICING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 text-foreground underline-offset-4 hover:underline"
-            >
-              {tSettings('seeAllPlanFeatures')}
-              <ArrowUpRight className="size-3.5" aria-hidden />
-            </a>
+            {PRICING_URL && (
+              <a
+                href={PRICING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-foreground underline-offset-4 hover:underline"
+              >
+                {tSettings('seeAllPlanFeatures')}
+                <ArrowUpRight className="size-3.5" aria-hidden />
+              </a>
+            )}
           </span>
         </div>
       </DialogContent>

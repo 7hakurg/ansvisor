@@ -9,7 +9,7 @@ export const dynamic = 'force-dynamic';
 export const runtime = 'nodejs';
 
 /**
- * Streamable HTTP entry point for the Ansvisor MCP server. Claude Desktop,
+ * Streamable HTTP entry point for the Oppla MCP server. Claude Desktop,
  * Claude Code, Cursor, Zed, and other MCP-aware clients hit this URL with a
  * Bearer API key. Each request gets a fresh `McpServer` + transport bound to
  * the caller's user context, then is discarded — stateless, no session

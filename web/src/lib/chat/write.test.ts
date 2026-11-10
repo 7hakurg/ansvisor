@@ -1451,7 +1451,7 @@ describe('content, reports and Site Audit, by role and mode (W2-07, CHAT-20 §9 
     },
   );
 
-  it('sends to no webhook: it goes out of Ansvisor, so only the editor sends there', () => {
+  it('sends to no webhook: it goes out of Oppla, so only the editor sends there', () => {
     const tool = chatTool('push_cms_draft')!;
     expect(tool.inputSchema.safeParse({ draft_id: DRAFT, destination: 'webhook' }).success).toBe(
       false,

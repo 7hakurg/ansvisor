@@ -817,7 +817,7 @@ describe('tableCsv', () => {
 });
 
 describe('trafficExportFileName', () => {
-  it('names the whole page ansvisor-ai-traffic-{brand}-{from}_{to}', () => {
+  it('names the whole page oppla-ai-traffic-{brand}-{from}_{to}', () => {
     expect(
       trafficExportFileName({
         brand: 'Acme Coffee',
@@ -825,7 +825,7 @@ describe('trafficExportFileName', () => {
         to: '2026-10-18',
         ext: 'xlsx',
       }),
-    ).toBe('ansvisor-ai-traffic-acme-coffee-2026-10-11_2026-10-18.xlsx');
+    ).toBe('oppla-ai-traffic-acme-coffee-2026-10-11_2026-10-18.xlsx');
   });
 
   it('adds the table for a single table, and says all time when there is no start', () => {
@@ -837,7 +837,7 @@ describe('trafficExportFileName', () => {
         ext: 'csv',
         table: 'Top landing pages',
       }),
-    ).toBe('ansvisor-ai-traffic-acme-coffee-top-landing-pages-all-time_2026-10-18.csv');
+    ).toBe('oppla-ai-traffic-acme-coffee-top-landing-pages-all-time_2026-10-18.csv');
   });
 
   it('starts with a white label kit’s word instead, or none', () => {

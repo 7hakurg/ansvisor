@@ -5,7 +5,7 @@ import type { Report } from '@/lib/actions/reports';
 import type { ReportBranding } from '@/lib/white-label/kit';
 
 /**
- * The report's PDF with and without a white label kit (00429): Ansvisor's
+ * The report's PDF with and without a white label kit (00429): Oppla's
  * name, footer and indigo without one; the agency's name, footer, color,
  * logo and "Prepared for" with one. The renderer's parts are drawn as plain
  * elements here, so the document reads as a page would.
@@ -94,30 +94,30 @@ async function draw(branding: ReportBranding | null, drawn: Report = report) {
 }
 
 describe('ReportPdfDocument', () => {
-  it('stays Ansvisor’s without a kit', async () => {
+  it('stays Oppla’s without a kit', async () => {
     const pdf = await draw(null);
     const doc = pdf.firstElementChild!;
-    expect(doc.getAttribute('data-author')).toBe('Ansvisor');
-    expect(doc.getAttribute('data-creator')).toBe('Ansvisor');
-    expect(pdf.textContent).toContain('Generated with Ansvisor · www.ansvisor.com');
+    expect(doc.getAttribute('data-author')).toBe('Oppla');
+    expect(doc.getAttribute('data-creator')).toBe('Oppla');
+    expect(pdf.textContent).toContain('Generated with Oppla · oppla.ai');
     expect(pdf.textContent).not.toContain('Prepared for');
     expect(pdf.querySelector('img')).toBeNull();
     expect(pdf.innerHTML).toContain('#6366f1');
   });
 
-  it('carries the agency’s name, footer, logos and color with a kit, and no Ansvisor', async () => {
+  it('carries the agency’s name, footer, logos and color with a kit, and no Oppla', async () => {
     const pdf = await draw(kit);
     const doc = pdf.firstElementChild!;
     expect(doc.getAttribute('data-author')).toBe('Acme Agency');
     expect(doc.getAttribute('data-creator')).toBe('Acme Agency');
     expect(pdf.textContent).toContain('Prepared for Northwind');
     expect(pdf.textContent).toContain('Prepared by Acme Agency · acme.com');
-    expect(pdf.textContent).not.toMatch(/ansvisor/i);
+    expect(pdf.textContent).not.toMatch(/oppla/i);
     expect([...pdf.querySelectorAll('img')].map((img) => img.getAttribute('src'))).toEqual([
       kit.logo,
       kit.clientLogo,
     ]);
-    // The rule and bars keep the kit's color; Ansvisor's indigo is gone.
+    // The rule and bars keep the kit's color; Oppla's indigo is gone.
     expect(pdf.innerHTML).toContain('#ffff00');
     expect(pdf.innerHTML).not.toContain('#6366f1');
   });
@@ -125,14 +125,14 @@ describe('ReportPdfDocument', () => {
   it('names the company where there is no logo, and leaves the footer empty without one', async () => {
     const pdf = await draw({ ...kit, logo: null, clientLogo: null, footerText: null });
     expect(pdf.textContent).toContain('Acme Agency');
-    expect(pdf.textContent).not.toMatch(/ansvisor/i);
+    expect(pdf.textContent).not.toMatch(/oppla/i);
     expect(pdf.querySelector('img')).toBeNull();
   });
 
   it('names no author for a kit with only a logo', async () => {
     const pdf = await draw({ ...kit, companyName: null });
     expect(pdf.firstElementChild!.getAttribute('data-author')).toBe('');
-    expect(pdf.textContent).not.toMatch(/ansvisor/i);
+    expect(pdf.textContent).not.toMatch(/oppla/i);
   });
 });
 

@@ -21,7 +21,7 @@ Quality scores the page from 0 to 100 on three things, each card saying what it 
 - **Trust**: sources, links and dated facts.
 - **Readability**: how easily it reads.
 
-80 and up is **Strong**, 60 to 79 **Can improve**, and under 60 **Needs work**. The header's **Quality** chip is the average of the three. The scores are Ansvisor's estimates from Google's published quality signals, not a Google score.
+80 and up is **Strong**, 60 to 79 **Can improve**, and under 60 **Needs work**. The header's **Quality** chip is the average of the three. The scores are Oppla's estimates from Google's published quality signals, not a Google score.
 
 Under them, **Site Audit estimate** is about where the page would score in Site Audit. See the Content Editor article.
 
@@ -63,7 +63,7 @@ The header shows the page's author, picked from **Settings › Authors**, or you
 - placeholders, alt text and links (**Ready for your CMS**);
 - the author, and the qualified reviewer on pages that advise on health, money or the law;
 - visible dates;
-- the search engine details (Article schema) Ansvisor adds;
+- the search engine details (Article schema) Oppla adds;
 - Trust under 60: AI answers may lean on the page less;
 - the rules and to-dos still open. You can still mark it ready.
 

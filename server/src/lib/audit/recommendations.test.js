@@ -12,7 +12,7 @@ const { brandFactsFor, generateRecommendations } = await import('./recommendatio
 const { MAX_COPY_CHARS, sentencesOf } = await import('./recommendation-guard.js');
 
 // The pricing page from the spec's bug report, cut down.
-const html = `<html><head><title>Ansvisor pricing</title>
+const html = `<html><head><title>Oppla pricing</title>
 <meta name="description" content="Plans from $49 a month.">
 <script type="application/ld+json">{"@type":"Offer","price":"249"}</script></head>
 <body><h1>Pricing</h1><p>Starter $49 per month: 100 site audits. Growth: 500 site audits.</p></body></html>`;
@@ -32,7 +32,7 @@ const results = [
 ];
 
 const brand = {
-  name: 'Ansvisor',
+  name: 'Oppla',
   description: 'AI visibility platform',
   domains: ['ansvisor.com'],
 };
@@ -65,7 +65,7 @@ const firstAnswer = [
     signalKey: 'h1-quality',
     priority: 'high',
     recommendation: 'Use a descriptive H1 that says what the plans cover.',
-    draft: 'Ansvisor pricing: AI visibility plans for every team size',
+    draft: 'Oppla pricing: AI visibility plans for every team size',
     code: null,
   },
   // Not a recommendable signal: dropped.
@@ -107,7 +107,7 @@ describe('generateRecommendations', () => {
       // Code keeps its markup; only the invented date goes.
       code: '{"@type": "FAQPage", "mainEntity": [], "dateModified": "[date]"}',
     });
-    expect(recs[2].draft).toBe('Ansvisor pricing: AI visibility plans for every team size');
+    expect(recs[2].draft).toBe('Oppla pricing: AI visibility plans for every team size');
 
     // The rewrite got only the long item, without its code.
     expect(generateObject).toHaveBeenCalledTimes(2);
@@ -135,7 +135,7 @@ describe('generateRecommendations', () => {
     expect(system).toContain('[your customer name], [your price], [your result]. At most 3');
     expect(system).not.toContain('[source URL]');
     expect(prompt).toContain('BRAND DATA');
-    expect(prompt).toContain('- Name: Ansvisor');
+    expect(prompt).toContain('- Name: Oppla');
     expect(prompt).toContain('- Description: AI visibility platform');
     expect(prompt).toContain('- Domains: ansvisor.com');
   });
@@ -190,7 +190,7 @@ describe('generateRecommendations', () => {
         signalKey: 'case-study-evidence',
         priority: 'medium',
         recommendation: 'Add one real customer result next to the plans.',
-        draft: 'Teams at Ansvisor cut audit time.',
+        draft: 'Teams at Oppla cut audit time.',
         code: null,
       },
     ]);
@@ -305,12 +305,12 @@ describe('generateRecommendations', () => {
 });
 
 describe('brandFactsFor', () => {
-  const row = { name: 'Ansvisor', description: 'AI visibility platform' };
+  const row = { name: 'Oppla', description: 'AI visibility platform' };
   const domains = [{ domain: 'ansvisor.com' }, { domain: null }];
 
   it("gives the brand's facts for a page on its domains", () => {
     expect(brandFactsFor('https://www.ansvisor.com/pricing', row, domains)).toEqual({
-      name: 'Ansvisor',
+      name: 'Oppla',
       description: 'AI visibility platform',
       domains: ['ansvisor.com'],
     });

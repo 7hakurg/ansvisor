@@ -1,6 +1,6 @@
 /**
  * Posting JSON to an address a workspace configured (Send to CMS, #1331).
- * On Ansvisor Cloud it never reaches anything private, as fetchPage reads a
+ * On Oppla Cloud it never reaches anything private, as fetchPage reads a
  * page:
  *   * http(s) only, with no credentials in it; any port, since a workspace's
  *     own automation (n8n, a CMS) often listens on one of its own;
@@ -20,12 +20,13 @@ import http from 'node:http';
 import https from 'node:https';
 import { isCloud } from '../config/plans.js';
 import { PageFetchError, checkPageUrl, publicOnlyLookup } from './safe-fetch.js';
+import { productAgent } from './brand.js';
 
 export const POST_TIMEOUT_MS = 15_000;
 /** How much of an answer is read back: enough to keep with the delivery. */
 export const MAX_ANSWER_BYTES = 8 * 1024;
 
-const USER_AGENT = 'Ansvisor-Webhook/1.0 (+https://ansvisor.com)';
+const USER_AGENT = productAgent('-Webhook');
 
 /** A 3xx: an answer that sends elsewhere, so the body never arrived (none is followed). */
 export const isRedirect = (status) => status >= 300 && status < 400;

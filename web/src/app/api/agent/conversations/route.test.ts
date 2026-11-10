@@ -2,7 +2,7 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 /**
- * /api/agent/conversations on a read-only workspace (Ansvisor Cloud, plan not
+ * /api/agent/conversations on a read-only workspace (Oppla Cloud, plan not
  * active): starting a conversation answers 402 subscription_inactive, as a
  * chat turn does; the list stays open.
  */

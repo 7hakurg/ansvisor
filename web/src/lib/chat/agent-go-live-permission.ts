@@ -56,7 +56,7 @@ export async function setAgentGoLive(
       organization_id: org,
       version: row.version,
       daily_limit: dailyLimit,
-      // Ansvisor's own skills carry none; Library skills' copies aren't built (§8).
+      // Oppla's own skills carry none; Library skills' copies aren't built (§8).
       skill_checksums: {},
       granted_by: ctx.actor.userId,
       granted_at: new Date().toISOString(),

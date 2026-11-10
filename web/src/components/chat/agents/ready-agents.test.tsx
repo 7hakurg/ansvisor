@@ -116,7 +116,7 @@ async function pick(filter: string, label: string) {
 }
 /** The brand on screen, as the brand switcher keeps it. */
 function onBrand(siteType: string | undefined) {
-  const brand = { id: 'brand-1', name: 'Ansvisor', siteType, shoppingModeEnabled: false } as Brand;
+  const brand = { id: 'brand-1', name: 'Oppla', siteType, shoppingModeEnabled: false } as Brand;
   useBrandStore.setState({ brands: [brand], activeBrandId: brand.id, loaded: true });
 }
 const panel = (tab: string) =>

@@ -9,7 +9,7 @@
  * "Open in Actions" rather than a second action for the same work.
  *
  * Send to webhook posts the task to the brand's active webhooks, in the shape
- * Content's opportunity.sent uses, for a workflow outside Ansvisor to pick up.
+ * Content's opportunity.sent uses, for a workflow outside Oppla to pick up.
  * A webhook must have `action_task.sent` selected; an active but unsubscribed
  * webhook is reported separately from a missing webhook.
  *

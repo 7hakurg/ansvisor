@@ -9,7 +9,7 @@ import type { ChatMessageDebug } from '@/lib/chat/staff-debug';
 
 /**
  * Chat's staff Debug view (CHAT-03 items 25–26; W1-15): the Debug switch is
- * in the open chat's ⋯ menu for Ansvisor staff only, and on, an answer
+ * in the open chat's ⋯ menu for Oppla staff only, and on, an answer
  * shows each step's tool, input, output (Download full past 20 KB), latency
  * and cache hit, and its model calls with tokens and cost in USD.
  */

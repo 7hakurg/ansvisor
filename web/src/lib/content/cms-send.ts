@@ -159,7 +159,7 @@ export interface CmsSource {
   teamByline: string;
   /** The byline line the brand puts in the content, or null. */
   byline: string | null;
-  /** The Article schema Ansvisor adds to the page as it goes (00448). */
+  /** The Article schema Oppla adds to the page as it goes (00448). */
   schema: AddedArticleSchema;
 }
 
@@ -303,7 +303,7 @@ export function bulkCmsItems(
 ): BulkItem[] {
   return sources.map((source) => {
     const { draftId, title } = source;
-    // With the Article schema Ansvisor adds, as the editor sends it.
+    // With the Article schema Oppla adds, as the editor sends it.
     const html = withArticleSchema(source.html, source.schema);
     const page = pageFields(source);
     const fields = cmsFields(page, kept.get(draftId) ?? null);

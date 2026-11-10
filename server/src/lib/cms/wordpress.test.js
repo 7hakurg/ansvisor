@@ -281,7 +281,7 @@ describe('revokePassword', () => {
   it('revokes the Application Password the connection signs in with', async () => {
     const { site, request } = await start({
       'GET /wp-json/wp/v2/users/me/application-passwords/introspect': () => ({
-        json: { uuid: UUID, name: 'Ansvisor' },
+        json: { uuid: UUID, name: 'Oppla' },
       }),
       [`DELETE /wp-json/wp/v2/users/me/application-passwords/${UUID}`]: () => ({
         json: { deleted: true },

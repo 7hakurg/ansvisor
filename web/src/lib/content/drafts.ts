@@ -1,6 +1,6 @@
 /**
  * Content drafts (Content Editor, CE-002): the pages a person or the Content
- * Agent writes or changes in Ansvisor, as the Library lists them. One row per
+ * Agent writes or changes in Oppla, as the Library lists them. One row per
  * content_drafts row (migration 00204).
  */
 
@@ -71,7 +71,7 @@ export const PAGE_TYPES = [
   'destination_page',
   'itinerary',
   'help_faq',
-  // The formats www.ansvisor.com offers (content intelligence page).
+  // The formats www.example.com offers (content intelligence page).
   'definition',
   'alternatives',
   'collection_page',
@@ -278,7 +278,7 @@ export interface ContentDraft {
    */
   qualityHandoff: boolean;
   /**
-   * The person left out the Article schema Ansvisor adds to the page it
+   * The person left out the Article schema Oppla adds to the page it
    * sends and exports (00448): their CMS writes its own.
    */
   schemaLeftOut: boolean;

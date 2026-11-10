@@ -5,7 +5,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import messages from '../../../../messages/en.json';
 
 /**
- * The dashboard's subscription gate on Ansvisor Cloud: a workspace whose plan
+ * The dashboard's subscription gate on Oppla Cloud: a workspace whose plan
  * isn't active opens read-only (the page, with the band across the top);
  * only an admin of a new account that never subscribed goes back to
  * onboarding's plan step.

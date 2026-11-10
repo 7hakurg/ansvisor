@@ -5,7 +5,7 @@ import { beforeEach, describe, expect, it, vi } from 'vitest';
  * published send says where; Webflow unpublishes the item, WordPress sets
  * the post back to a draft, Wix reverts it; then the send is marked taken
  * down. Framer and a webhook are refused with words, a page not live
- * through Ansvisor too, and a CMS that refuses marks nothing.
+ * through Oppla too, and a CMS that refuses marks nothing.
  */
 
 const db = vi.hoisted(() => ({ tables: {} }));
@@ -138,7 +138,7 @@ describe('takeDownContentPage', () => {
     expect(mocks.marked).toHaveBeenCalledTimes(2);
   });
 
-  it('refuses a page not live through Ansvisor, another brand’s, Framer and a webhook, before any CMS call', async () => {
+  it('refuses a page not live through Oppla, another brand’s, Framer and a webhook, before any CMS call', async () => {
     db.tables.content_draft_deliveries = [send({ status: 'sent' })];
     await expect(takeDownContentPage(input)).rejects.toMatchObject({
       code: 'not_live',
