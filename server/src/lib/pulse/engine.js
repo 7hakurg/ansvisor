@@ -12,7 +12,7 @@ import { renderPulseEmail, sendPulseEmail } from './email.js';
  * generatePulseForBrand runs after a brand's daily tracking job finishes.
  * It decides eligibility, computes the digest, records it in sent_pulses
  * (which doubles as the "already sent today" dedup and the 7-day warning
- * cooldown log), then delivers: email via Resend on cloud, and the
+ * cooldown log), then delivers: email through email.js on cloud, and the
  * `daily_pulse.created` webhook event everywhere.
  *
  * Everything is best-effort — a pulse failure must never fail the

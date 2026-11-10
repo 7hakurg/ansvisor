@@ -8,7 +8,7 @@ import logger from './logger.js';
  * tracking run stamps. A new customer's first run takes 30 to 65 minutes,
  * and most leave the app meanwhile; the app says it in a toast to those
  * still in it. Sent once per person (profiles.first_results_emailed_at,
- * 00385), through Resend (email.js), a silent no-op where it isn't
+ * 00385), through email.js (Cloudflare or Resend), a silent no-op where it isn't
  * configured.
  *
  * Each person gets it with their own first results (brand access, spec
@@ -131,7 +131,7 @@ async function emailsOf(ids) {
  * E-mail the people whose first results this brand's first run is: those
  * who can see the brand, never sent it, and see no real brand with an
  * earlier stamped run (never for a demo brand). 'sent', 'refused',
- * 'unknown' (no answer: Resend may have sent it, so the claim stays) or
+ * 'unknown' (no answer: the provider may have sent it, so the claim stays) or
  * 'skipped' (nobody to send it to, or e-mail isn't set up).
  */
 export async function sendFirstResultsEmail(brandId) {

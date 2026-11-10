@@ -243,7 +243,7 @@ export function renderTrafficDigestEmail({
   return { subject, html };
 }
 
-/** Sends through the Resend HTTP API: 'sent', 'refused', 'unknown' or 'skipped' (deliverEmail). */
+/** Sends through email.js (Cloudflare or Resend): 'sent', 'refused', 'unknown' or 'skipped' (deliverEmail). */
 export function sendTrafficDigestEmail({ to, subject, html, settingsUrl }) {
   return deliverEmail({ to, subject, html, headers: { 'List-Unsubscribe': `<${settingsUrl}>` } });
 }

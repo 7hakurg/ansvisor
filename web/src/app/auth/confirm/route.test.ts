@@ -34,6 +34,30 @@ describe('GET /auth/confirm', () => {
     expect(verifyOtp).toHaveBeenCalledWith({ type: 'invite', token_hash: 'h1' });
   });
 
+  it('goes on to the page a nested /auth/confirm link names, as invite and reset links are built', async () => {
+    // inviteMember and the forgot-password form hand Supabase
+    // `${appUrl}/auth/confirm?next=/page` as redirectTo, and the templates put
+    // that in redirect_to: one hop, straight to the page, not a second
+    // /auth/confirm without a token.
+    vi.stubEnv('NEXT_PUBLIC_APP_URL', 'https://app.example.com');
+    const nested = (next: string) =>
+      encodeURIComponent(`https://app.example.com/auth/confirm?next=${encodeURIComponent(next)}`);
+
+    let res = await confirm(`redirect_to=${nested('/invite/t1')}`);
+    expect(res.headers.get('location')).toBe('https://app.example.com/invite/t1');
+
+    res = await confirm(`redirect_to=${nested('/reset-password')}`);
+    expect(res.headers.get('location')).toBe('https://app.example.com/reset-password');
+
+    res = await confirm(
+      `redirect_to=${encodeURIComponent('https://app.example.com/auth/confirm')}`,
+    );
+    expect(res.headers.get('location')).toBe('https://app.example.com/dashboard');
+
+    res = await confirm(`redirect_to=${nested('https://evil.example/x')}`);
+    expect(res.headers.get('location')).toBe('https://app.example.com/dashboard');
+  });
+
   it('keeps a page on this site with its query and hash', async () => {
     const res = await confirm(
       `next=${encodeURIComponent('/dashboard/settings?tab=notifications#team')}`,

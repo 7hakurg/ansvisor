@@ -1,7 +1,7 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 /**
- * Resend's answer, told apart: accepted, refused (nothing went out), or no
+ * The provider's answer (Cloudflare or Resend), told apart: accepted, refused (nothing went out), or no
  * answer at all (it may have gone out), and nothing to do without config.
  */
 
@@ -15,6 +15,16 @@ const answer = (status, body = '{}') => ({ ok: status < 300, status, text: async
 const fetchMock = vi.fn();
 
 beforeEach(() => {
+  // Blank first, so a developer's own settings never pick the transport here.
+  for (const key of [
+    'EMAIL_PROVIDER',
+    'EMAIL_FROM',
+    'CLOUDFLARE_ACCOUNT_ID',
+    'CLOUDFLARE_EMAIL_API_TOKEN',
+    'PUBLIC_APP_URL',
+  ]) {
+    vi.stubEnv(key, '');
+  }
   vi.stubEnv('RESEND_API_KEY', 're_test');
   vi.stubEnv('RESEND_FROM_EMAIL', 'Oppla <hello@acme.example>');
   vi.stubGlobal('fetch', fetchMock);
@@ -106,5 +116,103 @@ describe('deliverEmailWithId', () => {
     fetchMock.mockResolvedValueOnce(answer(200, 'not json'));
     expect(await deliverEmailWithId(message)).toEqual({ status: 'sent', id: null });
     expect(JSON.parse(fetchMock.mock.calls[0][1].body)).not.toHaveProperty('attachments');
+  });
+});
+
+describe('the transport', () => {
+  const ACCOUNT = '0123456789abcdef'.repeat(2);
+  const cloudflareAccepted = () =>
+    answer(
+      200,
+      JSON.stringify({
+        success: true,
+        result: { message_id: '<m1@x>', delivered: [], queued: ['team@acme.example'] },
+      }),
+    );
+
+  it('goes through Cloudflare when its account and token are set, from EMAIL_FROM', async () => {
+    vi.stubEnv('CLOUDFLARE_ACCOUNT_ID', ACCOUNT);
+    vi.stubEnv('CLOUDFLARE_EMAIL_API_TOKEN', 'cf-token');
+    vi.stubEnv('EMAIL_FROM', 'Oppla <noreply@notify.acme.example>');
+    fetchMock.mockResolvedValueOnce(cloudflareAccepted());
+
+    expect(await deliverEmailWithId(message)).toEqual({ status: 'sent', id: '<m1@x>' });
+    const [url, init] = fetchMock.mock.calls[0];
+    expect(url).toContain(`/accounts/${ACCOUNT}/email/sending/send`);
+    expect(JSON.parse(init.body).from).toEqual({
+      address: 'noreply@notify.acme.example',
+      name: 'Oppla',
+    });
+  });
+
+  it('keeps a white label display name on the configured address through Cloudflare', async () => {
+    vi.stubEnv('CLOUDFLARE_ACCOUNT_ID', ACCOUNT);
+    vi.stubEnv('CLOUDFLARE_EMAIL_API_TOKEN', 'cf-token');
+    vi.stubEnv('EMAIL_FROM', 'Oppla <noreply@notify.acme.example>');
+    fetchMock.mockResolvedValueOnce(cloudflareAccepted());
+    await deliverEmailWithId({ ...message, fromName: 'Northwind' });
+    expect(JSON.parse(fetchMock.mock.calls[0][1].body).from).toEqual({
+      address: 'noreply@notify.acme.example',
+      name: 'Northwind',
+    });
+  });
+
+  it('stays on Resend when EMAIL_PROVIDER says so, even with Cloudflare set', async () => {
+    vi.stubEnv('CLOUDFLARE_ACCOUNT_ID', ACCOUNT);
+    vi.stubEnv('CLOUDFLARE_EMAIL_API_TOKEN', 'cf-token');
+    vi.stubEnv('EMAIL_PROVIDER', 'resend');
+    fetchMock.mockResolvedValueOnce(answer(200, '{"id":"e1"}'));
+    expect(await deliverEmailWithId(message)).toEqual({ status: 'sent', id: 'e1' });
+    expect(fetchMock.mock.calls[0][0]).toBe('https://api.resend.com/emails');
+  });
+
+  it('falls back to RESEND_FROM_EMAIL as the sender on Cloudflare', async () => {
+    vi.stubEnv('RESEND_API_KEY', '');
+    vi.stubEnv('CLOUDFLARE_ACCOUNT_ID', ACCOUNT);
+    vi.stubEnv('CLOUDFLARE_EMAIL_API_TOKEN', 'cf-token');
+    fetchMock.mockResolvedValueOnce(cloudflareAccepted());
+    await deliverEmail(message);
+    expect(JSON.parse(fetchMock.mock.calls[0][1].body).from).toEqual({
+      address: 'hello@acme.example',
+      name: 'Oppla',
+    });
+  });
+
+  it('skips when no provider is configured, or the chosen one is not', async () => {
+    vi.stubEnv('RESEND_API_KEY', '');
+    expect(await deliverEmail(message)).toBe('skipped');
+    vi.stubEnv('EMAIL_PROVIDER', 'cloudflare');
+    vi.stubEnv('RESEND_API_KEY', 're_test');
+    expect(await deliverEmail(message)).toBe('skipped');
+    expect(fetchMock).not.toHaveBeenCalled();
+  });
+
+  it('names the provider in use', async () => {
+    const { emailProvider } = await import('./email.js');
+    expect(emailProvider()).toBe('resend');
+    vi.stubEnv('CLOUDFLARE_ACCOUNT_ID', ACCOUNT);
+    vi.stubEnv('CLOUDFLARE_EMAIL_API_TOKEN', 'cf-token');
+    expect(emailProvider()).toBe('cloudflare');
+    vi.stubEnv('EMAIL_PROVIDER', 'carrier-pigeon');
+    expect(emailProvider()).toBe('cloudflare');
+    vi.stubEnv('CLOUDFLARE_EMAIL_API_TOKEN', '');
+    vi.stubEnv('RESEND_API_KEY', '');
+    expect(emailProvider()).toBeNull();
+  });
+});
+
+describe('the branded shell', () => {
+  it('wraps a fragment in the Oppla layout and keeps a whole document as it is', async () => {
+    vi.stubEnv('PUBLIC_APP_URL', 'https://app.acme.example');
+    fetchMock.mockResolvedValue(answer(200));
+    await deliverEmail(message);
+    const wrapped = JSON.parse(fetchMock.mock.calls[0][1].body).html;
+    expect(wrapped).toMatch(/^<!DOCTYPE html>/);
+    expect(wrapped).toContain('<p>Hi</p>');
+    expect(wrapped).toContain('https://app.acme.example/email/oppla-mark.png');
+
+    const own = '<!DOCTYPE html><html><body>Pulse</body></html>';
+    await deliverEmail({ ...message, html: own });
+    expect(JSON.parse(fetchMock.mock.calls[1][1].body).html).toBe(own);
   });
 });

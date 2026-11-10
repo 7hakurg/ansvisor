@@ -25,6 +25,7 @@ vi.mock('@/components/auth/oauth-buttons', () => ({
 }));
 
 const { SignUpForm } = await import('./sign-up-form');
+const { createClient } = await import('@/lib/supabase/client');
 
 (globalThis as typeof globalThis & { IS_REACT_ACT_ENVIRONMENT: boolean }).IS_REACT_ACT_ENVIRONMENT =
   true;
@@ -57,6 +58,25 @@ function render() {
 
 const emailInput = () => container.querySelector<HTMLInputElement>('#email')!;
 
+/** Types into a controlled input the way a person does. */
+function type(selector: string, value: string) {
+  const input = container.querySelector<HTMLInputElement>(selector)!;
+  const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value')!.set!;
+  act(() => {
+    setter.call(input, value);
+    input.dispatchEvent(new Event('input', { bubbles: true }));
+  });
+}
+
+async function submit() {
+  type('#fullName', 'Ada Lovelace');
+  type('#email', 'ada@acme.test');
+  type('#password', 'correct horse battery');
+  await act(async () => {
+    container.querySelector('form')!.requestSubmit();
+  });
+}
+
 describe('SignUpForm', () => {
   it("takes an invitation's token and address out of the address bar, and keeps them", () => {
     window.history.replaceState(
@@ -82,5 +102,28 @@ describe('SignUpForm', () => {
     expect(emailInput().value).toBe('');
     expect(emailInput().disabled).toBe(false);
     expect(oauthNext.at(-1)).toBe('/en/dashboard/chat');
+  });
+  it('asks for the confirmation link to sign in and go on to the page it came for', async () => {
+    const signUp = vi.fn().mockResolvedValue({ error: null });
+    vi.mocked(createClient).mockReturnValue({ auth: { signUp } } as never);
+    vi.stubEnv('NEXT_PUBLIC_APP_URL', 'https://app.example.com/');
+
+    window.history.replaceState(null, '', '/en/sign-up?next=%2Fen%2Fdashboard%2Fchat');
+    render();
+    await submit();
+    expect(signUp.mock.calls[0][0].options.emailRedirectTo).toBe(
+      'https://app.example.com/auth/confirm?next=%2Fen%2Fdashboard%2Fchat',
+    );
+
+    // A fresh form: it reads `next` once, when it mounts.
+    act(() => root.unmount());
+    root = createRoot(container);
+    window.history.replaceState(null, '', '/en/sign-up');
+    render();
+    await submit();
+    expect(signUp.mock.calls[1][0].options.emailRedirectTo).toBe(
+      'https://app.example.com/auth/confirm?next=%2Fdashboard',
+    );
+    vi.unstubAllEnvs();
   });
 });

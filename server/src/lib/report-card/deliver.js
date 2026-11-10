@@ -9,7 +9,7 @@ import { BRAND_HOST, PRIVACY_URL } from '../brand.js';
  * The report card's e-mail (REPORT-CARD §1, §4, §7): first that the PDF is
  * attached (owner review 2026-11-08), then the headline figures, and a
  * "Start a free trial" invitation; from Oppla
- * (REPORT_CARD_FROM_EMAIL, else RESEND_FROM_EMAIL). Each minute the queue
+ * (REPORT_CARD_FROM_EMAIL, else email.js's EMAIL_FROM). Each minute the queue
  * sends what is waiting: a new card once it's ready, a card sent again
  * (resent), and a short note when a card couldn't be made, each in the
  * language the request chose, else the card's country's. The PDF is drawn

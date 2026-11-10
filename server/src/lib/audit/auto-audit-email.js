@@ -5,7 +5,7 @@ import { sendEmail } from '../email.js';
 /**
  * The e-mail after an auto-audit run (SA-006), when the org turned it on in
  * Site Audit settings: "25 pages audited · 6 critical issues · next run Oct
- * 28", per brand when the run covered several. Sent through Resend
+ * 28", per brand when the run covered several. Sent through email.js
  * (email.js), a silent no-op where it isn't configured. Each person reads
  * only the brands they can see (brand access, spec §5.4): with All brands,
  * everyone gets the one e-mail, as before.

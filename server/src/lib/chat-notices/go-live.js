@@ -18,7 +18,7 @@ import { appOrigin, emailOf, escapeHtml } from './own-key.js';
  *   * agent_go_live_off: an edit made a new version of an allowed agent. The
  *     Admin who allowed it and its owner, once per version allowed.
  *
- * Through Resend (email.js), a silent no-op where it isn't configured. Never
+ * Through email.js (Cloudflare or Resend), a silent no-op where it isn't configured. Never
  * on the step's way: the caller logs what fails.
  */
 

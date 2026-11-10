@@ -16,6 +16,7 @@ import { OrDivider } from '@/components/auth/or-divider';
 import { siteConfig } from '@/config/site';
 import { track } from '@/lib/analytics';
 import { stripInviteParams } from '@/lib/analytics-privacy';
+import { safeNextPath } from '@/lib/auth-next';
 import { cn } from '@/lib/utils';
 
 export function SignUpForm() {
@@ -47,10 +48,16 @@ export function SignUpForm() {
     setIsLoading(true);
     const supabase = createClient();
 
+    // The confirmation e-mail's link verifies on /auth/confirm (it sets the
+    // session server-side), then goes on to the page this sign-up came for.
+    const appUrl = process.env.NEXT_PUBLIC_APP_URL?.replace(/\/+$/, '') || window.location.origin;
+    const emailRedirectTo = `${appUrl}/auth/confirm?next=${encodeURIComponent(safeNextPath(nextPath))}`;
+
     const { error } = await supabase.auth.signUp({
       email,
       password,
       options: {
+        emailRedirectTo,
         data: {
           full_name: fullName,
         },

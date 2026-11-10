@@ -24,9 +24,9 @@ import { applyPlanOverrides } from './plan-guard.js';
  *     answer's own PDF download): a bigger one, or none, is the Open in
  *     Chat link only.
  *   - From "Oppla", or the white label kit's company when the plan has
- *     white label and the kit names one, on RESEND_FROM_EMAIL's address.
+ *     white label and the kit names one, on the configured sender's address.
  *   - A run's result goes once (chat_schedule_runs.email_status); its
- *     outcome and Resend's id are kept on the run.
+ *     outcome and the provider's message id are kept on the run.
  *   - Addresses outside the workspace (external_recipients, 00467; W4-28,
  *     Wave 4 decision 16) get nothing from a run: it only prepares their
  *     e-mail, a `pending` chat_outbound_emails row each, with the summary
@@ -34,7 +34,7 @@ import { applyPlanOverrides } from './plan-guard.js';
  *     every time (chat-outbound-email.js); going live on its own never
  *     covers it.
  *
- * Through Resend (email.js): a silent no-op where it isn't configured.
+ * Through email.js (Cloudflare or Resend): a silent no-op where it isn't configured.
  */
 
 /** The largest report attached: a bigger one goes as the link (Wave 3 decision 3). */
@@ -316,7 +316,7 @@ export async function prepareOutboundEmails({ job, run, lines, attachment }) {
  * for a run that didn't run after its retry, `paused` for a job that turned
  * itself off. What went out: { status: 'sent' | 'failed' | 'skipped' |
  * 'not_found', sent }: skipped with Chat off, a job that doesn't e-mail, a
- * run already e-mailed, no one to send to, or Resend not configured. A
+ * run already e-mailed, no one to send to, or no e-mail provider configured. A
  * result for a job with outside addresses also prepares their e-mails,
  * sending none of them, with how many it prepared (`prepared`).
  * @param {{ orgId: string, scheduleId: string, runId?: string | null, kind: 'result' | 'failed' | 'paused', reason?: string, attachment?: { filename: string, content: string } | null }} input
@@ -436,7 +436,7 @@ export async function sendScheduleEmail({
       logger.warn({ orgId, scheduleId, outcome: outcome.status }, 'scheduled job e-mail not sent');
     }
   }
-  // Resend not configured (self-hosted): nothing went out, nothing to keep.
+  // No e-mail provider configured: nothing went out, nothing to keep.
   if (tried === 0) return { status: 'skipped', sent: 0, ...extra };
   const status = sent > 0 ? 'sent' : 'failed';
   if (run) {

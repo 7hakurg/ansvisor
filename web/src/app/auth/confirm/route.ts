@@ -30,8 +30,8 @@ export async function GET(request: Request) {
   const type = searchParams.get('type') as EmailOtpType | null;
   // Only to a page on this site (#1203): a crafted link can't send someone
   // who just confirmed an e-mail to another site.
-  const redirectTarget = safeRedirectUrl(
-    searchParams.get('redirect_to') ?? searchParams.get('next'),
+  const redirectTarget = unwrapConfirm(
+    safeRedirectUrl(searchParams.get('redirect_to') ?? searchParams.get('next'), origin),
     origin,
   );
 
@@ -49,4 +49,20 @@ export async function GET(request: Request) {
   }
 
   return NextResponse.redirect(redirectTarget);
+}
+
+/**
+ * The page a nested /auth/confirm link names. inviteMember and the
+ * forgot-password form give Supabase `${appUrl}/auth/confirm?next=/page` as
+ * redirectTo, and the e-mail templates carry it in redirect_to: going there
+ * would land on /auth/confirm again without a token. One level is unwrapped,
+ * through the same on-this-site check; anything else is the target as is.
+ */
+function unwrapConfirm(target: string, origin: string): string {
+  const url = new URL(target);
+  if (url.pathname !== '/auth/confirm') return target;
+  return safeRedirectUrl(
+    url.searchParams.get('next') ?? url.searchParams.get('redirect_to'),
+    origin,
+  );
 }

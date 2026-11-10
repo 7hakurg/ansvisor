@@ -242,7 +242,7 @@ describe('sendTrafficDigestForBrand', () => {
   it('gives the week back when Resend refuses the e-mail', async () => {
     deliverEmail.mockResolvedValue('refused');
     await expect(sendTrafficDigestForBrand('b1', { now: MONDAY })).rejects.toThrow(
-      'Resend refused the digest',
+      'the e-mail provider refused the digest',
     );
     expect(state.deleted).toEqual([{ table: 'ai_traffic_digests', id: 'd1' }]);
 
@@ -266,7 +266,7 @@ describe('sendTrafficDigestForBrand', () => {
     expect(state.updated.at(-1).patch).toMatchObject({ sent_at: expect.any(String) });
     expect(logger.warn).toHaveBeenCalledWith(
       expect.objectContaining({ brandId: 'b1', week: '2026-10-12' }),
-      '[traffic-digest] no answer from Resend; the week is not sent again',
+      '[traffic-digest] no answer from the e-mail provider; the week is not sent again',
     );
   });
 

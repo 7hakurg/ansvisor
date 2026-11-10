@@ -1,12 +1,12 @@
 import { sendEmail } from '../email.js';
 
 /**
- * Daily Pulse email rendering + delivery via the Resend HTTP API (#540).
+ * Daily Pulse email rendering + delivery through email.js (#540): the
+ * configured provider, Cloudflare Email Sending or Resend.
  *
- * Cloud-only: the caller gates on isCloud(). No SDK — a single fetch to
- * https://api.resend.com/emails with RESEND_API_KEY. When the key is
- * missing the send is a silent no-op so self-host / misconfigured
- * environments never crash the tracking pipeline.
+ * Cloud-only: the caller gates on isCloud(). With no provider configured the
+ * send is a silent no-op, so self-host / misconfigured environments never
+ * crash the tracking pipeline.
  */
 
 // Display names for platform slugs used in email copy. Keep in sync with
@@ -176,7 +176,7 @@ export function renderPulseEmail({ brandName, metrics, insightsUrl, settingsUrl 
 }
 
 /**
- * Send a pulse email through the Resend HTTP API.
+ * Send a pulse email through email.js.
  * Returns true when accepted, false otherwise (missing key, HTTP error).
  */
 export function sendPulseEmail({ to, subject, html, settingsUrl }) {

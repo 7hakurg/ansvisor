@@ -8,7 +8,7 @@ import logger from '../logger.js';
  * their "Notify me when an agent needs me" (chat_user_prefs.notify_via,
  * 00408): Inbox and e-mail (the default), Inbox only, or Inbox only until
  * Slack exists. Once per failure episode, and one reminder after 3 days
- * still failing. Through Resend (email.js), a silent no-op where it isn't
+ * still failing. Through email.js (Cloudflare or Resend), a silent no-op where it isn't
  * configured. The notice and the e-mail name no brand.
  */
 

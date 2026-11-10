@@ -11,7 +11,7 @@ import { appOrigin, escapeHtml } from './own-key.js';
  * agent's owner), when they are a member and reach the run's brand, gets one
  * e-mail with "Inbox + email": once per run. A chat_notices row records it
  * (agent_needs_you:{run id}); the Inbox lists the run's chat under Needs
- * you already, so the web doesn't show the row. Through Resend (email.js), a
+ * you already, so the web doesn't show the row. Through email.js (Cloudflare or Resend), a
  * silent no-op where it isn't configured. Never on the run's way: the caller
  * logs what fails.
  */

@@ -59,9 +59,20 @@ Sign in with **`demo@ansvisor.local` / `demo123`** to land on a populated dashbo
 
 In Supabase dashboard → **Authentication → URL Configuration**:
 - **Site URL**: your web app URL (`http://localhost:3000` for dev, `https://app.example.com` for prod)
-- **Redirect URLs**: add `<site_url>/auth/callback`
+- **Redirect URLs**: add `<site_url>/auth/callback` and `<site_url>/auth/confirm`
 
 Optionally enable OAuth providers (Google, GitHub) under **Authentication → Providers** if you want social sign-in.
+
+## Auth e-mails
+
+Sign-up confirmation, invite, password reset and the other Supabase Auth e-mails use the app's own templates, in the same layout as the e-mails the server sends. The web app serves them at `<site_url>/email/auth/<template>.html`, and their links go to `<site_url>/auth/confirm`, which signs the person in server-side. Supabase's default templates link elsewhere and the session never reaches the app, so set these up before you open sign-up.
+
+- **Hosted Supabase**: in **Authentication → Emails**, paste each file's contents from `web/public/email/auth/` into the matching template, and set its subject.
+- **Self-hosted Supabase**: point the auth service at the files. `npm run email:auth -- --env <site_url>` (in `server/`) prints every `GOTRUE_MAILER_TEMPLATES_*` and `GOTRUE_MAILER_SUBJECTS_*` setting; add them to the auth service's environment and restart it. The service fetches each template when it first sends it and every 10 minutes after.
+
+Set **SMTP** under **Authentication → Emails → SMTP Settings** (hosted) or `GOTRUE_SMTP_*` (self-hosted). Cloudflare Email Sending works: host `smtp.mx.cloudflare.net`, port `465`, user `api_token`, and an API token with the **Email Sending: Edit** permission as the password.
+
+After editing a template (`server/src/lib/auth-email-templates.js`) or the layout (`server/src/lib/email-layout.js`), run `npm run email:auth` in `server/` to write the files again; a test fails while they're out of date.
 
 ## Storage (optional)
 

@@ -26,9 +26,9 @@ import { logger } from './logger.js';
  *   - What goes: the job's title, the answer's first lines and the
  *     report's PDF; no link into the app, nothing that asks to sign in, and
  *     the footer "Sent by {person} from {workspace} via Oppla".
- *     Reply-To is the person who clicked Send. Through email.js (Resend).
- *   - Kept: sent (when, who, Resend's id), or pending again with why when
- *     Resend didn't take it; Cancel makes it cancelled. Each Send and
+ *     Reply-To is the person who clicked Send. Through email.js (Cloudflare or Resend).
+ *   - Kept: sent (when, who, the provider's message id), or pending again with why when
+ *     the provider didn't take it; Cancel makes it cancelled. Each Send and
  *     Cancel is a row in Chat's activity log (00402). The PDF is let go once
  *     no e-mail of its run waits.
  */
@@ -156,7 +156,7 @@ async function expireOne(id) {
   await letFilesGo([id]);
 }
 
-/** Back to pending, after a claim that couldn't go on: with why, when Resend didn't take it. */
+/** Back to pending, after a claim that couldn't go on: with why, when the provider didn't take it. */
 async function release(id, words) {
   const { error } = await supabaseAdmin
     .from('chat_outbound_emails')
@@ -244,7 +244,7 @@ async function emailOf(id) {
 }
 
 /**
- * Send, clicked by `userId` (above). { ok: true } once Resend took it; else
+ * Send, clicked by `userId` (above). { ok: true } once the provider took it; else
  * a refusal { ok: false, code, status, message }: not_found 404, forbidden
  * 403, trial or plan 402, expired 410, sent/cancelled/removed/busy 409,
  * daily_limit 429, send_failed 502 (pending again, with why).
@@ -334,7 +334,7 @@ export async function sendOutsideEmail({ userId, id, now = new Date() }) {
       .from('chat_outbound_emails')
       .update({ resend_id: outcome.id })
       .eq('id', row.id);
-    if (keepError) logger.error({ err: keepError, id: row.id }, 'could not keep Resend’s id');
+    if (keepError) logger.error({ err: keepError, id: row.id }, 'could not keep the provider’s message id');
   }
   await logActivity({ caller, job, row, sent: true });
   await letFilesGo([row.id]);

@@ -28,10 +28,10 @@ import { renderTrafficDigestEmail, sendTrafficDigestEmail } from './email.js';
  * twice, and marked sent (sent_at) just before the e-mail goes, so a stop
  * after the send can't leave a claim a later sweep takes over and sends
  * again. The sweep runs Monday to Wednesday: a week a failure left unsent (a
- * read that kept failing, an e-mail Resend refused, a restart between the
+ * read that kept failing, an e-mail the provider refused, a restart between the
  * claim and the send) is tried again the next day, and one already sent is
- * skipped. An e-mail Resend gave no answer for may have gone out, so its
- * week isn't sent again: Resend's idempotency keys don't last to the next
+ * skipped. An e-mail the provider gave no answer for may have gone out, so its
+ * week isn't sent again: a provider's idempotency keys don't last to the next
  * day. Cloud only, like the pulse's e-mail. Best effort: one brand's failure
  * is logged and the sweep moves on.
  */
@@ -258,7 +258,7 @@ export async function sendTrafficDigestForBrand(
   }
 
   let recipients;
-  // Nothing to send to, or Resend isn't set up: the week is done all the same.
+  // Nothing to send to, or no e-mail provider is set up: the week is done all the same.
   let outcome = 'skipped';
   try {
     recipients = await resolveRecipients(brand.organization_id, settings, brandId);
@@ -274,8 +274,8 @@ export async function sendTrafficDigestForBrand(
       // Marked sent before it goes. When this fails, nothing went out.
       await updateDigest(row.id, { sent_at: new Date().toISOString() }, retryWaitMs);
       outcome = await sendTrafficDigestEmail({ to: recipients, subject, html, settingsUrl });
-      // Resend answered with an error: nothing went out.
-      if (outcome === 'refused') throw new Error('Resend refused the digest');
+      // The provider answered with an error: nothing went out.
+      if (outcome === 'refused') throw new Error('the e-mail provider refused the digest');
     }
   } catch (err) {
     // Give the week back, so the next sweep (through Wednesday) tries again.
@@ -285,7 +285,7 @@ export async function sendTrafficDigestForBrand(
   if (outcome === 'unknown') {
     logger.warn(
       { brandId, week: week.firstDay },
-      '[traffic-digest] no answer from Resend; the week is not sent again',
+      '[traffic-digest] no answer from the e-mail provider; the week is not sent again',
     );
   }
   const emailSent = outcome === 'sent';

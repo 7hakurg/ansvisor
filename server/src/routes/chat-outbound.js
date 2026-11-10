@@ -5,7 +5,7 @@
  * (an EXECUTE), never a run's own (lib/chat-outbound-email.js).
  *
  * POST /api/chat-outbound/:id/send
- *   → 200 { success: true }: Resend took it; it is sent and logged.
+ *   → 200 { success: true }: the e-mail provider took it; it is sent and logged.
  *   → 402 trial | plan, 403 forbidden, 404 not_found, 409 sent | cancelled
  *     | removed | busy, 410 expired, 429 daily_limit (50 a day), 502
  *     send_failed (pending again, with why in `message`).
